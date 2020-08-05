@@ -20,10 +20,9 @@ class Sidebar extends Component {
           Management
         </div>
         <div className="collapse" id="collapseMenuManage">
-          <div className="card">
             <ul>
               <li>
-                <Link to="#">Ads</Link>
+                <Link to="/ads">Ads</Link>
               </li>
               <li>
                 <Link to="#">Commentar</Link>
@@ -35,7 +34,6 @@ class Sidebar extends Component {
                 <Link to="#">News Category</Link>
               </li>
             </ul>
-          </div>
         </div>
       </div>
     );

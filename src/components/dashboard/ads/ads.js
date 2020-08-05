@@ -32,23 +32,24 @@ class DashboardAds extends Component {
     const listAds =
       ads &&
       ads.map((ads, index) => (
-        <div className="row-table-ads">
+        <>
           <div>{index + 1}</div>
-          <div>
-            <button>Delete</button>
-            <button>Edit</button>
+          <div className="manage-ads">
+            <button type="button" className="btn btn-sm btn-outline-delete">Delete</button>
+            <button type="button" className="btn btn-sm btn-edit">Edit</button>
           </div>
-          <div>{ads.ads_name}</div>
+          <div className="name-ads">{ads.ads_name}</div>
           <div>
             <img
+            width={400} height={150}
               src={ads.ads_image}
-              alt={ads.ads_image}
+              alt="..."
               style={{ maxHeight: 50 }}
             />
           </div>
           <div>{this.getDateTimeFromTimestamp(ads.date_created)}</div>
           <div>{this.getDateTimeFromTimestamp(ads.date_updated)}</div>
-        </div>
+        </>
       ));
     return (
       <div className="container">
@@ -57,22 +58,22 @@ class DashboardAds extends Component {
         <div className="container-ads">
           <div className="title-ads">Ads</div>
           <form className="form ads">
+          <button type="button" className="btn btn-sm btn-add">Add</button>
             <input
-              className="form-control"
+              className="form-control ads"
               type="search"
-              placeholder="Search"
+              placeholder="Search Ads"
             />
+            
           </form>
           <div className="table-ads">
-            <div className="header-table-ads">
-              <div>No</div>
-            <div>Manage</div>
-            <div>Name</div>
-            <div>Image</div>
-            <div>Date Created</div>
-            <div>Date Updated</div>
-            </div>
-            <div>{listAds}</div>
+              <div className='header-table-ads'>No</div>
+              <div className='header-table-ads'>Manage</div>
+              <div className='header-table-ads'>Name</div>
+              <div className='header-table-ads'>Image</div>
+              <div className='header-table-ads'>Date Created</div>
+              <div className='header-table-ads'>Date Updated</div>
+              {listAds}
           </div>
         </div>
       </div>
@@ -80,6 +81,7 @@ class DashboardAds extends Component {
   }
 }
 const mapStateToProps = (state) => {
+  console.log(state)
   return {
     ads: state.ads.ads,
   };

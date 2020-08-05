@@ -4,39 +4,70 @@
   grid-area: content;
   padding: 8px;
   grid-template-columns: 70%, 30%;
-  grid-template-areas: "title search"
-  "table table";
+  grid-template-areas:
+    "title search"
+    "table table";
+  row-gap: 8px;
   align-items: center;
   justify-content: stretch;
 }
-.title-ads{
+.title-ads {
   grid-area: title;
   font-size: 24px;
 }
-.form.ads{
+.form.ads {
   display: grid;
   grid-area: search;
+  justify-self: end;
+  grid-template-columns: 1fr 3fr;
+  column-gap: 8px;
+}
+.btn-add{
+  background-color: #004de8 !important;
+  border: none;
+  border-radius: 4px;
+  color: white;
+}
+.form-control.ads{
   max-width: 200px;
+  max-height: 35px;
+  font-size: 12px;
+  font-weight: 200;
   justify-self: end;
 }
-.table-ads{
-  padding: 24px;
+/* Table Ads */
+.table-ads {
   display: grid;
   grid-area: table;
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-areas: 'header'
-  'body';
-  background-color: yellowgreen;
+  grid-template-columns: 0.5fr 2fr 2fr 3fr 2fr 2fr;
+  grid-auto-flow: row;
+  background-color: white;
 }
-.header-table-ads {
-  display: grid;
-  grid-area: header;  
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: auto;
+.table-ads > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border: 0.5px solid#DEDEDE;
 }
-.row-table-ads{
+.manage-ads {
   display: grid;
-  grid-area: body;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(auto-fit, 1fr);
+  grid-template-columns: 1fr 1fr;
+  column-gap: 8px;
+}
+.btn-outline-delete {
+  box-sizing: border-box;
+  border: 1px solid #004de8 !important;
+  color: #004de8 !important;
+  border-radius: 4px;
+}
+.btn-edit {
+  background-color: #004de8 !important;
+  border: none;
+  color: white;
+  border-radius: 4px;
+}
+
+.table-ads .name-ads {
+  justify-content: start;
 }
