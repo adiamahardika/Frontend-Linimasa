@@ -1,0 +1,44 @@
+
+.container-sidebar {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 10px;
+  align-content: start;
+  justify-content: start;
+}
+/* Dashboard */
+.dashboard,
+.management {
+  font-size: 16px;
+  font-weight: 600;
+}
+/* Management */
+.management {
+  border: none;
+}
+.card {
+  box-sizing: border-box;
+  border: none;
+  padding: 5px;
+  display: grid;
+  grid-template-rows: repeat(auto-fit, minmax(15px, 1fr));
+}
+.card ul {
+  list-style: none;
+  text-decoration: none;
+  display: grid;
+  row-gap: 2px;
+}
+.card li {
+  padding: 3px;
+  background-color: brown;
+  color: black;
+  font-size: 14px;
+  font-weight: 200;
+}
+.card li a {
+  color: white;
+}
+.card li a:hover {
+  text-decoration: none;
+}

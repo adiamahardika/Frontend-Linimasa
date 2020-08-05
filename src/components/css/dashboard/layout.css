@@ -1,0 +1,19 @@
+.container {
+  padding: 0;
+  display: grid;
+  width: 100%;
+  grid-template-areas:
+    "navbar navbar"
+    "sidebar content";
+    justify-content: stretch;
+}
+/* Navbar */
+.container-navbar {
+    display: grid;
+    grid-area: navbar;
+  }
+/* Sidebar */
+.container-sidebar {
+  display: grid;
+  grid-area: sidebar;
+}
