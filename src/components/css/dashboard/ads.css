@@ -14,6 +14,7 @@
 .title-ads {
   grid-area: title;
   font-size: 24px;
+  font-weight: 600;
 }
 .form.ads {
   display: grid;
@@ -27,6 +28,7 @@
   border: none;
   border-radius: 4px;
   color: white;
+  max-height: 35px;
 }
 .form-control.ads{
   max-width: 200px;
@@ -57,8 +59,8 @@
 }
 .btn-outline-delete {
   box-sizing: border-box;
-  border: 1px solid #004de8 !important;
-  color: #004de8 !important;
+  border: 1px solid #e80000 !important;
+  color: #e80000 !important;
   border-radius: 4px;
 }
 .btn-edit {
