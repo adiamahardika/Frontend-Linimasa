@@ -5,12 +5,11 @@
   padding: 8px;
   grid-template-columns: 70%, 30%;
   grid-template-areas: "title search"
-  "body body";
+  "table table";
   align-items: center;
   justify-content: stretch;
 }
 .title-ads{
-  display: grid;
   grid-area: title;
   font-size: 24px;
 }
@@ -20,11 +19,24 @@
   max-width: 200px;
   justify-self: end;
 }
-.table{
+.table-ads{
   padding: 24px;
   display: grid;
-  grid-area: body;
-  border-collapse: collapse;
-  justify-content: space-between;
+  grid-area: table;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: 'header'
+  'body';
   background-color: yellowgreen;
+}
+.header-table-ads {
+  display: grid;
+  grid-area: header;  
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto;
+}
+.row-table-ads{
+  display: grid;
+  grid-area: body;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(auto-fit, 1fr);
 }

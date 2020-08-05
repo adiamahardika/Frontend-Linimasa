@@ -32,23 +32,23 @@ class DashboardAds extends Component {
     const listAds =
       ads &&
       ads.map((ads, index) => (
-        <tr>
-          <td>{index + 1}</td>
-          <td>
+        <div className="row-table-ads">
+          <div>{index + 1}</div>
+          <div>
             <button>Delete</button>
             <button>Edit</button>
-          </td>
-          <td>{ads.ads_name}</td>
-          <td>
+          </div>
+          <div>{ads.ads_name}</div>
+          <div>
             <img
               src={ads.ads_image}
               alt={ads.ads_image}
               style={{ maxHeight: 50 }}
             />
-          </td>
-          <td>{this.getDateTimeFromTimestamp(ads.date_created)}</td>
-          <td>{this.getDateTimeFromTimestamp(ads.date_updated)}</td>
-        </tr>
+          </div>
+          <div>{this.getDateTimeFromTimestamp(ads.date_created)}</div>
+          <div>{this.getDateTimeFromTimestamp(ads.date_updated)}</div>
+        </div>
       ));
     return (
       <div className="container">
@@ -56,28 +56,24 @@ class DashboardAds extends Component {
         <Navbar />
         <div className="container-ads">
           <div className="title-ads">Ads</div>
-            <form className="form ads">
-              <input
-                className="form-control"
-                type="search"
-                placeholder="Search"
-              />
-            </form>
-          <table className="table">
-            <thead className="thead-light">
-              <tr>
-                <th>No</th>
-                <th>Manage</th>
-                <th>Name</th>
-                <th>Image</th>
-                <th>Date Created</th>
-                <th>Date Updated</th>
-              </tr>
-            </thead>
-            <tbody>
-                {listAds}
-            </tbody>
-          </table>
+          <form className="form ads">
+            <input
+              className="form-control"
+              type="search"
+              placeholder="Search"
+            />
+          </form>
+          <div className="table-ads">
+            <div className="header-table-ads">
+              <div>No</div>
+            <div>Manage</div>
+            <div>Name</div>
+            <div>Image</div>
+            <div>Date Created</div>
+            <div>Date Updated</div>
+            </div>
+            <div>{listAds}</div>
+          </div>
         </div>
       </div>
     );
