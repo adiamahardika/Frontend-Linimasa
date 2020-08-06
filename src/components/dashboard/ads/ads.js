@@ -6,12 +6,14 @@ import { connect } from "react-redux";
 import "../../css/dashboard/ads.css";
 import "../../css/dashboard/layout.css";
 import { readAds } from "../../redux/action/ads";
+import AdsItem from "./item_ads";
 import InsertAds from "./insert_ads";
 import EditAds from "./edit_ads";
-import AdsItem from './ads_item'
+import DeleteAds from "./delete_ads";
 class DashboardAds extends Component {
   state = {
     selectAdsEdit: [],
+    selectAdsDelete: null,
   };
   componentDidMount() {
     this.readAds();
@@ -24,16 +26,26 @@ class DashboardAds extends Component {
       selectAdsEdit: ads,
     });
   };
+  onSelectAdsDelete = (ads) => {
+    this.setState({
+      selectAdsDelete: ads,
+    });
+  };
   render() {
     const { ads } = this.props;
     const listAds =
       ads &&
       ads.map((item, index) => {
         return (
-          <AdsItem key={item.id} item={item} index={index} onSelectAdsEdit={this.onSelectAdsEdit}/>
+          <AdsItem
+            key={item.id}
+            item={item}
+            index={index}
+            onSelectAdsEdit={this.onSelectAdsEdit}
+            onSelectAdsDelete={this.onSelectAdsDelete}
+          />
         );
-      }
-      );
+      });
     return (
       <div className="container">
         <Sidebar />
@@ -67,6 +79,7 @@ class DashboardAds extends Component {
         </div>
         <InsertAds />
         <EditAds ads={this.state.selectAdsEdit} />
+        <DeleteAds ads={this.state.selectAdsDelete} />
       </div>
     );
   }

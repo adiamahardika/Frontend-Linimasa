@@ -15,7 +15,7 @@ class EditAds extends Component {
       id: ads.id,
       ads_name: ads.ads_name,
     });
-  };
+  }
   onEditAds = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
@@ -49,8 +49,7 @@ class EditAds extends Component {
           className="modal fade"
           id="modalEditAds"
           role="dialog"
-          aria-labelledby="modalEditAdsTitle"
-          aria-hidden="true"
+          data-backdrop="static"
         >
           <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content">
@@ -115,7 +114,7 @@ class EditAds extends Component {
                   onClick={this.editAds}
                   data-dismiss="modal"
                 >
-                  Add
+                  Edit
                 </button>
               </div>
             </div>

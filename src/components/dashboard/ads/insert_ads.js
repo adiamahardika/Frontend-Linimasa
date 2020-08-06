@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { insertAds } from "../../redux/action/ads";
 import { withRouter } from "react-router-dom";
 import { imageFilter } from "../../helpers/index";
-import { routes } from '../../helpers/routes.json'
+import { routes } from "../../helpers/routes.json";
 class InsertAds extends Component {
   state = {
     ads_name: "",
@@ -39,8 +39,7 @@ class InsertAds extends Component {
           className="modal fade"
           id="modalInsertAds"
           role="dialog"
-          aria-labelledby="modalInsertAdsTitle"
-          aria-hidden="true"
+          data-backdrop="static"
         >
           <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content">
