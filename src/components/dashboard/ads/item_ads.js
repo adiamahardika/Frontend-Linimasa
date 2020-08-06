@@ -1,14 +1,14 @@
 import React from "react";
 import { parseDate } from "../../helpers/index";
 import "../../css/components/button.css"
-const ItemAds = ({ item, index, onSelectAdsEdit, onSelectAdsDelete }) => {
+const ItemAds = ({ item, index, onSelectEditAds, onSelectDeleteAds }) => {
   const onClickEdit = (event) => {
     event.preventDefault();
-    onSelectAdsEdit(item);
+    onSelectEditAds(item);
   };
   const onClickDelete = (event) => {
     event.preventDefault();
-    onSelectAdsDelete(item);
+    onSelectDeleteAds(item);
   };
   return (
     <>

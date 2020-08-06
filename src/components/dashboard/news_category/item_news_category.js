@@ -1,6 +1,10 @@
 import React from "react";
 import { parseDate } from "../../helpers/index";
-const ItemNewsCategory = ({ item, index }) => {
+const ItemNewsCategory = ({ item, index, onSelectEditNewsCategory }) => {
+  const onClickEdit = (event) => {
+    event.preventDefault()
+    onSelectEditNewsCategory(item)
+  }
   return (
     <>
       <div>{index + 1}</div>
@@ -18,6 +22,7 @@ const ItemNewsCategory = ({ item, index }) => {
           className="dashboard btn btn-edit"
           data-toggle="modal"
           data-target="#modalEditNewsCategory"
+          onClick={onClickEdit}
         >
           Edit
         </button>

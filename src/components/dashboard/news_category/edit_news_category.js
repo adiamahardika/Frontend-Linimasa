@@ -1,21 +1,30 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { insertNewsCategory } from "../../redux/action/news-category";
+import { editNewsCategory } from "../../redux/action/news-category";
 import { withRouter } from "react-router-dom";
 import { routes } from "../../helpers/routes.json";
 import "../../css/components/button.css";
-class InsertNewsCategory extends Component {
+class EditNewsCategory extends Component {
   state = {
     news_category_name: "",
   };
-  onInsertNewsCategory = (event) => {
+  componentWillReceiveProps({ news_category }) {
+    this.setState({
+      news_category_name: news_category.news_category_name,
+    });
+  }
+  onEditNewsCategory = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
     });
   };
-  insertNewsCategory = async (event) => {
+  editNewsCategory = async (event) => {
     event.preventDefault();
-    await this.props.dispatch(insertNewsCategory(this.state));
+    const id = this.props.news_category.id;
+    const data = this.state
+    await this.props.dispatch(
+      editNewsCategory(data, id)
+    );
     this.props.history.push(routes.news_category);
   };
   render() {
@@ -23,15 +32,15 @@ class InsertNewsCategory extends Component {
       <>
         <div
           className="modal fade"
-          id="modalInsertNewsCategory"
+          id="modalEditNewsCategory"
           role="dialog"
           data-backdrop="static"
         >
           <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="modalInsertNewsCategoryTitle">
-                  Insert New News Category
+                <h5 className="modal-title" id="modalEditNewsCategoryTitle">
+                  Edit News Category
                 </h5>
                 <button
                   type="button"
@@ -57,7 +66,8 @@ class InsertNewsCategory extends Component {
                         type="text"
                         className="form-control"
                         id="validationCustom01"
-                        onChange={this.onInsertNewsCategory}
+                        onChange={this.onEditNewsCategory}
+                        value={this.state.news_category_name}
                         required
                       />
                       <div className="valid-feedback">Looks good!</div>
@@ -71,15 +81,15 @@ class InsertNewsCategory extends Component {
                   className="btn modal-btn-close"
                   data-dismiss="modal"
                 >
-                  Close
+                  Cancel
                 </button>
                 <button
                   type="submit"
                   className="btn modal-btn-submit"
-                  onClick={this.insertNewsCategory}
+                  onClick={this.editNewsCategory}
                   data-dismiss="modal"
                 >
-                  Add
+                  Edit
                 </button>
               </div>
             </div>
@@ -89,4 +99,4 @@ class InsertNewsCategory extends Component {
     );
   }
 }
-export default withRouter(connect()(InsertNewsCategory));
+export default withRouter(connect()(EditNewsCategory));

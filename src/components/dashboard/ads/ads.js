@@ -13,20 +13,20 @@ import EditAds from "./edit_ads";
 import DeleteAds from "./delete_ads";
 class DashboardAds extends Component {
   state = {
-    selectAdsEdit: [],
-    selectAdsDelete: null,
+    selectEditAds: [],
+    selectDeleteAds: null,
   };
   componentDidMount() {
     this.props.dispatch(readAds());
   }
-  onSelectAdsEdit = (ads) => {
+  onSelectEditAds = (ads) => {
     this.setState({
-      selectAdsEdit: ads,
+      selectEditAds: ads,
     });
   };
-  onSelectAdsDelete = (ads) => {
+  onSelectDeleteAds = (ads) => {
     this.setState({
-      selectAdsDelete: ads,
+      selectDeleteAds: ads,
     });
   };
   render() {
@@ -39,8 +39,8 @@ class DashboardAds extends Component {
             key={item.id}
             item={item}
             index={index}
-            onSelectAdsEdit={this.onSelectAdsEdit}
-            onSelectAdsDelete={this.onSelectAdsDelete}
+            onSelectEditAds={this.onSelectEditAds}
+            onSelectDeleteAds={this.onSelectDeleteAds}
           />
         );
       });
@@ -76,8 +76,8 @@ class DashboardAds extends Component {
           </div>
         </div>
         <InsertAds />
-        <EditAds ads={this.state.selectAdsEdit} />
-        <DeleteAds ads={this.state.selectAdsDelete} />
+        <EditAds ads={this.state.selectEditAds} />
+        <DeleteAds ads={this.state.selectDeleteAds} />
       </div>
     );
   }
