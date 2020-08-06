@@ -1,35 +1,45 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { insertAds } from "../../redux/action/ads";
+import { editAds } from "../../redux/action/ads";
 import { withRouter } from "react-router-dom";
-import { imageFilter } from "../../helpers/index";
-import { routes } from '../../helpers/routes.json'
-class InsertAds extends Component {
+import { imageFilter } from "../../helpers";
+import { routes } from "../../helpers/routes.json";
+class EditAds extends Component {
   state = {
+    id: "",
     ads_name: "",
     ads_image: "",
   };
-
-  onInsertAds = (event) => {
+  componentWillReceiveProps({ ads }) {
+    this.setState({
+      id: ads.id,
+      ads_name: ads.ads_name,
+    });
+  };
+  onEditAds = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
     });
   };
-  onInsertImage = (event) => {
+  onEditImage = (event) => {
     const image = event.target.files[0];
     imageFilter(image);
     this.setState({
       ads_image: image,
     });
   };
-  insertAds = async (event) => {
+  editAds = async (event) => {
     event.preventDefault();
-    let data = new FormData();
-
+    const data = new FormData();
     data.append("ads_name", this.state.ads_name);
     data.append("ads_image", this.state.ads_image);
-
-    await this.props.dispatch(insertAds(data));
+    const id = this.state.id;
+    if (this.state.ads_image === "") {
+      data.delete("ads_image");
+      await this.props.dispatch(editAds(data, id));
+    } else {
+      await this.props.dispatch(editAds(data, id));
+    }
     this.props.history.push(routes.ads);
   };
   render() {
@@ -37,16 +47,16 @@ class InsertAds extends Component {
       <>
         <div
           className="modal fade"
-          id="modalInsertAds"
+          id="modalEditAds"
           role="dialog"
-          aria-labelledby="modalInsertAdsTitle"
+          aria-labelledby="modalEditAdsTitle"
           aria-hidden="true"
         >
           <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="modalInsertAdsTitle">
-                  Insert New Ads
+                <h5 className="modal-title" id="modalEditAdsTitle">
+                  Edit Ads
                 </h5>
                 <button
                   type="button"
@@ -72,7 +82,8 @@ class InsertAds extends Component {
                         type="text"
                         className="form-control"
                         id="validationCustom01"
-                        onChange={this.onInsertAds}
+                        onChange={this.onEditAds}
+                        value={this.state.ads_name}
                         required
                       />
                       <div className="valid-feedback">Looks good!</div>
@@ -83,7 +94,7 @@ class InsertAds extends Component {
                         type="file"
                         name="ads_image"
                         className="form-control"
-                        onChange={this.onInsertImage}
+                        onChange={this.onEditImage}
                         required
                       />
                     </div>
@@ -101,7 +112,7 @@ class InsertAds extends Component {
                 <button
                   type="submit"
                   className="btn btn-primary"
-                  onClick={this.insertAds}
+                  onClick={this.editAds}
                   data-dismiss="modal"
                 >
                   Add
@@ -114,5 +125,4 @@ class InsertAds extends Component {
     );
   }
 }
-
-export default withRouter(connect()(InsertAds));
+export default withRouter(connect()(EditAds));

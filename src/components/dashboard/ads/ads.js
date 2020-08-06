@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import Sidebar from "../layout/sidebar";
 import Navbar from "../layout/navbar";
 import { withRouter } from "react-router";
@@ -7,56 +7,33 @@ import "../../css/dashboard/ads.css";
 import "../../css/dashboard/layout.css";
 import { readAds } from "../../redux/action/ads";
 import InsertAds from "./insert_ads";
+import EditAds from "./edit_ads";
+import AdsItem from './ads_item'
 class DashboardAds extends Component {
+  state = {
+    selectAdsEdit: [],
+  };
   componentDidMount() {
     this.readAds();
   }
   readAds() {
     this.props.dispatch(readAds());
   }
-  parseDate(time) {
-    let date = new Date(time);
-    return (
-      ("0" + date.getDate()).slice(-2) +
-      "-" +
-      ("0" + (date.getMonth() + 1)).slice(-2) +
-      "-" +
-      date.getFullYear() +
-      " " +
-      ("0" + date.getHours()).slice(-2) +
-      ":" +
-      ("0" + date.getMinutes()).slice(-2)
-    );
-  }
+  onSelectAdsEdit = (ads) => {
+    this.setState({
+      selectAdsEdit: ads,
+    });
+  };
   render() {
     const { ads } = this.props;
     const listAds =
       ads &&
-      ads.map((ads, index) => (
-        <Fragment key={ads.id}>
-          <div>{index + 1}</div>
-          <div className="manage-ads">
-            <button type="button" className="btn btn-sm btn-outline-delete">
-              Delete
-            </button>
-            <button type="button" className="btn btn-sm btn-edit">
-              Edit
-            </button>
-          </div>
-          <div className="name-ads">{ads.ads_name}</div>
-          <div>
-            <img
-              width={400}
-              height={150}
-              src={ads.ads_image}
-              alt="..."
-              style={{ maxHeight: 50 }}
-            />
-          </div>
-          <div>{this.parseDate(ads.date_created)}</div>
-          <div>{this.parseDate(ads.date_updated)}</div>
-        </Fragment>
-      ));
+      ads.map((item, index) => {
+        return (
+          <AdsItem key={item.id} item={item} index={index} onSelectAdsEdit={this.onSelectAdsEdit}/>
+        );
+      }
+      );
     return (
       <div className="container">
         <Sidebar />
@@ -89,6 +66,7 @@ class DashboardAds extends Component {
           </div>
         </div>
         <InsertAds />
+        <EditAds ads={this.state.selectAdsEdit} />
       </div>
     );
   }
