@@ -1,21 +1,21 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { deleteAds } from "../../redux/action/ads";
+import { deleteNewsCategory } from "../../redux/action/news-category";
 import { routes } from "../../helpers/routes.json";
 import { withRouter } from "react-router";
-import "../../css/components/button.css"
-class DeleteAds extends Component {
-  deleteAds = async (event) => {
+import "../../css/components/button.css";
+class DeleteNewsCategory extends Component {
+  deleteNewsCategory = async (event) => {
     event.preventDefault();
-    await this.props.dispatch(deleteAds(this.props.ads.id));
-    this.props.history.push(routes.ads);
+    await this.props.dispatch(deleteNewsCategory(this.props.news_category.id));
+    this.props.history.push(routes.news_category);
   };
   render() {
     return (
       <>
         <div
           className="modal fade"
-          id="deleteModalAds"
+          id="deleteModalNewsCategory"
           role="dialog"
           data-backdrop="static"
         >
@@ -46,7 +46,7 @@ class DeleteAds extends Component {
                 <button
                   type="button"
                   className="btn modal-btn-submit"
-                  onClick={this.deleteAds}
+                  onClick={this.deleteNewsCategory}
                   data-dismiss="modal"
                 >
                   Delete
@@ -59,4 +59,4 @@ class DeleteAds extends Component {
     );
   }
 }
-export default withRouter(connect()(DeleteAds));
+export default withRouter(connect()(DeleteNewsCategory));

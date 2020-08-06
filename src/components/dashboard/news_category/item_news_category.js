@@ -1,9 +1,14 @@
 import React from "react";
 import { parseDate } from "../../helpers/index";
-const ItemNewsCategory = ({ item, index, onSelectEditNewsCategory }) => {
+const ItemNewsCategory = ({ item, index, onSelectEditNewsCategory, onSelectDeleteNewsCategory }) => {
   const onClickEdit = (event) => {
     event.preventDefault()
     onSelectEditNewsCategory(item)
+  }
+  const onClickDelete = (event) => {
+    event.preventDefault()
+    onSelectDeleteNewsCategory(item)
+    
   }
   return (
     <>
@@ -14,6 +19,7 @@ const ItemNewsCategory = ({ item, index, onSelectEditNewsCategory }) => {
           className="dashboard btn btn-outline-delete"
           data-toggle="modal"
           data-target="#deleteModalNewsCategory"
+          onClick={onClickDelete}
         >
           Delete
         </button>

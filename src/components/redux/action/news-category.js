@@ -23,13 +23,22 @@ export const readNewsCategory = () => {
 };
 
 export const editNewsCategory = (data, id) => {
-  console.log(data);
   return {
     type: "PATCH_NEWS_CATEGORY",
     payload: axios({
       method: "PATCH",
       url: `${process.env.REACT_APP_API}/news-category/${id}`,
       data: data,
+    }),
+  };
+};
+
+export const deleteNewsCategory = (id) => {
+  return {
+    type: "DELETE_NEWS_CATEGORY",
+    payload: axios({
+      method: "DELETE",
+      url: `${process.env.REACT_APP_API}/news-category/${id}`,
     }),
   };
 };

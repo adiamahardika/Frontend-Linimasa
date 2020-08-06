@@ -43,6 +43,19 @@ const news_category = (state = initialState, action) => {
         ...state,
         news_category: action.payload.data.result,
       };
+    case "DELETE_NEWS_CATEGORY_PENDING":
+      return {
+        ...state,
+      };
+    case "DELETE_NEWS_CATEGORY_REJECTED":
+      return {
+        ...state,
+      };
+    case "DELETE_NEWS_CATEGORY_FULFILLED":
+      return {
+        ...state,
+        news_category: action.payload.data.result,
+      };
     default:
       return state;
   }

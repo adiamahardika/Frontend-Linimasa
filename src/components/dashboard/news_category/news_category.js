@@ -8,26 +8,41 @@ import "../../css/components/button.css";
 import Sidebar from "../layout/sidebar";
 import Navbar from "../layout/navbar";
 import ItemNewsCategory from "./item_news_category";
-import InsertNewsCategory from "./insert_news_category"
-import EditNewsCategory from "./edit_news_category"
+import InsertNewsCategory from "./insert_news_category";
+import EditNewsCategory from "./edit_news_category";
+import DeleteNewsCategory from "./delete_news_category";
 class DashboardNewsCategory extends Component {
   state = {
-    selectEditNewsCategory: []
-  }
+    selectEditNewsCategory: [],
+    selectDeleteNewsCategory: null,
+  };
   componentDidMount() {
     this.props.dispatch(readNewsCategory());
   }
   onSelectEditNewsCategory = (news_category) => {
     this.setState({
-      selectEditNewsCategory: news_category
-    })
-  }
+      selectEditNewsCategory: news_category,
+    });
+  };
+  onSelectDeleteNewsCategory = (news_category) => {
+    this.setState({
+      selectDeleteNewsCategory: news_category,
+    });
+  };
   render() {
     const { news_category } = this.props;
     const listNewsCategory =
       news_category &&
       news_category.map((item, index) => {
-        return <ItemNewsCategory key={item.id} item={item} index={index} onSelectEditNewsCategory={this.onSelectEditNewsCategory} />;
+        return (
+          <ItemNewsCategory
+            key={item.id}
+            item={item}
+            index={index}
+            onSelectEditNewsCategory={this.onSelectEditNewsCategory}
+            onSelectDeleteNewsCategory={this.onSelectDeleteNewsCategory}
+          />
+        );
       });
     return (
       <div className="container">
@@ -59,8 +74,11 @@ class DashboardNewsCategory extends Component {
             {listNewsCategory}
           </div>
         </div>
-        <InsertNewsCategory/>
-        <EditNewsCategory news_category={this.state.selectEditNewsCategory}/>
+        <InsertNewsCategory />
+        <EditNewsCategory news_category={this.state.selectEditNewsCategory} />
+        <DeleteNewsCategory
+          news_category={this.state.selectDeleteNewsCategory}
+        />
       </div>
     );
   }
