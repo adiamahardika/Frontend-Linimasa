@@ -4,6 +4,7 @@ import { editAds } from "../../redux/action/ads";
 import { withRouter } from "react-router-dom";
 import { imageFilter } from "../../helpers";
 import { routes } from "../../helpers/routes.json";
+import "../../css/components/button.css"
 class EditAds extends Component {
   state = {
     id: "",
@@ -103,14 +104,14 @@ class EditAds extends Component {
               <div className="modal-footer">
                 <button
                   type="button"
-                  className="btn btn-secondary"
+                  className="btn modal-btn-close"
                   data-dismiss="modal"
                 >
                   Close
                 </button>
                 <button
                   type="submit"
-                  className="btn btn-primary"
+                  className="btn modal-btn-submit"
                   onClick={this.editAds}
                   data-dismiss="modal"
                 >

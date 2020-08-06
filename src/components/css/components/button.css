@@ -1,0 +1,42 @@
+/* Dashboard Button */
+.dashboard.btn-add {
+  background-color: #004de8 !important;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  max-height: 35px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.dashboard.btn-outline-delete {
+  box-sizing: border-box;
+  border: 1px solid #e80000 !important;
+  color: #e80000 !important;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.dashboard.btn-edit {
+  background-color: #004de8 !important;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Modal Button */
+.modal-btn-close {
+  box-sizing: border-box;
+  border: 1px solid #004de8 !important;
+  color: #004de8 !important;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.modal-btn-submit {
+  background-color: #004de8 !important;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  font-size: 14px;
+}

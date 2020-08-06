@@ -1,5 +1,6 @@
 {
   "routes": {
-    "ads": "/ads"
+    "ads": "/ads",
+    "news_category": "/news-category"
   }
 }

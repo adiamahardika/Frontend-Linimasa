@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
-import "../../css/dashboard/sidebar.css";
-import "../../css/dashboard/layout.css";
+import "../../css/layout_dashboard/layout.css"
+import "../../css/layout_dashboard/sidebar.css"
 import { Link } from "react-router-dom";
 class Sidebar extends Component {
   render() {
@@ -31,7 +31,7 @@ class Sidebar extends Component {
                 <Link to="#">News</Link>
               </li>
               <li>
-                <Link to="#">News Category</Link>
+                <Link to="/news-category">News Category</Link>
               </li>
             </ul>
         </div>

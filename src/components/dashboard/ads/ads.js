@@ -4,9 +4,10 @@ import Navbar from "../layout/navbar";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import "../../css/dashboard/ads.css";
-import "../../css/dashboard/layout.css";
+import "../../css/layout_dashboard/layout.css";
+import "../../css/components/button.css";
 import { readAds } from "../../redux/action/ads";
-import AdsItem from "./item_ads";
+import ItemAds from "./item_ads";
 import InsertAds from "./insert_ads";
 import EditAds from "./edit_ads";
 import DeleteAds from "./delete_ads";
@@ -16,9 +17,6 @@ class DashboardAds extends Component {
     selectAdsDelete: null,
   };
   componentDidMount() {
-    this.readAds();
-  }
-  readAds() {
     this.props.dispatch(readAds());
   }
   onSelectAdsEdit = (ads) => {
@@ -37,7 +35,7 @@ class DashboardAds extends Component {
       ads &&
       ads.map((item, index) => {
         return (
-          <AdsItem
+          <ItemAds
             key={item.id}
             item={item}
             index={index}
@@ -52,10 +50,10 @@ class DashboardAds extends Component {
         <Navbar />
         <div className="container-ads">
           <div className="title-ads">Ads Table</div>
-          <form className="form ads">
+          <div className="form ads">
             <button
               type="button"
-              className="btn btn-sm btn-add"
+              className="dashboard btn btn-add"
               data-toggle="modal"
               data-target="#modalInsertAds"
             >
@@ -66,7 +64,7 @@ class DashboardAds extends Component {
               type="search"
               placeholder="Search Ads"
             />
-          </form>
+          </div>
           <div className="table-ads">
             <div className="header-table-ads">No</div>
             <div className="header-table-ads">Manage</div>

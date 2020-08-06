@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { deleteAds } from "../../redux/action/ads";
 import { routes } from "../../helpers/routes.json";
 import { withRouter } from "react-router";
+import "../../css/components/button.css"
 class DeleteAds extends Component {
   constructor(props) {
     super(props);
@@ -43,14 +44,14 @@ class DeleteAds extends Component {
               <div class="modal-footer">
                 <button
                   type="button"
-                  class="btn btn-secondary"
+                  class="btn modal-btn-close"
                   data-dismiss="modal"
                 >
                   Close
                 </button>
                 <button
                   type="button"
-                  class="btn btn-primary"
+                  class="btn modal-btn-submit"
                   onClick={this.deleteAds}
                   data-dismiss="modal"
                 >

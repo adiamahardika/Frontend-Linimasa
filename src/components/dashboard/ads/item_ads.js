@@ -1,6 +1,7 @@
 import React from "react";
 import { parseDate } from "../../helpers/index";
-const AdsItem = ({ item, index, onSelectAdsEdit, onSelectAdsDelete }) => {
+import "../../css/components/button.css"
+const ItemAds = ({ item, index, onSelectAdsEdit, onSelectAdsDelete }) => {
   const onClickEdit = (event) => {
     event.preventDefault();
     onSelectAdsEdit(item);
@@ -15,7 +16,7 @@ const AdsItem = ({ item, index, onSelectAdsEdit, onSelectAdsDelete }) => {
       <div className="manage-ads">
         <button
           type="button"
-          className="btn btn-sm btn-outline-delete"
+          className="dashboard btn btn-outline-delete"
           data-toggle="modal"
           data-target="#deleteModalAds"
           onClick={onClickDelete}
@@ -24,7 +25,7 @@ const AdsItem = ({ item, index, onSelectAdsEdit, onSelectAdsDelete }) => {
         </button>
         <button
           type="button"
-          className="btn btn-sm btn-edit"
+          className="dashboard btn btn-edit"
           data-toggle="modal"
           data-target="#modalEditAds"
           onClick={onClickEdit}
@@ -41,4 +42,4 @@ const AdsItem = ({ item, index, onSelectAdsEdit, onSelectAdsDelete }) => {
     </>
   );
 };
-export default AdsItem;
+export default ItemAds;
