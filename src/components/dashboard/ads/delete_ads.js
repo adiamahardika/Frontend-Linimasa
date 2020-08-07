@@ -41,7 +41,7 @@ class DeleteAds extends Component {
                   className="btn modal-btn-close"
                   data-dismiss="modal"
                 >
-                  Close
+                  Cancel
                 </button>
                 <button
                   type="button"

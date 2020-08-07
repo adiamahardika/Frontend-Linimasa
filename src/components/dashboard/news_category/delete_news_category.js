@@ -33,7 +33,7 @@ class DeleteNewsCategory extends Component {
                 </button>
               </div>
               <div className="modal-body">
-                <p>Are you sure want to delete this ads?</p>
+                <p>Are you sure want to delete this news category?</p>
               </div>
               <div className="modal-footer">
                 <button
