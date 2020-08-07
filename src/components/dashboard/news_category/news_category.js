@@ -11,13 +11,15 @@ import ItemNewsCategory from "./item_news_category";
 import InsertNewsCategory from "./insert_news_category";
 import EditNewsCategory from "./edit_news_category";
 import DeleteNewsCategory from "./delete_news_category";
+import { routes } from "../../helpers/routes.json"
 class DashboardNewsCategory extends Component {
   state = {
+    news_category_name: "",
     selectEditNewsCategory: [],
     selectDeleteNewsCategory: null,
   };
   componentDidMount() {
-    this.props.dispatch(readNewsCategory());
+    this.props.dispatch(readNewsCategory(this.state.news_category_name));
   }
   onSelectEditNewsCategory = (news_category) => {
     this.setState({
@@ -29,6 +31,13 @@ class DashboardNewsCategory extends Component {
       selectDeleteNewsCategory: news_category,
     });
   };
+  onSearchNewsCategoryName = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+    this.props.history.push(`${routes.news_category}/?news_category_name=${this.state.news_category_name}`)
+    this.props.dispatch(readNewsCategory(this.state.news_category_name))
+  }
   render() {
     const { news_category } = this.props;
     const listNewsCategory =
@@ -63,6 +72,8 @@ class DashboardNewsCategory extends Component {
               className="form-control news-category"
               type="search"
               placeholder="Search News Category"
+              onChange={this.onSearchNewsCategoryName}
+              name="news_category_name"
             />
           </div>
           <div className="table-news-category">

@@ -19,6 +19,31 @@ class InsertNewsCategory extends Component {
     this.props.history.push(routes.news_category);
   };
   render() {
+    const SubmitButton = () => {
+      if (this.state.news_category_name !== "") {
+        return (
+          <button
+            type="submit"
+            className="btn modal-btn-submit"
+            onClick={this.insertNewsCategory}
+            data-dismiss="modal"
+          >
+            Add
+          </button>
+        );
+      } else {
+        return (
+          <button
+            type="submit"
+            className="btn modal-btn-submit"
+            data-dismiss="modal"
+            disabled
+          >
+            Add
+          </button>
+        );
+      }
+    };
     return (
       <>
         <div
@@ -71,16 +96,9 @@ class InsertNewsCategory extends Component {
                   className="btn modal-btn-close"
                   data-dismiss="modal"
                 >
-                  Close
+                  Cancel
                 </button>
-                <button
-                  type="submit"
-                  className="btn modal-btn-submit"
-                  onClick={this.insertNewsCategory}
-                  data-dismiss="modal"
-                >
-                  Add
-                </button>
+                <SubmitButton />
               </div>
             </div>
           </div>

@@ -22,7 +22,7 @@ class DeleteNewsCategory extends Component {
           <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title">Delete Ads</h5>
+                <h5 className="modal-title">Delete News Category</h5>
                 <button
                   type="button"
                   className="close"
@@ -41,7 +41,7 @@ class DeleteNewsCategory extends Component {
                   className="btn modal-btn-close"
                   data-dismiss="modal"
                 >
-                  Close
+                  Cancel
                 </button>
                 <button
                   type="button"

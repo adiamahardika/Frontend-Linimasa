@@ -28,6 +28,31 @@ class EditNewsCategory extends Component {
     this.props.history.push(routes.news_category);
   };
   render() {
+    const SubmitButton = () => {
+      if (this.state.news_category_name !== "") {
+        return (
+          <button
+            type="submit"
+            className="btn modal-btn-submit"
+            onClick={this.editNewsCategory}
+            data-dismiss="modal"
+          >
+            Edit
+          </button>
+        );
+      } else {
+        return (
+          <button
+            type="submit"
+            className="btn modal-btn-submit"
+            data-dismiss="modal"
+            disabled
+          >
+            Edit
+          </button>
+        );
+      }
+    };
     return (
       <>
         <div
@@ -83,14 +108,7 @@ class EditNewsCategory extends Component {
                 >
                   Cancel
                 </button>
-                <button
-                  type="submit"
-                  className="btn modal-btn-submit"
-                  onClick={this.editNewsCategory}
-                  data-dismiss="modal"
-                >
-                  Edit
-                </button>
+                <SubmitButton/>
               </div>
             </div>
           </div>
