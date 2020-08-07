@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import "../../css/layout_dashboard/layout.css"
 import "../../css/layout_dashboard/sidebar.css"
 import { Link } from "react-router-dom";
+import { routes } from '../../helpers/routes.json'
 class Sidebar extends Component {
   render() {
     return (
@@ -22,7 +23,7 @@ class Sidebar extends Component {
         <div className="collapse" id="collapseMenuManage">
             <ul>
               <li>
-                <Link to="/ads">Ads</Link>
+                <Link to={routes.ads}>Ads</Link>
               </li>
               <li>
                 <Link to="#">Commentar</Link>
@@ -31,7 +32,10 @@ class Sidebar extends Component {
                 <Link to="#">News</Link>
               </li>
               <li>
-                <Link to="/news-category">News Category</Link>
+                <Link to={routes.news_category}>News Category</Link>
+              </li>
+              <li>
+                <Link to={routes.user_role}>User Role</Link>
               </li>
             </ul>
         </div>

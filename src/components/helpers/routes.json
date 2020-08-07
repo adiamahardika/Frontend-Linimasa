@@ -1,6 +1,8 @@
 {
   "routes": {
     "ads": "/ads",
-    "news_category": "/news-category"
+    "news_category": "/news-category",
+    "user_role": "/user-role",
+    "user": "/user"
   }
 }
