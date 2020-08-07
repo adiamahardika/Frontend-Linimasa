@@ -4,14 +4,14 @@
   padding: 10px;
   align-content: start;
   justify-content: start;
-  background-color: #004de8;
+  background-color: white;
 }
 /* Dashboard */
 .dashboard,
 .management {
   font-size: 16px;
   font-weight: 600;
-  color: white;
+  color: #121212
 }
 /* Management */
 .management {
@@ -23,7 +23,6 @@
   display: grid;
   row-gap: 2px;
   justify-content: start;
-  background-color: white;
   padding: 4px;
   border-radius: 4px;
 }
@@ -33,7 +32,7 @@ li {
   font-weight: 200;
 }
 li a {
-  color: black;
+  color: #121212;
 }
 li a:hover {
   text-decoration: none;
