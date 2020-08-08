@@ -21,3 +21,14 @@ export const readVideoCategory = () => {
     }),
   };
 };
+
+export const editVideoCategory = (data, id) => {
+  return {
+    type: "PATCH_VIDEO_CATEGORY",
+    payload: axios({
+      method: "PATCH",
+      url: `${process.env.REACT_APP_API}/video-category/${id}`,
+      data: data,
+    }),
+  };
+};

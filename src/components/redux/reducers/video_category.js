@@ -29,6 +29,19 @@ const video_category = (state = initialState, action) => {
         ...state,
         video_category: action.payload.data.result,
       };
+    case "PATCH_VIDEO_CATEGORY_PENDING":
+      return {
+        ...state,
+      };
+    case "PATCH_VIDEO_CATEGORY_REJECTED":
+      return {
+        ...state,
+      };
+    case "PATCH_VIDEO_CATEGORY_FULFILLED":
+      return {
+        ...state,
+        video_category: action.payload.data.result,
+      };
     default:
       return state;
   }

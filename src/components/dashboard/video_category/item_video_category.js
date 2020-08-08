@@ -1,6 +1,10 @@
 import React from "react";
 import { parseDate } from "../../helpers";
-const ItemVideoCategory = ({ item, index }) => {
+const ItemVideoCategory = ({ item, index, selectEditVideoCategory }) => {
+  const onClickEdit = (event) => {
+    event.preventDefault()
+    selectEditVideoCategory(item)
+  }
   return (
     <>
       <div>{index + 1}</div>
@@ -9,7 +13,7 @@ const ItemVideoCategory = ({ item, index }) => {
           type="button"
           className="dashboard btn btn-outline-delete"
           data-toggle="modal"
-          data-target="#deleteModalUserRole"
+          data-target="#deleteModalVideoCategory"
         >
           Delete
         </button>
@@ -17,7 +21,8 @@ const ItemVideoCategory = ({ item, index }) => {
           type="button"
           className="dashboard btn btn-edit"
           data-toggle="modal"
-          data-target="#modalEditUserRole"
+          data-target="#modalEditVideoCategory"
+          onClick={onClickEdit}
         >
           Edit
         </button>

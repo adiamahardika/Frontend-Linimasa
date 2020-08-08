@@ -1,40 +1,38 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { editNewsCategory } from "../../redux/action/news_category";
+import { editVideoCategory } from "../../redux/action/video_category";
 import { withRouter } from "react-router-dom";
 import { routes } from "../../helpers/routes.json";
 import "../../css/components/button.css";
-class EditNewsCategory extends Component {
+class EditVideoCategory extends Component {
   state = {
-    news_category_name: "",
+    video_category_name: "",
   };
-  componentWillReceiveProps({ news_category }) {
+  componentWillReceiveProps({ video_category }) {
     this.setState({
-      news_category_name: news_category.news_category_name,
+      video_category_name: video_category.video_category_name,
     });
   }
-  onEditNewsCategory = (event) => {
+  onEditVideoCategory = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
     });
   };
-  editNewsCategory = async (event) => {
+  editVideoCategory = async (event) => {
     event.preventDefault();
-    const id = this.props.news_category.id;
-    const data = this.state
-    await this.props.dispatch(
-      editNewsCategory(data, id)
-    );
-    this.props.history.push(routes.news_category);
+    const id = this.props.video_category.id;
+    const data = this.state;
+    await this.props.dispatch(editVideoCategory(data, id));
+    this.props.history.push(routes.video_category);
   };
   render() {
     const SubmitButton = () => {
-      if (this.state.news_category_name !== "") {
+      if (this.state.video_category_name !== "") {
         return (
           <button
             type="submit"
             className="btn modal-btn-submit"
-            onClick={this.editNewsCategory}
+            onClick={this.editVideoCategory}
             data-dismiss="modal"
           >
             Edit
@@ -42,11 +40,7 @@ class EditNewsCategory extends Component {
         );
       } else {
         return (
-          <button
-            type="submit"
-            className="btn modal-btn-submit"
-            disabled
-          >
+          <button type="submit" className="btn modal-btn-submit" disabled>
             Edit
           </button>
         );
@@ -56,15 +50,15 @@ class EditNewsCategory extends Component {
       <>
         <div
           className="modal fade"
-          id="modalEditNewsCategory"
+          id="modalEditVideoCategory"
           role="dialog"
           data-backdrop="static"
         >
           <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="modalEditNewsCategoryTitle">
-                  Edit News Category
+                <h5 className="modal-title" id="modalEditVideoCategoryTitle">
+                  Edit Video Category
                 </h5>
                 <button
                   type="button"
@@ -83,15 +77,15 @@ class EditNewsCategory extends Component {
                         htmlFor="validationCustom01"
                         className="col-form-label"
                       >
-                        News Category Name:{" "}
+                        Video Category Name:{" "}
                       </label>
                       <input
-                        name="news_category_name"
+                        name="video_category_name"
                         type="text"
                         className="form-control"
                         id="validationCustom01"
-                        onChange={this.onEditNewsCategory}
-                        value={this.state.news_category_name}
+                        onChange={this.onEditVideoCategory}
+                        value={this.state.video_category_name}
                         required
                       />
                     </div>
@@ -106,7 +100,7 @@ class EditNewsCategory extends Component {
                 >
                   Cancel
                 </button>
-                <SubmitButton/>
+                <SubmitButton />
               </div>
             </div>
           </div>
@@ -115,4 +109,4 @@ class EditNewsCategory extends Component {
     );
   }
 }
-export default withRouter(connect()(EditNewsCategory));
+export default withRouter(connect()(EditVideoCategory));
