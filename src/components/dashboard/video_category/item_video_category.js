@@ -1,9 +1,13 @@
 import React from "react";
 import { parseDate } from "../../helpers";
-const ItemVideoCategory = ({ item, index, selectEditVideoCategory }) => {
+const ItemVideoCategory = ({ item, index, selectEditVideoCategory, selectDeleteVideoCategory }) => {
   const onClickEdit = (event) => {
     event.preventDefault()
     selectEditVideoCategory(item)
+  }
+  const onClickDelete = (event) => {
+    event.preventDefault()
+    selectDeleteVideoCategory(item)
   }
   return (
     <>
@@ -14,6 +18,7 @@ const ItemVideoCategory = ({ item, index, selectEditVideoCategory }) => {
           className="dashboard btn btn-outline-delete"
           data-toggle="modal"
           data-target="#deleteModalVideoCategory"
+          onClick={onClickDelete}
         >
           Delete
         </button>

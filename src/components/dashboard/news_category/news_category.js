@@ -16,7 +16,7 @@ class DashboardNewsCategory extends Component {
   state = {
     news_category_name: "",
     selectEditNewsCategory: [],
-    selectDeleteNewsCategory: null,
+    selectDeleteNewsCategory: [],
   };
   componentDidMount() {
     this.props.dispatch(readNewsCategory(this.state.news_category_name));

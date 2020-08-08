@@ -32,3 +32,13 @@ export const editVideoCategory = (data, id) => {
     }),
   };
 };
+
+export const deleteVideoCategory = (id) => {
+  return {
+    type: "DELETE_VIDEO_CATEGORY",
+    payload: axios({
+      method: "DELETE",
+      url: `${process.env.REACT_APP_API}/video-category/${id}`,
+    }),
+  };
+};

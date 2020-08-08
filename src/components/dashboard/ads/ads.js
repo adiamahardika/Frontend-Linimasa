@@ -14,7 +14,7 @@ import DeleteAds from "./delete_ads";
 class DashboardAds extends Component {
   state = {
     selectEditAds: [],
-    selectDeleteAds: null,
+    selectDeleteAds: [],
   };
   componentDidMount() {
     this.props.dispatch(readAds());

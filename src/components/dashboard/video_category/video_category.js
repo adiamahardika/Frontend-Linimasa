@@ -10,9 +10,11 @@ import Navbar from "../layout/navbar";
 import ItemVideoCategory from "./item_video_category";
 import InsertVideoCategory from "./insert_video_category";
 import EditVideoCategory from "./edit_video_category";
+import DeleteVideoCategory from './delete_video_category'
 class DashboardVideoCategory extends Component {
   state = {
     selectEditVideoCategory: [],
+    selectDeleteVideoCategory: [],
   };
   componentDidMount() {
     this.props.dispatch(readVideoCategory());
@@ -20,6 +22,11 @@ class DashboardVideoCategory extends Component {
   onSelectEditVideoCategory = (video_category) => {
     this.setState({
       selectEditVideoCategory: video_category,
+    });
+  };
+  onSelectDeleteVideoCategory = (video_category) => {
+    this.setState({
+      selectDeleteVideoCategory: video_category,
     });
   };
   render() {
@@ -33,6 +40,7 @@ class DashboardVideoCategory extends Component {
             item={item}
             index={index}
             selectEditVideoCategory={this.onSelectEditVideoCategory}
+            selectDeleteVideoCategory={this.onSelectDeleteVideoCategory}
           />
         );
       });
@@ -70,6 +78,7 @@ class DashboardVideoCategory extends Component {
         <EditVideoCategory
           video_category={this.state.selectEditVideoCategory}
         />
+        <DeleteVideoCategory video_category={this.state.selectDeleteVideoCategory}/>
       </div>
     );
   }
