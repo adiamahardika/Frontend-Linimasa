@@ -32,3 +32,13 @@ export const editUserRole = (data, id) => {
     }),
   };
 };
+
+export const deleteUserRole = (id) => {
+  return {
+    type: "DELETE_USER_ROLE",
+    payload: axios({
+      method: "DELETE",
+      url: `${process.env.REACT_APP_API}/user-role/${id}`,
+    }),
+  };
+};

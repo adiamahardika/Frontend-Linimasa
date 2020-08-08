@@ -10,9 +10,11 @@ import Navbar from "../layout/navbar";
 import ItemUserRole from "./item_user_role";
 import InsertUserRole from "./insert_user_role"
 import EditUserRole from "./edit_user_role"
+import DeleteUserRole from "./delete_user_role"
 class DashboardUserRole extends Component {
   state = {
-    selectEditUserRole: []
+    selectEditUserRole: [],
+    selectDeleteUserRole: []
   }
   componentDidMount() {
     this.props.dispatch(readUserRole());
@@ -22,13 +24,18 @@ class DashboardUserRole extends Component {
       selectEditUserRole: user_role
     })
   }
+  onSelectDeleteUserRole = (user_role) => {
+    this.setState({
+      selectDeleteUserRole: user_role
+    })
+  }
   render() {
     const { user_role } = this.props;
     console.log(user_role);
     const listUserRole =
       user_role &&
       user_role.map((item, index) => {
-        return <ItemUserRole key={item.id} item={item} index={index} onSelectEditUserRole={this.onSelectEditUserRole}/>;
+        return <ItemUserRole key={item.id} item={item} index={index} onSelectEditUserRole={this.onSelectEditUserRole} onSelectDeleteUserRole={this.onSelectDeleteUserRole}/>;
       });
     return (
       <div className="container">
@@ -64,6 +71,7 @@ class DashboardUserRole extends Component {
         </div>
         <InsertUserRole/>
         <EditUserRole user_role={this.state.selectEditUserRole}/>
+        <DeleteUserRole user_role={this.state.selectDeleteUserRole}/>
       </div>
     );
   }

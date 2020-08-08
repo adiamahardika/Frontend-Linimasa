@@ -1,9 +1,13 @@
 import React from "react";
 import { parseDate } from "../../helpers/index";
-const ItemUserRole = ({ item, index, onSelectEditUserRole }) => {
+const ItemUserRole = ({ item, index, onSelectEditUserRole, onSelectDeleteUserRole }) => {
   const onclickEdit = (event) => {
     event.preventDefault()
     onSelectEditUserRole(item)
+  }
+  const onClickDelete = (event) => {
+    event.preventDefault()
+    onSelectDeleteUserRole(item)
   }
   return (
     <>
@@ -14,6 +18,7 @@ const ItemUserRole = ({ item, index, onSelectEditUserRole }) => {
           className="dashboard btn btn-outline-delete"
           data-toggle="modal"
           data-target="#deleteModalUserRole"
+          onClick={onClickDelete}
         >
           Delete
         </button>
