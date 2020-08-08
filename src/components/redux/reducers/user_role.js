@@ -29,6 +29,19 @@ const user_role = (state = initialState, action) => {
         ...state,
         user_role: action.payload.data.result,
       };
+    case "PATCH_USER_ROLE_PENDING":
+      return {
+        ...state,
+      };
+    case "PATCH_USER_ROLE_REJECTED":
+      return {
+        ...state,
+      };
+    case "PATCH_USER_ROLE_FULFILLED":
+      return {
+        ...state,
+        user_role: action.payload.data.result,
+      };
     default:
       return state;
   }

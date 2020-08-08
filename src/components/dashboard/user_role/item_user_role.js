@@ -1,6 +1,10 @@
 import React from "react";
 import { parseDate } from "../../helpers/index";
-const ItemUserRole = ({ item, index }) => {
+const ItemUserRole = ({ item, index, onSelectEditUserRole }) => {
+  const onclickEdit = (event) => {
+    event.preventDefault()
+    onSelectEditUserRole(item)
+  }
   return (
     <>
       <div>{index + 1}</div>
@@ -18,6 +22,7 @@ const ItemUserRole = ({ item, index }) => {
           className="dashboard btn btn-edit"
           data-toggle="modal"
           data-target="#modalEditUserRole"
+          onClick={onclickEdit}
         >
           Edit
         </button>

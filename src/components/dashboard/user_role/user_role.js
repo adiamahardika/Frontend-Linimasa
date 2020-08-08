@@ -9,9 +9,18 @@ import Sidebar from "../layout/sidebar";
 import Navbar from "../layout/navbar";
 import ItemUserRole from "./item_user_role";
 import InsertUserRole from "./insert_user_role"
+import EditUserRole from "./edit_user_role"
 class DashboardUserRole extends Component {
+  state = {
+    selectEditUserRole: []
+  }
   componentDidMount() {
     this.props.dispatch(readUserRole());
+  }
+  onSelectEditUserRole = (user_role) => {
+    this.setState({
+      selectEditUserRole: user_role
+    })
   }
   render() {
     const { user_role } = this.props;
@@ -19,7 +28,7 @@ class DashboardUserRole extends Component {
     const listUserRole =
       user_role &&
       user_role.map((item, index) => {
-        return <ItemUserRole key={item.id} item={item} index={index} />;
+        return <ItemUserRole key={item.id} item={item} index={index} onSelectEditUserRole={this.onSelectEditUserRole}/>;
       });
     return (
       <div className="container">
@@ -54,6 +63,7 @@ class DashboardUserRole extends Component {
           </div>
         </div>
         <InsertUserRole/>
+        <EditUserRole user_role={this.state.selectEditUserRole}/>
       </div>
     );
   }

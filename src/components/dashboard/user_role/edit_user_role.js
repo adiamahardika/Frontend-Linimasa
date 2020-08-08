@@ -1,40 +1,38 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { editNewsCategory } from "../../redux/action/news_category";
+import { editUserRole } from "../../redux/action/user_role";
 import { withRouter } from "react-router-dom";
 import { routes } from "../../helpers/routes.json";
 import "../../css/components/button.css";
-class EditNewsCategory extends Component {
+class EditUserRole extends Component {
   state = {
-    news_category_name: "",
+    user_role_name: "",
   };
-  componentWillReceiveProps({ news_category }) {
+  componentWillReceiveProps({ user_role }) {
     this.setState({
-      news_category_name: news_category.news_category_name,
+      user_role_name: user_role.user_role_name,
     });
   }
-  onEditNewsCategory = (event) => {
+  onEditUserRole = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
     });
   };
-  editNewsCategory = async (event) => {
+  editUserRole = async (event) => {
     event.preventDefault();
-    const id = this.props.news_category.id;
-    const data = this.state
-    await this.props.dispatch(
-      editNewsCategory(data, id)
-    );
-    this.props.history.push(routes.news_category);
+    const id = this.props.user_role.id;
+    const data = this.state;
+    await this.props.dispatch(editUserRole(data, id));
+    this.props.history.push(routes.user_role);
   };
   render() {
     const SubmitButton = () => {
-      if (this.state.news_category_name !== "") {
+      if (this.state.user_role_name !== "") {
         return (
           <button
             type="submit"
             className="btn modal-btn-submit"
-            onClick={this.editNewsCategory}
+            onClick={this.editUserRole}
             data-dismiss="modal"
           >
             Edit
@@ -57,15 +55,15 @@ class EditNewsCategory extends Component {
       <>
         <div
           className="modal fade"
-          id="modalEditNewsCategory"
+          id="modalEditUserRole"
           role="dialog"
           data-backdrop="static"
         >
           <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="modalEditNewsCategoryTitle">
-                  Edit News Category
+                <h5 className="modal-title" id="modalEditUserRoleTitle">
+                  Edit User Role
                 </h5>
                 <button
                   type="button"
@@ -84,15 +82,15 @@ class EditNewsCategory extends Component {
                         htmlFor="validationCustom01"
                         className="col-form-label"
                       >
-                        News Category Name:{" "}
+                        User Role Name:{" "}
                       </label>
                       <input
-                        name="news_category_name"
+                        name="user_role_name"
                         type="text"
                         className="form-control"
                         id="validationCustom01"
-                        onChange={this.onEditNewsCategory}
-                        value={this.state.news_category_name}
+                        onChange={this.onEditUserRole}
+                        value={this.state.user_role_name}
                         required
                       />
                     </div>
@@ -107,7 +105,7 @@ class EditNewsCategory extends Component {
                 >
                   Cancel
                 </button>
-                <SubmitButton/>
+                <SubmitButton />
               </div>
             </div>
           </div>
@@ -116,4 +114,4 @@ class EditNewsCategory extends Component {
     );
   }
 }
-export default withRouter(connect()(EditNewsCategory));
+export default withRouter(connect()(EditUserRole));

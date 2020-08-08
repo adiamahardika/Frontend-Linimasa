@@ -11,12 +11,24 @@ export const insertUserRole = (data) => {
     }),
   };
 };
+
 export const readUserRole = () => {
   return {
     type: "GET_USER_ROLE",
     payload: axios({
       method: "GET",
       url: `${process.env.REACT_APP_API}/user-role`,
+    }),
+  };
+};
+
+export const editUserRole = (data, id) => {
+  return {
+    type: "PATCH_USER_ROLE",
+    payload: axios({
+      method: "PATCH",
+      url: `${process.env.REACT_APP_API}/user-role/${id}`,
+      data: data,
     }),
   };
 };
