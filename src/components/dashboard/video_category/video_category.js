@@ -8,6 +8,7 @@ import "../../css/dashboard/video_category.css"
 import Sidebar from "../layout/sidebar";
 import Navbar from "../layout/navbar";
 import ItemVideoCategory from "./item_video_category";
+import InsertVideoCategory from "./insert_video_category"
 class DashboardVideoCategory extends Component {
   componentDidMount() {
     this.props.dispatch(readVideoCategory());
@@ -49,6 +50,7 @@ class DashboardVideoCategory extends Component {
             {listVideoCategory}
           </div>
         </div>
+        <InsertVideoCategory/>
       </div>
     );
   }

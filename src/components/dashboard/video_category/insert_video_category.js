@@ -1,31 +1,31 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { insertNewsCategory } from "../../redux/action/news_category";
+import { insertVideoCategory } from "../../redux/action/video_category";
 import { withRouter } from "react-router-dom";
 import { routes } from "../../helpers/routes.json";
 import "../../css/components/button.css";
-class InsertNewsCategory extends Component {
+class InsertVideoCategory extends Component {
   state = {
-    news_category_name: "",
+    video_category_name: "",
   };
-  onInsertNewsCategory = (event) => {
+  onInsertVideoCategory = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
     });
   };
-  insertNewsCategory = async (event) => {
+  insertVideoCategory = async (event) => {
     event.preventDefault();
-    await this.props.dispatch(insertNewsCategory(this.state));
-    this.props.history.push(routes.news_category);
+    await this.props.dispatch(insertVideoCategory(this.state));
+    this.props.history.push(routes.video_category);
   };
   render() {
     const SubmitButton = () => {
-      if (this.state.news_category_name !== "") {
+      if (this.state.video_category_name !== "") {
         return (
           <button
             type="submit"
             className="btn modal-btn-submit"
-            onClick={this.insertNewsCategory}
+            onClick={this.insertVideoCategory}
             data-dismiss="modal"
           >
             Add
@@ -33,12 +33,7 @@ class InsertNewsCategory extends Component {
         );
       } else {
         return (
-          <button
-            type="submit"
-            className="btn modal-btn-submit"
-            data-dismiss="modal"
-            disabled
-          >
+          <button type="submit" className="btn modal-btn-submit" disabled>
             Add
           </button>
         );
@@ -48,15 +43,15 @@ class InsertNewsCategory extends Component {
       <>
         <div
           className="modal fade"
-          id="modalInsertNewsCategory"
+          id="modalInsertVideoCategory"
           role="dialog"
           data-backdrop="static"
         >
           <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="modalInsertNewsCategoryTitle">
-                  Insert New News Category
+                <h5 className="modal-title" id="modalInsertVideoCategoryTitle">
+                  Insert New Video Category
                 </h5>
                 <button
                   type="button"
@@ -75,14 +70,14 @@ class InsertNewsCategory extends Component {
                         htmlFor="validationCustom01"
                         className="col-form-label"
                       >
-                        News Category:{" "}
+                        Video Category:{" "}
                       </label>
                       <input
-                        name="news_category_name"
+                        name="video_category_name"
                         type="text"
                         className="form-control"
                         id="validationCustom01"
-                        onChange={this.onInsertNewsCategory}
+                        onChange={this.onInsertVideoCategory}
                         required
                       />
                     </div>
@@ -106,4 +101,4 @@ class InsertNewsCategory extends Component {
     );
   }
 }
-export default withRouter(connect()(InsertNewsCategory));
+export default withRouter(connect()(InsertVideoCategory));
