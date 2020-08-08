@@ -3,6 +3,7 @@
     "ads": "/ads",
     "news_category": "/news-category",
     "user_role": "/user-role",
-    "user": "/user"
+    "user": "/user",
+    "video_category": "/video-category"
   }
 }

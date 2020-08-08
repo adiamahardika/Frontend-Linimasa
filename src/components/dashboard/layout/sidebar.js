@@ -37,6 +37,9 @@ class Sidebar extends Component {
               <li>
                 <Link to={routes.user_role}>User Role</Link>
               </li>
+              <li>
+                <Link to={routes.video_category}>Video Category</Link>
+              </li>
             </ul>
         </div>
       </div>
