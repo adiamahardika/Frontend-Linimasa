@@ -8,6 +8,7 @@ import "../../css/dashboard/user_role.css"
 import Sidebar from "../layout/sidebar";
 import Navbar from "../layout/navbar";
 import ItemUserRole from "./item_user_role";
+import InsertUserRole from "./insert_user_role"
 class DashboardUserRole extends Component {
   componentDidMount() {
     this.props.dispatch(readUserRole());
@@ -52,6 +53,7 @@ class DashboardUserRole extends Component {
             {listUserRole}
           </div>
         </div>
+        <InsertUserRole/>
       </div>
     );
   }
