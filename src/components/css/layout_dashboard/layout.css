@@ -6,6 +6,7 @@
     "navbar navbar"
     "sidebar content";
     justify-content: stretch;
+    align-items: flex-start;
 }
 /* Navbar */
 .container-navbar {
@@ -16,4 +17,5 @@
 .container-sidebar {
   display: grid;
   grid-area: sidebar;
+  min-height: 90vh;
 }
