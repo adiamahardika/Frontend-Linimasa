@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import "../../css/layout_dashboard/layout.css";
-import "../../css/layout_dashboard/navbar.css";
+import "../../css/admin_layout/layout.css";
+import "../../css/admin_layout/navbar.css";
 class Navbar extends Component {
   render() {
     return (

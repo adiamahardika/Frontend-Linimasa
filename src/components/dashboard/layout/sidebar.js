@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
-import "../../css/layout_dashboard/layout.css"
-import "../../css/layout_dashboard/sidebar.css"
+import "../../css/admin_layout/layout.css";
+import "../../css/admin_layout/sidebar.css"
 import { Link } from "react-router-dom";
 import { routes } from '../../helpers/routes.json'
 class Sidebar extends Component {

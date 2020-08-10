@@ -1,5 +1,6 @@
 {
   "routes": {
+    "admin": "/admin",
     "ads": "/ads",
     "news_category": "/news-category",
     "user_role": "/user-role",

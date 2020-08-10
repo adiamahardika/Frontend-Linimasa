@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { readVideoCategory } from "../../redux/action/video_category";
-import "../../css/layout_dashboard/layout.css";
+import "../../css/admin_layout/layout.css";
 import "../../css/components/button.css";
 import "../../css/dashboard/video_category.css";
 import Sidebar from "../layout/sidebar";
