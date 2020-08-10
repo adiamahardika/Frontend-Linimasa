@@ -11,6 +11,7 @@ import ItemAds from "./item_ads";
 import InsertAds from "./insert_ads";
 import EditAds from "./edit_ads";
 import DeleteAds from "./delete_ads";
+import FullPageLoader from '../../helpers/loading'
 class DashboardAds extends Component {
   state = {
     selectEditAds: [],
@@ -30,7 +31,7 @@ class DashboardAds extends Component {
     });
   };
   render() {
-    const { ads } = this.props;
+    const { ads, loading } = this.props;
     const listAds =
       ads &&
       ads.map((item, index) => {
@@ -48,6 +49,7 @@ class DashboardAds extends Component {
       <div className="container">
         <Sidebar />
         <Navbar />
+        <FullPageLoader loading ={loading}/>
         <div className="container-ads">
           <div className="title-ads">Ads Table</div>
           <div className="form ads">
@@ -85,6 +87,7 @@ class DashboardAds extends Component {
 const mapStateToProps = (state) => {
   return {
     ads: state.ads.ads,
+    loading: state.ads.loading
   };
 };
 export default withRouter(connect(mapStateToProps)(DashboardAds));
