@@ -5,15 +5,13 @@ import { readVideoCategory } from "../../redux/action/video_category";
 import "../../css/admin_layout/layout.css";
 import "../../css/components/button.css";
 import "../../css/admin/video_category.css";
-import Sidebar from "../layout/sidebar";
-import Navbar from "../layout/navbar";
 import ItemVideoCategory from "./item_video_category";
 import InsertVideoCategory from "./insert_video_category";
 import EditVideoCategory from "./edit_video_category";
 import DeleteVideoCategory from "./delete_video_category";
 import AdminLayout from "../layout/admin_layout";
 import FullPageLoader from "../../helpers/loading";
-class DashboardVideoCategory extends Component {
+class AdminVideoCategory extends Component {
   state = {
     selectEditVideoCategory: [],
     selectDeleteVideoCategory: [],
@@ -53,7 +51,7 @@ class DashboardVideoCategory extends Component {
         <div className="form video-category">
           <button
             type="button"
-            className="dashboard btn btn-add"
+            className="admin btn btn-add"
             data-toggle="modal"
             data-target="#modalInsertVideoCategory"
           >
@@ -90,4 +88,4 @@ const mapStateToProps = (state) => {
     loading: state.video_category.loading,
   };
 };
-export default withRouter(connect(mapStateToProps)(DashboardVideoCategory));
+export default withRouter(connect(mapStateToProps)(AdminVideoCategory));

@@ -51,7 +51,7 @@ class AdminAds extends Component {
         <div className="form ads">
           <button
             type="button"
-            className="dashboard btn btn-add"
+            className="admin btn btn-add"
             data-toggle="modal"
             data-target="#modalInsertAds"
           >

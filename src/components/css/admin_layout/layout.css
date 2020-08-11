@@ -19,6 +19,7 @@
   grid-area: sidebar;
   min-height: 90vh;
 }
+/* Content */
 .content {
   display: grid;
   grid-area: content;

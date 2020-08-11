@@ -15,7 +15,7 @@ const ItemUserRole = ({ item, index, onSelectEditUserRole, onSelectDeleteUserRol
       <div className="manage-user-role">
         <button
           type="button"
-          className="dashboard btn btn-outline-delete"
+          className="admin btn btn-outline-delete"
           data-toggle="modal"
           data-target="#deleteModalUserRole"
           onClick={onClickDelete}
@@ -24,7 +24,7 @@ const ItemUserRole = ({ item, index, onSelectEditUserRole, onSelectDeleteUserRol
         </button>
         <button
           type="button"
-          className="dashboard btn btn-edit"
+          className="admin btn btn-edit"
           data-toggle="modal"
           data-target="#modalEditUserRole"
           onClick={onclickEdit}

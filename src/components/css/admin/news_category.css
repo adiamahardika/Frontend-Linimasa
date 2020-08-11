@@ -1,16 +1,3 @@
-/* Content */
-.container-news-category {
-  display: grid;
-  grid-area: content;
-  padding: 8px;
-  grid-template-columns: 2fr 1fr;
-  grid-template-areas:
-    "title form"
-    "table table";
-  row-gap: 8px;
-  align-items: center;
-  justify-content: stretch;
-}
 /* Title News Category */
 .title-news-category {
   grid-area: title;

@@ -1,58 +1,44 @@
-/* Content */
-.container-user-role {
-    display: grid;
-    grid-area: content;
-    padding: 8px;
-    grid-template-columns: 2fr 1fr;
-    grid-template-areas:
-      "title form"
-      "table table";
-    row-gap: 8px;
-    align-items: center;
-    justify-content: stretch;
-  }
-  /* Title News Category */
-  .title-user-role {
-    grid-area: title;
-    font-size: 24px;
-    font-weight: 600;
-  }
-  /* Form News Category */
-  .form.user-role {
-    grid-area: form;
-    display: grid;
-    justify-self: end;
-    grid-template-columns: 1fr 3fr;
-    column-gap: 8px;
-  }
-  .form-control.user-role {
-    max-width: 200px;
-    max-height: 35px;
-    font-size: 12px;
-    font-weight: 200;
-    border: none;
-  }
-  /* Table News Category */
-  .table-user-role {
-    grid-area: table;
-    display: grid;
-    grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr;
-    grid-auto-flow: row;
-    background-color: white;
-  }
-  .table-user-role > div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-    border: 0.5px solid #dedede;
-  }
-  .manage-user-role {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 8px;
-  }
-  .table-user-role .name-user-role {
-    justify-content: start;
-  }
-  
+/* Title News Category */
+.title-user-role {
+  grid-area: title;
+  font-size: 24px;
+  font-weight: 600;
+}
+/* Form News Category */
+.form.user-role {
+  grid-area: form;
+  display: grid;
+  justify-self: end;
+  grid-template-columns: 1fr 3fr;
+  column-gap: 8px;
+}
+.form-control.user-role {
+  max-width: 200px;
+  max-height: 35px;
+  font-size: 12px;
+  font-weight: 200;
+  border: none;
+}
+/* Table News Category */
+.table-user-role {
+  grid-area: table;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr;
+  grid-auto-flow: row;
+  background-color: white;
+}
+.table-user-role > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border: 0.5px solid #dedede;
+}
+.manage-user-role {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 8px;
+}
+.table-user-role .name-user-role {
+  justify-content: start;
+}

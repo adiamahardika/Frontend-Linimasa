@@ -15,7 +15,7 @@ const ItemVideoCategory = ({ item, index, selectEditVideoCategory, selectDeleteV
       <div className="manage-video-category">
         <button
           type="button"
-          className="dashboard btn btn-outline-delete"
+          className="admin btn btn-outline-delete"
           data-toggle="modal"
           data-target="#deleteModalVideoCategory"
           onClick={onClickDelete}
@@ -24,7 +24,7 @@ const ItemVideoCategory = ({ item, index, selectEditVideoCategory, selectDeleteV
         </button>
         <button
           type="button"
-          className="dashboard btn btn-edit"
+          className="admin btn btn-edit"
           data-toggle="modal"
           data-target="#modalEditVideoCategory"
           onClick={onClickEdit}

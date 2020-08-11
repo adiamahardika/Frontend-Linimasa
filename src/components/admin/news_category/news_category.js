@@ -12,7 +12,7 @@ import DeleteNewsCategory from "./delete_news_category";
 import { routes } from "../../helpers/routes.json";
 import AdminLayout from "../layout/admin_layout";
 import FullPageLoader from "../../helpers/loading";
-class DashboardNewsCategory extends Component {
+class AdminNewsCategory extends Component {
   state = {
     news_category_name: "",
     selectEditNewsCategory: [],
@@ -62,7 +62,7 @@ class DashboardNewsCategory extends Component {
         <div className="form news-category">
           <button
             type="button"
-            className="dashboard btn btn-add"
+            className="admin btn btn-add"
             data-toggle="modal"
             data-target="#modalInsertNewsCategory"
           >
@@ -99,4 +99,4 @@ const mapStateToProps = (state) => {
     loading: state.news_category.loading,
   };
 };
-export default withRouter(connect(mapStateToProps)(DashboardNewsCategory));
+export default withRouter(connect(mapStateToProps)(AdminNewsCategory));

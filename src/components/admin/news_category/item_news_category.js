@@ -16,7 +16,7 @@ const ItemNewsCategory = ({ item, index, onSelectEditNewsCategory, onSelectDelet
       <div className="manage-news-category">
         <button
           type="button"
-          className="dashboard btn btn-outline-delete"
+          className="admin btn btn-outline-delete"
           data-toggle="modal"
           data-target="#deleteModalNewsCategory"
           onClick={onClickDelete}
@@ -25,7 +25,7 @@ const ItemNewsCategory = ({ item, index, onSelectEditNewsCategory, onSelectDelet
         </button>
         <button
           type="button"
-          className="dashboard btn btn-edit"
+          className="admin btn btn-edit"
           data-toggle="modal"
           data-target="#modalEditNewsCategory"
           onClick={onClickEdit}

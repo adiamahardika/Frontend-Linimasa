@@ -16,7 +16,7 @@ const ItemAds = ({ item, index, onSelectEditAds, onSelectDeleteAds }) => {
       <div className="manage-ads">
         <button
           type="button"
-          className="dashboard btn btn-outline-delete"
+          className="admin btn btn-outline-delete"
           data-toggle="modal"
           data-target="#deleteModalAds"
           onClick={onClickDelete}
@@ -25,7 +25,7 @@ const ItemAds = ({ item, index, onSelectEditAds, onSelectDeleteAds }) => {
         </button>
         <button
           type="button"
-          className="dashboard btn btn-edit"
+          className="admin btn btn-edit"
           data-toggle="modal"
           data-target="#modalEditAds"
           onClick={onClickEdit}

@@ -11,7 +11,7 @@ import EditUserRole from "./edit_user_role";
 import DeleteUserRole from "./delete_user_role";
 import AdminLayout from "../layout/admin_layout";
 import FullPageLoader from "../../helpers/loading";
-class DashboardUserRole extends Component {
+class AdminUserRole extends Component {
   state = {
     selectEditUserRole: [],
     selectDeleteUserRole: [],
@@ -51,7 +51,7 @@ class DashboardUserRole extends Component {
         <div className="form user-role">
           <button
             type="button"
-            className="dashboard btn btn-add"
+            className="admin btn btn-add"
             data-toggle="modal"
             data-target="#modalInsertUserRole"
           >
@@ -86,4 +86,4 @@ const mapStateToProps = (state) => {
     loading: state.user_role.loading
   };
 };
-export default withRouter(connect(mapStateToProps)(DashboardUserRole));
+export default withRouter(connect(mapStateToProps)(AdminUserRole));
