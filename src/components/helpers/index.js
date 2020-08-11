@@ -9,7 +9,7 @@ export function imageFilter(image) {
     imageType !== "image/jpg" &&
     imageType !== "image/jpeg"
   ) {
-    alert("Just image with extension .png, .jpg, and .jpeg can be upload!");
+    alert("Only image with extension .png, .jpg, and .jpeg can be upload!");
     return null;
   }
 }
