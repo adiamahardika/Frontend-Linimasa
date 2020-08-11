@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { readUserRole } from "../../redux/action/user_role";
 import "../../css/admin_layout/layout.css";
 import "../../css/components/button.css";
-import "../../css/dashboard/user_role.css"
+import "../../css/admin/user_role.css"
 import Sidebar from "../layout/sidebar";
 import Navbar from "../layout/navbar";
 import ItemUserRole from "./item_user_role";

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { readNewsCategory } from "../../redux/action/news_category";
-import "../../css/dashboard/news_category.css";
+import "../../css/admin/news_category.css";
 import "../../css/admin_layout/layout.css";
 import "../../css/components/button.css";
 import Sidebar from "../layout/sidebar";

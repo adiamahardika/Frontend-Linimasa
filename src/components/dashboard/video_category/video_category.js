@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { readVideoCategory } from "../../redux/action/video_category";
 import "../../css/admin_layout/layout.css";
 import "../../css/components/button.css";
-import "../../css/dashboard/video_category.css";
+import "../../css/admin/video_category.css";
 import Sidebar from "../layout/sidebar";
 import Navbar from "../layout/navbar";
 import ItemVideoCategory from "./item_video_category";
