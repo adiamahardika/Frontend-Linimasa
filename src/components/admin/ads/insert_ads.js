@@ -17,10 +17,12 @@ class InsertAds extends Component {
   };
   onInsertImage = (event) => {
     const image = event.target.files[0];
-    imageFilter(image);
-    this.setState({
-      ads_image: image,
-    });
+    const filter = imageFilter(image);
+    if (filter !== null) {
+      this.setState({
+        ads_image: image,
+      });
+    }
   };
   insertAds = async (event) => {
     event.preventDefault();
@@ -47,10 +49,7 @@ class InsertAds extends Component {
         );
       } else {
         return (
-          <button
-            className="btn modal-btn-submit"
-            disabled
-          >
+          <button className="btn modal-btn-submit" disabled>
             Add
           </button>
         );

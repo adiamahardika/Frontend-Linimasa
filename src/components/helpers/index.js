@@ -1,14 +1,17 @@
 export function imageFilter(image) {
-  if (image.size > 1024 * 1024 * 2)
-    return alert("Cannot upload image with size more than 2mb");
-  const imageArray = image.name.split(".");
-  const imageExtension = imageArray[imageArray.length - 1].toLowerCase();
+  if (image.size > 1024 * 1024 * 2) {
+    alert("Cannot upload image with size more than 2mb");
+    return null;
+  }
+  const imageType = image.type;
   if (
-    imageExtension !== "png" &&
-    imageExtension !== "jpg" &&
-    imageExtension !== "jpeg"
-  )
-    return alert("Cannot upload file except image!");
+    imageType !== "image/png" &&
+    imageType !== "image/jpg" &&
+    imageType !== "image/jpeg"
+  ) {
+    alert("Just image with extension .png, .jpg, and .jpeg can be upload!");
+    return null;
+  }
 }
 export function parseDate(time) {
   let date = new Date(time);

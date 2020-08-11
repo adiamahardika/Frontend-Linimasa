@@ -30,5 +30,5 @@
     "table table";
   row-gap: 8px;
   align-items: center;
-  justify-content: stretch;grid-area: content;
+  justify-content: stretch;
 }
