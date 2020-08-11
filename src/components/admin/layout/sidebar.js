@@ -23,7 +23,7 @@ class Sidebar extends Component {
         <div className="collapse" id="collapseMenuManage">
             <ul>
               <li>
-                <Link to={routes.ads}>Ads</Link>
+                <Link to={routes.admin + routes.ads}>Ads</Link>
               </li>
               <li>
                 <Link to="#">Commentar</Link>
@@ -32,7 +32,7 @@ class Sidebar extends Component {
                 <Link to="#">News</Link>
               </li>
               <li>
-                <Link to={routes.news_category}>News Category</Link>
+                <Link to={routes.admin + routes.news_category}>News Category</Link>
               </li>
               <li>
                 <Link to={routes.user_role}>User Role</Link>

@@ -16,7 +16,7 @@ class InsertNewsCategory extends Component {
   insertNewsCategory = async (event) => {
     event.preventDefault();
     await this.props.dispatch(insertNewsCategory(this.state));
-    this.props.history.push(routes.news_category);
+    this.props.history.push(routes.admin + routes.news_category);
   };
   render() {
     const SubmitButton = () => {

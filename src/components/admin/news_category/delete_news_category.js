@@ -8,7 +8,7 @@ class DeleteNewsCategory extends Component {
   deleteNewsCategory = async (event) => {
     event.preventDefault();
     await this.props.dispatch(deleteNewsCategory(this.props.news_category.id));
-    this.props.history.push(routes.news_category);
+    this.props.history.push(routes.admin + routes.news_category);
   };
   render() {
     return (

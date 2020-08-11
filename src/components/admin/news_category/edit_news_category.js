@@ -25,7 +25,7 @@ class EditNewsCategory extends Component {
     await this.props.dispatch(
       editNewsCategory(data, id)
     );
-    this.props.history.push(routes.news_category);
+    this.props.history.push(routes.admin + routes.news_category);
   };
   render() {
     const SubmitButton = () => {
