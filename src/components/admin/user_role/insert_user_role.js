@@ -16,7 +16,7 @@ class InsertUserRole extends Component {
   insertUserRole = async (event) => {
     event.preventDefault();
     await this.props.dispatch(insertUserRole(this.state));
-    this.props.history.push(routes.user_role);
+    this.props.history.push(routes.admin + routes.user_role);
   };
   render() {
     const SubmitButton = () => {

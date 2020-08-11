@@ -15,8 +15,8 @@ export default function App() {
         <Switch>
           <Route path={routes.admin + routes.ads} component={ads} />
           <Route path={routes.admin + routes.news_category} component={news_category} />
-          <Route path={routes.user_role} component={user_role} />
-          <Route path={routes.video_category} component={video_category} />
+          <Route path={routes.admin + routes.user_role} component={user_role} />
+          <Route path={routes.admin + routes.video_category} component={video_category} />
         </Switch>
       </Router>
     </Provider>

@@ -23,7 +23,7 @@ class EditVideoCategory extends Component {
     const id = this.props.video_category.id;
     const data = this.state;
     await this.props.dispatch(editVideoCategory(data, id));
-    this.props.history.push(routes.video_category);
+    this.props.history.push(routes.admin + routes.video_category);
   };
   render() {
     const SubmitButton = () => {

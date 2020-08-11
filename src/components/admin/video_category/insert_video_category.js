@@ -16,7 +16,7 @@ class InsertVideoCategory extends Component {
   insertVideoCategory = async (event) => {
     event.preventDefault();
     await this.props.dispatch(insertVideoCategory(this.state));
-    this.props.history.push(routes.video_category);
+    this.props.history.push(routes.admin + routes.video_category);
   };
   render() {
     const SubmitButton = () => {

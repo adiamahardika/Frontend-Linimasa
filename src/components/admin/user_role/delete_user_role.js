@@ -8,7 +8,7 @@ class DeleteUserRole extends Component {
   deleteUserRole = async (event) => {
     event.preventDefault();
     await this.props.dispatch(deleteUserRole(this.props.user_role.id));
-    this.props.history.push(routes.user_role);
+    this.props.history.push(routes.admin + routes.user_role);
   };
   render() {
     return (

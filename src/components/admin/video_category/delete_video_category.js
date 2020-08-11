@@ -10,7 +10,7 @@ class DeleteVideoCategory extends Component {
     await this.props.dispatch(
       deleteVideoCategory(this.props.video_category.id)
     );
-    this.props.history.push(routes.video_category);
+    this.props.history.push(routes.admin + routes.video_category);
   };
   render() {
     return (

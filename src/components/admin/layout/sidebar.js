@@ -35,10 +35,10 @@ class Sidebar extends Component {
                 <Link to={routes.admin + routes.news_category}>News Category</Link>
               </li>
               <li>
-                <Link to={routes.user_role}>User Role</Link>
+                <Link to={routes.admin + routes.user_role}>User Role</Link>
               </li>
               <li>
-                <Link to={routes.video_category}>Video Category</Link>
+                <Link to={routes.admin + routes.video_category}>Video Category</Link>
               </li>
             </ul>
         </div>

@@ -23,7 +23,7 @@ class EditUserRole extends Component {
     const id = this.props.user_role.id;
     const data = this.state;
     await this.props.dispatch(editUserRole(data, id));
-    this.props.history.push(routes.user_role);
+    this.props.history.push(routes.admin + routes.user_role);
   };
   render() {
     const SubmitButton = () => {

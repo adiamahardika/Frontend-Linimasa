@@ -11,7 +11,7 @@ import EditNewsCategory from "./edit_news_category";
 import DeleteNewsCategory from "./delete_news_category";
 import { routes } from "../../helpers/routes.json";
 import AdminLayout from "../layout/admin_layout";
-import FullPageLoader from '../../helpers/loading'
+import FullPageLoader from "../../helpers/loading";
 class DashboardNewsCategory extends Component {
   state = {
     news_category_name: "",
@@ -57,7 +57,7 @@ class DashboardNewsCategory extends Component {
       });
     return (
       <AdminLayout>
-        <FullPageLoader loading={loading}/>
+        <FullPageLoader loading={loading} />
         <div className="title-news-category">News Category Table</div>
         <div className="form news-category">
           <button
@@ -96,7 +96,7 @@ class DashboardNewsCategory extends Component {
 const mapStateToProps = (state) => {
   return {
     news_category: state.news_category.news_category,
-    loading: state.news_category.loading
+    loading: state.news_category.loading,
   };
 };
 export default withRouter(connect(mapStateToProps)(DashboardNewsCategory));
