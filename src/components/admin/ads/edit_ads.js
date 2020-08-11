@@ -41,7 +41,7 @@ class EditAds extends Component {
     } else {
       await this.props.dispatch(editAds(data, id));
     }
-    this.props.history.push(routes.ads);
+    this.props.history.push(routes.admin + routes.ads);
   };
   render() {
     const SubmitButton = () => {

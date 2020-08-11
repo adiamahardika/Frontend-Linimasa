@@ -8,7 +8,7 @@ class DeleteAds extends Component {
   deleteAds = async (event) => {
     event.preventDefault();
     await this.props.dispatch(deleteAds(this.props.ads.id));
-    this.props.history.push(routes.ads);
+    this.props.history.push(routes.admin + routes.ads);
   };
   render() {
     return (

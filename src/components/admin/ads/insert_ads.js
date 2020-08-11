@@ -30,7 +30,7 @@ class InsertAds extends Component {
     data.append("ads_image", this.state.ads_image);
 
     await this.props.dispatch(insertAds(data));
-    this.props.history.push(routes.ads);
+    this.props.history.push(routes.admin + routes.ads);
   };
   render() {
     const SubmitButton = () => {
