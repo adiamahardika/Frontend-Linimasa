@@ -24,9 +24,13 @@
 .table-ads {
   display: grid;
   grid-area: table;
-  grid-template-columns: 0.5fr 2fr 2fr 3fr 2fr 2fr;
+  grid-template-columns: repeat(2, minmax(min-content, max-content)) 1fr 2fr repeat(2, minmax(100px, max-content));
   grid-auto-flow: row;
   background-color: white;
+  overflow-x: auto;
+}
+.table-ads::-webkit-scrollbar{
+  width: 0;
 }
 .table-ads > div {
   display: flex;
