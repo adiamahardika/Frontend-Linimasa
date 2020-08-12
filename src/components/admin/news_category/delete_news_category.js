@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { deleteNewsCategory } from "../../redux/action/news_category";
 import { routes } from "../../helpers/routes.json";
 import { withRouter } from "react-router";
-import "../../css/components/button.css";
 class DeleteNewsCategory extends Component {
   deleteNewsCategory = async (event) => {
     event.preventDefault();

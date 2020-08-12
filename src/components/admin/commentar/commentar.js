@@ -3,6 +3,7 @@ import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { readCommentar } from "../../redux/action/commentar";
 import ItemCommentar from "./item_commentar";
+import DeleteCommentar from "./delete_commentar";
 import AdminLayout from "../layout/admin_layout";
 import FullPageLoader from "../../helpers/loading";
 import "../../css/admin_layout/layout.css";
@@ -12,15 +13,30 @@ import "../../css/components/title.css";
 import "../../css/components/form.css";
 import "../../css/components/table.css";
 class AdminCommentar extends Component {
+  state = {
+    selectDeleteCommentar: [],
+  };
   componentDidMount() {
     this.props.dispatch(readCommentar());
   }
+  onSelectDeleteCommentar = (commentar) => {
+    this.setState({
+      selectDeleteCommentar: commentar,
+    });
+  };
   render() {
     const { commentar, loading } = this.props;
     const listCommentar =
       commentar &&
       commentar.map((item, index) => {
-        return <ItemCommentar key={item.id} item={item} index={index} />;
+        return (
+          <ItemCommentar
+            key={item.id}
+            item={item}
+            index={index}
+            onSelectDeleteCommentar={this.onSelectDeleteCommentar}
+          />
+        );
       });
     return (
       <AdminLayout>
@@ -43,6 +59,7 @@ class AdminCommentar extends Component {
           <div className="header-admin-table">Date Updated</div>
           {listCommentar}
         </div>
+        <DeleteCommentar commentar={this.state.selectDeleteCommentar} />
       </AdminLayout>
     );
   }

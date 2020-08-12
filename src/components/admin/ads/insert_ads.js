@@ -4,7 +4,6 @@ import { insertAds } from "../../redux/action/ads";
 import { withRouter } from "react-router-dom";
 import { imageFilter } from "../../helpers/index";
 import { routes } from "../../helpers/routes.json";
-import "../../css/components/button.css";
 class InsertAds extends Component {
   state = {
     ads_name: "",

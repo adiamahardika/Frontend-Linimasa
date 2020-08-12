@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { editUserRole } from "../../redux/action/user_role";
 import { withRouter } from "react-router-dom";
 import { routes } from "../../helpers/routes.json";
-import "../../css/components/button.css";
 class EditUserRole extends Component {
   state = {
     user_role_name: "",

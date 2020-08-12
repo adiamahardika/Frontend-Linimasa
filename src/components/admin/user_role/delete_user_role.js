@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { deleteUserRole } from "../../redux/action/user_role";
 import { routes } from "../../helpers/routes.json";
 import { withRouter } from "react-router";
-import "../../css/components/button.css";
 class DeleteUserRole extends Component {
   deleteUserRole = async (event) => {
     event.preventDefault();

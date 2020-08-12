@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { deleteAds } from "../../redux/action/ads";
 import { routes } from "../../helpers/routes.json";
 import { withRouter } from "react-router";
-import "../../css/components/button.css"
 class DeleteAds extends Component {
   deleteAds = async (event) => {
     event.preventDefault();

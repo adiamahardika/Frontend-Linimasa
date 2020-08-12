@@ -1,29 +1,27 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { deleteVideoCategory } from "../../redux/action/video_category";
+import { deleteCommentar } from "../../redux/action/commentar";
 import { routes } from "../../helpers/routes.json";
 import { withRouter } from "react-router";
-class DeleteVideoCategory extends Component {
-  deleteVideoCategory = async (event) => {
+class DeleteCommentar extends Component {
+  deleteCommentar = async (event) => {
     event.preventDefault();
-    await this.props.dispatch(
-      deleteVideoCategory(this.props.video_category.id)
-    );
-    this.props.history.push(routes.admin + routes.video_category);
+    await this.props.dispatch(deleteCommentar(this.props.commentar.id));
+    this.props.history.push(routes.admin + routes.commentar);
   };
   render() {
     return (
       <>
         <div
           className="modal fade"
-          id="deleteModalVideoCategory"
+          id="deleteModalCommentar"
           role="dialog"
           data-backdrop="static"
         >
           <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title">Delete News Category</h5>
+                <h5 className="modal-title">Delete Commentar</h5>
                 <button
                   type="button"
                   className="close"
@@ -34,7 +32,7 @@ class DeleteVideoCategory extends Component {
                 </button>
               </div>
               <div className="modal-body">
-                <p>Are you sure want to delete this video category?</p>
+                <p>Are you sure want to delete this commentar?</p>
               </div>
               <div className="modal-footer">
                 <button
@@ -47,7 +45,7 @@ class DeleteVideoCategory extends Component {
                 <button
                   type="button"
                   className="btn modal-btn-submit"
-                  onClick={this.deleteVideoCategory}
+                  onClick={this.deleteCommentar}
                   data-dismiss="modal"
                 >
                   Delete
@@ -60,4 +58,4 @@ class DeleteVideoCategory extends Component {
     );
   }
 }
-export default withRouter(connect()(DeleteVideoCategory));
+export default withRouter(connect()(DeleteCommentar));

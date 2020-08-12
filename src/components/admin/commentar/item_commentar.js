@@ -1,6 +1,10 @@
 import React from "react";
 import { parseDate } from "../../helpers/index";
-const ItemCommentar = ({ item, index }) => {
+const ItemCommentar = ({ item, index, onSelectDeleteCommentar }) => {
+  const onClickDelete = (event) => {
+    event.preventDefault()
+    onSelectDeleteCommentar(item)
+  }
   return (
     <>
       <div className="number-column">{index + 1}</div>
@@ -9,7 +13,8 @@ const ItemCommentar = ({ item, index }) => {
           type="button"
           className="admin btn btn-outline-delete"
           data-toggle="modal"
-          data-target="#deleteModalUserRole"
+          data-target="#deleteModalCommentar"
+          onClick={onClickDelete}
         >
           Delete
         </button>

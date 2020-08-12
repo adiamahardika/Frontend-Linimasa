@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { insertNewsCategory } from "../../redux/action/news_category";
 import { withRouter } from "react-router-dom";
 import { routes } from "../../helpers/routes.json";
-import "../../css/components/button.css";
 class InsertNewsCategory extends Component {
   state = {
     news_category_name: "",

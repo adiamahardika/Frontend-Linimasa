@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { insertVideoCategory } from "../../redux/action/video_category";
 import { withRouter } from "react-router-dom";
 import { routes } from "../../helpers/routes.json";
-import "../../css/components/button.css";
 class InsertVideoCategory extends Component {
   state = {
     video_category_name: "",
