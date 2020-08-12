@@ -6,34 +6,45 @@
   justify-content: start;
   background-color: white;
 }
-/* Dashboard */
-.dashboard,
-.management {
+/*Sidebar Menu*/
+.sidebar-menu {
   font-size: 16px;
+  font-weight: 500;
+  color: #5a5c69;
+}
+.sidebar-menu:hover {
   font-weight: 600;
-  color: #5a5c69
+  color: #5a5c69;
 }
 /* Management */
-.management {
+.sidebar-menu {
   border: none;
 }
- ul {
+ul {
   list-style: none;
   text-decoration: none;
   display: grid;
   row-gap: 2px;
-  justify-content: start;
-  padding: 4px;
-  border-radius: 4px;
+  justify-content: stretch;
+  padding: 8px;
+  border-radius: 8px;
+  background-color: #004de8;
 }
 li {
-  padding: 3px;
+  border: none;
+  padding: 4px;
   font-size: 14px;
   font-weight: 200;
 }
+li:hover{
+  background-color: #0c49c4;
+  border-radius: 4px;
+}
 li a {
-  color: #5a5c69;
+  color: white;
 }
 li a:hover {
   text-decoration: none;
+  color: white;
+  font-weight: 400;
 }

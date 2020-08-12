@@ -9,11 +9,11 @@ class Sidebar extends Component {
   render() {
     return (
       <div className="container-sidebar">
-        <div className="dashboard">
+        <div className="sidebar-menu">
           Dashboard
         </div>
         <div
-          className="management"
+          className="sidebar-menu"
           type="button"
           data-toggle="collapse"
           data-target="#collapseMenuManage"
@@ -22,22 +22,22 @@ class Sidebar extends Component {
         </div>
         <div className="collapse" id="collapseMenuManage">
             <ul>
-              <li>
+              <li type="button">
                 <Link to={routes.admin + routes.ads}>Ads</Link>
               </li>
-              <li>
+              <li type="button">
                 <Link to={routes.admin + routes.commentar}>Commentar</Link>
               </li>
-              <li>
+              <li type="button">
                 <Link to="#">News</Link>
               </li>
-              <li>
+              <li type="button">
                 <Link to={routes.admin + routes.news_category}>News Category</Link>
               </li>
-              <li>
+              <li type="button">
                 <Link to={routes.admin + routes.user_role}>User Role</Link>
               </li>
-              <li>
+              <li type="button">
                 <Link to={routes.admin + routes.video_category}>Video Category</Link>
               </li>
             </ul>
