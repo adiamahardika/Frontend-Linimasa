@@ -34,13 +34,13 @@ class AdminCommentar extends Component {
           />
         </div>
         <div className="admin-table commentar">
-          <div className="header-table-commentar number-column">No</div>
-          <div className="header-table-commentar">Manage</div>
-          <div className="header-table-commentar">News Title</div>
-          <div className="header-table-commentar">User</div>
-          <div className="header-table-commentar">Commentar</div>
-          <div className="header-table-commentar">Date Created</div>
-          <div className="header-table-commentar">Date Updated</div>
+          <div className="header-admin-table number-column">No</div>
+          <div className="header-admin-table">Manage</div>
+          <div className="header-admin-table">News Title</div>
+          <div className="header-admin-table">User</div>
+          <div className="header-admin-table">Commentar</div>
+          <div className="header-admin-table">Date Created</div>
+          <div className="header-admin-table">Date Updated</div>
           {listCommentar}
         </div>
       </AdminLayout>

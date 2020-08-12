@@ -67,11 +67,11 @@ class AdminVideoCategory extends Component {
           />
         </div>
         <div className="admin-table video-category">
-          <div className="header-table-video-category number-column">No</div>
-          <div className="header-table-video-category">Manage</div>
-          <div className="header-table-video-category">Name</div>
-          <div className="header-table-video-category">Date Created</div>
-          <div className="header-table-video-category">Date Updated</div>
+          <div className="header-admin-table number-column">No</div>
+          <div className="header-admin-table">Manage</div>
+          <div className="header-admin-table">Name</div>
+          <div className="header-admin-table">Date Created</div>
+          <div className="header-admin-table">Date Updated</div>
           {listVideoCategory}
         </div>
         <InsertVideoCategory />

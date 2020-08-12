@@ -80,11 +80,11 @@ class AdminNewsCategory extends Component {
           />
         </div>
         <div className="admin-table news-category">
-          <div className="header-table-news-category number-column">No</div>
-          <div className="header-table-news-category">Manage</div>
-          <div className="header-table-news-category">Name</div>
-          <div className="header-table-news-category">Date Created</div>
-          <div className="header-table-news-category">Date Updated</div>
+          <div className="header-admin-table number-column">No</div>
+          <div className="header-admin-table">Manage</div>
+          <div className="header-admin-table">Name</div>
+          <div className="header-admin-table">Date Created</div>
+          <div className="header-admin-table">Date Updated</div>
           {listNewsCategory}
         </div>
         <InsertNewsCategory />

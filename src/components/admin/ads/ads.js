@@ -67,12 +67,12 @@ class AdminAds extends Component {
           />
         </div>
         <div className="admin-table ads">
-          <div className="header-table-ads number-column">No</div>
-          <div className="header-table-ads">Manage</div>
-          <div className="header-table-ads">Name</div>
-          <div className="header-table-ads">Image</div>
-          <div className="header-table-ads">Date Created</div>
-          <div className="header-table-ads">Date Updated</div>
+          <div className="header-admin-table number-column">No</div>
+          <div className="header-admin-table">Manage</div>
+          <div className="header-admin-table">Name</div>
+          <div className="header-admin-table">Image</div>
+          <div className="header-admin-table">Date Created</div>
+          <div className="header-admin-table">Date Updated</div>
           {listAds}
         </div>
         <InsertAds />

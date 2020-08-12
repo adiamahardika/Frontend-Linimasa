@@ -11,7 +11,7 @@
 .management {
   font-size: 16px;
   font-weight: 600;
-  color: #121212
+  color: #5a5c69
 }
 /* Management */
 .management {
@@ -32,7 +32,7 @@ li {
   font-weight: 200;
 }
 li a {
-  color: #121212;
+  color: #5a5c69;
 }
 li a:hover {
   text-decoration: none;

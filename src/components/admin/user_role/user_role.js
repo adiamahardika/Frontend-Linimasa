@@ -67,11 +67,11 @@ class AdminUserRole extends Component {
           />
         </div>
         <div className="admin-table user-role">
-          <div className="header-table-user-role number-column">No</div>
-          <div className="header-table-user-role">Manage</div>
-          <div className="header-table-user-role">Name</div>
-          <div className="header-table-user-role">Date Created</div>
-          <div className="header-table-user-role">Date Updated</div>
+          <div className="header-admin-table number-column">No</div>
+          <div className="header-admin-table">Manage</div>
+          <div className="header-admin-table">Name</div>
+          <div className="header-admin-table">Date Created</div>
+          <div className="header-admin-table">Date Updated</div>
           {listUserRole}
         </div>
         <InsertUserRole />
