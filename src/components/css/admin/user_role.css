@@ -1,18 +1,3 @@
-/* Form News Category */
-.form.user-role {
-  grid-area: form;
-  display: grid;
-  justify-self: end;
-  grid-template-columns: 1fr 3fr;
-  column-gap: 8px;
-}
-.form-control.user-role {
-  max-width: 200px;
-  max-height: 35px;
-  font-size: 12px;
-  font-weight: 200;
-  border: none;
-}
 /* Table News Category */
 .table-user-role {
   grid-area: table;

@@ -9,6 +9,7 @@ import "../../css/admin_layout/layout.css";
 import "../../css/components/button.css";
 import "../../css/admin/commentar.css";
 import "../../css/components/title.css";
+import "../../css/components/form.css";
 class AdminCommentar extends Component {
   componentDidMount() {
     this.props.dispatch(readCommentar());
@@ -24,9 +25,9 @@ class AdminCommentar extends Component {
       <AdminLayout>
         <FullPageLoader loading={loading} />
         <div className="admin-title">Commentar</div>
-        <div className="form commentar">
+        <div className="form admin">
           <input
-            className="form-control commentar"
+            className="form-control admin-search"
             type="search"
             placeholder="Search Commentar"
           />

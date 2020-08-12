@@ -11,7 +11,8 @@ import FullPageLoader from "../../helpers/loading";
 import "../../css/admin/ads.css";
 import "../../css/admin_layout/layout.css";
 import "../../css/components/button.css";
-import "../../css/components/title.css"
+import "../../css/components/title.css";
+import "../../css/components/form.css";
 class AdminAds extends Component {
   state = {
     selectEditAds: [],
@@ -49,7 +50,7 @@ class AdminAds extends Component {
       <AdminLayout>
         <FullPageLoader loading={loading} />
         <div className="admin-title">Ads</div>
-        <div className="form ads">
+        <div className="form admin">
           <button
             type="button"
             className="admin btn btn-add"
@@ -59,7 +60,7 @@ class AdminAds extends Component {
             Add
           </button>
           <input
-            className="form-control ads"
+            className="form-control admin-search"
             type="search"
             placeholder="Search Ads"
           />

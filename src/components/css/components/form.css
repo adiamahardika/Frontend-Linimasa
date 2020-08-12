@@ -1,0 +1,16 @@
+@import "../admin_layout/layout.css";
+.form.admin {
+  display: grid;
+  grid-area: form;
+  justify-content: end;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 8px;
+}
+
+.form-control.admin-search {
+  max-height: 35px;
+  font-size: 12px;
+  font-weight: 200;
+  border: none;
+  grid-column-start: 2;
+}

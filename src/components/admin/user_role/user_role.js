@@ -12,6 +12,7 @@ import "../../css/admin_layout/layout.css";
 import "../../css/components/button.css";
 import "../../css/admin/user_role.css";
 import "../../css/components/title.css";
+import "../../css/components/form.css";
 class AdminUserRole extends Component {
   state = {
     selectEditUserRole: [],
@@ -49,7 +50,7 @@ class AdminUserRole extends Component {
       <AdminLayout>
         <FullPageLoader loading={loading} />
         <div className="admin-title">User Role</div>
-        <div className="form user-role">
+        <div className="form admin">
           <button
             type="button"
             className="admin btn btn-add"
@@ -59,7 +60,7 @@ class AdminUserRole extends Component {
             Add
           </button>
           <input
-            className="form-control user-role"
+            className="form-control admin-search"
             type="search"
             placeholder="Search User Role"
             onChange={this.onSearchNewsCategoryName}

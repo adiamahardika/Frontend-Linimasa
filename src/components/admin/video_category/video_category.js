@@ -12,6 +12,7 @@ import "../../css/admin_layout/layout.css";
 import "../../css/components/button.css";
 import "../../css/admin/video_category.css";
 import "../../css/components/title.css";
+import "../../css/components/form.css";
 class AdminVideoCategory extends Component {
   state = {
     selectEditVideoCategory: [],
@@ -49,7 +50,7 @@ class AdminVideoCategory extends Component {
       <AdminLayout>
         <FullPageLoader loading={loading} />
         <div className="admin-title">Video Category</div>
-        <div className="form video-category">
+        <div className="form admin">
           <button
             type="button"
             className="admin btn btn-add"
@@ -59,7 +60,7 @@ class AdminVideoCategory extends Component {
             Add
           </button>
           <input
-            className="form-control video-category"
+            className="form-control admin-search"
             type="search"
             placeholder="Search Video Category"
           />

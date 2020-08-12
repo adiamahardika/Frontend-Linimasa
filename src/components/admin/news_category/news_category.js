@@ -13,6 +13,7 @@ import "../../css/admin/news_category.css";
 import "../../css/admin_layout/layout.css";
 import "../../css/components/button.css";
 import "../../css/components/title.css"
+import "../../css/components/form.css";
 class AdminNewsCategory extends Component {
   state = {
     news_category_name: "",
@@ -60,7 +61,7 @@ class AdminNewsCategory extends Component {
       <AdminLayout>
         <FullPageLoader loading={loading} />
         <div className="admin-title">News Category</div>
-        <div className="form news-category">
+        <div className="form admin">
           <button
             type="button"
             className="admin btn btn-add"
@@ -70,7 +71,7 @@ class AdminNewsCategory extends Component {
             Add
           </button>
           <input
-            className="form-control news-category"
+            className="form-control admin-search"
             type="search"
             placeholder="Search News Category"
             onChange={this.onSearchNewsCategoryName}

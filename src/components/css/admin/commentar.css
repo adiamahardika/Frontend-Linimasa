@@ -1,16 +1,3 @@
-/* Form Commentar */
-.form.commentar {
-  grid-area: form;
-  display: grid;
-  justify-self: end;
-}
-.form-control.commentar {
-  max-width: 200px;
-  max-height: 35px;
-  font-size: 12px;
-  font-weight: 200;
-  border: none;
-}
 /* Table Commentar */
 .table-commentar {
   grid-area: table;
