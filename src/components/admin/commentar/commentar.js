@@ -10,6 +10,7 @@ import "../../css/components/button.css";
 import "../../css/admin/commentar.css";
 import "../../css/components/title.css";
 import "../../css/components/form.css";
+import "../../css/components/table.css";
 class AdminCommentar extends Component {
   componentDidMount() {
     this.props.dispatch(readCommentar());
@@ -32,8 +33,8 @@ class AdminCommentar extends Component {
             placeholder="Search Commentar"
           />
         </div>
-        <div className="table-commentar">
-          <div className="header-table-commentar item-number">No</div>
+        <div className="admin-table commentar">
+          <div className="header-table-commentar number-column">No</div>
           <div className="header-table-commentar">Manage</div>
           <div className="header-table-commentar">News Title</div>
           <div className="header-table-commentar">User</div>

@@ -13,6 +13,7 @@ import "../../css/admin_layout/layout.css";
 import "../../css/components/button.css";
 import "../../css/components/title.css";
 import "../../css/components/form.css";
+import "../../css/components/table.css";
 class AdminAds extends Component {
   state = {
     selectEditAds: [],
@@ -65,8 +66,8 @@ class AdminAds extends Component {
             placeholder="Search Ads"
           />
         </div>
-        <div className="table-ads">
-          <div className="header-table-ads">No</div>
+        <div className="admin-table ads">
+          <div className="header-table-ads number-column">No</div>
           <div className="header-table-ads">Manage</div>
           <div className="header-table-ads">Name</div>
           <div className="header-table-ads">Image</div>

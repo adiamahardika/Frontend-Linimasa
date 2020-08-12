@@ -12,8 +12,8 @@ const ItemNewsCategory = ({ item, index, onSelectEditNewsCategory, onSelectDelet
   }
   return (
     <>
-      <div>{index + 1}</div>
-      <div className="manage-news-category">
+      <div className="number-column">{index + 1}</div>
+      <div className="manage-column">
         <button
           type="button"
           className="admin btn btn-outline-delete"
@@ -33,7 +33,7 @@ const ItemNewsCategory = ({ item, index, onSelectEditNewsCategory, onSelectDelet
           Edit
         </button>
       </div>
-      <div className="name-news-category">{item.news_category_name}</div>
+      <div className="sentences-column">{item.news_category_name}</div>
       <div>{parseDate(item.date_created)}</div>
       <div>{parseDate(item.date_updated)}</div>
     </>

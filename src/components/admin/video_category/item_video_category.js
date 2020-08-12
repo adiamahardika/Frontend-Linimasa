@@ -11,8 +11,8 @@ const ItemVideoCategory = ({ item, index, selectEditVideoCategory, selectDeleteV
   }
   return (
     <>
-      <div>{index + 1}</div>
-      <div className="manage-video-category">
+      <div className="number-column">{index + 1}</div>
+      <div className="manage-column">
         <button
           type="button"
           className="admin btn btn-outline-delete"
@@ -32,7 +32,7 @@ const ItemVideoCategory = ({ item, index, selectEditVideoCategory, selectDeleteV
           Edit
         </button>
       </div>
-      <div className="name-video-category">{item.video_category_name}</div>
+      <div className="sentences-column">{item.video_category_name}</div>
       <div>{parseDate(item.date_created)}</div>
       <div>{parseDate(item.date_updated)}</div>
     </>

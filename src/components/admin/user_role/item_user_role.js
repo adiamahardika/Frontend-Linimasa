@@ -11,8 +11,8 @@ const ItemUserRole = ({ item, index, onSelectEditUserRole, onSelectDeleteUserRol
   }
   return (
     <>
-      <div>{index + 1}</div>
-      <div className="manage-user-role">
+      <div className="number-column">{index + 1}</div>
+      <div className="manage-column">
         <button
           type="button"
           className="admin btn btn-outline-delete"
@@ -32,7 +32,7 @@ const ItemUserRole = ({ item, index, onSelectEditUserRole, onSelectDeleteUserRol
           Edit
         </button>
       </div>
-      <div className="name-user-role">{item.user_role_name}</div>
+      <div className="sentences-column">{item.user_role_name}</div>
       <div>{parseDate(item.date_created)}</div>
       <div>{parseDate(item.date_updated)}</div>
     </>

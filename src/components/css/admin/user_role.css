@@ -1,27 +1,7 @@
 /* Table News Category */
-.table-user-role {
-  grid-area: table;
-  display: grid;
+.admin-table.user-role {
   grid-template-columns: repeat(2, max-content) 1fr repeat(
       2,
       minmax(100px, max-content)
     );
-  grid-auto-flow: row;
-  background-color: white;
-  overflow-x: auto;
-}
-.table-user-role > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5px;
-  border: 0.5px solid #dedede;
-}
-.manage-user-role {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 8px;
-}
-.table-user-role .name-user-role {
-  justify-content: start;
 }

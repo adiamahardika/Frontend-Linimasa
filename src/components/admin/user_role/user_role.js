@@ -13,6 +13,7 @@ import "../../css/components/button.css";
 import "../../css/admin/user_role.css";
 import "../../css/components/title.css";
 import "../../css/components/form.css";
+import "../../css/components/table.css";
 class AdminUserRole extends Component {
   state = {
     selectEditUserRole: [],
@@ -63,12 +64,10 @@ class AdminUserRole extends Component {
             className="form-control admin-search"
             type="search"
             placeholder="Search User Role"
-            onChange={this.onSearchNewsCategoryName}
-            name="news_category_name"
           />
         </div>
-        <div className="table-user-role">
-          <div className="header-table-user-role">No</div>
+        <div className="admin-table user-role">
+          <div className="header-table-user-role number-column">No</div>
           <div className="header-table-user-role">Manage</div>
           <div className="header-table-user-role">Name</div>
           <div className="header-table-user-role">Date Created</div>

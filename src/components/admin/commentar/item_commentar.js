@@ -3,8 +3,8 @@ import { parseDate } from "../../helpers/index";
 const ItemCommentar = ({ item, index }) => {
   return (
     <>
-      <div className="item-number">{index + 1}</div>
-      <div className="manage-user-role">
+      <div className="number-column">{index + 1}</div>
+      <div className="manage-column">
         <button
           type="button"
           className="admin btn btn-outline-delete"
@@ -14,9 +14,9 @@ const ItemCommentar = ({ item, index }) => {
           Delete
         </button>
       </div>
-      <div>{item.news_title}</div>
-      <div>{item.user_name}</div>
-      <div>{item.commentar}</div>
+      <div className="sentences-column">{item.news_title}</div>
+      <div className="sentences-column">{item.user_name}</div>
+      <div className="sentences-column">{item.commentar}</div>
       <div>{parseDate(item.date_created)}</div>
       <div>{parseDate(item.date_updated)}</div>
     </>

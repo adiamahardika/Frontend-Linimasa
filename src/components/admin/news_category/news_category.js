@@ -12,8 +12,9 @@ import FullPageLoader from "../../helpers/loading";
 import "../../css/admin/news_category.css";
 import "../../css/admin_layout/layout.css";
 import "../../css/components/button.css";
-import "../../css/components/title.css"
+import "../../css/components/title.css";
 import "../../css/components/form.css";
+import "../../css/components/table.css";
 class AdminNewsCategory extends Component {
   state = {
     news_category_name: "",
@@ -78,8 +79,8 @@ class AdminNewsCategory extends Component {
             name="news_category_name"
           />
         </div>
-        <div className="table-news-category">
-          <div className="header-table-news-category">No</div>
+        <div className="admin-table news-category">
+          <div className="header-table-news-category number-column">No</div>
           <div className="header-table-news-category">Manage</div>
           <div className="header-table-news-category">Name</div>
           <div className="header-table-news-category">Date Created</div>

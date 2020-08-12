@@ -1,42 +1,7 @@
-/* Form News Category */
-.form.video-category {
-  grid-area: form;
-  display: grid;
-  justify-self: end;
-  grid-template-columns: 1fr 3fr;
-  column-gap: 8px;
-}
-.form-control.video-category {
-  max-width: 200px;
-  max-height: 35px;
-  font-size: 12px;
-  font-weight: 200;
-  border: none;
-}
 /* Table News Category */
-.table-video-category {
-  grid-area: table;
-  display: grid;
+.admin-table.video-category {
   grid-template-columns: repeat(2, max-content) 1fr repeat(
       2,
       minmax(100px, max-content)
     );
-  grid-auto-flow: row;
-  background-color: white;
-  overflow-x: auto;
-}
-.table-video-category > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5px;
-  border: 0.5px solid #dedede;
-}
-.manage-video-category {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 8px;
-}
-.table-video-category .name-video-category {
-  justify-content: start;
 }

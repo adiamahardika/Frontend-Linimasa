@@ -1,27 +1,7 @@
 /* Table Commentar */
-.table-commentar {
-  grid-area: table;
-  display: grid;
-  overflow-x: auto;
+.admin-table.commentar {
   grid-template-columns: repeat(2, max-content) repeat(3, minmax(100px, 400px)) repeat(
       2,
       minmax(100px, max-content)
     );
-  grid-auto-flow: row;
-  background-color: white;
-}
-.table-commentar > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5px;
-  border: 0.5px solid #dedede;
-}
-.item-number {
-  position: sticky;
-  left: 0;
-  background-color: white;
-}
-.table-commentar .name-commentar {
-  justify-content: start;
 }

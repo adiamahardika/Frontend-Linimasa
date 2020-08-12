@@ -13,6 +13,7 @@ import "../../css/components/button.css";
 import "../../css/admin/video_category.css";
 import "../../css/components/title.css";
 import "../../css/components/form.css";
+import "../../css/components/table.css";
 class AdminVideoCategory extends Component {
   state = {
     selectEditVideoCategory: [],
@@ -65,8 +66,8 @@ class AdminVideoCategory extends Component {
             placeholder="Search Video Category"
           />
         </div>
-        <div className="table-video-category">
-          <div className="header-table-video-category">No</div>
+        <div className="admin-table video-category">
+          <div className="header-table-video-category number-column">No</div>
           <div className="header-table-video-category">Manage</div>
           <div className="header-table-video-category">Name</div>
           <div className="header-table-video-category">Date Created</div>

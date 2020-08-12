@@ -1,27 +1,7 @@
 /* Table News Category */
-.table-news-category {
-  grid-area: table;
-  display: grid;
+.admin-table.news-category {
   grid-template-columns: repeat(2, max-content) 1fr repeat(
       2,
       minmax(100px, max-content)
     );
-  grid-auto-flow: row;
-  background-color: white;
-  overflow-x: auto;
-}
-.table-news-category > div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 5px;
-  border: 0.5px solid #dedede;
-}
-.manage-news-category {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 8px;
-}
-.table-news-category .name-news-category {
-  justify-content: start;
 }
