@@ -26,7 +26,7 @@ class Sidebar extends Component {
                 <Link to={routes.admin + routes.ads}>Ads</Link>
               </li>
               <li>
-                <Link to="#">Commentar</Link>
+                <Link to={routes.admin + routes.commentar}>Commentar</Link>
               </li>
               <li>
                 <Link to="#">News</Link>

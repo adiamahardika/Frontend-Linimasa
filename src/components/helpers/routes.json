@@ -2,6 +2,7 @@
   "routes": {
     "admin": "/admin",
     "ads": "/ads",
+    "commentar": "/commentar",
     "news_category": "/news-category",
     "user_role": "/user-role",
     "user": "/user",

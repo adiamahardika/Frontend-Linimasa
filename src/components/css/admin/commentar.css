@@ -1,0 +1,44 @@
+/* Title Commentar */
+.title-commentar {
+    grid-area: title;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  /* Form Commentar */
+  .form.commentar {
+    grid-area: form;
+    display: grid;
+    justify-self: end;
+  }
+  .form-control.commentar {
+    max-width: 200px;
+    max-height: 35px;
+    font-size: 12px;
+    font-weight: 200;
+    border: none;
+  }
+  /* Table Commentar */
+  .table-commentar {
+    grid-area: table;
+    display: grid;
+    overflow-x: auto;
+    grid-template-columns: 0.5fr 1fr repeat(5, minmax(200px, 400px));
+    grid-auto-flow: row;
+    background-color: white;
+  }
+  .table-commentar > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border: 0.5px solid #dedede;
+  }
+  .item-number{
+    position: sticky;
+    left: 0;
+    background-color: white;
+  }
+  .table-commentar .name-commentar {
+    justify-content: start;
+  }
+  
