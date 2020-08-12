@@ -20,24 +20,24 @@ class Sidebar extends Component {
         >
           Management
         </div>
-        <div className="collapse" id="collapseMenuManage">
+        <div className="collapse sidebar" id="collapseMenuManage">
             <ul>
-              <li type="button">
+              <li type="button" className="management-list">
                 <Link to={routes.admin + routes.ads}>Ads</Link>
               </li>
-              <li type="button">
+              <li type="button" className="management-list">
                 <Link to={routes.admin + routes.commentar}>Commentar</Link>
               </li>
-              <li type="button">
+              <li type="button" className="management-list">
                 <Link to="#">News</Link>
               </li>
-              <li type="button">
+              <li type="button" className="management-list">
                 <Link to={routes.admin + routes.news_category}>News Category</Link>
               </li>
-              <li type="button">
+              <li type="button" className="management-list">
                 <Link to={routes.admin + routes.user_role}>User Role</Link>
               </li>
-              <li type="button">
+              <li type="button" className="management-list">
                 <Link to={routes.admin + routes.video_category}>Video Category</Link>
               </li>
             </ul>

@@ -20,7 +20,7 @@
 .sidebar-menu {
   border: none;
 }
-ul {
+.sidebar ul {
   list-style: none;
   text-decoration: none;
   display: grid;
@@ -30,20 +30,21 @@ ul {
   border-radius: 8px;
   background-color: #004de8;
 }
-li {
+.management-list {
   border: none;
   padding: 4px;
   font-size: 14px;
   font-weight: 200;
 }
-li:hover{
+.management-list:hover{
   background-color: #0c49c4;
   border-radius: 4px;
 }
-li a {
+.management-list a {
   color: white;
+  display: block;
 }
-li a:hover {
+.management-list a:hover {
   text-decoration: none;
   color: white;
   font-weight: 400;
