@@ -2,15 +2,16 @@ import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { readUserRole } from "../../redux/action/user_role";
-import "../../css/admin_layout/layout.css";
-import "../../css/components/button.css";
-import "../../css/admin/user_role.css";
 import ItemUserRole from "./item_user_role";
 import InsertUserRole from "./insert_user_role";
 import EditUserRole from "./edit_user_role";
 import DeleteUserRole from "./delete_user_role";
 import AdminLayout from "../layout/admin_layout";
 import FullPageLoader from "../../helpers/loading";
+import "../../css/admin_layout/layout.css";
+import "../../css/components/button.css";
+import "../../css/admin/user_role.css";
+import "../../css/components/title.css";
 class AdminUserRole extends Component {
   state = {
     selectEditUserRole: [],
@@ -47,7 +48,7 @@ class AdminUserRole extends Component {
     return (
       <AdminLayout>
         <FullPageLoader loading={loading} />
-        <div className="title-user-role">User Role Table</div>
+        <div className="admin-title">User Role</div>
         <div className="form user-role">
           <button
             type="button"
@@ -83,7 +84,7 @@ class AdminUserRole extends Component {
 const mapStateToProps = (state) => {
   return {
     user_role: state.user_role.user_role,
-    loading: state.user_role.loading
+    loading: state.user_role.loading,
   };
 };
 export default withRouter(connect(mapStateToProps)(AdminUserRole));

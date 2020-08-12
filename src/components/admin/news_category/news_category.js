@@ -2,16 +2,17 @@ import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { readNewsCategory } from "../../redux/action/news_category";
-import "../../css/admin/news_category.css";
-import "../../css/admin_layout/layout.css";
-import "../../css/components/button.css";
+import { routes } from "../../helpers/routes.json";
 import ItemNewsCategory from "./item_news_category";
 import InsertNewsCategory from "./insert_news_category";
 import EditNewsCategory from "./edit_news_category";
 import DeleteNewsCategory from "./delete_news_category";
-import { routes } from "../../helpers/routes.json";
 import AdminLayout from "../layout/admin_layout";
 import FullPageLoader from "../../helpers/loading";
+import "../../css/admin/news_category.css";
+import "../../css/admin_layout/layout.css";
+import "../../css/components/button.css";
+import "../../css/components/title.css"
 class AdminNewsCategory extends Component {
   state = {
     news_category_name: "",
@@ -58,7 +59,7 @@ class AdminNewsCategory extends Component {
     return (
       <AdminLayout>
         <FullPageLoader loading={loading} />
-        <div className="title-news-category">News Category Table</div>
+        <div className="admin-title">News Category</div>
         <div className="form news-category">
           <button
             type="button"

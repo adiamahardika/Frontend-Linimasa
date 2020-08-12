@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { readCommentar } from "../../redux/action/commentar";
-import "../../css/admin_layout/layout.css";
-import "../../css/components/button.css";
-import "../../css/admin/commentar.css";
 import ItemCommentar from "./item_commentar";
 import AdminLayout from "../layout/admin_layout";
 import FullPageLoader from "../../helpers/loading";
+import "../../css/admin_layout/layout.css";
+import "../../css/components/button.css";
+import "../../css/admin/commentar.css";
+import "../../css/components/title.css";
 class AdminCommentar extends Component {
   componentDidMount() {
     this.props.dispatch(readCommentar());
@@ -22,7 +23,7 @@ class AdminCommentar extends Component {
     return (
       <AdminLayout>
         <FullPageLoader loading={loading} />
-        <div className="title-commentar">Commentar Table</div>
+        <div className="admin-title">Commentar</div>
         <div className="form commentar">
           <input
             className="form-control commentar"

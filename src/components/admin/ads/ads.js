@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
-import "../../css/admin/ads.css";
-import "../../css/admin_layout/layout.css";
-import "../../css/components/button.css";
 import { readAds } from "../../redux/action/ads";
 import ItemAds from "./item_ads";
 import InsertAds from "./insert_ads";
@@ -11,6 +8,10 @@ import EditAds from "./edit_ads";
 import DeleteAds from "./delete_ads";
 import AdminLayout from "../layout/admin_layout";
 import FullPageLoader from "../../helpers/loading";
+import "../../css/admin/ads.css";
+import "../../css/admin_layout/layout.css";
+import "../../css/components/button.css";
+import "../../css/components/title.css"
 class AdminAds extends Component {
   state = {
     selectEditAds: [],
@@ -47,7 +48,7 @@ class AdminAds extends Component {
     return (
       <AdminLayout>
         <FullPageLoader loading={loading} />
-        <div className="title-ads">Ads Table</div>
+        <div className="admin-title">Ads</div>
         <div className="form ads">
           <button
             type="button"

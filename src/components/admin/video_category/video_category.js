@@ -2,15 +2,16 @@ import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { readVideoCategory } from "../../redux/action/video_category";
-import "../../css/admin_layout/layout.css";
-import "../../css/components/button.css";
-import "../../css/admin/video_category.css";
 import ItemVideoCategory from "./item_video_category";
 import InsertVideoCategory from "./insert_video_category";
 import EditVideoCategory from "./edit_video_category";
 import DeleteVideoCategory from "./delete_video_category";
 import AdminLayout from "../layout/admin_layout";
 import FullPageLoader from "../../helpers/loading";
+import "../../css/admin_layout/layout.css";
+import "../../css/components/button.css";
+import "../../css/admin/video_category.css";
+import "../../css/components/title.css";
 class AdminVideoCategory extends Component {
   state = {
     selectEditVideoCategory: [],
@@ -47,7 +48,7 @@ class AdminVideoCategory extends Component {
     return (
       <AdminLayout>
         <FullPageLoader loading={loading} />
-        <div className="title-video-category">Video Category Table</div>
+        <div className="admin-title">Video Category</div>
         <div className="form video-category">
           <button
             type="button"

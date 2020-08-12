@@ -1,44 +1,40 @@
-/* Title Commentar */
-.title-commentar {
-    grid-area: title;
-    font-size: 24px;
-    font-weight: 600;
-  }
-  /* Form Commentar */
-  .form.commentar {
-    grid-area: form;
-    display: grid;
-    justify-self: end;
-  }
-  .form-control.commentar {
-    max-width: 200px;
-    max-height: 35px;
-    font-size: 12px;
-    font-weight: 200;
-    border: none;
-  }
-  /* Table Commentar */
-  .table-commentar {
-    grid-area: table;
-    display: grid;
-    overflow-x: auto;
-    grid-template-columns: repeat(2, max-content) repeat(3, minmax(100px, 400px)) repeat(2, minmax(100px, max-content));
-    grid-auto-flow: row;
-    background-color: white;
-  }
-  .table-commentar > div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5px;
-    border: 0.5px solid #dedede;
-  }
-  .item-number{
-    position: sticky;
-    left: 0;
-    background-color: white;
-  }
-  .table-commentar .name-commentar {
-    justify-content: start;
-  }
-  
+/* Form Commentar */
+.form.commentar {
+  grid-area: form;
+  display: grid;
+  justify-self: end;
+}
+.form-control.commentar {
+  max-width: 200px;
+  max-height: 35px;
+  font-size: 12px;
+  font-weight: 200;
+  border: none;
+}
+/* Table Commentar */
+.table-commentar {
+  grid-area: table;
+  display: grid;
+  overflow-x: auto;
+  grid-template-columns: repeat(2, max-content) repeat(3, minmax(100px, 400px)) repeat(
+      2,
+      minmax(100px, max-content)
+    );
+  grid-auto-flow: row;
+  background-color: white;
+}
+.table-commentar > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border: 0.5px solid #dedede;
+}
+.item-number {
+  position: sticky;
+  left: 0;
+  background-color: white;
+}
+.table-commentar .name-commentar {
+  justify-content: start;
+}
