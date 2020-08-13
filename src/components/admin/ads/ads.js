@@ -9,7 +9,6 @@ import DeleteAds from "./delete_ads";
 import AdminLayout from "../layout/admin_layout";
 import FullPageLoader from "../../helpers/loading";
 import "../../css/admin/ads.css";
-import "../../css/admin_layout/layout.css";
 import "../../css/components/button.css";
 import "../../css/components/title.css";
 import "../../css/components/form.css";

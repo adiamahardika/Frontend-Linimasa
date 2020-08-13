@@ -38,6 +38,9 @@ class Sidebar extends Component {
                 <Link to={routes.admin + routes.user_role}>User Role</Link>
               </li>
               <li type="button" className="management-list">
+                <Link to={routes.admin + routes.video}>Video</Link>
+              </li>
+              <li type="button" className="management-list">
                 <Link to={routes.admin + routes.video_category}>Video Category</Link>
               </li>
             </ul>

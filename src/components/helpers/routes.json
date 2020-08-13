@@ -6,6 +6,7 @@
     "news_category": "/news-category",
     "user_role": "/user-role",
     "user": "/user",
+    "video": "/video",
     "video_category": "/video-category"
   }
 }

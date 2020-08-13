@@ -33,8 +33,8 @@ const ItemAds = ({ item, index, onSelectEditAds, onSelectDeleteAds }) => {
         </button>
       </div>
       <div className="sentences-column">{item.ads_name}</div>
-      <div className="image-column">
-        <img src={item.ads_image} alt="..." style={{ maxHeight: 50 }} />
+      <div className="media-column">
+        <img src="http://localhost:5001/assets/upload/images/ads/1597045475419154d8c443fe4.jpg" alt="..." />
       </div>
       <div>{parseDate(item.date_created)}</div>
       <div>{parseDate(item.date_updated)}</div>

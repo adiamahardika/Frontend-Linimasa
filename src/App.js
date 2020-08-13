@@ -9,16 +9,18 @@ import news_category from "./components/admin/news_category/news_category";
 import user_role from "./components/admin/user_role/user_role";
 import video_category from "./components/admin/video_category/video_category";
 import commentar from "./components/admin/commentar/commentar"
+import video from "./components/admin/video/video"
 export default function App() {
   return (
     <Provider store={store}>
       <Router>
         <Switch>
           <Route path={routes.admin + routes.ads} component={ads} />
+          <Route path={routes.admin + routes.commentar} component={commentar}/>
           <Route path={routes.admin + routes.news_category} component={news_category} />
           <Route path={routes.admin + routes.user_role} component={user_role} />
+          <Route path={routes.admin + routes.video} component={video} />
           <Route path={routes.admin + routes.video_category} component={video_category} />
-          <Route path={routes.admin + routes.commentar} component={commentar}/>
         </Switch>
       </Router>
     </Provider>
