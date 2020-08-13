@@ -11,6 +11,7 @@ import video_category from "./components/admin/video_category/video_category";
 import commentar from "./components/admin/commentar/commentar";
 import video from "./components/admin/video/video";
 import news from "./components/admin/news/news";
+import user from "./components/admin/user/user";
 export default function App() {
   return (
     <Provider store={store}>
@@ -23,6 +24,7 @@ export default function App() {
             path={routes.admin + routes.news_category}
             component={news_category}
           />
+          <Route path={routes.admin + routes.user} component={user} />
           <Route path={routes.admin + routes.user_role} component={user_role} />
           <Route path={routes.admin + routes.video} component={video} />
           <Route

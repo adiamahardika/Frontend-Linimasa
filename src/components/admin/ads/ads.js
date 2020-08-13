@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { readAds } from "../../redux/action/ads";
-import AdsList from "./item_ads";
+import AdsList from "./ads_list";
 import InsertAds from "./insert_ads";
 import EditAds from "./edit_ads";
 import DeleteAds from "./delete_ads";
