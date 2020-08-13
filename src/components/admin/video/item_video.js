@@ -1,6 +1,10 @@
 import React from "react";
 import { parseDate } from "../../helpers/index";
-const ItemVideo = ({ item, index }) => {
+const ItemVideo = ({ item, index, selectDeleteVideo }) => {
+  const onClickDelete = (event) => {
+    event.preventDefault()
+    selectDeleteVideo(item)
+  }
   return (
     <>
       <div className="number-column">{index + 1}</div>
@@ -10,6 +14,7 @@ const ItemVideo = ({ item, index }) => {
           className="admin btn btn-outline-delete"
           data-toggle="modal"
           data-target="#deleteModalVideo"
+          onClick={onClickDelete}
         >
           Delete
         </button>

@@ -3,6 +3,7 @@ import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { readVideo } from "../../redux/action/video";
 import ItemVideo from "./item_video";
+import DeleteVideo from "./delete_video";
 import AdminLayout from "../layout/admin_layout";
 import FullPageLoader from "../../helpers/loading";
 import "../../css/components/button.css";
@@ -11,15 +12,30 @@ import "../../css/components/form.css";
 import "../../css/components/table.css";
 import "../../css/admin/video.css";
 class AdminVideo extends Component {
+  state = {
+    selectDeleteVideo: [],
+  };
   componentDidMount() {
     this.props.dispatch(readVideo());
   }
+  onSelectDeleteVideo = (video) => {
+    this.setState({
+      selectDeleteVideo: video,
+    });
+  };
   render() {
     const { video, loading } = this.props;
     const listVideo =
       video &&
       video.map((item, index) => {
-        return <ItemVideo key={item.id} item={item} index={index} />;
+        return (
+          <ItemVideo
+            key={item.id}
+            item={item}
+            index={index}
+            selectDeleteVideo={this.onSelectDeleteVideo}
+          />
+        );
       });
     return (
       <AdminLayout>
@@ -44,6 +60,7 @@ class AdminVideo extends Component {
           <div className="header-admin-table">Date Updated</div>
           {listVideo}
         </div>
+        <DeleteVideo video={this.state.selectDeleteVideo} />
       </AdminLayout>
     );
   }
