@@ -1,11 +1,14 @@
 /* Table Video */
 .admin-table.video {
-  grid-template-columns: repeat(2, minmax(min-content, max-content)) minmax(150px, 400px) 2fr minmax(200px, 500px) repeat(
-      2, max-content
-    ) repeat(2, max-content);
+  grid-template-columns:
+    repeat(2, minmax(min-content, max-content)) minmax(150px, 400px) 2fr minmax(
+      200px,
+      500px
+    ) repeat(2, max-content)
+    repeat(2, max-content);
 }
 /* Video */
-.admin-video{
-    max-height: 100;
-    max-width: 320;
+.admin-video {
+  max-width: 400px;
+  max-height: 150px;
 }

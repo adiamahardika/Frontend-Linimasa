@@ -24,7 +24,7 @@ class AdminVideo extends Component {
     });
   };
   render() {
-    const { video, loading } = this.props;
+    const { video, loading, total_data } = this.props;
     const listVideo =
       video &&
       video.map((item, index) => {
@@ -60,6 +60,9 @@ class AdminVideo extends Component {
           <div className="header-admin-table">Date Updated</div>
           {listVideo}
         </div>
+        <div className="total_data">
+          Total Data = {total_data}
+        </div>
         <DeleteVideo video={this.state.selectDeleteVideo} />
       </AdminLayout>
     );
@@ -69,6 +72,7 @@ const mapStateToProps = (state) => {
   return {
     video: state.video.video,
     loading: state.video.loading,
+    total_data: state.video.total_data,
   };
 };
 export default withRouter(connect(mapStateToProps)(AdminVideo));

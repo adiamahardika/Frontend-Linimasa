@@ -1,6 +1,7 @@
 const initialState = {
   video: [],
   loading: false,
+  total_data: null
 };
 
 const video = (state = initialState, action) => {
@@ -32,9 +33,11 @@ const video = (state = initialState, action) => {
         loading: true,
       };
     case "GET_VIDEO_FULFILLED":
+      console.log(action.payload)
       return {
         ...state,
         video: action.payload.data.result,
+        total_data: action.payload.data.total_data,
         loading: false,
       };
     case "PATCH_VIDEO_PENDING":
