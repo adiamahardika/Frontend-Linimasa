@@ -1,6 +1,10 @@
 import React from "react";
 import { parseDate } from "../../helpers/index";
-const UserList = ({ item, index }) => {
+const UserList = ({ item, index, onSelectDeleteUser }) => {
+  const onClickDelete = (event) => {
+    event.preventDefault();
+    onSelectDeleteUser(item);
+  };
   return (
     <>
       <div className="number-column">{index + 1}</div>
@@ -10,6 +14,7 @@ const UserList = ({ item, index }) => {
           className="admin btn btn-outline-delete"
           data-toggle="modal"
           data-target="#deleteModalUser"
+          onClick={onClickDelete}
         >
           Delete
         </button>
