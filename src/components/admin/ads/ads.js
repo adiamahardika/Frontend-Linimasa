@@ -13,6 +13,7 @@ import "../../css/components/button.css";
 import "../../css/components/title.css";
 import "../../css/components/form.css";
 import "../../css/components/table.css";
+import "../../css/components/image.css";
 class AdminAds extends Component {
   state = {
     selectEditAds: [],
