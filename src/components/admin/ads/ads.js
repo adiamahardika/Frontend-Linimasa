@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { readAds } from "../../redux/action/ads";
-import ItemAds from "./item_ads";
+import AdsList from "./item_ads";
 import InsertAds from "./insert_ads";
 import EditAds from "./edit_ads";
 import DeleteAds from "./delete_ads";
@@ -38,7 +38,7 @@ class AdminAds extends Component {
       ads &&
       ads.map((item, index) => {
         return (
-          <ItemAds
+          <AdsList
             key={item.id}
             item={item}
             index={index}

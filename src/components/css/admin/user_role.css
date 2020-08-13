@@ -1,4 +1,4 @@
-/* Table News Category */
+/* User Role Table */
 .admin-table.user-role {
   grid-template-columns: repeat(2, max-content) 1fr repeat(
       2,

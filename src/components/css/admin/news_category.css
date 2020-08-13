@@ -1,4 +1,4 @@
-/* Table News Category */
+/*  News Category Table */
 .admin-table.news-category {
   grid-template-columns: repeat(2, max-content) 1fr repeat(
       2,

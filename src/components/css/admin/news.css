@@ -1,0 +1,10 @@
+/* News Table */
+.admin-table.news {
+  grid-template-columns:
+    repeat(2, minmax(min-content, max-content)) minmax(150px, 400px) 2fr repeat(2, minmax(
+        200px,
+        500px
+      ))
+    repeat(2, max-content)
+    repeat(2, max-content);
+}

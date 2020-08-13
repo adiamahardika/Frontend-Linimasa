@@ -1,0 +1,66 @@
+import React, { Component } from "react";
+import { withRouter } from "react-router";
+import { connect } from "react-redux";
+import { readNews } from "../../redux/action/news";
+import AdminLayout from "../layout/admin_layout";
+import FullPageLoader from "../../helpers/loading";
+import NewsList from "./news_list";
+import "../../css/admin/news.css";
+import "../../css/components/button.css";
+import "../../css/components/title.css";
+import "../../css/components/form.css";
+import "../../css/components/table.css";
+import "../../css/components/image.css";
+class AdminNews extends Component {
+  componentDidMount() {
+    this.props.dispatch(readNews());
+  }
+  render() {
+    const { news, loading } = this.props;
+    const listNews =
+      news &&
+      news.map((item, index) => {
+        return <NewsList key={item.id} item={item} index={index} />;
+      });
+    return (
+      <AdminLayout>
+        <FullPageLoader loading={loading} />
+        <div className="admin-title">News</div>
+        <div className="form admin">
+          <button
+            type="button"
+            className="admin btn btn-add"
+            data-toggle="modal"
+          >
+            Add
+          </button>
+          <input
+            className="form-control admin-search"
+            type="search"
+            placeholder="Search News"
+          />
+        </div>
+        <div className="admin-table news">
+          <div className="header-admin-table number-column">No</div>
+          <div className="header-admin-table">Manage</div>
+          <div className="header-admin-table">News Title</div>
+          <div className="header-admin-table">Image</div>
+          <div className="header-admin-table">Image Description</div>
+          <div className="header-admin-table">News Content</div>
+          <div className="header-admin-table">News Category</div>
+          <div className="header-admin-table">News Author</div>
+          <div className="header-admin-table">Date Created</div>
+          <div className="header-admin-table">Date Updated</div>
+          {listNews}
+        </div>
+      </AdminLayout>
+    );
+  }
+}
+const mapStateToProps = (state) => {
+  return {
+    news: state.news.news,
+    loading: state.news.loading,
+  };
+};
+export default withRouter(connect(mapStateToProps)(AdminNews));

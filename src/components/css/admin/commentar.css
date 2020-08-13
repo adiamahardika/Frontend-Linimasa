@@ -1,4 +1,4 @@
-/* Table Commentar */
+/* Commentar Table */
 .admin-table.commentar {
   grid-template-columns: repeat(2, max-content) repeat(3, minmax(100px, 400px)) repeat(
       2,

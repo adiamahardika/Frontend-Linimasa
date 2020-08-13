@@ -1,6 +1,6 @@
 import React from "react";
 import { parseDate } from "../../helpers/index";
-const ItemAds = ({ item, index, onSelectEditAds, onSelectDeleteAds }) => {
+const AdsList = ({ item, index, onSelectEditAds, onSelectDeleteAds }) => {
   const onClickEdit = (event) => {
     event.preventDefault();
     onSelectEditAds(item);
@@ -41,4 +41,4 @@ const ItemAds = ({ item, index, onSelectEditAds, onSelectDeleteAds }) => {
     </>
   );
 };
-export default ItemAds;
+export default AdsList;

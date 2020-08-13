@@ -1,4 +1,4 @@
-/* Table Ads */
+/* Ads Table */
 .admin-table.ads {
   grid-template-columns: repeat(2, minmax(min-content, max-content)) 1fr 2fr repeat(
       2,
