@@ -1,6 +1,10 @@
 import React from "react";
 import { parseDate } from "../../helpers/index";
-const NewsList = ({ item, index }) => {
+const NewsList = ({ item, index, onSelectDeleteNews }) => {
+  const onClickDelete = (event) => {
+    event.preventDefault();
+    onSelectDeleteNews(item);
+  };
   return (
     <>
       <div className="number-column">{index + 1}</div>
@@ -10,6 +14,7 @@ const NewsList = ({ item, index }) => {
           className="admin btn btn-outline-delete"
           data-toggle="modal"
           data-target="#deleteModalNews"
+          onClick={onClickDelete}
         >
           Delete
         </button>
@@ -22,7 +27,6 @@ const NewsList = ({ item, index }) => {
         <img className="admin-image" src={item.news_image} alt="..." />
       </div>
       <div className="sentences-column">{item.news_image_description}</div>
-      <div className="sentences-column">{item.news_content}</div>
       <div className="sentences-column">{item.news_category_name}</div>
       <div className="sentences-column">{item.user_name}</div>
       <div>{parseDate(item.date_created)}</div>

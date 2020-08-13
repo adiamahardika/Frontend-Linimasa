@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { readNews } from "../../redux/action/news";
+import DeleteNews from "./delete_news";
 import AdminLayout from "../layout/admin_layout";
 import FullPageLoader from "../../helpers/loading";
 import NewsList from "./news_list";
@@ -12,15 +13,30 @@ import "../../css/components/form.css";
 import "../../css/components/table.css";
 import "../../css/components/image.css";
 class AdminNews extends Component {
+  state = {
+    selectDeleteNews: [],
+  };
   componentDidMount() {
     this.props.dispatch(readNews());
   }
+  onSelectDeleteNews = (news) => {
+    this.setState({
+      selectDeleteNews: news,
+    });
+  };
   render() {
     const { news, loading } = this.props;
     const listNews =
       news &&
       news.map((item, index) => {
-        return <NewsList key={item.id} item={item} index={index} />;
+        return (
+          <NewsList
+            key={item.id}
+            item={item}
+            index={index}
+            onSelectDeleteNews={this.onSelectDeleteNews}
+          />
+        );
       });
     return (
       <AdminLayout>
@@ -46,13 +62,13 @@ class AdminNews extends Component {
           <div className="header-admin-table">News Title</div>
           <div className="header-admin-table">Image</div>
           <div className="header-admin-table">Image Description</div>
-          <div className="header-admin-table">News Content</div>
           <div className="header-admin-table">News Category</div>
           <div className="header-admin-table">News Author</div>
           <div className="header-admin-table">Date Created</div>
           <div className="header-admin-table">Date Updated</div>
           {listNews}
         </div>
+        <DeleteNews news={this.state.selectDeleteNews} />
       </AdminLayout>
     );
   }
