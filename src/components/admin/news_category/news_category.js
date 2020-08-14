@@ -81,7 +81,6 @@ class AdminNewsCategory extends Component {
             type="search"
             placeholder="Search News Category"
             onChange={this.onSearchNewsCategoryName}
-            name="news_category_name"
           />
         </div>
         <div className="admin-table news-category">

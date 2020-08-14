@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
-import { readUserRole } from "../../redux/action/user_role";
+import { readUserRole, readAllUserRole } from "../../redux/action/user_role";
+import { routes } from "../../helpers/routes.json";
 import ItemUserRole from "./item_user_role";
 import InsertUserRole from "./insert_user_role";
 import EditUserRole from "./edit_user_role";
@@ -20,7 +21,7 @@ class AdminUserRole extends Component {
     selectDeleteUserRole: [],
   };
   componentDidMount() {
-    this.props.dispatch(readUserRole());
+    this.props.dispatch(readAllUserRole());
   }
   onSelectEditUserRole = (user_role) => {
     this.setState({
@@ -31,6 +32,18 @@ class AdminUserRole extends Component {
     this.setState({
       selectDeleteUserRole: user_role,
     });
+  };
+  onSearchUserRoleName = (event) => {
+    if (event.target.value !== "") {
+      this.props.history.push(
+        `${routes.admin + routes.user_role}/?user_role_name=${
+          event.target.value
+        }`
+      );
+    } else {
+      this.props.history.push(routes.admin + routes.user_role);
+    }
+    this.props.dispatch(readUserRole(event.target.value));
   };
   render() {
     const { user_role, loading } = this.props;
@@ -64,6 +77,7 @@ class AdminUserRole extends Component {
             className="form-control admin-search"
             type="search"
             placeholder="Search User Role"
+            onChange={this.onSearchUserRoleName}
           />
         </div>
         <div className="admin-table user-role">

@@ -12,7 +12,17 @@ export const insertUserRole = (data) => {
   };
 };
 
-export const readUserRole = () => {
+export const readUserRole = (user_role_name) => {
+  return {
+    type: "GET_USER_ROLE",
+    payload: axios({
+      method: "GET",
+      url: `${process.env.REACT_APP_API}/user-role/?user_role_name=${user_role_name}`,
+    }),
+  };
+};
+
+export const readAllUserRole = () => {
   return {
     type: "GET_USER_ROLE",
     payload: axios({
