@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
-import { readCommentar } from "../../redux/action/commentar";
+import { readCommentar, readAllCommentar } from "../../redux/action/commentar";
+import { routes } from "../../helpers/routes.json";
 import ItemCommentar from "./item_commentar";
 import DeleteCommentar from "./delete_commentar";
 import AdminLayout from "../layout/admin_layout";
@@ -17,13 +18,24 @@ class AdminCommentar extends Component {
     selectDeleteCommentar: [],
   };
   componentDidMount() {
-    this.props.dispatch(readCommentar());
+    this.props.dispatch(readAllCommentar());
   }
   onSelectDeleteCommentar = (commentar) => {
     this.setState({
       selectDeleteCommentar: commentar,
     });
   };
+  onSearchCommentar = (event) => {
+    const commentar = event.target.value
+    if (commentar !== "") {
+      this.props.history.push(
+        `${routes.admin + routes.commentar}/?commentar=${commentar}`
+      )
+    } else {
+      this.props.history.push(routes.admin + routes.commentar)
+    }
+    this.props.dispatch(readCommentar(commentar))
+  }
   render() {
     const { commentar, loading } = this.props;
     const listCommentar =
@@ -47,6 +59,7 @@ class AdminCommentar extends Component {
             className="form-control admin-search"
             type="search"
             placeholder="Search Commentar"
+            onChange={this.onSearchCommentar}
           />
         </div>
         <div className="admin-table commentar">

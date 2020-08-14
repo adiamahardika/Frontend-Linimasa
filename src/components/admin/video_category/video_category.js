@@ -37,16 +37,17 @@ class AdminVideoCategory extends Component {
     });
   };
   onSearchVideoCategory = (event) => {
-    if (event.target.value !== "") {
+    const video_category_name = event.target.value;
+    if (video_category_name !== "") {
       this.props.history.push(
-        `${routes.admin + routes.video_category}/?video_category_name=${
-          event.target.value
-        }`
+        `${
+          routes.admin + routes.video_category
+        }/?video_category_name=${video_category_name}`
       );
     } else {
       this.props.history.push(routes.admin + routes.video_category);
     }
-    this.props.dispatch(readVideoCategory(event.target.value));
+    this.props.dispatch(readVideoCategory(video_category_name));
   };
   render() {
     const { video_category, loading } = this.props;

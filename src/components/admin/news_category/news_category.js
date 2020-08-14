@@ -37,16 +37,17 @@ class AdminNewsCategory extends Component {
     });
   };
   onSearchNewsCategory = (event) => {
-    if (event.target.value !== "") {
+    const news_category_name = event.target.value;
+    if (news_category_name !== "") {
       this.props.history.push(
-        `${routes.admin + routes.news_category}/?news_category_name=${
-          event.target.value
-        }`
+        `${
+          routes.admin + routes.news_category
+        }/?news_category_name=${news_category_name}`
       );
     } else {
       this.props.history.push(routes.admin + routes.news_category);
     }
-    this.props.dispatch(readNewsCategory(event.target.value));
+    this.props.dispatch(readNewsCategory(news_category_name));
   };
   render() {
     const { news_category, loading } = this.props;

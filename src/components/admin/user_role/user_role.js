@@ -34,16 +34,15 @@ class AdminUserRole extends Component {
     });
   };
   onSearchUserRole = (event) => {
-    if (event.target.value !== "") {
+    const user_role_name = event.target.value;
+    if (user_role_name !== "") {
       this.props.history.push(
-        `${routes.admin + routes.user_role}/?user_role_name=${
-          event.target.value
-        }`
+        `${routes.admin + routes.user_role}/?user_role_name=${user_role_name}`
       );
     } else {
       this.props.history.push(routes.admin + routes.user_role);
     }
-    this.props.dispatch(readUserRole(event.target.value));
+    this.props.dispatch(readUserRole(user_role_name));
   };
   render() {
     const { user_role, loading } = this.props;

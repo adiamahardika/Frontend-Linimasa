@@ -12,7 +12,17 @@ export const insertCommentar = (data) => {
   };
 };
 
-export const readCommentar = () => {
+export const readCommentar = (commentar) => {
+  return {
+    type: "GET_COMMENTAR",
+    payload: axios({
+      method: "GET",
+      url: `${process.env.REACT_APP_API}/commentar/?commentar=${commentar}`,
+    }),
+  };
+};
+
+export const readAllCommentar = () => {
   return {
     type: "GET_COMMENTAR",
     payload: axios({
