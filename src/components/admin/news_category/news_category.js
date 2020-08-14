@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
-import { readNewsCategory } from "../../redux/action/news_category";
+import {
+  readNewsCategory,
+  readAllNewsCategory,
+} from "../../redux/action/news_category";
 import { routes } from "../../helpers/routes.json";
 import ItemNewsCategory from "./item_news_category";
 import InsertNewsCategory from "./insert_news_category";
@@ -17,12 +20,11 @@ import "../../css/components/form.css";
 import "../../css/components/table.css";
 class AdminNewsCategory extends Component {
   state = {
-    news_category_name: "",
     selectEditNewsCategory: [],
     selectDeleteNewsCategory: [],
   };
   componentDidMount() {
-    this.props.dispatch(readNewsCategory(this.state.news_category_name));
+    this.props.dispatch(readAllNewsCategory());
   }
   onSelectEditNewsCategory = (news_category) => {
     this.setState({
@@ -35,13 +37,16 @@ class AdminNewsCategory extends Component {
     });
   };
   onSearchNewsCategoryName = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
-    this.props.history.push(
-      `${routes.news_category}/?news_category_name=${this.state.news_category_name}`
-    );
-    this.props.dispatch(readNewsCategory(this.state.news_category_name));
+    if (event.target.value !== "") {
+      this.props.history.push(
+        `${routes.admin + routes.news_category}/?news_category_name=${
+          event.target.value
+        }`
+      );
+    } else {
+      this.props.history.push(routes.admin + routes.news_category);
+    }
+    this.props.dispatch(readNewsCategory(event.target.value));
   };
   render() {
     const { news_category, loading } = this.props;

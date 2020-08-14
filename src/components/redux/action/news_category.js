@@ -13,23 +13,23 @@ export const insertNewsCategory = (data) => {
 };
 
 export const readNewsCategory = (news_category_name) => {
-  if (news_category_name !== "") {
-    return {
-      type: "GET_NEWS_CATEGORY",
-      payload: axios({
-        method: "GET",
-        url: `${process.env.REACT_APP_API}/news-category/?news_category_name=${news_category_name}`,
-      }),
-    };
-  } else {
-    return {
-      type: "GET_NEWS_CATEGORY",
-      payload: axios({
-        method: "GET",
-        url: `${process.env.REACT_APP_API}/news-category`,
-      }),
-    }
-  }
+  return {
+    type: "GET_NEWS_CATEGORY",
+    payload: axios({
+      method: "GET",
+      url: `${process.env.REACT_APP_API}/news-category/?news_category_name=${news_category_name}`,
+    }),
+  };
+};
+
+export const readAllNewsCategory = () => {
+  return {
+    type: "GET_NEWS_CATEGORY",
+    payload: axios({
+      method: "GET",
+      url: `${process.env.REACT_APP_API}/news-category`,
+    }),
+  };
 };
 
 export const editNewsCategory = (data, id) => {
