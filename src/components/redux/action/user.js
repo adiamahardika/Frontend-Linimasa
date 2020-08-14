@@ -12,7 +12,17 @@ export const insertUser = (data) => {
   };
 };
 
-export const readUser = () => {
+export const readUser = (user_name) => {
+  return {
+    type: "GET_USER",
+    payload: axios({
+      method: "GET",
+      url: `${process.env.REACT_APP_API}/user/?user_name=${user_name}`,
+    }),
+  };
+};
+
+export const readAllUser = () => {
   return {
     type: "GET_USER",
     payload: axios({

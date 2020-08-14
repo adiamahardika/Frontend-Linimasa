@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
-import { readUser } from "../../redux/action/user";
+import { readUser, readAllUser } from "../../redux/action/user";
+import { routes } from "../../helpers/routes.json";
 import UserList from "./user_list";
 import DeleteUser from "./delete_user";
 import AdminLayout from "../layout/admin_layout";
@@ -17,12 +18,23 @@ class AdminUser extends Component {
     selectDeleteUser: [],
   };
   componentDidMount() {
-    this.props.dispatch(readUser());
+    this.props.dispatch(readAllUser());
   }
   onSelectDeleteUser = (user) => {
     this.setState({
       selectDeleteUser: user,
     });
+  };
+  onSearchUser = (event) => {
+    const user_name = event.target.value;
+    if (user_name !== "") {
+      this.props.history.push(
+        `${routes.admin + routes.user}/?user_name=${user_name}`
+      );
+    } else {
+      this.props.history.push(routes.admin + routes.user);
+    }
+    this.props.dispatch(readUser(user_name));
   };
   render() {
     const { user, loading } = this.props;
@@ -47,6 +59,7 @@ class AdminUser extends Component {
             className="form-control admin-search"
             type="search"
             placeholder="Search User"
+            onChange={this.onSearchUser}
           />
         </div>
         <div className="admin-table user">
@@ -62,7 +75,7 @@ class AdminUser extends Component {
           <div className="header-admin-table">Date Updated</div>
           {listAds}
         </div>
-        <DeleteUser user={this.state.selectDeleteUser}/>
+        <DeleteUser user={this.state.selectDeleteUser} />
       </AdminLayout>
     );
   }
