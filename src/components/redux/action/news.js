@@ -12,7 +12,17 @@ export const insertNews = (data) => {
   };
 };
 
-export const readNews = () => {
+export const readNews = (news_title) => {
+  return {
+    type: "GET_NEWS",
+    payload: axios({
+      method: "GET",
+      url: `${process.env.REACT_APP_API}/news/?news_title=${news_title}`,
+    }),
+  };
+};
+
+export const readAllNews = () => {
   return {
     type: "GET_NEWS",
     payload: axios({

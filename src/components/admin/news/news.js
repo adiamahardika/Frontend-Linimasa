@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
-import { readNews } from "../../redux/action/news";
+import { readNews, readAllNews } from "../../redux/action/news";
+import { routes } from "../../helpers/routes.json";
 import DeleteNews from "./delete_news";
 import AdminLayout from "../layout/admin_layout";
 import FullPageLoader from "../../helpers/loading";
@@ -17,12 +18,23 @@ class AdminNews extends Component {
     selectDeleteNews: [],
   };
   componentDidMount() {
-    this.props.dispatch(readNews());
+    this.props.dispatch(readAllNews());
   }
   onSelectDeleteNews = (news) => {
     this.setState({
       selectDeleteNews: news,
     });
+  };
+  onSearchNews = (event) => {
+    const news_title = event.target.value;
+    if (news_title !== "") {
+      this.props.history.push(
+        `${routes.admin + routes.news}/?news_title=${news_title}`
+      );
+    } else {
+      this.props.history.push(routes.admin + routes.news);
+    }
+    this.props.dispatch(readNews(news_title));
   };
   render() {
     const { news, loading } = this.props;
@@ -54,6 +66,7 @@ class AdminNews extends Component {
             className="form-control admin-search"
             type="search"
             placeholder="Search News"
+            onChange={this.onSearchNews}
           />
         </div>
         <div className="admin-table news">
