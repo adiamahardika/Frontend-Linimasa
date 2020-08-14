@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
-import { readVideo } from "../../redux/action/video";
+import { readVideo, readAllVideo } from "../../redux/action/video";
+import { routes } from "../../helpers/routes.json";
 import ItemVideo from "./item_video";
 import DeleteVideo from "./delete_video";
 import AdminLayout from "../layout/admin_layout";
@@ -16,12 +17,23 @@ class AdminVideo extends Component {
     selectDeleteVideo: [],
   };
   componentDidMount() {
-    this.props.dispatch(readVideo());
+    this.props.dispatch(readAllVideo());
   }
   onSelectDeleteVideo = (video) => {
     this.setState({
       selectDeleteVideo: video,
     });
+  };
+  onSearchVideo = (event) => {
+    const video_title = event.target.value;
+    if (video_title !== "") {
+      this.props.history.push(
+        `${routes.admin + routes.video}/?video_title=${video_title}`
+      );
+    } else {
+      this.props.history.push(routes.admin + routes.video);
+    }
+    this.props.dispatch(readVideo(video_title));
   };
   render() {
     const { video, loading, total_data } = this.props;
@@ -46,6 +58,7 @@ class AdminVideo extends Component {
             className="form-control admin-search"
             type="search"
             placeholder="Search Video"
+            onChange={this.onSearchVideo}
           />
         </div>
         <div className="admin-table video">
@@ -60,9 +73,7 @@ class AdminVideo extends Component {
           <div className="header-admin-table">Date Updated</div>
           {listVideo}
         </div>
-        <div className="total_data">
-          Total Data = {total_data}
-        </div>
+        <div className="total_data">Total Data = {total_data}</div>
         <DeleteVideo video={this.state.selectDeleteVideo} />
       </AdminLayout>
     );
