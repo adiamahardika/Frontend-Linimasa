@@ -12,7 +12,17 @@ export const insertVideoCategory = (data) => {
   };
 };
 
-export const readVideoCategory = () => {
+export const readVideoCategory = (video_category_name) => {
+  return {
+    type: "GET_VIDEO_CATEGORY",
+    payload: axios({
+      method: "GET",
+      url: `${process.env.REACT_APP_API}/video-category/?video_category_name=${video_category_name}`,
+    }),
+  };
+};
+
+export const readAllVideoCategory = () => {
   return {
     type: "GET_VIDEO_CATEGORY",
     payload: axios({

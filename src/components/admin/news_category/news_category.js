@@ -36,7 +36,7 @@ class AdminNewsCategory extends Component {
       selectDeleteNewsCategory: news_category,
     });
   };
-  onSearchNewsCategoryName = (event) => {
+  onSearchNewsCategory = (event) => {
     if (event.target.value !== "") {
       this.props.history.push(
         `${routes.admin + routes.news_category}/?news_category_name=${
@@ -80,7 +80,7 @@ class AdminNewsCategory extends Component {
             className="form-control admin-search"
             type="search"
             placeholder="Search News Category"
-            onChange={this.onSearchNewsCategoryName}
+            onChange={this.onSearchNewsCategory}
           />
         </div>
         <div className="admin-table news-category">

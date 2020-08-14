@@ -1,7 +1,11 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
-import { readVideoCategory } from "../../redux/action/video_category";
+import {
+  readVideoCategory,
+  readAllVideoCategory,
+} from "../../redux/action/video_category";
+import { routes } from "../../helpers/routes.json";
 import ItemVideoCategory from "./item_video_category";
 import InsertVideoCategory from "./insert_video_category";
 import EditVideoCategory from "./edit_video_category";
@@ -20,7 +24,7 @@ class AdminVideoCategory extends Component {
     selectDeleteVideoCategory: [],
   };
   componentDidMount() {
-    this.props.dispatch(readVideoCategory());
+    this.props.dispatch(readAllVideoCategory());
   }
   onSelectEditVideoCategory = (video_category) => {
     this.setState({
@@ -31,6 +35,18 @@ class AdminVideoCategory extends Component {
     this.setState({
       selectDeleteVideoCategory: video_category,
     });
+  };
+  onSearchVideoCategory = (event) => {
+    if (event.target.value !== "") {
+      this.props.history.push(
+        `${routes.admin + routes.video_category}/?video_category_name=${
+          event.target.value
+        }`
+      );
+    } else {
+      this.props.history.push(routes.admin + routes.video_category);
+    }
+    this.props.dispatch(readVideoCategory(event.target.value));
   };
   render() {
     const { video_category, loading } = this.props;
@@ -64,6 +80,7 @@ class AdminVideoCategory extends Component {
             className="form-control admin-search"
             type="search"
             placeholder="Search Video Category"
+            onChange={this.onSearchVideoCategory}
           />
         </div>
         <div className="admin-table video-category">

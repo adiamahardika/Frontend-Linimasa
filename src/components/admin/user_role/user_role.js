@@ -33,7 +33,7 @@ class AdminUserRole extends Component {
       selectDeleteUserRole: user_role,
     });
   };
-  onSearchUserRoleName = (event) => {
+  onSearchUserRole = (event) => {
     if (event.target.value !== "") {
       this.props.history.push(
         `${routes.admin + routes.user_role}/?user_role_name=${
@@ -77,7 +77,7 @@ class AdminUserRole extends Component {
             className="form-control admin-search"
             type="search"
             placeholder="Search User Role"
-            onChange={this.onSearchUserRoleName}
+            onChange={this.onSearchUserRole}
           />
         </div>
         <div className="admin-table user-role">
