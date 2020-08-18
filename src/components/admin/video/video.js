@@ -3,6 +3,7 @@ import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { readVideo, readAllVideo } from "../../redux/action/video";
 import { routes } from "../../helpers/routes.json";
+import { readAllVideoCategory } from "../../redux/action/video_category";
 import ItemVideo from "./item_video";
 import DeleteVideo from "./delete_video";
 import AdminLayout from "../layout/admin_layout";
@@ -11,32 +12,64 @@ import "../../css/components/button.css";
 import "../../css/components/title.css";
 import "../../css/components/form.css";
 import "../../css/components/table.css";
+import "../../css/components/icon.css";
 import "../../css/admin/video.css";
 class AdminVideo extends Component {
   state = {
     selectDeleteVideo: [],
   };
+  data = {
+    video_title: "",
+    video_category: "",
+  };
   componentDidMount() {
     this.props.dispatch(readAllVideo());
+    this.props.dispatch(readAllVideoCategory());
   }
-  onSelectDeleteVideo = (video) => {
+  selectDeleteVideo = (video) => {
     this.setState({
       selectDeleteVideo: video,
     });
   };
-  onSearchVideo = (event) => {
+  searchVideo = (event) => {
     const video_title = event.target.value;
-    if (video_title !== "") {
+    this.data.video_title = video_title;
+    this.propsHistoryPush();
+  };
+  filterVideo = (event) => {
+    const video_category = event;
+    this.data.video_category = video_category;
+    this.propsHistoryPush();
+  };
+  propsHistoryPush = () => {
+    const data = this.data;
+    let result = [];
+    Object.keys(data).map((key) => {
+      if (data[key] !== "") {
+        return result.push(key + "=" + data[key]);
+      } else {
+        return "";
+      }
+    });
+    if (result.length !== 0) {
       this.props.history.push(
-        `${routes.admin + routes.video}/?video_title=${video_title}`
+        `${routes.admin + routes.video}/?${result.map((value) => {
+          if (result.indexOf(value) === result.length - 1) {
+            return value;
+          } else {
+            return value + "&";
+          }
+        })}`
       );
     } else {
       this.props.history.push(routes.admin + routes.video);
     }
-    this.props.dispatch(readVideo(video_title));
+    this.props.dispatch(
+      readVideo(this.data.video_title, this.data.video_category)
+    );
   };
   render() {
-    const { video, loading, total_data } = this.props;
+    const { video, loading, total_data, video_category } = this.props;
     const listVideo =
       video &&
       video.map((item, index) => {
@@ -45,7 +78,7 @@ class AdminVideo extends Component {
             key={item.id}
             item={item}
             index={index}
-            selectDeleteVideo={this.onSelectDeleteVideo}
+            selectDeleteVideo={this.selectDeleteVideo}
           />
         );
       });
@@ -54,11 +87,36 @@ class AdminVideo extends Component {
         <FullPageLoader loading={loading} />
         <div className="admin-title">Video</div>
         <div className="form admin">
+          <div className="admin-icon dropdown">
+            <ion-icon
+              name="funnel"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            />
+            <div class="dropdown-menu">
+              <button
+                className="dropdown-item"
+                onClick={() => this.filterVideo("")}
+              >
+                All
+              </button>
+              {video_category.map((video_category, index) => (
+                <button
+                  className="dropdown-item"
+                  key={index}
+                  onClick={() => this.filterVideo(video_category.id)}
+                >
+                  {video_category.video_category_name}
+                </button>
+              ))}
+            </div>
+          </div>
           <input
             className="form-control admin-search"
             type="search"
             placeholder="Search Video"
-            onChange={this.onSearchVideo}
+            onChange={this.searchVideo}
           />
         </div>
         <div className="admin-table video">
@@ -84,6 +142,7 @@ const mapStateToProps = (state) => {
     video: state.video.video,
     loading: state.video.loading,
     total_data: state.video.total_data,
+    video_category: state.video_category.video_category,
   };
 };
 export default withRouter(connect(mapStateToProps)(AdminVideo));

@@ -11,12 +11,12 @@ export const insertVideo = (data) => {
   };
 };
 
-export const readVideo = (video_title) => {
+export const readVideo = (video_title, video_category) => {
   return {
     type: "GET_VIDEO",
     payload: axios({
       method: "GET",
-      url: `${process.env.REACT_APP_API}/video/?video_title=${video_title}`,
+      url: `${process.env.REACT_APP_API}/video/?video_title=${video_title}&video_category=${video_category}`,
     }),
   };
 };
