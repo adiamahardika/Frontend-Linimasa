@@ -12,12 +12,12 @@ export const insertNews = (data) => {
   };
 };
 
-export const readNews = (news_title) => {
+export const readNews = (news_title, news_category) => {
   return {
     type: "GET_NEWS",
     payload: axios({
       method: "GET",
-      url: `${process.env.REACT_APP_API}/news/?news_title=${news_title}`,
+      url: `${process.env.REACT_APP_API}/news/?news_title=${news_title}&news_category=${news_category}`,
     }),
   };
 };

@@ -1,0 +1,15 @@
+.admin-icon{
+    min-height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 4px;
+    border-radius: 4px;
+}
+.admin-icon:hover{
+    box-shadow: 1px 1px 2px;
+}
+ion-icon {
+    font-size: 24px;
+}
