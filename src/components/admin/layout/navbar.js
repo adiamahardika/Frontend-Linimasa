@@ -56,10 +56,10 @@ class Navbar extends Component {
                 className="dropdown-menu"
                 aria-labelledby="navbarDropdownMenuLink"
               >
-                <Link className="dropdown-item" to="#">
+                <Link className="navbar dropdown-item" to="#">
                   Business
                 </Link>
-                <Link className="dropdown-item" to="#">
+                <Link className="navbar dropdown-item" to="#">
                   Economy
                 </Link>
               </div>
@@ -99,16 +99,16 @@ class Navbar extends Component {
                 className="dropdown-menu"
                 aria-labelledby="navbarDropdownMenuLink"
               >
-                <Link className="dropdown-item" to="#">
+                <Link className="navbar dropdown-item" to="#">
                   Food
                 </Link>
-                <Link className="dropdown-item" to="#">
+                <Link className="navbar dropdown-item" to="#">
                   Sport
                 </Link>
-                <Link className="dropdown-item" to="#">
+                <Link className="navbar dropdown-item" to="#">
                   Health
                 </Link>
-                <Link className="dropdown-item" to="#">
+                <Link className="navbar dropdown-item" to="#">
                   Outgoing
                 </Link>
               </div>

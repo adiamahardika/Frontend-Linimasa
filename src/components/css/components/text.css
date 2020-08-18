@@ -1,0 +1,11 @@
+/* Title */
+.admin-title {
+  grid-area: title;
+  font-size: 24px;
+  font-weight: 600;
+}
+/* Dropdown */
+.dropdown-item{
+  font-size: 16px;
+  font-weight: 300;
+}

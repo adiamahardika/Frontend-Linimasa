@@ -10,7 +10,7 @@ import FullPageLoader from "../../helpers/loading";
 import NewsList from "./news_list";
 import "../../css/admin/news.css";
 import "../../css/components/button.css";
-import "../../css/components/title.css";
+import "../../css/components/text.css";
 import "../../css/components/form.css";
 import "../../css/components/table.css";
 import "../../css/components/image.css";

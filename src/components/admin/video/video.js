@@ -9,7 +9,7 @@ import DeleteVideo from "./delete_video";
 import AdminLayout from "../layout/admin_layout";
 import FullPageLoader from "../../helpers/loading";
 import "../../css/components/button.css";
-import "../../css/components/title.css";
+import "../../css/components/text.css";
 import "../../css/components/form.css";
 import "../../css/components/table.css";
 import "../../css/components/icon.css";

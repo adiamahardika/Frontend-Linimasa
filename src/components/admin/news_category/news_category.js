@@ -15,7 +15,7 @@ import FullPageLoader from "../../helpers/loading";
 import "../../css/admin/news_category.css";
 import "../../css/admin_layout/layout.css";
 import "../../css/components/button.css";
-import "../../css/components/title.css";
+import "../../css/components/text.css";
 import "../../css/components/form.css";
 import "../../css/components/table.css";
 class AdminNewsCategory extends Component {
