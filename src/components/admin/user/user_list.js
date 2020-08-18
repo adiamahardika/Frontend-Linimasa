@@ -1,9 +1,9 @@
 import React from "react";
 import { parseDate } from "../../helpers/index";
-const UserList = ({ item, index, onSelectDeleteUser }) => {
+const UserList = ({ item, index, selectDeleteUser }) => {
   const onClickDelete = (event) => {
     event.preventDefault();
-    onSelectDeleteUser(item);
+    selectDeleteUser(item);
   };
   return (
     <>

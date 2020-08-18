@@ -45,16 +45,16 @@ class AdminNews extends Component {
   propsHistoryPush = () => {
     const data = this.data;
     let result = [];
-    Object.keys(data).map(function (key) {
+    Object.keys(data).map((key) => {
       if (data[key] !== "") {
         return result.push(key + "=" + data[key]);
       } else {
-        return ""
+        return "";
       }
     });
     if (result.length !== 0) {
       this.props.history.push(
-        `${routes.admin + routes.news}/?${result.map(function (value) {
+        `${routes.admin + routes.news}/?${result.map((value) => {
           if (result.indexOf(value) === result.length - 1) {
             return value;
           } else {
@@ -65,7 +65,9 @@ class AdminNews extends Component {
     } else {
       this.props.history.push(routes.admin + routes.news);
     }
-    this.props.dispatch(readNews(this.data.news_title, this.data.news_category));
+    this.props.dispatch(
+      readNews(this.data.news_title, this.data.news_category)
+    );
   };
   render() {
     const { news, loading, news_category } = this.props;

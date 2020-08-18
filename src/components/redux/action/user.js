@@ -12,12 +12,12 @@ export const insertUser = (data) => {
   };
 };
 
-export const readUser = (user_name) => {
+export const readUser = (user_name, user_role) => {
   return {
     type: "GET_USER",
     payload: axios({
       method: "GET",
-      url: `${process.env.REACT_APP_API}/user/?user_name=${user_name}`,
+      url: `${process.env.REACT_APP_API}/user/?user_name=${user_name}&user_role=${user_role}`,
     }),
   };
 };
