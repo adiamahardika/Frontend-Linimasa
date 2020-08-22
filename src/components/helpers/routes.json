@@ -5,6 +5,7 @@
     "commentar": "/commentar",
     "news": "/news",
     "insert_news": "/insert-news",
+    "edit_news": "/edit-news",
     "news_category": "/news-category",
     "user_role": "/user-role",
     "user": "/user",

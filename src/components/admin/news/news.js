@@ -4,9 +4,10 @@ import { connect } from "react-redux";
 import { readNews, readAllNews } from "../../redux/action/news";
 import { routes } from "../../helpers/routes.json";
 import { readAllNewsCategory } from "../../redux/action/news_category";
-import { Link } from 'react-router-dom' 
+import { Link } from "react-router-dom";
 import DeleteNews from "./delete_news";
 import AdminLayout from "../layout/admin_layout";
+import EditNews from "./edit_news";
 import FullPageLoader from "../../helpers/loading";
 import NewsList from "./news_list";
 import "../../css/admin/news.css";
@@ -19,6 +20,7 @@ import "../../css/components/icon.css";
 class AdminNews extends Component {
   state = {
     selectDeleteNews: [],
+    selectEditNews: [],
   };
   data = {
     news_title: "",
@@ -31,6 +33,11 @@ class AdminNews extends Component {
   onSelectDeleteNews = (news) => {
     this.setState({
       selectDeleteNews: news,
+    });
+  };
+  onSelectEditNews = (news) => {
+    this.setState({
+      selectEditNews: news,
     });
   };
   searchNews = (event) => {
@@ -81,66 +88,69 @@ class AdminNews extends Component {
             item={item}
             index={index}
             onSelectDeleteNews={this.onSelectDeleteNews}
+            onSelectEditNews={this.onSelectEditNews}
           />
         );
       });
     return (
-      <AdminLayout>
+      <>
         <FullPageLoader loading={loading} />
-        <div className="admin-title">News</div>
-        <div className="form admin">
-          <button
-            type="button"
-            className="admin btn btn-add"
-          >
-            <Link to={routes.admin + routes.news + routes.insert_news}>Insert</Link>
-          </button>
-          <div className="admin-icon dropdown">
-            <ion-icon
-              name="funnel"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            />
-            <div class="dropdown-menu">
-              <button
-                className="dropdown-item"
-                onClick={() => this.filterNews("")}
-              >
-                All
-              </button>
-              {news_category.map((news_category, index) => (
+        <AdminLayout>
+          <div className="admin-title">News</div>
+          <div className="form admin">
+            <button type="button" className="admin btn btn-add">
+              <Link to={routes.admin + routes.news + routes.insert_news}>
+                Insert
+              </Link>
+            </button>
+            <div className="admin-icon dropdown">
+              <ion-icon
+                name="funnel"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              />
+              <div className="dropdown-menu">
                 <button
                   className="dropdown-item"
-                  key={index}
-                  onClick={() => this.filterNews(news_category.id)}
+                  onClick={() => this.filterNews("")}
                 >
-                  {news_category.news_category_name}
+                  All
                 </button>
-              ))}
+                {news_category.map((news_category, index) => (
+                  <button
+                    className="dropdown-item"
+                    key={index}
+                    onClick={() => this.filterNews(news_category.id)}
+                  >
+                    {news_category.news_category_name}
+                  </button>
+                ))}
+              </div>
             </div>
+            <input
+              className="form-control admin-search"
+              type="search"
+              placeholder="Search News"
+              onChange={this.searchNews}
+            />
           </div>
-          <input
-            className="form-control admin-search"
-            type="search"
-            placeholder="Search News"
-            onChange={this.searchNews}
-          />
-        </div>
-        <div className="admin-table news">
-          <div className="header-admin-table number-column">No</div>
-          <div className="header-admin-table">Manage</div>
-          <div className="header-admin-table">News Title</div>
-          <div className="header-admin-table">Image</div>
-          <div className="header-admin-table">Image Description</div>
-          <div className="header-admin-table">News Category</div>
-          <div className="header-admin-table">News Author</div>
-          <div className="header-admin-table">Date Created</div>
-          <div className="header-admin-table">Date Updated</div>
-          {listNews}
-        </div>
+          <div className="admin-table news">
+            <div className="header-admin-table number-column">No</div>
+            <div className="header-admin-table">Manage</div>
+            <div className="header-admin-table">News Title</div>
+            <div className="header-admin-table">Image</div>
+            <div className="header-admin-table">Image Description</div>
+            <div className="header-admin-table">News Category</div>
+            <div className="header-admin-table">News Author</div>
+            <div className="header-admin-table">Date Created</div>
+            <div className="header-admin-table">Date Updated</div>
+            {listNews}
+          </div>
+        </AdminLayout>
         <DeleteNews news={this.state.selectDeleteNews} />
-      </AdminLayout>
+        <EditNews news={this.state.selectEditNews} />
+      </>
     );
   }
 }

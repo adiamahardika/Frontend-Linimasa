@@ -8,6 +8,7 @@ import ads from "./components/admin/ads/ads";
 import commentar from "./components/admin/commentar/commentar";
 import news from "./components/admin/news/news";
 import insert_news from "./components/admin/news/insert_news";
+import edit_news from "./components/admin/news/edit_news"
 import news_category from "./components/admin/news_category/news_category";
 import user from "./components/admin/user/user";
 import user_role from "./components/admin/user_role/user_role";
@@ -24,6 +25,10 @@ export default function App() {
           <Route
             path={routes.admin + routes.news + routes.insert_news}
             component={insert_news}
+          />
+          <Route
+            path={routes.admin + routes.news + routes.edit_news}
+            component={edit_news}
           />
           <Route
             path={routes.admin + routes.news_category}
