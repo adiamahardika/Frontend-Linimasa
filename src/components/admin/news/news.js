@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { readNews, readAllNews } from "../../redux/action/news";
 import { routes } from "../../helpers/routes.json";
 import { readAllNewsCategory } from "../../redux/action/news_category";
+import { Link } from 'react-router-dom' 
 import DeleteNews from "./delete_news";
 import AdminLayout from "../layout/admin_layout";
 import FullPageLoader from "../../helpers/loading";
@@ -91,9 +92,8 @@ class AdminNews extends Component {
           <button
             type="button"
             className="admin btn btn-add"
-            data-toggle="modal"
           >
-            Add
+            <Link to={routes.admin + routes.news + routes.insert_news}>Insert</Link>
           </button>
           <div className="admin-icon dropdown">
             <ion-icon

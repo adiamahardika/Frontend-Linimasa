@@ -67,7 +67,7 @@ const news = (state = initialState, action) => {
       return {
         ...state,
         news: action.payload.data.result,
-        loading: true,
+        loading: false,
       };
     default:
       return state;

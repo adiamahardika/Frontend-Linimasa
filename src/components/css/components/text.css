@@ -9,3 +9,10 @@
   font-size: 16px;
   font-weight: 300;
 }
+/* Upload File */
+.upload{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+}

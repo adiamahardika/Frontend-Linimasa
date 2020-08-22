@@ -1,5 +1,29 @@
 /* Image */
-.admin-image{
-    max-width: 400px;
-    max-height: 150px;
+.admin-image {
+  max-width: 400px;
+  max-height: 150px;
 }
+
+.image-wrapper {
+  position: relative;
+  height: 300px;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #fff;
+  border: 2px dashed #c2cdda;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.image-wrapper.active {
+  border: none;
+}
+
+.wrapper img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+

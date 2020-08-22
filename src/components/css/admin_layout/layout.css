@@ -27,7 +27,7 @@
   grid-template-columns: 3fr 2fr;
   grid-template-areas:
     "title form"
-    "table table"
+    "content content"
     "totalData pagination";
   row-gap: 16px;
   align-items: center;

@@ -1,7 +1,7 @@
 /* Table */
 .admin-table {
   display: grid;
-  grid-area: table;
+  grid-area: content;
   grid-auto-flow: row;
   background-color: white;
   overflow: auto;
