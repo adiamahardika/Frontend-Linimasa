@@ -1,0 +1,16 @@
+.top-nav {
+  display: grid;
+  grid-auto-flow: column;
+  background-color: #fff;
+  align-items: center;
+  padding: 8px;
+  column-gap: 8px;
+  padding-right: 80px;
+  padding-left: 80px;
+}
+.top-nav.top {
+  justify-content: end;
+}
+.top-nav.bottom {
+  justify-content: space-between;
+}

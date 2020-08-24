@@ -31,3 +31,11 @@
   width: 100%;
   object-fit: cover;
 }
+
+.lensajabar-logo{
+  max-width: 320px;
+}
+
+.socmed-logo{
+  max-width: 24px;
+}

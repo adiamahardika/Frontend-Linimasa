@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
-import { routes_admin } from "./components/helpers/routes.json";
+import { routes_admin, routes } from "./components/helpers/routes.json";
 import store from "./components/redux/store";
 import ads from "./components/admin/ads/ads";
 import commentar from "./components/admin/commentar/commentar";
@@ -15,6 +15,7 @@ import user_role from "./components/admin/user_role/user_role";
 import video from "./components/admin/video/video";
 import insert_video from "./components/admin/video/insert_video";
 import video_category from "./components/admin/video_category/video_category";
+import home from "./components/main/home"
 export default function App() {
   return (
     <Provider store={store}>
@@ -46,6 +47,7 @@ export default function App() {
             path={routes_admin.admin + routes_admin.video_category}
             component={video_category}
           />
+          <Route exact path={routes.home} component={home}/>
         </Switch>
       </Router>
     </Provider>

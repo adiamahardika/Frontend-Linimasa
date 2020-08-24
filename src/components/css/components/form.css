@@ -16,6 +16,7 @@
   column-gap: 8px;
 }
 
+/* Search */
 .form-control.admin-search {
   max-height: 32px;
   font-size: 12px;
@@ -23,7 +24,10 @@
   border: none;
   grid-column-start: 3;
 }
-
+.form-control.search{
+  max-width: 200px;
+  border-radius: 50px;
+}
 .form-input {
   padding: 16px;
   grid-area: content;
