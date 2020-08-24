@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { deleteVideoCategory } from "../../redux/action/video_category";
-import { routes } from "../../helpers/routes.json";
+import { routes_admin } from "../../helpers/routes.json";
 import { withRouter } from "react-router";
 class DeleteVideoCategory extends Component {
   deleteVideoCategory = async (event) => {
@@ -9,7 +9,7 @@ class DeleteVideoCategory extends Component {
     await this.props.dispatch(
       deleteVideoCategory(this.props.video_category.id)
     );
-    this.props.history.push(routes.admin + routes.video_category);
+    this.props.history.push(routes_admin.admin + routes_admin.video_category);
   };
   render() {
     return (

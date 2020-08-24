@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { readUser, readAllUser } from "../../redux/action/user";
-import { routes } from "../../helpers/routes.json";
+import { routes_admin } from "../../helpers/routes.json";
 import { readAllUserRole } from "../../redux/action/user_role";
 import UserList from "./user_list";
 import DeleteUser from "./delete_user";
@@ -54,7 +54,7 @@ class AdminUser extends Component {
     });
     if (result.length !== 0) {
       this.props.history.push(
-        `${routes.admin + routes.user}/?${result.map((value) => {
+        `${routes_admin.admin + routes_admin.user}/?${result.map((value) => {
           if (result.indexOf(value) === result.length - 1) {
             return value;
           } else {
@@ -63,7 +63,7 @@ class AdminUser extends Component {
         })}`
       );
     } else {
-      this.props.history.push(routes.admin + routes.user);
+      this.props.history.push(routes_admin.admin + routes_admin.user);
     }
     this.props.dispatch(readUser(this.data.user_name, this.data.user_role));
   };

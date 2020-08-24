@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { deleteVideo } from "../../redux/action/video";
 import { withRouter } from "react-router";
-import { routes } from "../../helpers/routes.json";
+import { routes_admin } from "../../helpers/routes.json";
 class DeleteVideo extends Component {
   deleteVideo = async (event) => {
     event.preventDefault();
     await this.props.dispatch(deleteVideo(this.props.video.id));
-    this.props.history.push(routes.admin + routes.video);
+    this.props.history.push(routes_admin.admin + routes_admin.video);
   };
   render() {
     return (

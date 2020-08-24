@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { deleteUser } from "../../redux/action/user";
-import { routes } from "../../helpers/routes.json";
+import { routes_admin } from "../../helpers/routes.json";
 import { withRouter } from "react-router";
 class DeleteUser extends Component {
   deleteUser = async (event) => {
     event.preventDefault();
     await this.props.dispatch(deleteUser(this.props.user.id));
-    this.props.history.push(routes.admin + routes.user);
+    this.props.history.push(routes_admin.admin + routes_admin.user);
   };
   render() {
     return (

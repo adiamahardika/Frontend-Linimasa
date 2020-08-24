@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { deleteUserRole } from "../../redux/action/user_role";
-import { routes } from "../../helpers/routes.json";
+import { routes_admin } from "../../helpers/routes.json";
 import { withRouter } from "react-router";
 class DeleteUserRole extends Component {
   deleteUserRole = async (event) => {
     event.preventDefault();
     await this.props.dispatch(deleteUserRole(this.props.user_role.id));
-    this.props.history.push(routes.admin + routes.user_role);
+    this.props.history.push(routes_admin.admin + routes_admin.user_role);
   };
   render() {
     return (

@@ -1,6 +1,6 @@
 import React from "react";
 import { parseDate } from "../../helpers/index";
-import { routes } from "../../helpers/routes.json";
+import { routes_admin } from "../../helpers/routes.json";
 import { Link } from "react-router-dom";
 const NewsList = ({ item, index, onSelectDeleteNews, onSelectEditNews }) => {
   const onClickDelete = (event) => {
@@ -29,7 +29,7 @@ const NewsList = ({ item, index, onSelectDeleteNews, onSelectEditNews }) => {
           className="admin btn btn-edit"
           onClick={onClickEdit}
         >
-          <Link to={routes.admin + routes.news + routes.edit_news}>Edit</Link>
+          <Link to={routes_admin.admin + routes_admin.news + routes_admin.edit_news}>Edit</Link>
         </button>
       </div>
       <div className="sentences-column">{item.news_title}</div>

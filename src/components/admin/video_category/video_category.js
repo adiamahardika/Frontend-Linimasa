@@ -5,7 +5,7 @@ import {
   readVideoCategory,
   readAllVideoCategory,
 } from "../../redux/action/video_category";
-import { routes } from "../../helpers/routes.json";
+import { routes_admin } from "../../helpers/routes.json";
 import ItemVideoCategory from "./item_video_category";
 import InsertVideoCategory from "./insert_video_category";
 import EditVideoCategory from "./edit_video_category";
@@ -41,11 +41,11 @@ class AdminVideoCategory extends Component {
     if (video_category_name !== "") {
       this.props.history.push(
         `${
-          routes.admin + routes.video_category
+          routes_admin.admin + routes_admin.video_category
         }/?video_category_name=${video_category_name}`
       );
     } else {
-      this.props.history.push(routes.admin + routes.video_category);
+      this.props.history.push(routes_admin.admin + routes_admin.video_category);
     }
     this.props.dispatch(readVideoCategory(video_category_name));
   };

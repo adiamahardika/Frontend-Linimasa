@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { deleteNewsCategory } from "../../redux/action/news_category";
-import { routes } from "../../helpers/routes.json";
+import { routes_admin } from "../../helpers/routes.json";
 import { withRouter } from "react-router";
 class DeleteNewsCategory extends Component {
   deleteNewsCategory = async (event) => {
     event.preventDefault();
     await this.props.dispatch(deleteNewsCategory(this.props.news_category.id));
-    this.props.history.push(routes.admin + routes.news_category);
+    this.props.history.push(routes_admin.admin + routes_admin.news_category);
   };
   render() {
     return (

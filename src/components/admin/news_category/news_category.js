@@ -5,7 +5,7 @@ import {
   readNewsCategory,
   readAllNewsCategory,
 } from "../../redux/action/news_category";
-import { routes } from "../../helpers/routes.json";
+import { routes_admin } from "../../helpers/routes.json";
 import ItemNewsCategory from "./item_news_category";
 import InsertNewsCategory from "./insert_news_category";
 import EditNewsCategory from "./edit_news_category";
@@ -41,11 +41,11 @@ class AdminNewsCategory extends Component {
     if (news_category_name !== "") {
       this.props.history.push(
         `${
-          routes.admin + routes.news_category
+          routes_admin.admin + routes_admin.news_category
         }/?news_category_name=${news_category_name}`
       );
     } else {
-      this.props.history.push(routes.admin + routes.news_category);
+      this.props.history.push(routes_admin.admin + routes_admin.news_category);
     }
     this.props.dispatch(readNewsCategory(news_category_name));
   };

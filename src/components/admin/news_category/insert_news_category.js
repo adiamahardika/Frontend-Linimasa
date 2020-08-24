@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { insertNewsCategory } from "../../redux/action/news_category";
 import { withRouter } from "react-router-dom";
-import { routes } from "../../helpers/routes.json";
+import { routes_admin } from "../../helpers/routes.json";
 class InsertNewsCategory extends Component {
   state = {
     news_category_name: "",
@@ -15,7 +15,7 @@ class InsertNewsCategory extends Component {
   insertNewsCategory = async (event) => {
     event.preventDefault();
     await this.props.dispatch(insertNewsCategory(this.state));
-    this.props.history.push(routes.admin + routes.news_category);
+    this.props.history.push(routes_admin.admin + routes_admin.news_category);
   };
   render() {
     const SubmitButton = () => {

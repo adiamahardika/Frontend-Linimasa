@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { editNewsCategory } from "../../redux/action/news_category";
 import { withRouter } from "react-router-dom";
-import { routes } from "../../helpers/routes.json";
+import { routes_admin } from "../../helpers/routes.json";
 class EditNewsCategory extends Component {
   state = {
     news_category_name: "",
@@ -24,7 +24,7 @@ class EditNewsCategory extends Component {
     await this.props.dispatch(
       editNewsCategory(data, id)
     );
-    this.props.history.push(routes.admin + routes.news_category);
+    this.props.history.push(routes_admin.admin + routes_admin.news_category);
   };
   render() {
     const SubmitButton = () => {

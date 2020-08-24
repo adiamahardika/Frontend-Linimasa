@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { insertNews } from "../../redux/action/news";
 import { withRouter } from "react-router-dom";
 import { imageFilter } from "../../helpers/index";
-import { routes } from "../../helpers/routes.json";
+import { routes_admin } from "../../helpers/routes.json";
 import { readAllNewsCategory } from "../../redux/action/news_category";
 import AdminLayout from "../layout/admin_layout";
 import FullPageLoader from "../../helpers/loading";
@@ -66,7 +66,7 @@ class InsertNews extends Component {
     data.append("news_author", this.state.news_author);
 
     await this.props.dispatch(insertNews(data));
-    this.props.history.push(routes.admin + routes.news);
+    this.props.history.push(routes_admin.admin + routes_admin.news);
   };
   render() {
     const { loading, news_category } = this.props;

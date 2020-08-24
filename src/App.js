@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
-import { routes } from "./components/helpers/routes.json";
+import { routes_admin } from "./components/helpers/routes.json";
 import store from "./components/redux/store";
 import ads from "./components/admin/ads/ads";
 import commentar from "./components/admin/commentar/commentar";
@@ -20,30 +20,30 @@ export default function App() {
     <Provider store={store}>
       <Router>
         <Switch>
-          <Route path={routes.admin + routes.ads} component={ads} />
-          <Route path={routes.admin + routes.commentar} component={commentar} />
-          <Route exact path={routes.admin + routes.news} component={news} />
+          <Route path={routes_admin.admin + routes_admin.ads} component={ads} />
+          <Route path={routes_admin.admin + routes_admin.commentar} component={commentar} />
+          <Route exact path={routes_admin.admin + routes_admin.news} component={news} />
           <Route
-            path={routes.admin + routes.news + routes.insert_news}
+            path={routes_admin.admin + routes_admin.news + routes_admin.insert_news}
             component={insert_news}
           />
           <Route
-            path={routes.admin + routes.news + routes.edit_news}
+            path={routes_admin.admin + routes_admin.news + routes_admin.edit_news}
             component={edit_news}
           />
           <Route
-            path={routes.admin + routes.news_category}
+            path={routes_admin.admin + routes_admin.news_category}
             component={news_category}
           />
-          <Route path={routes.admin + routes.user} component={user} />
-          <Route path={routes.admin + routes.user_role} component={user_role} />
-          <Route exact path={routes.admin + routes.video} component={video} />
+          <Route path={routes_admin.admin + routes_admin.user} component={user} />
+          <Route path={routes_admin.admin + routes_admin.user_role} component={user_role} />
+          <Route exact path={routes_admin.admin + routes_admin.video} component={video} />
           <Route
-            path={routes.admin + routes.video + routes.insert_video}
+            path={routes_admin.admin + routes_admin.video + routes_admin.insert_video}
             component={insert_video}
           />
           <Route
-            path={routes.admin + routes.video_category}
+            path={routes_admin.admin + routes_admin.video_category}
             component={video_category}
           />
         </Switch>

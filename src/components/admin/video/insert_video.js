@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { insertVideo } from "../../redux/action/video";
 import { withRouter } from "react-router-dom";
 import { videoFilter } from "../../helpers/index";
-import { routes } from "../../helpers/routes.json";
+import { routes_admin } from "../../helpers/routes.json";
 import { readAllVideoCategory } from "../../redux/action/video_category";
 import AdminLayout from "../layout/admin_layout";
 import FullPageLoader from "../../helpers/loading";
@@ -64,7 +64,7 @@ class InsertVideo extends Component {
     data.append("video_category", this.state.video_category);
     
     await this.props.dispatch(insertVideo(data));
-    this.props.history.push(routes.admin + routes.video);
+    this.props.history.push(routes_admin.admin + routes_admin.video);
   };
   render() {
     const { loading, video_category } = this.props;

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { editVideoCategory } from "../../redux/action/video_category";
 import { withRouter } from "react-router-dom";
-import { routes } from "../../helpers/routes.json";
+import { routes_admin } from "../../helpers/routes.json";
 class EditVideoCategory extends Component {
   state = {
     video_category_name: "",
@@ -22,7 +22,7 @@ class EditVideoCategory extends Component {
     const id = this.props.video_category.id;
     const data = this.state;
     await this.props.dispatch(editVideoCategory(data, id));
-    this.props.history.push(routes.admin + routes.video_category);
+    this.props.history.push(routes_admin.admin + routes_admin.video_category);
   };
   render() {
     const SubmitButton = () => {

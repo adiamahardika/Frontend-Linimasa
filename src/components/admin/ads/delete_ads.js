@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { deleteAds } from "../../redux/action/ads";
-import { routes } from "../../helpers/routes.json";
+import { routes_admin } from "../../helpers/routes.json";
 import { withRouter } from "react-router";
 class DeleteAds extends Component {
   deleteAds = async (event) => {
     event.preventDefault();
     await this.props.dispatch(deleteAds(this.props.ads.id));
-    this.props.history.push(routes.admin + routes.ads);
+    this.props.history.push(routes_admin.admin + routes_admin.ads);
   };
   render() {
     return (

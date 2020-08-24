@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { editAds } from "../../redux/action/ads";
 import { withRouter } from "react-router-dom";
 import { imageFilter } from "../../helpers";
-import { routes } from "../../helpers/routes.json";
+import { routes_admin } from "../../helpers/routes.json";
 class EditAds extends Component {
   state = {
     id: "",
@@ -40,7 +40,7 @@ class EditAds extends Component {
     } else {
       await this.props.dispatch(editAds(data, id));
     }
-    this.props.history.push(routes.admin + routes.ads);
+    this.props.history.push(routes_admin.admin + routes_admin.ads);
   };
   render() {
     const SubmitButton = () => {

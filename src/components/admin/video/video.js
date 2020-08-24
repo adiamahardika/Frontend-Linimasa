@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { readVideo, readAllVideo } from "../../redux/action/video";
-import { routes } from "../../helpers/routes.json";
+import { routes_admin } from "../../helpers/routes.json";
 import { readAllVideoCategory } from "../../redux/action/video_category";
 import { Link } from "react-router-dom";
 import ItemVideo from "./item_video";
@@ -54,7 +54,7 @@ class AdminVideo extends Component {
     });
     if (result.length !== 0) {
       this.props.history.push(
-        `${routes.admin + routes.video}/?${result.map((value) => {
+        `${routes_admin.admin + routes_admin.video}/?${result.map((value) => {
           if (result.indexOf(value) === result.length - 1) {
             return value;
           } else {
@@ -63,7 +63,7 @@ class AdminVideo extends Component {
         })}`
       );
     } else {
-      this.props.history.push(routes.admin + routes.video);
+      this.props.history.push(routes_admin.admin + routes_admin.video);
     }
     this.props.dispatch(
       readVideo(this.data.video_title, this.data.video_category)
@@ -89,7 +89,7 @@ class AdminVideo extends Component {
         <div className="admin-title">Video</div>
         <div className="form admin">
           <button type="button" className="admin btn btn-add">
-            <Link to={routes.admin + routes.video + routes.insert_video}>
+            <Link to={routes_admin.admin + routes_admin.video + routes_admin.insert_video}>
               Insert
             </Link>
           </button>

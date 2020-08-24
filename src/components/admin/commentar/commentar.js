@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { readCommentar, readAllCommentar } from "../../redux/action/commentar";
-import { routes } from "../../helpers/routes.json";
+import { routes_admin } from "../../helpers/routes.json";
 import ItemCommentar from "./item_commentar";
 import DeleteCommentar from "./delete_commentar";
 import AdminLayout from "../layout/admin_layout";
@@ -29,10 +29,10 @@ class AdminCommentar extends Component {
     const commentar = event.target.value
     if (commentar !== "") {
       this.props.history.push(
-        `${routes.admin + routes.commentar}/?commentar=${commentar}`
+        `${routes_admin.admin + routes_admin.commentar}/?commentar=${commentar}`
       )
     } else {
-      this.props.history.push(routes.admin + routes.commentar)
+      this.props.history.push(routes_admin.admin + routes_admin.commentar)
     }
     this.props.dispatch(readCommentar(commentar))
   }

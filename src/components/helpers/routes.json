@@ -1,5 +1,5 @@
 {
-  "routes": {
+  "routes_admin": {
     "admin": "/admin",
     "ads": "/ads",
     "commentar": "/commentar",
@@ -12,5 +12,8 @@
     "video": "/video",
     "insert_video": "/insert-video",
     "video_category": "/video-category"
+  },
+  "routes": {
+    "home": "/home"
   }
 }

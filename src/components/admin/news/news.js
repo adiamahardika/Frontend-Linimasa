@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { readNews, readAllNews } from "../../redux/action/news";
-import { routes } from "../../helpers/routes.json";
+import { routes_admin } from "../../helpers/routes.json";
 import { readAllNewsCategory } from "../../redux/action/news_category";
 import { Link } from "react-router-dom";
 import DeleteNews from "./delete_news";
@@ -62,7 +62,7 @@ class AdminNews extends Component {
     });
     if (result.length !== 0) {
       this.props.history.push(
-        `${routes.admin + routes.news}/?${result.map((value) => {
+        `${routes_admin.admin + routes_admin.news}/?${result.map((value) => {
           if (result.indexOf(value) === result.length - 1) {
             return value;
           } else {
@@ -71,7 +71,7 @@ class AdminNews extends Component {
         })}`
       );
     } else {
-      this.props.history.push(routes.admin + routes.news);
+      this.props.history.push(routes_admin.admin + routes_admin.news);
     }
     this.props.dispatch(
       readNews(this.data.news_title, this.data.news_category)
@@ -99,7 +99,7 @@ class AdminNews extends Component {
           <div className="admin-title">News</div>
           <div className="form admin">
             <button type="button" className="admin btn btn-add">
-              <Link to={routes.admin + routes.news + routes.insert_news}>
+              <Link to={routes_admin.admin + routes_admin.news + routes_admin.insert_news}>
                 Insert
               </Link>
             </button>

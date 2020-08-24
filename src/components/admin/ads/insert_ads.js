@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { insertAds } from "../../redux/action/ads";
 import { withRouter } from "react-router-dom";
 import { imageFilter } from "../../helpers/index";
-import { routes } from "../../helpers/routes.json";
+import { routes_admin } from "../../helpers/routes.json";
 class InsertAds extends Component {
   state = {
     ads_name: "",
@@ -31,7 +31,7 @@ class InsertAds extends Component {
     data.append("ads_image", this.state.ads_image);
 
     await this.props.dispatch(insertAds(data));
-    this.props.history.push(routes.admin + routes.ads);
+    this.props.history.push(routes_admin.admin + routes_admin.ads);
   };
   render() {
     const SubmitButton = () => {

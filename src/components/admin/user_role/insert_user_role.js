@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { insertUserRole } from "../../redux/action/user_role";
 import { withRouter } from "react-router-dom";
-import { routes } from "../../helpers/routes.json";
+import { routes_admin } from "../../helpers/routes.json";
 class InsertUserRole extends Component {
   state = {
     user_role_name: "",
@@ -15,7 +15,7 @@ class InsertUserRole extends Component {
   insertUserRole = async (event) => {
     event.preventDefault();
     await this.props.dispatch(insertUserRole(this.state));
-    this.props.history.push(routes.admin + routes.user_role);
+    this.props.history.push(routes_admin.admin + routes_admin.user_role);
   };
   render() {
     const SubmitButton = () => {

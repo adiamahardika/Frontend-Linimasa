@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import "../../css/admin_layout/layout.css";
 import "../../css/admin_layout/sidebar.css";
 import { Link } from "react-router-dom";
-import { routes } from "../../helpers/routes.json";
+import { routes_admin } from "../../helpers/routes.json";
 class Sidebar extends Component {
   render() {
     return (
@@ -21,30 +21,30 @@ class Sidebar extends Component {
         <div className="collapse sidebar" id="collapseMenuManage">
           <ul>
             <li type="button" className="management-list">
-              <Link to={routes.admin + routes.ads}>Ads</Link>
+              <Link to={routes_admin.admin + routes_admin.ads}>Ads</Link>
             </li>
             <li type="button" className="management-list">
-              <Link to={routes.admin + routes.commentar}>Commentar</Link>
+              <Link to={routes_admin.admin + routes_admin.commentar}>Commentar</Link>
             </li>
             <li type="button" className="management-list">
-              <Link to={routes.admin + routes.news}>News</Link>
+              <Link to={routes_admin.admin + routes_admin.news}>News</Link>
             </li>
             <li type="button" className="management-list">
-              <Link to={routes.admin + routes.news_category}>
+              <Link to={routes_admin.admin + routes_admin.news_category}>
                 News Category
               </Link>
             </li>
             <li type="button" className="management-list">
-              <Link to={routes.admin + routes.user}>User</Link>
+              <Link to={routes_admin.admin + routes_admin.user}>User</Link>
             </li>
             <li type="button" className="management-list">
-              <Link to={routes.admin + routes.user_role}>User Role</Link>
+              <Link to={routes_admin.admin + routes_admin.user_role}>User Role</Link>
             </li>
             <li type="button" className="management-list">
-              <Link to={routes.admin + routes.video}>Video</Link>
+              <Link to={routes_admin.admin + routes_admin.video}>Video</Link>
             </li>
             <li type="button" className="management-list">
-              <Link to={routes.admin + routes.video_category}>
+              <Link to={routes_admin.admin + routes_admin.video_category}>
                 Video Category
               </Link>
             </li>

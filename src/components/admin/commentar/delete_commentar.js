@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { deleteCommentar } from "../../redux/action/commentar";
-import { routes } from "../../helpers/routes.json";
+import { routes_admin } from "../../helpers/routes.json";
 import { withRouter } from "react-router";
 class DeleteCommentar extends Component {
   deleteCommentar = async (event) => {
     event.preventDefault();
     await this.props.dispatch(deleteCommentar(this.props.commentar.id));
-    this.props.history.push(routes.admin + routes.commentar);
+    this.props.history.push(routes_admin.admin + routes_admin.commentar);
   };
   render() {
     return (
