@@ -10,6 +10,7 @@
     "user_role": "/user-role",
     "user": "/user",
     "video": "/video",
+    "insert_video": "/insert-video",
     "video_category": "/video-category"
   }
 }

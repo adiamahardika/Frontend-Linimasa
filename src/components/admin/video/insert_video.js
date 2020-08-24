@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { insertNews } from "../../redux/action/news";
+import { insertVideo } from "../../redux/action/video";
 import { withRouter } from "react-router-dom";
-import { imageFilter } from "../../helpers/index";
+import { videoFilter } from "../../helpers/index";
 import { routes } from "../../helpers/routes.json";
-import { readAllNewsCategory } from "../../redux/action/news_category";
+import { readAllVideoCategory } from "../../redux/action/video_category";
 import AdminLayout from "../layout/admin_layout";
 import FullPageLoader from "../../helpers/loading";
 import TextEditor from "../../helpers/text_editor";
@@ -13,71 +13,69 @@ import "../../css/components/text.css";
 import "../../css/components/form.css";
 import "../../css/components/media.css";
 import "../../css/components/icon.css";
-class InsertNews extends Component {
+class InsertVideo extends Component {
   state = {
-    news_title: "",
-    news_content: "Ini isinya",
-    news_image: "",
-    news_image_description: "",
-    news_category: "",
-    news_author: "adia-4zgkdslofmw",
-    image_preview: "",
+    video_title: "",
+    video: "",
+    video_description: "Ini artikel",
+    video_author: "adia-4zgkdslofmw",
+    video_category: "",
+    video_preview: "",
   };
   componentDidMount() {
-    this.props.dispatch(readAllNewsCategory());
+    this.props.dispatch(readAllVideoCategory());
   }
-  onInsertNews = (event) => {
+  onInsertVideo = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
     });
   };
   onInsertArticle = (content) => {
     this.setState({
-      news_content: content,
+      video_description: content,
     });
   };
-  onInsertImage = async (event) => {
-    const image = event.target.files[0];
-    const filter = imageFilter(image);
+  onInsertNewsVideo = async (event) => {
+    const video = event.target.files[0];
+    const filter = videoFilter(video);
     if (filter !== null) {
       this.setState({
-        news_image: image,
+        video: video,
       });
     }
     const reader = new FileReader();
     reader.onload = () => {
       if (reader.readyState === 2) {
         this.setState({
-          image_preview: reader.result,
+          video_preview: reader.result,
         });
       }
     };
-    reader.readAsDataURL(image);
+    reader.readAsDataURL(video);
   };
-  insertNews = async (event) => {
+  insertVideo = async (event) => {
     event.preventDefault();
     let data = new FormData();
-
-    data.append("news_title", this.state.news_title);
-    data.append("news_content", this.state.news_content);
-    data.append("news_image", this.state.news_image);
-    data.append("news_image_description", this.state.news_image_description);
-    data.append("news_category", this.state.news_category);
-    data.append("news_author", this.state.news_author);
-
-    await this.props.dispatch(insertNews(data));
-    this.props.history.push(routes.admin + routes.news);
+    
+    data.append("video_title", this.state.video_title);
+    data.append("video", this.state.video);
+    data.append("video_description", this.state.video_description);
+    data.append("video_author", this.state.video_author);
+    data.append("video_category", this.state.video_category);
+    
+    await this.props.dispatch(insertVideo(data));
+    this.props.history.push(routes.admin + routes.video);
   };
   render() {
-    const { loading, news_category } = this.props;
+    const { loading, video_category } = this.props;
     const SubmitButton = () => {
       if (Object.values(this.state).every((values) => values !== "")) {
         return (
           <button
-            type="button"
+          type="button"
             className="admin btn btn-add"
-            onClick={this.insertNews}
-          >
+            onClick={this.insertVideo}
+            >
             Submit
           </button>
         );
@@ -91,8 +89,8 @@ class InsertNews extends Component {
     };
     return (
       <AdminLayout>
-      <FullPageLoader loading={loading} />
-        <div className="admin-title">Insert News</div>
+        <FullPageLoader loading={loading} />
+        <div className="admin-title">Insert Video</div>
         <div className="form admin">
           <SubmitButton />
         </div>
@@ -102,33 +100,35 @@ class InsertNews extends Component {
               type="text"
               className="input-title"
               placeholder="Tulis Judul..."
-              onChange={this.onInsertNews}
-              name="news_title"
+              onChange={this.onInsertVideo}
+              name="video_title"
               rows="1"
             />
           </div>
           <div className="form-group">
             <select
               className="custom-select input-category"
-              onChange={this.onInsertNews}
-              name="news_category"
+              onChange={this.onInsertVideo}
+              name="video_category"
               defaultValue={"DEFAULT"}
             >
               <option disabled value="DEFAULT">
-                Pilih Kategori Berita...
+                Pilih Kategori Video...
               </option>
-              {news_category.map((news_category, index) => (
-                <option key={index} value={news_category.id}>
-                  {news_category.news_category_name}
+              {video_category.map((video_category, index) => (
+                <option key={index} value={video_category.id}>
+                  {video_category.video_category_name}
                 </option>
               ))}
             </select>
           </div>
           <div className="form-group">
-            <label className="label-input">Image</label>
+            <label className="label-input">Video</label>
             <div className="media-wrapper">
-              <div className="image-uploaded">
-                <img src={this.state.image_preview} alt="" />
+              <div className="video-uploaded">
+                <video>
+                  <source src={this.state.video_preview} type="video/mp4" />
+                </video>
               </div>
               <div className="upload">
                 <ion-icon size="large" name="cloud-upload"></ion-icon>
@@ -136,25 +136,15 @@ class InsertNews extends Component {
                 <input
                   type="file"
                   className="form-control-file"
-                  accept="image/*"
-                  onChange={this.onInsertImage}
+                  accept="video/*"
+                  onChange={this.onInsertNewsVideo}
                   id="input-button"
                 />
                 <label className="upload-file" htmlFor="input-button">
-                  Upload Gambar
+                  Upload Video
                 </label>
               </div>
             </div>
-          </div>
-          <div className="form-group">
-            <textarea
-              type="text"
-              className="input-image-description"
-              placeholder="Tulis Deskripsi Gambar..."
-              onChange={this.onInsertNews}
-              name="news_image_description"
-              rows="1"
-            />
           </div>
           <div className="form-group">
             <label className="label-input">Artikel</label>
@@ -167,8 +157,8 @@ class InsertNews extends Component {
 }
 const mapStateToProps = (state) => {
   return {
-    news_category: state.news_category.news_category,
-    loading: state.news.loading,
+    video_category: state.video_category.video_category,
+    loading: state.video.loading,
   };
 };
-export default withRouter(connect(mapStateToProps)(InsertNews));
+export default withRouter(connect(mapStateToProps)(InsertVideo));

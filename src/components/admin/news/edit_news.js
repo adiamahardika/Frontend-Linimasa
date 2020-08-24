@@ -11,7 +11,7 @@ import TextEditor from "../../helpers/text_editor";
 import "../../css/components/button.css";
 import "../../css/components/text.css";
 import "../../css/components/form.css";
-import "../../css/components/image.css";
+import "../../css/components/media.css";
 import "../../css/components/icon.css";
 class EditNews extends Component {
   state = {

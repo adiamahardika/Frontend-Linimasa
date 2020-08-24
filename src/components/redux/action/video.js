@@ -7,6 +7,7 @@ export const insertVideo = (data) => {
     payload: axios({
       method: "POST",
       url: `${process.env.REACT_APP_API}/video`,
+      data: data,
     }),
   };
 };

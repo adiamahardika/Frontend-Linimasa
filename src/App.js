@@ -8,12 +8,13 @@ import ads from "./components/admin/ads/ads";
 import commentar from "./components/admin/commentar/commentar";
 import news from "./components/admin/news/news";
 import insert_news from "./components/admin/news/insert_news";
-import edit_news from "./components/admin/news/edit_news"
+import edit_news from "./components/admin/news/edit_news";
 import news_category from "./components/admin/news_category/news_category";
 import user from "./components/admin/user/user";
 import user_role from "./components/admin/user_role/user_role";
-import video_category from "./components/admin/video_category/video_category";
 import video from "./components/admin/video/video";
+import insert_video from "./components/admin/video/insert_video";
+import video_category from "./components/admin/video_category/video_category";
 export default function App() {
   return (
     <Provider store={store}>
@@ -36,7 +37,11 @@ export default function App() {
           />
           <Route path={routes.admin + routes.user} component={user} />
           <Route path={routes.admin + routes.user_role} component={user_role} />
-          <Route path={routes.admin + routes.video} component={video} />
+          <Route exact path={routes.admin + routes.video} component={video} />
+          <Route
+            path={routes.admin + routes.video + routes.insert_video}
+            component={insert_video}
+          />
           <Route
             path={routes.admin + routes.video_category}
             component={video_category}

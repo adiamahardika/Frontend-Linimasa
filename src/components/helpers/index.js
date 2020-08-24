@@ -13,6 +13,17 @@ export function imageFilter(image) {
     return null;
   }
 }
+export function videoFilter(video) {
+  if (video.size > 1024 * 1024 * 12) {
+    alert("Cannot upload video with size more than 12mb");
+    return null;
+  }
+  const videoType = video.type;
+  if (videoType !== "video/mp4") {
+    alert("Only video with extension .mp4 can be upload!");
+    return null;
+  }
+}
 export function parseDate(time) {
   let date = new Date(time);
   return (

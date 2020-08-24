@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { readVideo, readAllVideo } from "../../redux/action/video";
 import { routes } from "../../helpers/routes.json";
 import { readAllVideoCategory } from "../../redux/action/video_category";
+import { Link } from "react-router-dom";
 import ItemVideo from "./item_video";
 import DeleteVideo from "./delete_video";
 import AdminLayout from "../layout/admin_layout";
@@ -87,6 +88,11 @@ class AdminVideo extends Component {
         <FullPageLoader loading={loading} />
         <div className="admin-title">Video</div>
         <div className="form admin">
+          <button type="button" className="admin btn btn-add">
+            <Link to={routes.admin + routes.video + routes.insert_video}>
+              Insert
+            </Link>
+          </button>
           <div className="admin-icon dropdown">
             <ion-icon
               name="funnel"
@@ -94,7 +100,7 @@ class AdminVideo extends Component {
               aria-haspopup="true"
               aria-expanded="false"
             />
-            <div class="dropdown-menu">
+            <div className="dropdown-menu">
               <button
                 className="dropdown-item"
                 onClick={() => this.filterVideo("")}
