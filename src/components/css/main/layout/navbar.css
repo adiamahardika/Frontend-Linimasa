@@ -1,0 +1,38 @@
+.navbar{
+    grid-area: navbar;
+}
+.container-navbar {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 90% 10%;
+  background-color: #004de8;
+}
+.navbar-collapse {
+  justify-self: center;
+}
+.navbar-nav {
+  background-color: transparent;
+}
+.nav-link {
+  font-weight: 400;
+  color: white;
+  font-size: 16px;
+}
+.nav-link:hover {
+  color: #ffffff;
+  font-weight: 600;
+}
+.navbar.dropdown-item {
+  font-weight: 500;
+  color: #004de8;
+  font-size: 16px;
+}
+.navbar-profile {
+  color: white;
+  justify-self: center;
+}
+.navbar-profile:hover {
+  text-decoration: none;
+  color: #e80000;
+}

@@ -1,3 +1,6 @@
+.top{
+  grid-area: top;
+}
 .top-nav {
   display: grid;
   grid-auto-flow: column;

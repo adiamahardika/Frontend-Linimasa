@@ -6,7 +6,7 @@ class Home extends Component {
     render() {
         return (
             <Layout>
-                <div>Ini Home</div>
+                <div className="home">Ini Home</div>
             </Layout>
         );
     }

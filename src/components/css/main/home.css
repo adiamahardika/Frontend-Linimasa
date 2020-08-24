@@ -1,0 +1,4 @@
+@import "./layout//layout.css";
+.home {
+    grid-area: content;
+}

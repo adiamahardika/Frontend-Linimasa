@@ -1,0 +1,9 @@
+.layout {
+  display: grid;
+  grid-template-areas:
+    "top top"
+    "navbar navbar"
+    "content side";
+    grid-template-columns: 80% 20%;
+    row-gap: 32px;
+}
