@@ -12,6 +12,9 @@
 .container.layout {
   grid-area: container;
   display: grid;
-  grid-template-areas: "content side";
-  grid-template-columns: 75% 25%;
+  grid-template-areas: "content side"
+  "horizontal-top horizontal-top"
+  "content-middle side-middle"
+  "horizontal-bottom horizontal-bottom";
+  grid-template-columns: 3fr 1fr;
 }

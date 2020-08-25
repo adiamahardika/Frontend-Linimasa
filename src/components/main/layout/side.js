@@ -16,11 +16,19 @@ class Side extends Component {
     this.props.dispatch(readNews(this.data));
   }
   render() {
-    const { news } = this.props;
+    const { news, ads } = this.props;
     return (
       <div className="side">
-        <img alt="" />
-        <img alt="" />
+        {ads.map((item, index) => {
+          if (index === 3) {
+            return <img src={item.ads_image} alt="" />;
+          }
+        })}
+        {ads.map((item, index) => {
+          if (index === 4) {
+            return <img src={item.ads_image} alt="" />;
+          }
+        })}
         <div>
           <div className="image-wrapper">
             <img className="image-side" src={berita_terbaru} alt="" />
