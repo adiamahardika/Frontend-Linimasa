@@ -8,8 +8,10 @@ const Layout = (props) => {
     <div className="layout">
       <Top />
       <Navbar />
-      <div>{props.children}</div>
+      <div className="container layout">
       <Side/>
+      <div>{props.children}</div>
+      </div>
     </div>
   );
 };

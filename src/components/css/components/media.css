@@ -39,3 +39,12 @@
 .socmed-logo{
   max-width: 24px;
 }
+
+.image-side{
+  max-width: 240px;
+}
+
+.side-news-image{
+  max-width: 120px;
+  border-radius: 8px;
+}

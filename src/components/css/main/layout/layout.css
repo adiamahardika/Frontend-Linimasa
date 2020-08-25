@@ -1,9 +1,17 @@
 .layout {
   display: grid;
   grid-template-areas:
-    "top top"
-    "navbar navbar"
-    "content side";
-    grid-template-columns: 80% 20%;
-    row-gap: 32px;
+    "top"
+    "navbar"
+    "container";
+  row-gap: 32px;
+}
+.container{
+  max-width: 90%;
+}
+.container.layout {
+  grid-area: container;
+  display: grid;
+  grid-template-areas: "content side";
+  grid-template-columns: 75% 25%;
 }

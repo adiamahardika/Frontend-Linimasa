@@ -7,7 +7,6 @@ import { readAllNewsCategory } from "../../redux/action/news_category";
 import { Link } from "react-router-dom";
 import DeleteNews from "./delete_news";
 import AdminLayout from "../layout/admin_layout";
-import EditNews from "./edit_news";
 import FullPageLoader from "../../helpers/loading";
 import NewsList from "./news_list";
 import "../../css/admin/news.css";
@@ -74,7 +73,7 @@ class AdminNews extends Component {
       this.props.history.push(routes_admin.admin + routes_admin.news);
     }
     this.props.dispatch(
-      readNews(this.data.news_title, this.data.news_category)
+      readNews(data)
     );
   };
   render() {
@@ -149,7 +148,6 @@ class AdminNews extends Component {
           </div>
         </AdminLayout>
         <DeleteNews news={this.state.selectDeleteNews} />
-        <EditNews news={this.state.selectEditNews} />
       </>
     );
   }

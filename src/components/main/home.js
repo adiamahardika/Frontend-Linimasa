@@ -2,6 +2,7 @@ import React, { Component } from "react"
 import { withRouter } from "react-router"
 import { connect } from "react-redux"
 import Layout from "./layout/layout"
+import "../css/main/home.css"
 class Home extends Component {
     render() {
         return (

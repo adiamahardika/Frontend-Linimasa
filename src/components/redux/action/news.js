@@ -12,12 +12,16 @@ export const insertNews = (data) => {
   };
 };
 
-export const readNews = (news_title, news_category) => {
+export const readNews = (data) => {
+  const news_title = data.news_title || ""
+  const news_category = data.news_category || ""
+  const page = data.page || 1
+  const limit = data.limit || 10
   return {
     type: "GET_NEWS",
     payload: axios({
       method: "GET",
-      url: `${process.env.REACT_APP_API}/news/?news_title=${news_title}&news_category=${news_category}`,
+      url: `${process.env.REACT_APP_API}/news/?news_title=${news_title}&news_category=${news_category}&page=${page}&limit=${limit}`,
     }),
   };
 };
