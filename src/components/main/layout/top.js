@@ -19,10 +19,10 @@ class Top extends Component {
     return (
       <div className="top-section">
         {ads.map((item, index) => {
-          if (index === 0) {
-            return <img src={item.ads_image} alt="" />;
-          }
-        })}
+              if (index === 0) {
+                return <img src={item.ads_image} alt="" />;
+              }
+            })}
         <div className="top-nav">
           <div className="top">
             <input

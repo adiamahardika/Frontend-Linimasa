@@ -48,3 +48,21 @@
   max-width: 120px;
   border-radius: 8px;
 }
+
+.image-ads-tengah{
+  max-width: 899px;
+  max-height: 210px;
+}
+
+.home-news-image{
+  max-width: 240px;
+  border-radius: 16px;
+  grid-area: home-news-image;
+}
+
+.horizontal-home-news-image{
+  max-width: 100%;
+  border-radius: 16px;
+  display: flex;
+  justify-self: center;
+}
