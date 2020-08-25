@@ -1,19 +1,28 @@
-.top{
+.top-section{
   grid-area: top;
+  display: grid;
+  justify-content: center;
+  grid-auto-flow: row;
+  row-gap: 16px;
 }
 .top-nav {
   display: grid;
-  grid-auto-flow: column;
-  background-color: #fff;
-  align-items: center;
+  grid-auto-flow: row;
+  background-color: #ffffff;
   padding: 8px;
-  column-gap: 8px;
-  padding-right: 80px;
-  padding-left: 80px;
+  row-gap: 8px;
 }
-.top-nav.top {
+.top {
   justify-content: end;
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 8px;
+  align-items: center;
 }
-.top-nav.bottom {
+.bottom {
   justify-content: space-between;
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 8px;
+  align-items: center;
 }
