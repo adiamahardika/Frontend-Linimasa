@@ -18,7 +18,6 @@
 .wrapper video {
   height: 100%;
   width: 100%;
-  object-fit: cover;
 }
 /* Image */
 .admin-image {
@@ -29,7 +28,6 @@
 .wrapper img {
   height: 100%;
   width: 100%;
-  object-fit: cover;
 }
 
 .lensajabar-logo{
@@ -60,7 +58,7 @@
   grid-area: home-news-image;
 }
 
-.horizontal-home-news-image{
+.horizontal-home-news-media{
   max-width: 100%;
   border-radius: 16px;
   display: flex;

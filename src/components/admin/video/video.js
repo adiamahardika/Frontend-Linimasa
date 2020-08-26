@@ -65,9 +65,7 @@ class AdminVideo extends Component {
     } else {
       this.props.history.push(routes_admin.admin + routes_admin.video);
     }
-    this.props.dispatch(
-      readVideo(this.data.video_title, this.data.video_category)
-    );
+    this.props.dispatch(readVideo(data));
   };
   render() {
     const { video, loading, total_data, video_category } = this.props;
@@ -89,7 +87,13 @@ class AdminVideo extends Component {
         <div className="admin-title">Video</div>
         <div className="form admin">
           <button type="button" className="admin btn btn-add">
-            <Link to={routes_admin.admin + routes_admin.video + routes_admin.insert_video}>
+            <Link
+              to={
+                routes_admin.admin +
+                routes_admin.video +
+                routes_admin.insert_video
+              }
+            >
               Insert
             </Link>
           </button>

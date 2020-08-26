@@ -12,12 +12,16 @@ export const insertVideo = (data) => {
   };
 };
 
-export const readVideo = (video_title, video_category) => {
+export const readVideo = (data) => {
+  const video_title = data.video_title || "";
+  const video_category = data.video_category || "";
+  const page = data.page || 1;
+  const limit = data.limit || 10;
   return {
     type: "GET_VIDEO",
     payload: axios({
       method: "GET",
-      url: `${process.env.REACT_APP_API}/video/?video_title=${video_title}&video_category=${video_category}`,
+      url: `${process.env.REACT_APP_API}/video/?video_title=${video_title}&video_category=${video_category}&page=${page}&limit=${limit}`,
     }),
   };
 };

@@ -20,7 +20,7 @@ class Top extends Component {
       <div className="top-section">
         {ads.map((item, index) => {
               if (index === 0) {
-                return <img src={item.ads_image} alt="" />;
+                return <img src={item.ads_image} alt="" key={index}/>;
               }
             })}
         <div className="top-nav">
@@ -46,14 +46,14 @@ class Top extends Component {
             <img className="lensajabar-logo" src={lensajabar} alt="" />
             {ads.map((item, index) => {
               if (index === 1) {
-                return <img src={item.ads_image} alt="" />;
+                return <img src={item.ads_image} alt="" key={index}/>;
               }
             })}
           </div>
         </div>
         {ads.map((item, index) => {
           if (index === 2) {
-            return <img src={item.ads_image} alt="" />;
+            return <img src={item.ads_image} alt="" key={index}/>;
           }
         })}
       </div>

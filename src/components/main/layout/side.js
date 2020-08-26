@@ -21,12 +21,12 @@ class Side extends Component {
       <div className="side">
         {ads.map((item, index) => {
           if (index === 3) {
-            return <img src={item.ads_image} alt="" />;
+            return <img src={item.ads_image} alt="" key={index}/>;
           }
         })}
         {ads.map((item, index) => {
           if (index === 4) {
-            return <img src={item.ads_image} alt="" />;
+            return <img src={item.ads_image} alt="" key={index}/>;
           }
         })}
         <div>

@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { readAds } from "../redux/action/ads";
 import { readNews } from "../redux/action/news";
 import { parseDate } from "../helpers/index";
+import { readVideo } from "../redux/action/video";
 import Top from "./layout/top";
 import Navbar from "./layout/navbar";
 import Side from "./layout/side";
@@ -18,10 +19,11 @@ class Home extends Component {
   };
   componentDidMount() {
     this.props.dispatch(readAds());
+    this.props.dispatch(readVideo(this.data));
     this.props.dispatch(readNews(this.data));
   }
   render() {
-    const { ads, news } = this.props;
+    const { ads, news, video } = this.props;
     return (
       <div className="layout">
         <Top />
@@ -36,6 +38,7 @@ class Home extends Component {
                     className="image-ads-tengah"
                     src={item.ads_image}
                     alt=""
+                    key={index}
                   />
                 );
               }
@@ -88,6 +91,21 @@ class Home extends Component {
               <div className="news-category-name">Video</div>
               <div className="lihat-lainnya">Lihat Lainnya</div>
             </div>
+            <div className="horizontal-home-news">
+              {video.map((item, index) => (
+                <div className="horizontal-home-news-list" key={index}>
+                  <video className="horizontal-home-news-media">
+                    <source src={item.video} type="video/mp4" />
+                  </video>
+                  <div className="horizotal-home-news-title">
+                    {item.video_title}
+                  </div>
+                  <div className="horizontal-home-news-date">
+                    {parseDate(item.date_updated)}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
           <div className="home-content-middle">
             <div>
@@ -135,7 +153,10 @@ class Home extends Component {
           </div>
           <div className="home-side-middle">
             <div>
-              <div className="news-category-name">Entertainment</div>
+              <div className="home-news-header">
+                <div className="news-category-name">Entertainment</div>
+                <div className="lihat-lainnya">Lihat Lainnya</div>
+              </div>
               <div className="side-news">
                 {news.map((item, index) => (
                   <div className="news-wrapper" key={index}>
@@ -150,7 +171,10 @@ class Home extends Component {
               </div>
             </div>
             <div>
-              <div className="news-category-name">Komentar</div>
+              <div className="home-news-header">
+                <div className="news-category-name">Komentar</div>
+                <div className="lihat-lainnya">Lihat Lainnya</div>
+              </div>
             </div>
           </div>
           <div className="home-horizontal-bottom">
@@ -162,7 +186,7 @@ class Home extends Component {
               {news.map((item, index) => (
                 <div className="horizontal-home-news-list" key={index}>
                   <img
-                    className="horizontal-home-news-image"
+                    className="horizontal-home-news-media"
                     src={item.news_image}
                     alt=""
                   />
@@ -222,7 +246,10 @@ class Home extends Component {
           </div>
           <div className="home-side-bottom">
             <div>
-              <div className="news-category-name">Techno</div>
+              <div className="home-news-header">
+                <div className="news-category-name">Techno</div>
+                <div className="lihat-lainnya">Lihat Lainnya</div>
+              </div>
               <div className="side-news">
                 {news.map((item, index) => (
                   <div className="news-wrapper" key={index}>
@@ -247,6 +274,7 @@ const mapStateToProps = (state) => {
   return {
     ads: state.ads.ads,
     news: state.news.news,
+    video: state.video.video,
   };
 };
 export default withRouter(connect(mapStateToProps)(Home));
