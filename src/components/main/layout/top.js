@@ -16,13 +16,20 @@ class Top extends Component {
   }
   render() {
     const { ads } = this.props;
+    const listAds = (indexOrder) => {
+      let url = "";
+      ads &&
+        ads.map((item, index) => {
+          if (index === indexOrder) {
+            url = item.ads_image;
+          }
+          return null;
+        });
+      return <img src={url} alt="" />;
+    };
     return (
       <div className="top-section">
-        {ads.map((item, index) => {
-              if (index === 0) {
-                return <img src={item.ads_image} alt="" key={index}/>;
-              }
-            })}
+        {listAds(0)}
         <div className="top-nav">
           <div className="top">
             <input
@@ -44,18 +51,10 @@ class Top extends Component {
           </div>
           <div className="bottom">
             <img className="lensajabar-logo" src={lensajabar} alt="" />
-            {ads.map((item, index) => {
-              if (index === 1) {
-                return <img src={item.ads_image} alt="" key={index}/>;
-              }
-            })}
+            {listAds(1)}
           </div>
         </div>
-        {ads.map((item, index) => {
-          if (index === 2) {
-            return <img src={item.ads_image} alt="" key={index}/>;
-          }
-        })}
+        {listAds(2)}
       </div>
     );
   }
