@@ -24,6 +24,34 @@ class Home extends Component {
   }
   render() {
     const { ads, news, video } = this.props;
+    const newsListByCategory = (category) => {
+      let newsData = {};
+      news &&
+        news.map((item) => {
+          if (category === item.news_category) {
+            newsData = item;
+          }
+          return null;
+        });
+      return (
+        <div className="home-news-list">
+          <div className="home-news-title">{newsData.news_title}</div>
+          <div className="home-news-date">
+            {parseDate(newsData.date_updated)}
+          </div>
+          <img className="home-news-image" src={newsData.news_image} alt="" />
+        </div>
+      );
+    };
+    const newsList =
+      news &&
+      news.map((item) => (
+        <div className="home-news-list">
+          <div className="home-news-title">{item.news_title}</div>
+          <div className="home-news-date">{parseDate(item.date_updated)}</div>
+          <img className="home-news-image" src={item.news_image} alt="" />
+        </div>
+      ));
     return (
       <div className="layout">
         <Top />
@@ -42,51 +70,29 @@ class Home extends Component {
                   />
                 );
               }
-              return null
+              return null;
             })}
+            {/* News */}
             <div>
               <div className="home-news-header">
                 <div className="news-category-name">News</div>
                 <div className="lihat-lainnya">Lihat Lainnya</div>
               </div>
-              <div className="home-news-wrapper">
-                {news.map((item, index) => (
-                  <div className="home-news-list" key={index}>
-                    <div className="home-news-title">{item.news_title}</div>
-                    <div className="home-news-date">
-                      {parseDate(item.date_updated)}
-                    </div>
-                    <img
-                      className="home-news-image"
-                      src={item.news_image}
-                      alt=""
-                    />
-                  </div>
-                ))}
-              </div>
+              <div className="home-news-wrapper">{newsList}</div>
             </div>
+
+            {/* Hype */}
             <div>
               <div className="home-news-header">
                 <div className="news-category-name">Hype</div>
                 <div className="lihat-lainnya">Lihat Lainnya</div>
               </div>
-              <div className="home-news-wrapper">
-                {news.map((item, index) => (
-                  <div className="home-news-list" key={index}>
-                    <div className="home-news-title">{item.news_title}</div>
-                    <div className="home-news-date">
-                      {parseDate(item.date_updated)}
-                    </div>
-                    <img
-                      className="home-news-image"
-                      src={item.news_image}
-                      alt=""
-                    />
-                  </div>
-                ))}
-              </div>
+              <div className="home-news-wrapper">{newsList}</div>
             </div>
           </div>
+
+          {/* Horizontal */}
+          {/* Video */}
           <div className="home-horizontal-top">
             <div className="home-news-header">
               <div className="news-category-name">Video</div>
@@ -108,51 +114,31 @@ class Home extends Component {
               ))}
             </div>
           </div>
+
+          {/* Content Middle */}
           <div className="home-content-middle">
+            {/* Peritiwa */}
             <div>
               <div className="home-news-header">
                 <div className="news-category-name">Peristiwa</div>
                 <div className="lihat-lainnya">Lihat Lainnya</div>
               </div>
-              <div className="home-news-wrapper">
-                {news.map((item, index) => (
-                  <div className="home-news-list" key={index}>
-                    <div className="home-news-title">{item.news_title}</div>
-                    <div className="home-news-date">
-                      {parseDate(item.date_updated)}
-                    </div>
-                    <img
-                      className="home-news-image"
-                      src={item.news_image}
-                      alt=""
-                    />
-                  </div>
-                ))}
-              </div>
+              <div className="home-news-wrapper">{newsList}</div>
             </div>
+
+            {/* Finance */}
             <div>
               <div className="home-news-header">
                 <div className="news-category-name">Finance</div>
                 <div className="lihat-lainnya">Lihat Lainnya</div>
               </div>
-              <div className="home-news-wrapper">
-                {news.map((item, index) => (
-                  <div className="home-news-list" key={index}>
-                    <div className="home-news-title">{item.news_title}</div>
-                    <div className="home-news-date">
-                      {parseDate(item.date_updated)}
-                    </div>
-                    <img
-                      className="home-news-image"
-                      src={item.news_image}
-                      alt=""
-                    />
-                  </div>
-                ))}
-              </div>
+              <div className="home-news-wrapper">{newsList}</div>
             </div>
           </div>
+
+          {/* Side Middle */}
           <div className="home-side-middle">
+            {/* Entertainment */}
             <div>
               <div className="home-news-header">
                 <div className="news-category-name">Entertainment</div>
@@ -171,6 +157,8 @@ class Home extends Component {
                 ))}
               </div>
             </div>
+
+            {/* Komentar */}
             <div>
               <div className="home-news-header">
                 <div className="news-category-name">Komentar</div>
@@ -178,6 +166,9 @@ class Home extends Component {
               </div>
             </div>
           </div>
+
+          {/* Horizontal Bottom */}
+          {/* Lifestyle */}
           <div className="home-horizontal-bottom">
             <div className="home-news-header">
               <div className="news-category-name">Lifestyle</div>
@@ -201,51 +192,31 @@ class Home extends Component {
               ))}
             </div>
           </div>
+
+          {/* Content Bottom */}
           <div className="home-content-bottom">
+            {/* Humaniora */}
             <div>
               <div className="home-news-header">
                 <div className="news-category-name">Humaniora</div>
                 <div className="lihat-lainnya">Lihat Lainnya</div>
               </div>
-              <div className="home-news-wrapper">
-                {news.map((item, index) => (
-                  <div className="home-news-list" key={index}>
-                    <div className="home-news-title">{item.news_title}</div>
-                    <div className="home-news-date">
-                      {parseDate(item.date_updated)}
-                    </div>
-                    <img
-                      className="home-news-image"
-                      src={item.news_image}
-                      alt=""
-                    />
-                  </div>
-                ))}
-              </div>
+              <div className="home-news-wrapper">{newsList}</div>
             </div>
+
+            {/* Ragam */}
             <div>
               <div className="home-news-header">
                 <div className="news-category-name">Ragam</div>
                 <div className="lihat-lainnya">Lihat Lainnya</div>
               </div>
-              <div className="home-news-wrapper">
-                {news.map((item, index) => (
-                  <div className="home-news-list" key={index}>
-                    <div className="home-news-title">{item.news_title}</div>
-                    <div className="home-news-date">
-                      {parseDate(item.date_updated)}
-                    </div>
-                    <img
-                      className="home-news-image"
-                      src={item.news_image}
-                      alt=""
-                    />
-                  </div>
-                ))}
-              </div>
+              <div className="home-news-wrapper">{newsList}</div>
             </div>
           </div>
+
+          {/* Side Bottom */}
           <div className="home-side-bottom">
+            {/* Techno */}
             <div>
               <div className="home-news-header">
                 <div className="news-category-name">Techno</div>
