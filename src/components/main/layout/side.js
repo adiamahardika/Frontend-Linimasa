@@ -17,18 +17,21 @@ class Side extends Component {
   }
   render() {
     const { news, ads } = this.props;
+    const imageAds = (indexOrder) => {
+      let url = "";
+      ads &&
+        ads.map((item, index) => {
+          if (index === indexOrder) {
+            url = item.ads_image;
+          }
+          return null;
+        });
+      return <img src={url} alt="" />;
+    };
     return (
       <div className="side">
-        {ads.map((item, index) => {
-          if (index === 3) {
-            return <img src={item.ads_image} alt="" key={index}/>;
-          }
-        })}
-        {ads.map((item, index) => {
-          if (index === 4) {
-            return <img src={item.ads_image} alt="" key={index}/>;
-          }
-        })}
+        {imageAds(3)}
+        {imageAds(4)}
         <div>
           <div className="image-wrapper">
             <img className="image-side" src={berita_terbaru} alt="" />

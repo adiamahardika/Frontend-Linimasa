@@ -16,7 +16,7 @@ class Top extends Component {
   }
   render() {
     const { ads } = this.props;
-    const listAds = (indexOrder) => {
+    const imageAds = (indexOrder) => {
       let url = "";
       ads &&
         ads.map((item, index) => {
@@ -29,7 +29,7 @@ class Top extends Component {
     };
     return (
       <div className="top-section">
-        {listAds(0)}
+        {imageAds(0)}
         <div className="top-nav">
           <div className="top">
             <input
@@ -51,10 +51,10 @@ class Top extends Component {
           </div>
           <div className="bottom">
             <img className="lensajabar-logo" src={lensajabar} alt="" />
-            {listAds(1)}
+            {imageAds(1)}
           </div>
         </div>
-        {listAds(2)}
+        {imageAds(2)}
       </div>
     );
   }
