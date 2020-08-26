@@ -5,6 +5,13 @@
   justify-content: center;
   row-gap: 32px;
 }
+/* Home News Header */
+.home-news-header {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
 /* Section */
 .home-horizontal-top {
   grid-area: horizontal-top;
@@ -73,7 +80,7 @@
   align-items: center;
   justify-content: space-between;
 }
-.horizontal-home-news-list{
+.horizontal-home-news-list {
   display: grid;
   row-gap: 8px;
   grid-template-rows: repeat(3, max-content);

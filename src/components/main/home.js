@@ -41,7 +41,10 @@ class Home extends Component {
               }
             })}
             <div>
-              <div className="news-category-name">News</div>
+              <div className="home-news-header">
+                <div className="news-category-name">News</div>
+                <div className="lihat-lainnya">Lihat Lainnya</div>
+              </div>
               <div className="home-news-wrapper">
                 {news.map((item, index) => (
                   <div className="home-news-list" key={index}>
@@ -59,7 +62,10 @@ class Home extends Component {
               </div>
             </div>
             <div>
-              <div className="news-category-name">Hype</div>
+              <div className="home-news-header">
+                <div className="news-category-name">Hype</div>
+                <div className="lihat-lainnya">Lihat Lainnya</div>
+              </div>
               <div className="home-news-wrapper">
                 {news.map((item, index) => (
                   <div className="home-news-list" key={index}>
@@ -78,11 +84,17 @@ class Home extends Component {
             </div>
           </div>
           <div className="home-horizontal-top">
-            <div className="news-category-name">Video</div>
+            <div className="home-news-header">
+              <div className="news-category-name">Video</div>
+              <div className="lihat-lainnya">Lihat Lainnya</div>
+            </div>
           </div>
           <div className="home-content-middle">
             <div>
-              <div className="news-category-name">Peristiwa</div>
+              <div className="home-news-header">
+                <div className="news-category-name">Peristiwa</div>
+                <div className="lihat-lainnya">Lihat Lainnya</div>
+              </div>
               <div className="home-news-wrapper">
                 {news.map((item, index) => (
                   <div className="home-news-list" key={index}>
@@ -100,7 +112,10 @@ class Home extends Component {
               </div>
             </div>
             <div>
-              <div className="news-category-name">Finance</div>
+              <div className="home-news-header">
+                <div className="news-category-name">Finance</div>
+                <div className="lihat-lainnya">Lihat Lainnya</div>
+              </div>
               <div className="home-news-wrapper">
                 {news.map((item, index) => (
                   <div className="home-news-list" key={index}>
@@ -139,7 +154,10 @@ class Home extends Component {
             </div>
           </div>
           <div className="home-horizontal-bottom">
-            <div className="news-category-name">Lifestyle</div>
+            <div className="home-news-header">
+              <div className="news-category-name">Lifestyle</div>
+              <div className="lihat-lainnya">Lihat Lainnya</div>
+            </div>
             <div className="horizontal-home-news">
               {news.map((item, index) => (
                 <div className="horizontal-home-news-list" key={index}>
@@ -148,7 +166,9 @@ class Home extends Component {
                     src={item.news_image}
                     alt=""
                   />
-                  <div className="horizotal-home-news-title">{item.news_title}</div>
+                  <div className="horizotal-home-news-title">
+                    {item.news_title}
+                  </div>
                   <div className="horizontal-home-news-date">
                     {parseDate(item.date_updated)}
                   </div>
@@ -158,7 +178,10 @@ class Home extends Component {
           </div>
           <div className="home-content-bottom">
             <div>
-              <div className="news-category-name">Humaniora</div>
+              <div className="home-news-header">
+                <div className="news-category-name">Humaniora</div>
+                <div className="lihat-lainnya">Lihat Lainnya</div>
+              </div>
               <div className="home-news-wrapper">
                 {news.map((item, index) => (
                   <div className="home-news-list" key={index}>
@@ -176,7 +199,10 @@ class Home extends Component {
               </div>
             </div>
             <div>
-              <div className="news-category-name">Ragam</div>
+              <div className="home-news-header">
+                <div className="news-category-name">Ragam</div>
+                <div className="lihat-lainnya">Lihat Lainnya</div>
+              </div>
               <div className="home-news-wrapper">
                 {news.map((item, index) => (
                   <div className="home-news-list" key={index}>
@@ -212,7 +238,7 @@ class Home extends Component {
             </div>
           </div>
         </div>
-        <Footer/>
+        <Footer />
       </div>
     );
   }
