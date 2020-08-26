@@ -42,6 +42,7 @@ class Home extends Component {
                   />
                 );
               }
+              return null
             })}
             <div>
               <div className="home-news-header">
