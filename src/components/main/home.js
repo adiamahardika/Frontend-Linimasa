@@ -7,6 +7,7 @@ import { parseDate } from "../helpers/index";
 import Top from "./layout/top";
 import Navbar from "./layout/navbar";
 import Side from "./layout/side";
+import Footer from "./layout/footer";
 import "../css/main/home.css";
 import "../css/main/layout/layout.css";
 import "../css/components/media.css";
@@ -211,6 +212,7 @@ class Home extends Component {
             </div>
           </div>
         </div>
+        <Footer/>
       </div>
     );
   }

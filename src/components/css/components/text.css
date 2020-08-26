@@ -62,3 +62,11 @@
   display: flex;
   align-self: flex-start;
 }
+.footer-bold{
+  font-weight: 600;
+  font-size: 16px;
+}
+.footer-items{
+  font-weight: 400;
+  font-size: 14px;
+}

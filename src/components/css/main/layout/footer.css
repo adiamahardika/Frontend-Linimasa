@@ -1,0 +1,39 @@
+.footer {
+  background-color: #fff;
+  display: grid;
+  grid-template-rows: repeat(2, max-content);
+  row-gap: 16px;
+  padding: 16px;
+  grid-template-columns: 3fr 2fr 1fr;
+  grid-template-areas:
+    "footer-left footer-middle footer-right"
+    "footer-left footer-bottom footer-bottom";
+}
+
+.footer-column {
+  display: grid;
+  row-gap: 8px;
+  grid-auto-flow: row;
+}
+.footer-column.left {
+  grid-area: footer-left;
+  display: grid;
+  justify-items: center;
+}
+.footer-column.middle {
+  grid-area: footer-middle;
+}
+.footer-column.right {
+  grid-area: footer-right;
+}
+.informasi-column {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 8px;
+}
+.socmed-wrapper {
+  display: grid;
+  align-items: center;
+  grid-auto-flow: column;
+  column-gap: 8px;
+}

@@ -2,6 +2,7 @@ import React from "react";
 import Top from "./top";
 import Navbar from "../../admin/layout/navbar";
 import Side from "./side"
+import Footer from "./footer"
 import "../../css/main/layout/layout.css"
 const Layout = (props) => {
   return (
@@ -12,6 +13,7 @@ const Layout = (props) => {
       <Side/>
       <div>{props.children}</div>
       </div>
+      <Footer/>
     </div>
   );
 };
