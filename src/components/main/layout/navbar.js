@@ -7,7 +7,7 @@ import "../../css/main/layout/navbar.css";
 class Navbar extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-lg container-navbar">
+      <nav className="navbar navbar-expand-lg container-main-navbar">
         <button
           className="navbar-toggler"
           type="button"
@@ -20,7 +20,7 @@ class Navbar extends Component {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul className="navbar-nav">
+          <ul className="main-navbar-nav">
             <li className="nav-item">
               <Link className="nav-link" to="#">
                 Home
@@ -115,9 +115,6 @@ class Navbar extends Component {
             </li>
           </ul>
         </div>
-        <Link className="navbar-profile" to="#">
-          User Profile
-        </Link>
       </nav>
     );
   }
