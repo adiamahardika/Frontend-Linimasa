@@ -2,14 +2,10 @@ import React from "react";
 import { parseDate } from "../../helpers/index";
 import { routes_admin } from "../../helpers/routes.json";
 import { Link } from "react-router-dom";
-const NewsList = ({ item, index, onSelectDeleteNews, onSelectEditNews }) => {
+const NewsList = ({ item, index, onSelectDeleteNews }) => {
   const onClickDelete = (event) => {
     event.preventDefault();
     onSelectDeleteNews(item);
-  };
-  const onClickEdit = (event) => {
-    event.preventDefault();
-    onSelectEditNews(item);
   };
   return (
     <>
@@ -24,12 +20,16 @@ const NewsList = ({ item, index, onSelectDeleteNews, onSelectEditNews }) => {
         >
           Delete
         </button>
-        <button
-          type="button"
-          className="admin btn btn-edit"
-          onClick={onClickEdit}
-        >
-          <Link to={routes_admin.admin + routes_admin.news + routes_admin.edit_news}>Edit</Link>
+        <button type="button" className="admin btn btn-edit">
+          <Link
+            to={{
+              pathname:
+                routes_admin.admin + routes_admin.news + routes_admin.edit_news,
+              data: item,
+            }}
+          >
+            Edit
+          </Link>
         </button>
       </div>
       <div className="sentences-column">{item.news_title}</div>

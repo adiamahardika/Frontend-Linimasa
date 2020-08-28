@@ -22,18 +22,26 @@ class EditNews extends Component {
     news_image_description: "",
     news_category: "",
     news_author: "",
+  };
+  data = {
     image_preview: "",
   };
-  componentWillReceiveProps({ news }) {
-    this.setState({
-      id: news.id,
-      news_title: news.news_title,
-      news_content: news.news_content,
-      news_image: news.news_image,
-      news_image_description: news.news_image_description,
-      news_category: news.news_category,
-      news_author: news.news_author,
-    });
+  componentWillReceiveProps() {
+    const news = this.props.location.data;
+    if (!news || news === undefined) {
+      this.props.history.push(routes_admin.admin + routes_admin.news);
+    } else {
+      this.setState({
+        id: news.id,
+        news_title: news.news_title,
+        news_content: news.news_content,
+        news_image: news.news_image,
+        news_image_description: news.news_image_description,
+        news_category: news.news_category,
+        news_author: news.news_author,
+      });
+      this.data.image_preview = news.news_image;
+    }
   }
   componentDidMount() {
     this.props.dispatch(readAllNewsCategory());
@@ -54,9 +62,7 @@ class EditNews extends Component {
     const reader = new FileReader();
     reader.onload = () => {
       if (reader.readyState === 2) {
-        this.setState({
-          image_preview: reader.result,
-        });
+        this.data.image_preview = reader.result;
       }
     };
     reader.readAsDataURL(image);
@@ -123,6 +129,7 @@ class EditNews extends Component {
               onChange={this.onEditNews}
               name="news_title"
               rows="1"
+              value={this.state.news_title}
             />
           </div>
           <div className="form-group">
@@ -144,9 +151,9 @@ class EditNews extends Component {
           </div>
           <div className="form-group">
             <label className="label-input">Image</label>
-            <div className="image-wrapper">
+            <div className="media-wrapper">
               <div className="image-uploaded">
-                <img src={this.state.image_preview} alt="" />
+                <img src={this.data.image_preview} alt="" />
               </div>
               <div className="upload">
                 <ion-icon size="large" name="cloud-upload"></ion-icon>
@@ -155,7 +162,7 @@ class EditNews extends Component {
                   type="file"
                   className="form-control-file"
                   accept="image/*"
-                  onChange={this.onInsertImage}
+                  onChange={this.onEditImage}
                   id="input-button"
                 />
                 <label className="upload-file" htmlFor="input-button">
@@ -172,6 +179,7 @@ class EditNews extends Component {
               onChange={this.onEditNews}
               name="news_image_description"
               rows="1"
+              value={this.state.news_image_description}
             />
           </div>
           <div className="form-group">

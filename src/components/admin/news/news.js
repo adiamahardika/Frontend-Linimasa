@@ -19,7 +19,6 @@ import "../../css/components/icon.css";
 class AdminNews extends Component {
   state = {
     selectDeleteNews: [],
-    selectEditNews: [],
   };
   data = {
     news_title: "",
@@ -32,11 +31,6 @@ class AdminNews extends Component {
   onSelectDeleteNews = (news) => {
     this.setState({
       selectDeleteNews: news,
-    });
-  };
-  onSelectEditNews = (news) => {
-    this.setState({
-      selectEditNews: news,
     });
   };
   searchNews = (event) => {
@@ -72,9 +66,7 @@ class AdminNews extends Component {
     } else {
       this.props.history.push(routes_admin.admin + routes_admin.news);
     }
-    this.props.dispatch(
-      readNews(data)
-    );
+    this.props.dispatch(readNews(data));
   };
   render() {
     const { news, loading, news_category } = this.props;
@@ -87,7 +79,6 @@ class AdminNews extends Component {
             item={item}
             index={index}
             onSelectDeleteNews={this.onSelectDeleteNews}
-            onSelectEditNews={this.onSelectEditNews}
           />
         );
       });
@@ -98,7 +89,13 @@ class AdminNews extends Component {
           <div className="admin-title">News</div>
           <div className="form admin">
             <button type="button" className="admin btn btn-add">
-              <Link to={routes_admin.admin + routes_admin.news + routes_admin.insert_news}>
+              <Link
+                to={
+                  routes_admin.admin +
+                  routes_admin.news +
+                  routes_admin.insert_news
+                }
+              >
                 Insert
               </Link>
             </button>
