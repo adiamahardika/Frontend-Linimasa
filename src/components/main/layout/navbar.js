@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import { routes } from "../../helpers/routes.json";
 import "../../css/main/layout/layout.css";
 import "../../css/main/layout/navbar.css";
 class Navbar extends Component {
@@ -22,22 +23,46 @@ class Navbar extends Component {
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="main-navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" to="#">
+              <Link
+                className="nav-link"
+                to={{
+                  pathname: "/",
+                  state: "",
+                }}
+              >
                 Home
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="#">
+              <Link
+                className="nav-link"
+                to={{
+                  pathname: routes.news,
+                  state: "",
+                }}
+              >
                 News
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="#">
+              <Link
+                className="nav-link"
+                to={{
+                  pathname: routes.hype,
+                  state: "keb6syxk",
+                }}
+              >
                 Hype
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="#">
+              <Link
+                className="nav-link"
+                to={{
+                  pathname: routes.peristiwa,
+                  state: "keb6tdl4",
+                }}
+              >
                 Peristiwa
               </Link>
             </li>
@@ -56,10 +81,22 @@ class Navbar extends Component {
                 className="dropdown-menu"
                 aria-labelledby="navbarDropdownMenuLink"
               >
-                <Link className="navbar dropdown-item" to="#">
+                <Link
+                  className="navbar dropdown-item"
+                  to={{
+                    pathname: routes.business,
+                    state: "keb6tpmy",
+                  }}
+                >
                   Business
                 </Link>
-                <Link className="navbar dropdown-item" to="#">
+                <Link
+                  className="navbar dropdown-item"
+                  to={{
+                    pathname: routes.economy,
+                    state: "keb6txn2",
+                  }}
+                >
                   Economy
                 </Link>
               </div>

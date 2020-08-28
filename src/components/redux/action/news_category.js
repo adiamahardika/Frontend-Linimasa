@@ -12,7 +12,8 @@ export const insertNewsCategory = (data) => {
   };
 };
 
-export const readNewsCategory = (news_category_name) => {
+export const readNewsCategory = (data) => {
+  const news_category_name = data || "";
   return {
     type: "GET_NEWS_CATEGORY",
     payload: axios({
