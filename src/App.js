@@ -79,6 +79,14 @@ export default function App() {
           <Route path={routes.peristiwa} component={news_category}/>
           <Route path={routes.business} component={news_category}/>
           <Route path={routes.economy} component={news_category}/>
+          <Route path={routes.entertainment} component={news_category}/>
+          <Route path={routes.food} component={news_category}/>
+          <Route path={routes.health} component={news_category}/>
+          <Route path={routes.humaniora} component={news_category}/>
+          <Route path={routes.outgoing} component={news_category}/>
+          <Route path={routes.ragam} component={news_category}/>
+          <Route path={routes.sport} component={news_category}/>
+          <Route path={routes.techno} component={news_category}/>
         </Switch>
       </Router>
     </Provider>

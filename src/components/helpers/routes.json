@@ -19,6 +19,14 @@
     "hype": "/hype",
     "peristiwa": "/peristiwa",
     "business": "/business",
-    "economy": "/economy"
+    "economy": "/economy",
+    "humaniora": "/humaniora",
+    "ragam": "/ragam",
+    "techno": "/techno",
+    "entertainment": "/entertainment",
+    "food": "/food",
+    "sport": "/sport",
+    "health": "/health",
+    "outgoing": "/outgoing"
   }
 }

@@ -3,10 +3,25 @@ import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { routes } from "../../helpers/routes.json";
+import { readAllNewsCategory } from "../../redux/action/news_category";
 import "../../css/main/layout/layout.css";
 import "../../css/main/layout/navbar.css";
 class Navbar extends Component {
+  data = {
+    news_category_id: {},
+  };
+  componentDidMount() {
+    this.props.dispatch(readAllNewsCategory());
+  }
   render() {
+    const { news_category } = this.props;
+    if (news_category.length > 1) {
+      news_category &&
+        news_category.map((item) => {
+          return (this.data.news_category_id[item.news_category_name] =
+            item.id);
+        });
+    }
     return (
       <nav className="navbar navbar-expand-lg container-main-navbar">
         <button
@@ -27,7 +42,7 @@ class Navbar extends Component {
                 className="nav-link"
                 to={{
                   pathname: "/",
-                  state: "",
+                  data: "",
                 }}
               >
                 Home
@@ -38,7 +53,7 @@ class Navbar extends Component {
                 className="nav-link"
                 to={{
                   pathname: routes.news,
-                  state: "",
+                  data: "",
                 }}
               >
                 News
@@ -49,7 +64,7 @@ class Navbar extends Component {
                 className="nav-link"
                 to={{
                   pathname: routes.hype,
-                  state: "keb6syxk",
+                  data: this.data.news_category_id.Hype,
                 }}
               >
                 Hype
@@ -60,7 +75,7 @@ class Navbar extends Component {
                 className="nav-link"
                 to={{
                   pathname: routes.peristiwa,
-                  state: "keb6tdl4",
+                  data: this.data.news_category_id.Peristiwa,
                 }}
               >
                 Peristiwa
@@ -69,7 +84,6 @@ class Navbar extends Component {
             <li className="nav-item dropdown">
               <Link
                 className="nav-link dropdown-toggle"
-                to="#"
                 id="navbarDropdownMenuLink"
                 data-toggle="dropdown"
                 aria-haspopup="true"
@@ -85,7 +99,7 @@ class Navbar extends Component {
                   className="navbar dropdown-item"
                   to={{
                     pathname: routes.business,
-                    state: "keb6tpmy",
+                    data: this.data.news_category_id.Business,
                   }}
                 >
                   Business
@@ -94,7 +108,7 @@ class Navbar extends Component {
                   className="navbar dropdown-item"
                   to={{
                     pathname: routes.economy,
-                    state: "keb6txn2",
+                    data: this.data.news_category_id.Economy,
                   }}
                 >
                   Economy
@@ -102,29 +116,52 @@ class Navbar extends Component {
               </div>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="#">
+              <Link
+                className="nav-link"
+                to={{
+                  pathname: routes.humaniora,
+                  data: this.data.news_category_id.Humaniora,
+                }}
+              >
                 Humaniora
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="#">
+              <Link
+                className="nav-link"
+                to={{
+                  pathname: routes.ragam,
+                  data: this.data.news_category_id.Ragam,
+                }}
+              >
                 Ragam
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="#">
+              <Link
+                className="nav-link"
+                to={{
+                  pathname: routes.techno,
+                  data: this.data.news_category_id.Techno,
+                }}
+              >
                 Techno
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="#">
+              <Link
+                className="nav-link"
+                to={{
+                  pathname: routes.entertainment,
+                  data: this.data.news_category_id.Entertainment,
+                }}
+              >
                 Entertainment
               </Link>
             </li>
             <li className="nav-item dropdown">
               <Link
                 className="nav-link dropdown-toggle"
-                to="#"
                 id="navbarDropdownMenuLink"
                 data-toggle="dropdown"
                 aria-haspopup="true"
@@ -136,16 +173,40 @@ class Navbar extends Component {
                 className="dropdown-menu"
                 aria-labelledby="navbarDropdownMenuLink"
               >
-                <Link className="navbar dropdown-item" to="#">
+                <Link
+                  className="navbar dropdown-item"
+                  to={{
+                    pathname: routes.food,
+                    data: this.data.news_category_id.Food,
+                  }}
+                >
                   Food
                 </Link>
-                <Link className="navbar dropdown-item" to="#">
+                <Link
+                  className="navbar dropdown-item"
+                  to={{
+                    pathname: routes.sport,
+                    data: this.data.news_category_id.Sport,
+                  }}
+                >
                   Sport
                 </Link>
-                <Link className="navbar dropdown-item" to="#">
+                <Link
+                  className="navbar dropdown-item"
+                  to={{
+                    pathname: routes.business,
+                    data: this.data.news_category_id.Health,
+                  }}
+                >
                   Health
                 </Link>
-                <Link className="navbar dropdown-item" to="#">
+                <Link
+                  className="navbar dropdown-item"
+                  to={{
+                    pathname: routes.outgoing,
+                    data: this.data.news_category_id.Outgoing,
+                  }}
+                >
                   Outgoing
                 </Link>
               </div>
@@ -156,4 +217,9 @@ class Navbar extends Component {
     );
   }
 }
-export default withRouter(connect()(Navbar));
+const mapStateToProps = (state) => {
+  return {
+    news_category: state.news_category.news_category,
+  };
+};
+export default withRouter(connect(mapStateToProps)(Navbar));

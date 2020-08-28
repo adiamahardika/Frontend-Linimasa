@@ -14,7 +14,8 @@ class NewsCategory extends Component {
     page: 1,
     limit: 10,
   };
-  componentWillMount() {
+
+  componentDidMount() {
     const pathname = this.props.location.pathname.replace(/[^a-z- ]/g, "");
     this.setState({
       selectedNewsCategory: pathname,
@@ -24,8 +25,6 @@ class NewsCategory extends Component {
     } else {
       this.props.dispatch(readNewsCategory(pathname));
     }
-  }
-  componentDidMount() {
     this.props.dispatch(readNews(this.data));
   }
   render() {
@@ -33,7 +32,8 @@ class NewsCategory extends Component {
     if (news_category.length === 1) {
       this.data.news_category = news_category[0].id;
     }
-    const selectedNewsCategory = this.props.location.state;
+    const selectedNewsCategory = this.props.location.data;
+    console.log(selectedNewsCategory)
     if (selectedNewsCategory !== undefined) {
       this.data.news_category = selectedNewsCategory;
     }
@@ -49,8 +49,14 @@ class NewsCategory extends Component {
           return (
             <div className="home-news-list" key={newsData.id}>
               <div className="home-news-title">{newsData.news_title}</div>
-              <div className="home-news-date">{parseDate(newsData.date_updated)}</div>
-              <img className="home-news-image" src={newsData.news_image} alt="" />
+              <div className="home-news-date">
+                {parseDate(newsData.date_updated)}
+              </div>
+              <img
+                className="home-news-image"
+                src={newsData.news_image}
+                alt=""
+              />
             </div>
           );
         } else if (this.data.news_category === "") {
@@ -58,11 +64,18 @@ class NewsCategory extends Component {
           return (
             <div className="home-news-list" key={newsData.id}>
               <div className="home-news-title">{newsData.news_title}</div>
-              <div className="home-news-date">{parseDate(newsData.date_updated)}</div>
-              <img className="home-news-image" src={newsData.news_image} alt="" />
+              <div className="home-news-date">
+                {parseDate(newsData.date_updated)}
+              </div>
+              <img
+                className="home-news-image"
+                src={newsData.news_image}
+                alt=""
+              />
             </div>
           );
-        } return null 
+        }
+        return null;
       });
     return (
       <Layout>
