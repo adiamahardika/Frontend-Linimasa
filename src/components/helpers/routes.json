@@ -11,6 +11,7 @@
     "user": "/user",
     "video": "/video",
     "insert_video": "/insert-video",
+    "edit-video": "/edit-video",
     "video_category": "/video-category"
   },
   "routes": {

@@ -1,10 +1,12 @@
 import React from "react";
 import { parseDate } from "../../helpers/index";
+import { routes_admin } from "../../helpers/routes.json";
+import { Link } from "react-router-dom";
 const ItemVideo = ({ item, index, selectDeleteVideo }) => {
   const onClickDelete = (event) => {
-    event.preventDefault()
-    selectDeleteVideo(item)
-  }
+    event.preventDefault();
+    selectDeleteVideo(item);
+  };
   return (
     <>
       <div className="number-column">{index + 1}</div>
@@ -17,6 +19,19 @@ const ItemVideo = ({ item, index, selectDeleteVideo }) => {
           onClick={onClickDelete}
         >
           Delete
+        </button>
+        <button type="button" className="admin btn btn-edit">
+          <Link
+            to={{
+              pathname:
+                routes_admin.admin +
+                routes_admin.video +
+                routes_admin.edit_video,
+              data: item,
+            }}
+          >
+            Edit
+          </Link>
         </button>
       </div>
       <div className="sentences-column">{item.video_title}</div>
