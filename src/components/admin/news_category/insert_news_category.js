@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { insertNewsCategory } from "../../redux/action/news_category";
 import { withRouter } from "react-router-dom";
 import { routes_admin } from "../../helpers/routes.json";
+import { button } from "../../helpers/class_name.json"
 class InsertNewsCategory extends Component {
   state = {
     news_category_name: "",
@@ -23,22 +24,21 @@ class InsertNewsCategory extends Component {
         return (
           <button
             type="submit"
-            className="btn modal-btn-submit"
+            className={button.primary}
             onClick={this.insertNewsCategory}
             data-dismiss="modal"
           >
-            Add
+            Submit
           </button>
         );
       } else {
         return (
           <button
             type="submit"
-            className="btn modal-btn-submit"
-            data-dismiss="modal"
+            className={button.disabled}
             disabled
           >
-            Add
+            Submit
           </button>
         );
       }
@@ -91,7 +91,7 @@ class InsertNewsCategory extends Component {
               <div className="modal-footer">
                 <button
                   type="button"
-                  className="btn modal-btn-close"
+                  className={button["outline-primary"]}
                   data-dismiss="modal"
                 >
                   Cancel

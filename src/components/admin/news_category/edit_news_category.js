@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { editNewsCategory } from "../../redux/action/news_category";
 import { withRouter } from "react-router-dom";
 import { routes_admin } from "../../helpers/routes.json";
+import { button } from "../../helpers/class_name.json";
 class EditNewsCategory extends Component {
   state = {
     news_category_name: "",
@@ -20,10 +21,8 @@ class EditNewsCategory extends Component {
   editNewsCategory = async (event) => {
     event.preventDefault();
     const id = this.props.news_category.id;
-    const data = this.state
-    await this.props.dispatch(
-      editNewsCategory(data, id)
-    );
+    const data = this.state;
+    await this.props.dispatch(editNewsCategory(data, id));
     this.props.history.push(routes_admin.admin + routes_admin.news_category);
   };
   render() {
@@ -32,21 +31,17 @@ class EditNewsCategory extends Component {
         return (
           <button
             type="submit"
-            className="btn modal-btn-submit"
+            className={button.primary}
             onClick={this.editNewsCategory}
             data-dismiss="modal"
           >
-            Edit
+            Submit
           </button>
         );
       } else {
         return (
-          <button
-            type="submit"
-            className="btn modal-btn-submit"
-            disabled
-          >
-            Edit
+          <button type="submit" className={button.disabled} disabled>
+            Submit
           </button>
         );
       }
@@ -100,12 +95,12 @@ class EditNewsCategory extends Component {
               <div className="modal-footer">
                 <button
                   type="button"
-                  className="btn modal-btn-close"
+                  className={button["outline-primary"]}
                   data-dismiss="modal"
                 >
                   Cancel
                 </button>
-                <SubmitButton/>
+                <SubmitButton />
               </div>
             </div>
           </div>

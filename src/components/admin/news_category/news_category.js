@@ -5,6 +5,7 @@ import {
   readNewsCategory,
   readAllNewsCategory,
 } from "../../redux/action/news_category";
+import { button } from "../../helpers/class_name.json"
 import { routes_admin } from "../../helpers/routes.json";
 import ItemNewsCategory from "./item_news_category";
 import InsertNewsCategory from "./insert_news_category";
@@ -71,11 +72,11 @@ class AdminNewsCategory extends Component {
         <div className="form admin">
           <button
             type="button"
-            className="admin btn btn-add"
+            className={button.primary}
             data-toggle="modal"
             data-target="#modalInsertNewsCategory"
           >
-            Add
+            Insert
           </button>
           <input
             className="form-control admin-search"

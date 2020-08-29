@@ -1,5 +1,6 @@
 import React from "react";
 import { parseDate } from "../../helpers/index";
+import { button } from "../../helpers/class_name.json"
 const ItemNewsCategory = ({ item, index, onSelectEditNewsCategory, onSelectDeleteNewsCategory }) => {
   const onClickEdit = (event) => {
     event.preventDefault()
@@ -16,7 +17,7 @@ const ItemNewsCategory = ({ item, index, onSelectEditNewsCategory, onSelectDelet
       <div className="manage-column">
         <button
           type="button"
-          className="admin btn btn-outline-delete"
+          className={button.danger}
           data-toggle="modal"
           data-target="#deleteModalNewsCategory"
           onClick={onClickDelete}
@@ -25,7 +26,7 @@ const ItemNewsCategory = ({ item, index, onSelectEditNewsCategory, onSelectDelet
         </button>
         <button
           type="button"
-          className="admin btn btn-edit"
+          className={button.primary}
           data-toggle="modal"
           data-target="#modalEditNewsCategory"
           onClick={onClickEdit}
