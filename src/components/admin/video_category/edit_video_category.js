@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { editVideoCategory } from "../../redux/action/video_category";
 import { withRouter } from "react-router-dom";
 import { routes_admin } from "../../helpers/routes.json";
+import { button } from "../../helpers/class_name.json";
 class EditVideoCategory extends Component {
   state = {
     video_category_name: "",
@@ -30,17 +31,17 @@ class EditVideoCategory extends Component {
         return (
           <button
             type="submit"
-            className="btn modal-btn-submit"
+            className={button.primary}
             onClick={this.editVideoCategory}
             data-dismiss="modal"
           >
-            Edit
+            Submit
           </button>
         );
       } else {
         return (
-          <button type="submit" className="btn modal-btn-submit" disabled>
-            Edit
+          <button type="submit" className={button.disabled} disabled>
+            Submit
           </button>
         );
       }
@@ -94,7 +95,7 @@ class EditVideoCategory extends Component {
               <div className="modal-footer">
                 <button
                   type="button"
-                  className="btn modal-btn-close"
+                  className={button["outline-primary"]}
                   data-dismiss="modal"
                 >
                   Cancel

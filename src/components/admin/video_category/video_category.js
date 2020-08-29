@@ -6,6 +6,7 @@ import {
   readAllVideoCategory,
 } from "../../redux/action/video_category";
 import { routes_admin } from "../../helpers/routes.json";
+import { button } from "../../helpers/class_name.json"
 import ItemVideoCategory from "./item_video_category";
 import InsertVideoCategory from "./insert_video_category";
 import EditVideoCategory from "./edit_video_category";
@@ -71,11 +72,11 @@ class AdminVideoCategory extends Component {
         <div className="form admin">
           <button
             type="button"
-            className="admin btn btn-add"
+            className={button.primary}
             data-toggle="modal"
             data-target="#modalInsertVideoCategory"
           >
-            Add
+            Insert
           </button>
           <input
             className="form-control admin-search"

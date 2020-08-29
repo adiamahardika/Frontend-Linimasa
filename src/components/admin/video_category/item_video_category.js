@@ -1,21 +1,27 @@
 import React from "react";
-import { parseDate } from "../../helpers";
-const ItemVideoCategory = ({ item, index, selectEditVideoCategory, selectDeleteVideoCategory }) => {
+import { parseDate } from "../../helpers/index";
+import { button } from "../../helpers/class_name.json";
+const ItemVideoCategory = ({
+  item,
+  index,
+  selectEditVideoCategory,
+  selectDeleteVideoCategory,
+}) => {
   const onClickEdit = (event) => {
-    event.preventDefault()
-    selectEditVideoCategory(item)
-  }
+    event.preventDefault();
+    selectEditVideoCategory(item);
+  };
   const onClickDelete = (event) => {
-    event.preventDefault()
-    selectDeleteVideoCategory(item)
-  }
+    event.preventDefault();
+    selectDeleteVideoCategory(item);
+  };
   return (
     <>
       <div className="number-column">{index + 1}</div>
       <div className="manage-column">
         <button
           type="button"
-          className="admin btn btn-outline-delete"
+          className={button.danger}
           data-toggle="modal"
           data-target="#deleteModalVideoCategory"
           onClick={onClickDelete}
@@ -24,7 +30,7 @@ const ItemVideoCategory = ({ item, index, selectEditVideoCategory, selectDeleteV
         </button>
         <button
           type="button"
-          className="admin btn btn-edit"
+          className={button.primary}
           data-toggle="modal"
           data-target="#modalEditVideoCategory"
           onClick={onClickEdit}
