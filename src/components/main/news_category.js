@@ -29,7 +29,6 @@ class NewsCategory extends Component {
   }
   render() {
     const { news, news_category } = this.props;
-    console.log(news)
     if (news_category.length === 1) {
       this.data.news_category = news_category[0].id;
     }

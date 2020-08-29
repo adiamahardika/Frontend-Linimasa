@@ -15,15 +15,30 @@ class Side extends Component {
     const { news, ads } = this.props;
     const imageAds = (indexOrder) => {
       let url = "";
-      ads &&
+      return (
+        ads &&
         ads.map((item, index) => {
           if (index === indexOrder) {
             url = item.ads_image;
+            return <img src={url} alt="" />;
           }
           return null;
-        });
-      return <img src={url} alt="" />;
+        })
+      );
     };
+    const newsList =
+      news &&
+      news.map((item, index) => {
+        if (index <= 3) {
+          return (
+            <div className="news-wrapper" key={index}>
+              <div className="side-news-title">{item.news_title}</div>
+              <img className="side-news-image" src={item.news_image} alt="" />
+            </div>
+          );
+        }
+        return null;
+      });
     return (
       <div className="side">
         {imageAds(3)}
@@ -32,45 +47,13 @@ class Side extends Component {
           <div className="image-wrapper">
             <img className="image-side" src={berita_terbaru} alt="" />
           </div>
-          <div className="side-news">
-            {news.map((item, index) => {
-              if (index <= 3) {
-                return (
-                  <div className="news-wrapper" key={index}>
-                    <div className="side-news-title">{item.news_title}</div>
-                    <img
-                      className="side-news-image"
-                      src={item.news_image}
-                      alt=""
-                    />
-                  </div>
-                );
-              }
-              return null;
-            })}
-          </div>
+          <div className="side-news">{newsList}</div>
         </div>
         <div>
           <div className="image-wrapper">
             <img className="image-side" src={berita_terpopuler} alt="" />
           </div>
-          <div className="side-news">
-            {news.map((item, index) => {
-              if (index <= 3) {
-                return (
-                  <div className="news-wrapper" key={index}>
-                    <div className="side-news-title">{item.news_title}</div>
-                    <img
-                      className="side-news-image"
-                      src={item.news_image}
-                      alt=""
-                    />
-                  </div>
-                );
-              }
-              return null;
-            })}
-          </div>
+          <div className="side-news">{newsList}</div>
         </div>
       </div>
     );

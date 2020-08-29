@@ -27,7 +27,6 @@ class Home extends Component {
   }
   render() {
     const { ads, news, video, news_category } = this.props;
-    console.log(news)
     if (news_category.length > 1) {
       news_category &&
         news_category.map((item) => {
@@ -35,23 +34,28 @@ class Home extends Component {
             item.id);
         });
     }
-    const newsListByCategory = (category) => {
+    const newsListByCategory = (category, limit) => {
       let newsData = {};
-      news &&
-        news.map((item, index) => {
-          if (category === item.news_category) {
-            newsData = item;
+      return (
+        news &&
+        news.map((item) => {
+          if (
+            category === item.news_category &&
+            limit > Object.keys(newsData).length
+          ) {
+            newsData[item.id] = item;
+            return (
+              <div className="home-news-list">
+                <div className="home-news-title">{item.news_title}</div>
+                <div className="home-news-date">
+                  {parseDate(item.date_updated)}
+                </div>
+                <img className="home-news-image" src={item.news_image} alt="" />
+              </div>
+            );
           }
           return null;
-        });
-      return (
-        <div className="home-news-list">
-          <div className="home-news-title">{newsData.news_title}</div>
-          <div className="home-news-date">
-            {parseDate(newsData.date_updated)}
-          </div>
-          <img className="home-news-image" src={newsData.news_image} alt="" />
-        </div>
+        })
       );
     };
     const newsList =
@@ -68,6 +72,20 @@ class Home extends Component {
             </div>
           );
         }
+        return null;
+      });
+    const sideNewsList =
+      news &&
+      news.map((item, index) => {
+        if (index <= 3) {
+          return (
+            <div className="news-wrapper" key={index}>
+              <div className="side-news-title">{item.news_title}</div>
+              <img className="side-news-image" src={item.news_image} alt="" />
+            </div>
+          );
+        }
+        return null;
       });
     return (
       <div className="layout">
@@ -105,7 +123,7 @@ class Home extends Component {
                 <div className="lihat-lainnya">Lihat Lainnya</div>
               </div>
               <div className="home-news-wrapper">
-                {newsListByCategory(this.data.news_category_id.Hype)}
+                {newsListByCategory(this.data.news_category_id.Hype, 4)}
               </div>
             </div>
           </div>
@@ -143,7 +161,7 @@ class Home extends Component {
                 <div className="lihat-lainnya">Lihat Lainnya</div>
               </div>
               <div className="home-news-wrapper">
-                {newsListByCategory(this.data.news_category_id.Peristiwa)}
+                {newsListByCategory(this.data.news_category_id.Peristiwa, 4)}
               </div>
             </div>
 
@@ -154,8 +172,8 @@ class Home extends Component {
                 <div className="lihat-lainnya">Lihat Lainnya</div>
               </div>
               <div className="home-news-wrapper">
-                {newsListByCategory(this.data.news_category_id.Business)}
-                {newsListByCategory(this.data.news_category_id.Economy)}
+                {newsListByCategory(this.data.news_category_id.Business, 2)}
+                {newsListByCategory(this.data.news_category_id.Economy, 2)}
               </div>
             </div>
           </div>
@@ -168,18 +186,7 @@ class Home extends Component {
                 <div className="news-category-name">Entertainment</div>
                 <div className="lihat-lainnya">Lihat Lainnya</div>
               </div>
-              <div className="side-news">
-                {news.map((item, index) => (
-                  <div className="news-wrapper" key={index}>
-                    <div className="side-news-title">{item.news_title}</div>
-                    <img
-                      className="side-news-image"
-                      src={item.news_image}
-                      alt=""
-                    />
-                  </div>
-                ))}
-              </div>
+              <div className="side-news">{sideNewsList}</div>
             </div>
 
             {/* Komentar */}
@@ -217,6 +224,7 @@ class Home extends Component {
                     </div>
                   );
                 }
+                return null;
               })}
             </div>
           </div>
@@ -250,18 +258,7 @@ class Home extends Component {
                 <div className="news-category-name">Techno</div>
                 <div className="lihat-lainnya">Lihat Lainnya</div>
               </div>
-              <div className="side-news">
-                {news.map((item, index) => (
-                  <div className="news-wrapper" key={index}>
-                    <div className="side-news-title">{item.news_title}</div>
-                    <img
-                      className="side-news-image"
-                      src={item.news_image}
-                      alt=""
-                    />
-                  </div>
-                ))}
-              </div>
+              <div className="side-news">{sideNewsList}</div>
             </div>
           </div>
         </div>
@@ -271,7 +268,6 @@ class Home extends Component {
   }
 }
 const mapStateToProps = (state) => {
-  console.log('ini state', state.news.news)
   return {
     ads: state.ads.ads,
     news: state.news.news,
