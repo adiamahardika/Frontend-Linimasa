@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { deleteCommentar } from "../../redux/action/commentar";
 import { routes_admin } from "../../helpers/routes.json";
 import { withRouter } from "react-router";
+import { button } from "../../helpers/class_name.json"
 class DeleteCommentar extends Component {
   deleteCommentar = async (event) => {
     event.preventDefault();
@@ -37,14 +38,14 @@ class DeleteCommentar extends Component {
               <div className="modal-footer">
                 <button
                   type="button"
-                  className="btn modal-btn-close"
+                  className={button["outline-primary"]}
                   data-dismiss="modal"
                 >
                   Cancel
                 </button>
                 <button
                   type="button"
-                  className="btn modal-btn-submit"
+                  className={button.danger}
                   onClick={this.deleteCommentar}
                   data-dismiss="modal"
                 >

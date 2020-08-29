@@ -1,5 +1,6 @@
 import React from "react";
 import { parseDate } from "../../helpers/index";
+import { button } from "../../helpers/class_name.json"
 const ItemCommentar = ({ item, index, onSelectDeleteCommentar }) => {
   const onClickDelete = (event) => {
     event.preventDefault()
@@ -11,7 +12,7 @@ const ItemCommentar = ({ item, index, onSelectDeleteCommentar }) => {
       <div className="manage-column">
         <button
           type="button"
-          className="admin btn btn-outline-delete"
+          className={button.danger}
           data-toggle="modal"
           data-target="#deleteModalCommentar"
           onClick={onClickDelete}
