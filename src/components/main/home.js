@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { readAds } from "../redux/action/ads";
-import { readNews } from "../redux/action/news";
+import { readAllNews } from "../redux/action/news";
 import { parseDate } from "../helpers/index";
 import { readVideo } from "../redux/action/video";
+import { readAllNewsCategory } from "../redux/action/news_category";
 import Top from "./layout/top";
 import Navbar from "./layout/navbar";
 import Side from "./layout/side";
@@ -16,18 +17,28 @@ class Home extends Component {
   data = {
     page: 1,
     limit: 4,
+    news_category_id: {},
   };
   componentDidMount() {
     this.props.dispatch(readAds());
     this.props.dispatch(readVideo(this.data));
-    this.props.dispatch(readNews(this.data));
+    this.props.dispatch(readAllNews());
+    this.props.dispatch(readAllNewsCategory());
   }
   render() {
-    const { ads, news, video } = this.props;
+    const { ads, news, video, news_category } = this.props;
+    console.log(news)
+    if (news_category.length > 1) {
+      news_category &&
+        news_category.map((item) => {
+          return (this.data.news_category_id[item.news_category_name] =
+            item.id);
+        });
+    }
     const newsListByCategory = (category) => {
       let newsData = {};
       news &&
-        news.map((item) => {
+        news.map((item, index) => {
           if (category === item.news_category) {
             newsData = item;
           }
@@ -45,13 +56,19 @@ class Home extends Component {
     };
     const newsList =
       news &&
-      news.map((item) => (
-        <div className="home-news-list">
-          <div className="home-news-title">{item.news_title}</div>
-          <div className="home-news-date">{parseDate(item.date_updated)}</div>
-          <img className="home-news-image" src={item.news_image} alt="" />
-        </div>
-      ));
+      news.map((item, index) => {
+        if (index <= 3) {
+          return (
+            <div className="home-news-list">
+              <div className="home-news-title">{item.news_title}</div>
+              <div className="home-news-date">
+                {parseDate(item.date_updated)}
+              </div>
+              <img className="home-news-image" src={item.news_image} alt="" />
+            </div>
+          );
+        }
+      });
     return (
       <div className="layout">
         <Top />
@@ -87,7 +104,9 @@ class Home extends Component {
                 <div className="news-category-name">Hype</div>
                 <div className="lihat-lainnya">Lihat Lainnya</div>
               </div>
-              <div className="home-news-wrapper">{newsList}</div>
+              <div className="home-news-wrapper">
+                {newsListByCategory(this.data.news_category_id.Hype)}
+              </div>
             </div>
           </div>
 
@@ -123,7 +142,9 @@ class Home extends Component {
                 <div className="news-category-name">Peristiwa</div>
                 <div className="lihat-lainnya">Lihat Lainnya</div>
               </div>
-              <div className="home-news-wrapper">{newsList}</div>
+              <div className="home-news-wrapper">
+                {newsListByCategory(this.data.news_category_id.Peristiwa)}
+              </div>
             </div>
 
             {/* Finance */}
@@ -132,7 +153,10 @@ class Home extends Component {
                 <div className="news-category-name">Finance</div>
                 <div className="lihat-lainnya">Lihat Lainnya</div>
               </div>
-              <div className="home-news-wrapper">{newsList}</div>
+              <div className="home-news-wrapper">
+                {newsListByCategory(this.data.news_category_id.Business)}
+                {newsListByCategory(this.data.news_category_id.Economy)}
+              </div>
             </div>
           </div>
 
@@ -175,21 +199,25 @@ class Home extends Component {
               <div className="lihat-lainnya">Lihat Lainnya</div>
             </div>
             <div className="horizontal-home-news">
-              {news.map((item, index) => (
-                <div className="horizontal-home-news-list" key={index}>
-                  <img
-                    className="horizontal-home-news-media"
-                    src={item.news_image}
-                    alt=""
-                  />
-                  <div className="horizotal-home-news-title">
-                    {item.news_title}
-                  </div>
-                  <div className="horizontal-home-news-date">
-                    {parseDate(item.date_updated)}
-                  </div>
-                </div>
-              ))}
+              {news.map((item, index) => {
+                if (index <= 3) {
+                  return (
+                    <div className="horizontal-home-news-list" key={index}>
+                      <img
+                        className="horizontal-home-news-media"
+                        src={item.news_image}
+                        alt=""
+                      />
+                      <div className="horizotal-home-news-title">
+                        {item.news_title}
+                      </div>
+                      <div className="horizontal-home-news-date">
+                        {parseDate(item.date_updated)}
+                      </div>
+                    </div>
+                  );
+                }
+              })}
             </div>
           </div>
 
@@ -243,10 +271,12 @@ class Home extends Component {
   }
 }
 const mapStateToProps = (state) => {
+  console.log('ini state', state.news.news)
   return {
     ads: state.ads.ads,
     news: state.news.news,
     video: state.video.video,
+    news_category: state.news_category.news_category,
   };
 };
 export default withRouter(connect(mapStateToProps)(Home));
