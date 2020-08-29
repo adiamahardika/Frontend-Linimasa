@@ -1,21 +1,27 @@
 import React from "react";
 import { parseDate } from "../../helpers/index";
-const ItemUserRole = ({ item, index, onSelectEditUserRole, onSelectDeleteUserRole }) => {
+import { button } from "../../helpers/class_name.json";
+const ItemUserRole = ({
+  item,
+  index,
+  onSelectEditUserRole,
+  onSelectDeleteUserRole,
+}) => {
   const onclickEdit = (event) => {
-    event.preventDefault()
-    onSelectEditUserRole(item)
-  }
+    event.preventDefault();
+    onSelectEditUserRole(item);
+  };
   const onClickDelete = (event) => {
-    event.preventDefault()
-    onSelectDeleteUserRole(item)
-  }
+    event.preventDefault();
+    onSelectDeleteUserRole(item);
+  };
   return (
     <>
       <div className="number-column">{index + 1}</div>
       <div className="manage-column">
         <button
           type="button"
-          className="admin btn btn-outline-delete"
+          className={button.danger}
           data-toggle="modal"
           data-target="#deleteModalUserRole"
           onClick={onClickDelete}
@@ -24,7 +30,7 @@ const ItemUserRole = ({ item, index, onSelectEditUserRole, onSelectDeleteUserRol
         </button>
         <button
           type="button"
-          className="admin btn btn-edit"
+          className={button.primary}
           data-toggle="modal"
           data-target="#modalEditUserRole"
           onClick={onclickEdit}

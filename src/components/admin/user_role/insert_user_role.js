@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { insertUserRole } from "../../redux/action/user_role";
 import { withRouter } from "react-router-dom";
 import { routes_admin } from "../../helpers/routes.json";
+import { button } from "../../helpers/class_name.json";
 class InsertUserRole extends Component {
   state = {
     user_role_name: "",
@@ -23,17 +24,17 @@ class InsertUserRole extends Component {
         return (
           <button
             type="submit"
-            className="btn modal-btn-submit"
+            className={button.primary}
             onClick={this.insertUserRole}
             data-dismiss="modal"
           >
-            Add
+            Submit
           </button>
         );
       } else {
         return (
-          <button type="submit" className="btn modal-btn-submit" disabled>
-            Add
+          <button type="submit" className={button.disabled} disabled>
+            Submit
           </button>
         );
       }
@@ -86,7 +87,7 @@ class InsertUserRole extends Component {
               <div className="modal-footer">
                 <button
                   type="button"
-                  className="btn modal-btn-close"
+                  className={button["outline-primary"]}
                   data-dismiss="modal"
                 >
                   Cancel

@@ -3,6 +3,7 @@ import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { readUserRole, readAllUserRole } from "../../redux/action/user_role";
 import { routes_admin } from "../../helpers/routes.json";
+import { button } from "../../helpers/class_name.json"
 import ItemUserRole from "./item_user_role";
 import InsertUserRole from "./insert_user_role";
 import EditUserRole from "./edit_user_role";
@@ -66,11 +67,11 @@ class AdminUserRole extends Component {
         <div className="form admin">
           <button
             type="button"
-            className="admin btn btn-add"
+            className={button.primary}
             data-toggle="modal"
             data-target="#modalInsertUserRole"
           >
-            Add
+            Insert
           </button>
           <input
             className="form-control admin-search"
