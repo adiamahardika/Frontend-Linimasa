@@ -1,5 +1,6 @@
 import React from "react";
 import { parseDate } from "../../helpers/index";
+import { button } from "../../helpers/class_name.json";
 const UserList = ({ item, index, selectDeleteUser }) => {
   const onClickDelete = (event) => {
     event.preventDefault();
@@ -11,7 +12,7 @@ const UserList = ({ item, index, selectDeleteUser }) => {
       <div className="manage-column">
         <button
           type="button"
-          className="admin btn btn-outline-delete"
+          className={button.danger}
           data-toggle="modal"
           data-target="#deleteModalUser"
           onClick={onClickDelete}
