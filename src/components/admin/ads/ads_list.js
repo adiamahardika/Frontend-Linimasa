@@ -1,5 +1,6 @@
 import React from "react";
 import { parseDate } from "../../helpers/index";
+import { button } from "../../helpers/class_name.json"
 const AdsList = ({ item, index, onSelectEditAds, onSelectDeleteAds }) => {
   const onClickEdit = (event) => {
     event.preventDefault();
@@ -15,7 +16,7 @@ const AdsList = ({ item, index, onSelectEditAds, onSelectDeleteAds }) => {
       <div className="manage-column">
         <button
           type="button"
-          className="admin btn btn-outline-delete"
+          className={button.danger}
           data-toggle="modal"
           data-target="#deleteModalAds"
           onClick={onClickDelete}
@@ -24,7 +25,7 @@ const AdsList = ({ item, index, onSelectEditAds, onSelectDeleteAds }) => {
         </button>
         <button
           type="button"
-          className="admin btn btn-edit"
+          className={button.primary}
           data-toggle="modal"
           data-target="#modalEditAds"
           onClick={onClickEdit}

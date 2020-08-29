@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { readAds } from "../../redux/action/ads";
+import { button } from "../../helpers/class_name.json"
 import lensajabar from "../../../assets/image/logo/lensajabar.png";
 import youtube from "../../../assets/image/logo/youtube.jpg";
 import instagram from "../../../assets/image/logo/instagram.jpg";
@@ -42,10 +43,10 @@ class Top extends Component {
             <img className="socmed-logo" alt="" src={instagram} />
             <img className="socmed-logo" alt="" src={twitter} />
             <img className="socmed-logo" alt="" src={facebook} />
-            <button type="button" className="btn primary">
+            <button type="button" className={button.primary}>
               Daftar Lensa ID
             </button>
-            <button type="button" className="btn secondary">
+            <button type="button" className={button["outline-primary"]}>
               Masuk
             </button>
           </div>

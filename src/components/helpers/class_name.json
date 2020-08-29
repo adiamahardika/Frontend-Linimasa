@@ -1,0 +1,7 @@
+{
+  "button": {
+    "primary": "button-primary",
+    "outline-primary": "button-outline-primary",
+    "danger": "button-danger"
+  }
+}

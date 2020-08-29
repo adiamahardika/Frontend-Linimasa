@@ -62,25 +62,30 @@
   color: #fff;
 }
 
-.secondary{
-  max-height: 32px;
-  color: #004de8;
-  border-radius: 16px;
+.button-outline-primary{
   background-color: #fff;
-  display: flex;
   border: 1px solid #004de8;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+  border-radius: 16px;
+  color: #004de8;
+  height: 32px;
+  font-size: 14px;
   font-weight: 500;
-  font-size: 12px;
 }
-.primary {
+.button-primary {
   background-color: #004de8 !important;
   border: none;
   border-radius: 16px;
   color: white;
-  max-height: 32px;
-  font-size: 12px;
+  height: 32px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.button-danger{
+  background-color: #e80000 !important;
+  border: none;
+  border-radius: 16px;
+  color: white;
+  height: 32px;
+  font-size: 14px;
   font-weight: 500;
 }

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { deleteAds } from "../../redux/action/ads";
 import { routes_admin } from "../../helpers/routes.json";
 import { withRouter } from "react-router";
+import { button } from "../../helpers/class_name.json"
 class DeleteAds extends Component {
   deleteAds = async (event) => {
     event.preventDefault();
@@ -37,18 +38,18 @@ class DeleteAds extends Component {
               <div className="modal-footer">
                 <button
                   type="button"
-                  className="btn modal-btn-close"
+                  className={button["outline-primary"]}
                   data-dismiss="modal"
                 >
                   Cancel
                 </button>
                 <button
                   type="button"
-                  className="btn modal-btn-submit"
+                  className={button.danger}
                   onClick={this.deleteAds}
                   data-dismiss="modal"
                 >
-                  Delete
+                  Submit
                 </button>
               </div>
             </div>

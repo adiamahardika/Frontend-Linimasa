@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { readAds } from "../../redux/action/ads";
+import { button } from "../../helpers/class_name.json"
 import AdsList from "./ads_list";
 import InsertAds from "./insert_ads";
 import EditAds from "./edit_ads";
@@ -54,7 +55,7 @@ class AdminAds extends Component {
         <div className="form admin">
           <button
             type="button"
-            className="admin btn btn-add"
+            className={button.primary}
             data-toggle="modal"
             data-target="#modalInsertAds"
           >

@@ -4,6 +4,7 @@ import { editAds } from "../../redux/action/ads";
 import { withRouter } from "react-router-dom";
 import { imageFilter } from "../../helpers";
 import { routes_admin } from "../../helpers/routes.json";
+import { button } from "../../helpers/class_name.json"
 class EditAds extends Component {
   state = {
     id: "",
@@ -48,17 +49,17 @@ class EditAds extends Component {
         return (
           <button
             type="submit"
-            className="btn modal-btn-submit"
+            className={button.primary}
             onClick={this.editAds}
             data-dismiss="modal"
           >
-            Edit
+            Submit
           </button>
         );
       } else {
         return (
-          <button className="btn modal-btn-submit" disabled>
-            Edit
+          <button className={button.primary} disabled>
+            Submit
           </button>
         );
       }
@@ -123,7 +124,7 @@ class EditAds extends Component {
               <div className="modal-footer">
                 <button
                   type="button"
-                  className="btn modal-btn-close"
+                  className={button["outline-primary"]}
                   data-dismiss="modal"
                 >
                   Cancel
