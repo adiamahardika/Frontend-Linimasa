@@ -5,6 +5,7 @@ import { withRouter } from "react-router-dom";
 import { videoFilter } from "../../helpers/index";
 import { routes_admin } from "../../helpers/routes.json";
 import { readAllVideoCategory } from "../../redux/action/video_category";
+import { button } from "../../helpers/class_name.json";
 import AdminLayout from "../layout/admin_layout";
 import FullPageLoader from "../../helpers/loading";
 import TextEditor from "../../helpers/text_editor";
@@ -96,7 +97,7 @@ class EditVideo extends Component {
         return (
           <button
             type="button"
-            className="admin btn btn-add"
+            className={button.primary}
             onClick={this.editVideo}
           >
             Submit
@@ -104,7 +105,7 @@ class EditVideo extends Component {
         );
       } else {
         return (
-          <button type="button" className="admin btn btn-add" disabled>
+          <button type="button" className={button.disabled} disabled>
             Submit
           </button>
         );

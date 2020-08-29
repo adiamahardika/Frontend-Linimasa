@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { deleteVideo } from "../../redux/action/video";
 import { withRouter } from "react-router";
 import { routes_admin } from "../../helpers/routes.json";
+import { button } from "../../helpers/class_name.json";
 class DeleteVideo extends Component {
   deleteVideo = async (event) => {
     event.preventDefault();
@@ -37,18 +38,18 @@ class DeleteVideo extends Component {
               <div className="modal-footer">
                 <button
                   type="button"
-                  className="btn modal-btn-close"
+                  className={button["outline-primary"]}
                   data-dismiss="modal"
                 >
                   Cancel
                 </button>
                 <button
                   type="button"
-                  className="btn modal-btn-submit"
+                  className={button.danger}
                   onClick={this.deleteVideo}
                   data-dismiss="modal"
                 >
-                  Delete
+                  Submit
                 </button>
               </div>
             </div>

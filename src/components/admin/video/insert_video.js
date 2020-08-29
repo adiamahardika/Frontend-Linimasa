@@ -5,6 +5,7 @@ import { withRouter } from "react-router-dom";
 import { videoFilter } from "../../helpers/index";
 import { routes_admin } from "../../helpers/routes.json";
 import { readAllVideoCategory } from "../../redux/action/video_category";
+import { button } from "../../helpers/class_name.json";
 import AdminLayout from "../layout/admin_layout";
 import FullPageLoader from "../../helpers/loading";
 import TextEditor from "../../helpers/text_editor";
@@ -56,13 +57,13 @@ class InsertVideo extends Component {
   insertVideo = async (event) => {
     event.preventDefault();
     let data = new FormData();
-    
+
     data.append("video_title", this.state.video_title);
     data.append("video", this.state.video);
     data.append("video_description", this.state.video_description);
     data.append("video_author", this.state.video_author);
     data.append("video_category", this.state.video_category);
-    
+
     await this.props.dispatch(insertVideo(data));
     this.props.history.push(routes_admin.admin + routes_admin.video);
   };
@@ -72,16 +73,16 @@ class InsertVideo extends Component {
       if (Object.values(this.state).every((values) => values !== "")) {
         return (
           <button
-          type="button"
-            className="admin btn btn-add"
+            type="button"
+            className={button.primary}
             onClick={this.insertVideo}
-            >
+          >
             Submit
           </button>
         );
       } else {
         return (
-          <button type="button" className="admin btn btn-add" disabled>
+          <button type="button" className={button.disabled} disabled>
             Submit
           </button>
         );

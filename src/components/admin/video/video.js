@@ -5,6 +5,7 @@ import { readVideo, readAllVideo } from "../../redux/action/video";
 import { routes_admin } from "../../helpers/routes.json";
 import { readAllVideoCategory } from "../../redux/action/video_category";
 import { Link } from "react-router-dom";
+import { button } from "../../helpers/class_name.json"
 import ItemVideo from "./item_video";
 import DeleteVideo from "./delete_video";
 import AdminLayout from "../layout/admin_layout";
@@ -86,7 +87,7 @@ class AdminVideo extends Component {
         <FullPageLoader loading={loading} />
         <div className="admin-title">Video</div>
         <div className="form admin">
-          <button type="button" className="admin btn btn-add">
+          <button type="button" className={button.primary}>
             <Link
               to={
                 routes_admin.admin +
