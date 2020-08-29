@@ -49,7 +49,7 @@ class InsertAds extends Component {
         );
       } else {
         return (
-          <button className={button.primary} disabled>
+          <button className={button.disabled} disabled>
             Submit
           </button>
         );

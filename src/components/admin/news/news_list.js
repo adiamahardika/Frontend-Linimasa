@@ -2,6 +2,7 @@ import React from "react";
 import { parseDate } from "../../helpers/index";
 import { routes_admin } from "../../helpers/routes.json";
 import { Link } from "react-router-dom";
+import { button } from "../../helpers/class_name.json"
 const NewsList = ({ item, index, onSelectDeleteNews }) => {
   const onClickDelete = (event) => {
     event.preventDefault();
@@ -13,14 +14,14 @@ const NewsList = ({ item, index, onSelectDeleteNews }) => {
       <div className="manage-column">
         <button
           type="button"
-          className="admin btn btn-outline-delete"
+          className={button.danger}
           data-toggle="modal"
           data-target="#deleteModalNews"
           onClick={onClickDelete}
         >
           Delete
         </button>
-        <button type="button" className="admin btn btn-edit">
+        <button type="button" className={button.primary}>
           <Link
             to={{
               pathname:

@@ -59,7 +59,7 @@ class AdminAds extends Component {
             data-toggle="modal"
             data-target="#modalInsertAds"
           >
-            Add
+            Insert
           </button>
           <input
             className="form-control admin-search"

@@ -5,6 +5,7 @@ import { readNews, readAllNews } from "../../redux/action/news";
 import { routes_admin } from "../../helpers/routes.json";
 import { readAllNewsCategory } from "../../redux/action/news_category";
 import { Link } from "react-router-dom";
+import { button } from "../../helpers/class_name.json"
 import DeleteNews from "./delete_news";
 import AdminLayout from "../layout/admin_layout";
 import FullPageLoader from "../../helpers/loading";
@@ -88,7 +89,7 @@ class AdminNews extends Component {
         <AdminLayout>
           <div className="admin-title">News</div>
           <div className="form admin">
-            <button type="button" className="admin btn btn-add">
+            <button type="button" className={button.primary}>
               <Link
                 to={
                   routes_admin.admin +

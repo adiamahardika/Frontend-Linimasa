@@ -5,6 +5,7 @@ import { withRouter } from "react-router-dom";
 import { imageFilter } from "../../helpers/index";
 import { routes_admin } from "../../helpers/routes.json";
 import { readAllNewsCategory } from "../../redux/action/news_category";
+import { button } from "../../helpers/class_name.json"
 import AdminLayout from "../layout/admin_layout";
 import FullPageLoader from "../../helpers/loading";
 import TextEditor from "../../helpers/text_editor";
@@ -75,7 +76,7 @@ class InsertNews extends Component {
         return (
           <button
             type="button"
-            className="admin btn btn-add"
+            className={button.primary}
             onClick={this.insertNews}
           >
             Submit
@@ -83,7 +84,7 @@ class InsertNews extends Component {
         );
       } else {
         return (
-          <button type="button" className="admin btn btn-add" disabled>
+          <button type="button" disabled className={button.disabled}>
             Submit
           </button>
         );

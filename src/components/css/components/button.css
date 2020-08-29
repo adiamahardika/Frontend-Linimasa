@@ -89,3 +89,13 @@
   font-size: 14px;
   font-weight: 500;
 }
+.button-disabled{
+  background-color: #aeafb3;
+  border: 1px solid #bdc1c9;
+  border: none;
+  border-radius: 16px;
+  color: #fff;
+  height: 32px;
+  font-size: 14px;
+  font-weight: 500;
+}
