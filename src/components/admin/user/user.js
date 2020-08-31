@@ -85,7 +85,7 @@ class AdminUser extends Component {
     return (
       <AdminLayout>
         <FullPageLoader loading={loading} />
-        <div className="admin-title">User</div>
+        <div className={text.h1}>User</div>
         <div className="form admin">
           <div className="admin-icon dropdown">
             <ion-icon
@@ -96,14 +96,14 @@ class AdminUser extends Component {
             />
             <div class="dropdown-menu">
               <button
-                className="dropdown-item"
+                className="dropdown-item paragraph-1"
                 onClick={() => this.filterUser("")}
               >
                 All
               </button>
               {user_role.map((user_role, index) => (
                 <button
-                  className="dropdown-item"
+                  className="dropdown-item paragraph-1"
                   key={index}
                   onClick={() => this.filterUser(user_role.id)}
                 >
