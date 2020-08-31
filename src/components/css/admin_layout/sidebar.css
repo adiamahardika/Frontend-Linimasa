@@ -5,16 +5,20 @@
   align-content: start;
   justify-content: start;
   background-color: white;
+  row-gap: 8px;
 }
 /*Sidebar Menu*/
 .sidebar-menu {
   font-size: 16px;
   font-weight: 500;
   color: #5a5c69;
+  padding: 2px;
 }
 .sidebar-menu:hover {
   font-weight: 600;
   color: #5a5c69;
+  background-color: #ececec;
+  border-radius: 4px;
 }
 /* Management */
 .sidebar-menu {
@@ -43,9 +47,10 @@
 .management-list a {
   color: white;
   display: block;
+  font-weight: 400;
 }
 .management-list a:hover {
   text-decoration: none;
   color: white;
-  font-weight: 400;
+  font-weight: 500;
 }
