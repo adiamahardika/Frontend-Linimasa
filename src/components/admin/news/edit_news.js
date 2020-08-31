@@ -151,7 +151,7 @@ class EditNews extends Component {
             </select>
           </div>
           <div className="form-group">
-            <label className={text.p1}>Image</label>
+            <label className={text.p1}>Gambar</label>
             <div className="media-wrapper">
               <div className="image-uploaded">
                 <img src={this.data.image_preview} alt="" />

@@ -87,7 +87,7 @@ class AdminNews extends Component {
       <>
         <FullPageLoader loading={loading} />
         <AdminLayout>
-          <div className={text.h1}>News</div>
+          <div className={text.h1}>Berita</div>
           <div className="form admin">
             <button type="button" className={button.primary}>
               <div className={text.p3}>
@@ -137,13 +137,13 @@ class AdminNews extends Component {
           <div className="admin-table news">
             <div className="paragraph-1 number-column">No</div>
             <div className={text.p1}>Manage</div>
-            <div className={text.p1}>News Title</div>
-            <div className={text.p1}>Image</div>
-            <div className={text.p1}>Image Description</div>
-            <div className={text.p1}>News Category</div>
-            <div className={text.p1}>News Author</div>
-            <div className={text.p1}>Date Created</div>
-            <div className={text.p1}>Date Updated</div>
+            <div className={text.p1}>Judul Berita</div>
+            <div className={text.p1}>Gambar</div>
+            <div className={text.p1}>Deskripsi Gambar</div>
+            <div className={text.p1}>Kategori Berita</div>
+            <div className={text.p1}>Penulis Berita</div>
+            <div className={text.p1}>Tanggal Dibuat</div>
+            <div className={text.p1}>Tanggal Diedit</div>
             {listNews}
           </div>
         </AdminLayout>
