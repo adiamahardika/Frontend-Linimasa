@@ -122,14 +122,14 @@ class AdminUser extends Component {
         <div className="admin-table user">
           <div className="paragraph-1 number-column">No</div>
           <div className={text.p1}>Manage</div>
-          <div className={text.p1}>Name</div>
-          <div className={text.p1}>Image</div>
+          <div className={text.p1}>Nama</div>
+          <div className={text.p1}>Foto Profil</div>
           <div className={text.p1}>Email</div>
-          <div className={text.p1}>Phone Number</div>
+          <div className={text.p1}>No.Hp</div>
           <div className={text.p1}>Role</div>
           <div className={text.p1}>Points</div>
-          <div className={text.p1}>Date Created</div>
-          <div className={text.p1}>Date Updated</div>
+          <div className={text.p1}>Tanggal Dibuat</div>
+          <div className={text.p1}>Tangal Diedit</div>
           {listAds}
         </div>
         <DeleteUser user={this.state.selectDeleteUser} />
