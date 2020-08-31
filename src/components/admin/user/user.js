@@ -115,7 +115,7 @@ class AdminUser extends Component {
           <input
             className="form-control search paragraph-3"
             type="search"
-            placeholder="Search User"
+            placeholder="Cari User"
             onChange={this.searchUser}
           />
         </div>

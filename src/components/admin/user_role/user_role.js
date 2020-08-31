@@ -78,16 +78,16 @@ class AdminUserRole extends Component {
           <input
             className="form-control search paragraph-3"
             type="search"
-            placeholder="Search User Role"
+            placeholder="Cari User Role"
             onChange={this.onSearchUserRole}
           />
         </div>
         <div className="admin-table user-role">
           <div className="paragraph-1 number-column">No</div>
           <div className={text.p1}>Manage</div>
-          <div className={text.p1}>Name</div>
-          <div className={text.p1}>Date Created</div>
-          <div className={text.p1}>Date Updated</div>
+          <div className={text.p1}>Nama</div>
+          <div className={text.p1}>Tanggal Dibuat</div>
+          <div className={text.p1}>Tanggal Diedit</div>
           {listUserRole}
         </div>
         <InsertUserRole />
