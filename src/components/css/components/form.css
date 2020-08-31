@@ -48,8 +48,7 @@
 .input-title {
   border: none;
   padding: 8px;
-  font-size: 32px;
-  font-weight: 600;
+  justify-content: start;
 }
 .input-title:focus{
   border: none;

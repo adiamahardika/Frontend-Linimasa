@@ -5,7 +5,7 @@ import { withRouter } from "react-router-dom";
 import { imageFilter } from "../../helpers/index";
 import { routes_admin } from "../../helpers/routes.json";
 import { readAllNewsCategory } from "../../redux/action/news_category";
-import { button } from "../../helpers/class_name.json"
+import { button, text } from "../../helpers/class_name.json"
 import AdminLayout from "../layout/admin_layout";
 import FullPageLoader from "../../helpers/loading";
 import TextEditor from "../../helpers/text_editor";
@@ -117,7 +117,7 @@ class EditNews extends Component {
     return (
       <AdminLayout>
         <FullPageLoader loading={loading} />
-        <div className="admin-title">Edit News</div>
+        <div className={text.h1}> Edit Berita</div>
         <div className="form admin">
           <SubmitButton />
         </div>
@@ -125,7 +125,7 @@ class EditNews extends Component {
           <div className="form-group">
             <textarea
               type="text"
-              className="input-title"
+              className="input-title header-2"
               placeholder="Tulis Judul..."
               onChange={this.onEditNews}
               name="news_title"
@@ -135,7 +135,7 @@ class EditNews extends Component {
           </div>
           <div className="form-group">
             <select
-              className="custom-select input-category"
+              className="custom-select input-category paragraph-1"
               onChange={this.onEditNews}
               name="news_category"
               defaultValue={"DEFAULT"}
@@ -151,14 +151,14 @@ class EditNews extends Component {
             </select>
           </div>
           <div className="form-group">
-            <label className="label-input">Image</label>
+            <label className={text.p1}>Image</label>
             <div className="media-wrapper">
               <div className="image-uploaded">
                 <img src={this.data.image_preview} alt="" />
               </div>
               <div className="upload">
                 <ion-icon size="large" name="cloud-upload"></ion-icon>
-                <div className="text">No file chosen, yet!</div>
+                <div className={text.p2}>Belum ada gambar yang dipilih!</div>
                 <input
                   type="file"
                   className="form-control-file"
@@ -175,7 +175,7 @@ class EditNews extends Component {
           <div className="form-group">
             <textarea
               type="text"
-              className="input-image-description"
+              className="input-image-description paragraph-1"
               placeholder="Tulis Deskripsi Gambar..."
               onChange={this.onEditNews}
               name="news_image_description"
