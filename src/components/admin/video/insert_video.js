@@ -5,7 +5,7 @@ import { withRouter } from "react-router-dom";
 import { videoFilter } from "../../helpers/index";
 import { routes_admin } from "../../helpers/routes.json";
 import { readAllVideoCategory } from "../../redux/action/video_category";
-import { button } from "../../helpers/class_name.json";
+import { button, text } from "../../helpers/class_name.json";
 import AdminLayout from "../layout/admin_layout";
 import FullPageLoader from "../../helpers/loading";
 import TextEditor from "../../helpers/text_editor";
@@ -91,7 +91,7 @@ class InsertVideo extends Component {
     return (
       <AdminLayout>
         <FullPageLoader loading={loading} />
-        <div className="admin-title">Insert Video</div>
+        <div className={text.h1}>Insert Video</div>
         <div className="form admin">
           <SubmitButton />
         </div>
@@ -99,7 +99,7 @@ class InsertVideo extends Component {
           <div className="form-group">
             <textarea
               type="text"
-              className="input-title"
+              className="input-title header-2"
               placeholder="Tulis Judul..."
               onChange={this.onInsertVideo}
               name="video_title"
@@ -108,23 +108,27 @@ class InsertVideo extends Component {
           </div>
           <div className="form-group">
             <select
-              className="custom-select input-category"
+              className="custom-select input-category paragraph-1"
               onChange={this.onInsertVideo}
               name="video_category"
               defaultValue={"DEFAULT"}
             >
-              <option disabled value="DEFAULT">
+              <option disabled value="DEFAULT" className={text.p1}>
                 Pilih Kategori Video...
               </option>
               {video_category.map((video_category, index) => (
-                <option key={index} value={video_category.id}>
+                <option
+                  key={index}
+                  value={video_category.id}
+                  className={text.p1}
+                >
                   {video_category.video_category_name}
                 </option>
               ))}
             </select>
           </div>
           <div className="form-group">
-            <label className="label-input">Video</label>
+            <label className={text.p1}>Video</label>
             <div className="media-wrapper">
               <div className="video-uploaded">
                 <video>
@@ -133,7 +137,7 @@ class InsertVideo extends Component {
               </div>
               <div className="upload">
                 <ion-icon size="large" name="cloud-upload"></ion-icon>
-                <div className="text">No file chosen, yet!</div>
+                <div className={text.p2}>Belum ada video yang dipilih!</div>
                 <input
                   type="file"
                   className="form-control-file"
@@ -148,7 +152,7 @@ class InsertVideo extends Component {
             </div>
           </div>
           <div className="form-group">
-            <label className="label-input">Artikel</label>
+            <label className={text.p1}>Artikel</label>
             <TextEditor insertArticle={this.onInsertArticle} />
           </div>
         </div>

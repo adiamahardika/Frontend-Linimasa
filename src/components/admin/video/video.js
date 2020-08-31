@@ -5,7 +5,7 @@ import { readVideo, readAllVideo } from "../../redux/action/video";
 import { routes_admin } from "../../helpers/routes.json";
 import { readAllVideoCategory } from "../../redux/action/video_category";
 import { Link } from "react-router-dom";
-import { button } from "../../helpers/class_name.json"
+import { button, text } from "../../helpers/class_name.json"
 import ItemVideo from "./item_video";
 import DeleteVideo from "./delete_video";
 import AdminLayout from "../layout/admin_layout";
@@ -85,9 +85,10 @@ class AdminVideo extends Component {
     return (
       <AdminLayout>
         <FullPageLoader loading={loading} />
-        <div className="admin-title">Video</div>
+        <div className={text.h1}>Video</div>
         <div className="form admin">
           <button type="button" className={button.primary}>
+            <div className={text.p3}>
             <Link
               to={
                 routes_admin.admin +
@@ -95,8 +96,9 @@ class AdminVideo extends Component {
                 routes_admin.insert_video
               }
             >
-              Insert
+              Tulis Video
             </Link>
+            </div>
           </button>
           <div className="admin-icon dropdown">
             <ion-icon
@@ -107,14 +109,14 @@ class AdminVideo extends Component {
             />
             <div className="dropdown-menu">
               <button
-                className="dropdown-item"
+                className="dropdown-item paragraph-1"
                 onClick={() => this.filterVideo("")}
               >
                 All
               </button>
               {video_category.map((video_category, index) => (
                 <button
-                  className="dropdown-item"
+                  className="dropdown-item paragraph-1"
                   key={index}
                   onClick={() => this.filterVideo(video_category.id)}
                 >
@@ -131,15 +133,15 @@ class AdminVideo extends Component {
           />
         </div>
         <div className="admin-table video">
-          <div className="number-column header-admin-table">No</div>
-          <div className="header-admin-table">Manage</div>
-          <div className="header-admin-table">Video Title</div>
-          <div className="header-admin-table">Video</div>
-          <div className="header-admin-table">Video Description</div>
-          <div className="header-admin-table">Video Author</div>
-          <div className="header-admin-table">Video Category</div>
-          <div className="header-admin-table">Date Created</div>
-          <div className="header-admin-table">Date Updated</div>
+          <div className="number-column paragraph-1">No</div>
+          <div className={text.p1}>Manage</div>
+          <div className={text.p1}>Video Title</div>
+          <div className={text.p1}>Video</div>
+          <div className={text.p1}>Video Description</div>
+          <div className={text.p1}>Video Author</div>
+          <div className={text.p1}>Video Category</div>
+          <div className={text.p1}>Date Created</div>
+          <div className={text.p1}>Date Updated</div>
           {listVideo}
         </div>
         <div className="total_data">Total Data = {total_data}</div>

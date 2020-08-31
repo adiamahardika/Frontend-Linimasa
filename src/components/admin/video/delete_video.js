@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { deleteVideo } from "../../redux/action/video";
 import { withRouter } from "react-router";
 import { routes_admin } from "../../helpers/routes.json";
-import { button } from "../../helpers/class_name.json";
+import { button, text } from "../../helpers/class_name.json";
 class DeleteVideo extends Component {
   deleteVideo = async (event) => {
     event.preventDefault();
@@ -22,7 +22,7 @@ class DeleteVideo extends Component {
           <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title">Delete Video</h5>
+                <div className={text.h2}>Hapus Video</div>
                 <button
                   type="button"
                   className="close"
@@ -33,7 +33,9 @@ class DeleteVideo extends Component {
                 </button>
               </div>
               <div className="modal-body">
-                <p>Are you sure want to delete this video?</p>
+                <div className={text.p2}>
+                  Anda yakin akan menghapus video ini?
+                </div>
               </div>
               <div className="modal-footer">
                 <button
