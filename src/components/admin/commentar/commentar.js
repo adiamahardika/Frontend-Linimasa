@@ -59,7 +59,7 @@ class AdminCommentar extends Component {
           <input
             className="form-control search paragraph-3"
             type="search"
-            placeholder="Search Commentar"
+            placeholder="Cari Komentar"
             onChange={this.onSearchCommentar}
           />
         </div>
