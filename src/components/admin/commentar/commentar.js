@@ -3,7 +3,8 @@ import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { readCommentar, readAllCommentar } from "../../redux/action/commentar";
 import { routes_admin } from "../../helpers/routes.json";
-import ItemCommentar from "./item_commentar";
+import { text } from "../../helpers/class_name.json"
+import ItemCommentar from "./commentar_list";
 import DeleteCommentar from "./delete_commentar";
 import AdminLayout from "../layout/admin_layout";
 import FullPageLoader from "../../helpers/loading";
@@ -53,7 +54,7 @@ class AdminCommentar extends Component {
     return (
       <AdminLayout>
         <FullPageLoader loading={loading} />
-        <div className="admin-title">Commentar</div>
+        <div className={text.h1}>Komentar</div>
         <div className="form admin">
           <input
             className="form-control admin-search"
@@ -63,13 +64,13 @@ class AdminCommentar extends Component {
           />
         </div>
         <div className="admin-table commentar">
-          <div className="header-admin-table number-column">No</div>
-          <div className="header-admin-table">Manage</div>
-          <div className="header-admin-table">News Title</div>
-          <div className="header-admin-table">User</div>
-          <div className="header-admin-table">Commentar</div>
-          <div className="header-admin-table">Date Created</div>
-          <div className="header-admin-table">Date Updated</div>
+          <div className="paragraph-1 number-column">No</div>
+          <div className={text.p1}>Atur</div>
+          <div className={text.p1}>Judul Berita</div>
+          <div className={text.p1}>User</div>
+          <div className={text.p1}>Komentar</div>
+          <div className={text.p1}>Tanggal Dibuat</div>
+          <div className={text.p1}>Tanggal Diedit</div>
           {listCommentar}
         </div>
         <DeleteCommentar commentar={this.state.selectDeleteCommentar} />

@@ -1,6 +1,6 @@
 import React from "react";
 import { parseDate } from "../../helpers/index";
-import { button } from "../../helpers/class_name.json"
+import { button, text} from "../../helpers/class_name.json"
 const ItemCommentar = ({ item, index, onSelectDeleteCommentar }) => {
   const onClickDelete = (event) => {
     event.preventDefault()
@@ -20,9 +20,9 @@ const ItemCommentar = ({ item, index, onSelectDeleteCommentar }) => {
           Delete
         </button>
       </div>
-      <div className="sentences-column">{item.news_title}</div>
-      <div className="sentences-column">{item.user_name}</div>
-      <div className="sentences-column">{item.commentar}</div>
+      <div className={text.p2}>{item.news_title}</div>
+      <div className={text.p2}>{item.user_name}</div>
+      <div className={text.p2}>{item.commentar}</div>
       <div>{parseDate(item.date_created)}</div>
       <div>{parseDate(item.date_updated)}</div>
     </>

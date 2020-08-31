@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { deleteCommentar } from "../../redux/action/commentar";
 import { routes_admin } from "../../helpers/routes.json";
 import { withRouter } from "react-router";
-import { button } from "../../helpers/class_name.json"
+import { button, text } from "../../helpers/class_name.json"
 class DeleteCommentar extends Component {
   deleteCommentar = async (event) => {
     event.preventDefault();
@@ -22,7 +22,7 @@ class DeleteCommentar extends Component {
           <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title">Delete Commentar</h5>
+                <div className={text.h2}>Delete Commentar</div>
                 <button
                   type="button"
                   className="close"
@@ -33,7 +33,7 @@ class DeleteCommentar extends Component {
                 </button>
               </div>
               <div className="modal-body">
-                <p>Are you sure want to delete this commentar?</p>
+                <div className={text.p2}>Apakah anda yakin akan menghapus komentar ini?</div>
               </div>
               <div className="modal-footer">
                 <button
