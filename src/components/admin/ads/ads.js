@@ -64,7 +64,7 @@ class AdminAds extends Component {
           <input
             className="form-control search paragraph-3"
             type="search"
-            placeholder="Search Ads"
+            placeholder="Cari Ads"
           />
         </div>
         <div className="admin-table ads">
