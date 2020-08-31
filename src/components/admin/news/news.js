@@ -111,14 +111,14 @@ class AdminNews extends Component {
               />
               <div className="dropdown-menu">
                 <button
-                  className="dropdown-item"
+                  className="dropdown-item paragraph-1"
                   onClick={() => this.filterNews("")}
                 >
                   All
                 </button>
                 {news_category.map((news_category, index) => (
                   <button
-                    className="dropdown-item"
+                    className="dropdown-item paragraph-1"
                     key={index}
                     onClick={() => this.filterNews(news_category.id)}
                   >
@@ -130,7 +130,7 @@ class AdminNews extends Component {
             <input
               className="form-control search paragraph-3"
               type="search"
-              placeholder="Search News"
+              placeholder="Cari Berita"
               onChange={this.searchNews}
             />
           </div>

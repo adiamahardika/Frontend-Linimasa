@@ -22,7 +22,7 @@ class DeleteAds extends Component {
           <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                <div className={text.h2}>Delete Ads</div>
+                <div className={text.h2}>Hapus Ads</div>
                 <button
                   type="button"
                   className="close"
@@ -33,7 +33,7 @@ class DeleteAds extends Component {
                 </button>
               </div>
               <div className="modal-body">
-                <div className={text.p2}>Are you sure want to delete this ads?</div>
+                <div className={text.p2}>Anda yakin ingin menghapus ads ini?</div>
               </div>
               <div className="modal-footer">
                 <button

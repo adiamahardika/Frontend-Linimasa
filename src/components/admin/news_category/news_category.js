@@ -81,7 +81,7 @@ class AdminNewsCategory extends Component {
           <input
             className="form-control search paragraph-3"
             type="search"
-            placeholder="Search News Category"
+            placeholder="Cari Kategori Berita"
             onChange={this.onSearchNewsCategory}
           />
         </div>

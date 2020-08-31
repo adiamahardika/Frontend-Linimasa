@@ -37,7 +37,7 @@ class Top extends Component {
             <input
               className="form-control search paragraph-3"
               type="search"
-              placeholder="Search News"
+              placeholder="Cari Berita"
             />
             <div className={text.p1}>Connect with us</div>
             <img className="socmed-logo" alt="" src={youtube} />

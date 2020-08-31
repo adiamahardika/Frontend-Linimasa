@@ -85,7 +85,7 @@ class InsertAds extends Component {
                       <label
                         className={text.p1}
                       >
-                        Ads Name:
+                        Nama:
                       </label>
                       <input
                         name="ads_name"
@@ -96,7 +96,7 @@ class InsertAds extends Component {
                       />
                     </div>
                     <div>
-                      <label className={text.p1}> Image: </label>
+                      <label className={text.p1}>Gambar: </label>
                       <input
                         type="file"
                         name="ads_image"

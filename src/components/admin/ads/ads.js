@@ -59,7 +59,7 @@ class AdminAds extends Component {
             data-toggle="modal"
             data-target="#modalInsertAds"
           >
-            Insert
+            Tulis Ads
           </button>
           <input
             className="form-control search paragraph-3"
@@ -70,10 +70,10 @@ class AdminAds extends Component {
         <div className="admin-table ads">
           <div className="paragraph-1 number-column">No</div>
           <div className={text.p1}>Manage</div>
-          <div className={text.p1}>Name</div>
-          <div className={text.p1}>Image</div>
-          <div className={text.p1}>Date Created</div>
-          <div className={text.p1}>Date Updated</div>
+          <div className={text.p1}>Nama</div>
+          <div className={text.p1}>Gambar</div>
+          <div className={text.p1}>Tanggal Dibuat</div>
+          <div className={text.p1}>Tanggal Diedit</div>
           {listAds}
         </div>
         <InsertAds />
