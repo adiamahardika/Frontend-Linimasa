@@ -3,6 +3,7 @@ import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { readAds } from "../../redux/action/ads";
 import { readAllNews } from "../../redux/action/news";
+import { text } from "../../helpers/class_name.json"
 import berita_terbaru from "../../../assets/image/logo/berita_terbaru.png";
 import berita_terpopuler from "../../../assets/image/logo/berita_terpopuler.png";
 import "../../css/main/layout/side.css";
@@ -32,7 +33,7 @@ class Side extends Component {
         if (index <= 3) {
           return (
             <div className="news-wrapper" key={index}>
-              <div className="side-news-title">{item.news_title}</div>
+              <div className={text.p1}>{item.news_title}</div>
               <img className="side-news-image" src={item.news_image} alt="" />
             </div>
           );
