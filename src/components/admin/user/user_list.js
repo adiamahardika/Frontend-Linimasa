@@ -1,6 +1,6 @@
 import React from "react";
 import { parseDate } from "../../helpers/index";
-import { button } from "../../helpers/class_name.json";
+import { button, text } from "../../helpers/class_name.json";
 const UserList = ({ item, index, selectDeleteUser }) => {
   const onClickDelete = (event) => {
     event.preventDefault();
@@ -20,16 +20,16 @@ const UserList = ({ item, index, selectDeleteUser }) => {
           Delete
         </button>
       </div>
-      <div className="sentences-column">{item.user_name}</div>
+      <div className={text.p2}>{item.user_name}</div>
       <div className="media-column">
         <img className="admin-image" src={item.user_image} alt="..." />
       </div>
-      <div className="sentences-column">{item.user_email}</div>
+      <div className={text.p2}>{item.user_email}</div>
       <div>{item.user_phone_number}</div>
-      <div className="sentences-column">{item.user_role_name}</div>
-      <div>{item.user_points}</div>
-      <div>{parseDate(item.date_created)}</div>
-      <div>{parseDate(item.date_updated)}</div>
+      <div className={text.p2}>{item.user_role_name}</div>
+      <div className={text.p2}>{item.user_points}</div>
+      <div className={text.p2}>{parseDate(item.date_created)}</div>
+      <div className={text.p2}>{parseDate(item.date_updated)}</div>
     </>
   );
 };

@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { readUser, readAllUser } from "../../redux/action/user";
 import { routes_admin } from "../../helpers/routes.json";
 import { readAllUserRole } from "../../redux/action/user_role";
+import { text } from "../../helpers/class_name.json";
 import UserList from "./user_list";
 import DeleteUser from "./delete_user";
 import AdminLayout from "../layout/admin_layout";
@@ -119,16 +120,16 @@ class AdminUser extends Component {
           />
         </div>
         <div className="admin-table user">
-          <div className="header-admin-table number-column">No</div>
-          <div className="header-admin-table">Manage</div>
-          <div className="header-admin-table">Name</div>
-          <div className="header-admin-table">Image</div>
-          <div className="header-admin-table">Email</div>
-          <div className="header-admin-table">Phone Number</div>
-          <div className="header-admin-table">Role</div>
-          <div className="header-admin-table">Points</div>
-          <div className="header-admin-table">Date Created</div>
-          <div className="header-admin-table">Date Updated</div>
+          <div className="paragraph-1 number-column">No</div>
+          <div className={text.p1}>Manage</div>
+          <div className={text.p1}>Name</div>
+          <div className={text.p1}>Image</div>
+          <div className={text.p1}>Email</div>
+          <div className={text.p1}>Phone Number</div>
+          <div className={text.p1}>Role</div>
+          <div className={text.p1}>Points</div>
+          <div className={text.p1}>Date Created</div>
+          <div className={text.p1}>Date Updated</div>
           {listAds}
         </div>
         <DeleteUser user={this.state.selectDeleteUser} />
