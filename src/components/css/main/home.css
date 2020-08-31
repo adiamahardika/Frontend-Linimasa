@@ -58,15 +58,6 @@
   grid-template-columns: repeat(4, 1fr);
 }
 
-/* News Category Name */
-.news-category-name {
-  font-size: 32px;
-  font-weight: 700;
-  color: #004de8;
-  border-bottom: 4px solid #e80000;
-  width: min-content;
-}
-
 /* News List */
 .home-news-list {
   display: grid;

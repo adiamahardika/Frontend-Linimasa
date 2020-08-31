@@ -6,6 +6,7 @@ import { readAllNews } from "../redux/action/news";
 import { parseDate } from "../helpers/index";
 import { readVideo } from "../redux/action/video";
 import { readAllNewsCategory } from "../redux/action/news_category";
+import { text } from "../helpers/class_name.json"
 import Top from "./layout/top";
 import Navbar from "./layout/navbar";
 import Side from "./layout/side";
@@ -46,8 +47,8 @@ class Home extends Component {
             newsData[item.id] = item;
             return (
               <div className="home-news-list">
-                <div className="home-news-title">{item.news_title}</div>
-                <div className="home-news-date">
+                <div className={text.h2}>{item.news_title}</div>
+                <div className={text.p3}>
                   {parseDate(item.date_updated)}
                 </div>
                 <img className="home-news-image" src={item.news_image} alt="" />
@@ -64,8 +65,8 @@ class Home extends Component {
         if (index <= 3) {
           return (
             <div className="home-news-list">
-              <div className="home-news-title">{item.news_title}</div>
-              <div className="home-news-date">
+              <div className={text.h2}>{item.news_title}</div>
+              <div className={text.p3}>
                 {parseDate(item.date_updated)}
               </div>
               <img className="home-news-image" src={item.news_image} alt="" />
@@ -80,7 +81,7 @@ class Home extends Component {
         if (index <= 3) {
           return (
             <div className="news-wrapper" key={index}>
-              <div className="side-news-title">{item.news_title}</div>
+              <div className={text.p1}>{item.news_title}</div>
               <img className="side-news-image" src={item.news_image} alt="" />
             </div>
           );
@@ -110,8 +111,8 @@ class Home extends Component {
             {/* News */}
             <div>
               <div className="home-news-header">
-                <div className="news-category-name">News</div>
-                <div className="lihat-lainnya">Lihat Lainnya</div>
+                <div className={text.h1}>News</div>
+                <div className={text.p1}>Lihat Lainnya</div>
               </div>
               <div className="home-news-wrapper">{newsList}</div>
             </div>
@@ -119,8 +120,8 @@ class Home extends Component {
             {/* Hype */}
             <div>
               <div className="home-news-header">
-                <div className="news-category-name">Hype</div>
-                <div className="lihat-lainnya">Lihat Lainnya</div>
+                <div className={text.h1}>Hype</div>
+                <div className={text.p1}>Lihat Lainnya</div>
               </div>
               <div className="home-news-wrapper">
                 {newsListByCategory(this.data.news_category_id.Hype, 4)}
@@ -132,8 +133,8 @@ class Home extends Component {
           {/* Video */}
           <div className="home-horizontal-top">
             <div className="home-news-header">
-              <div className="news-category-name">Video</div>
-              <div className="lihat-lainnya">Lihat Lainnya</div>
+              <div className={text.h1}>Video</div>
+              <div className={text.p1}>Lihat Lainnya</div>
             </div>
             <div className="horizontal-home-news">
               {video.map((item, index) => (
@@ -141,10 +142,10 @@ class Home extends Component {
                   <video className="horizontal-home-news-media">
                     <source src={item.video} type="video/mp4" />
                   </video>
-                  <div className="horizotal-home-news-title">
+                  <div className={text.p1}>
                     {item.video_title}
                   </div>
-                  <div className="horizontal-home-news-date">
+                  <div className={text.p3}>
                     {parseDate(item.date_updated)}
                   </div>
                 </div>
@@ -157,8 +158,8 @@ class Home extends Component {
             {/* Peritiwa */}
             <div>
               <div className="home-news-header">
-                <div className="news-category-name">Peristiwa</div>
-                <div className="lihat-lainnya">Lihat Lainnya</div>
+                <div className={text.h1}>Peristiwa</div>
+                <div className={text.p1}>Lihat Lainnya</div>
               </div>
               <div className="home-news-wrapper">
                 {newsListByCategory(this.data.news_category_id.Peristiwa, 4)}
@@ -168,8 +169,8 @@ class Home extends Component {
             {/* Finance */}
             <div>
               <div className="home-news-header">
-                <div className="news-category-name">Finance</div>
-                <div className="lihat-lainnya">Lihat Lainnya</div>
+                <div className={text.h1}>Finance</div>
+                <div className={text.p1}>Lihat Lainnya</div>
               </div>
               <div className="home-news-wrapper">
                 {newsListByCategory(this.data.news_category_id.Business, 2)}
@@ -183,8 +184,8 @@ class Home extends Component {
             {/* Entertainment */}
             <div>
               <div className="home-news-header">
-                <div className="news-category-name">Entertainment</div>
-                <div className="lihat-lainnya">Lihat Lainnya</div>
+                <div className={text.h1}>Entertainment</div>
+                <div className={text.p1}>Lihat Lainnya</div>
               </div>
               <div className="side-news">{sideNewsList}</div>
             </div>
@@ -192,8 +193,8 @@ class Home extends Component {
             {/* Komentar */}
             <div>
               <div className="home-news-header">
-                <div className="news-category-name">Komentar</div>
-                <div className="lihat-lainnya">Lihat Lainnya</div>
+                <div className={text.h1}>Komentar</div>
+                <div className={text.p1}>Lihat Lainnya</div>
               </div>
             </div>
           </div>
@@ -202,8 +203,8 @@ class Home extends Component {
           {/* Lifestyle */}
           <div className="home-horizontal-bottom">
             <div className="home-news-header">
-              <div className="news-category-name">Lifestyle</div>
-              <div className="lihat-lainnya">Lihat Lainnya</div>
+              <div className={text.h1}>Lifestyle</div>
+              <div className={text.p1}>Lihat Lainnya</div>
             </div>
             <div className="horizontal-home-news">
               {news.map((item, index) => {
@@ -215,10 +216,10 @@ class Home extends Component {
                         src={item.news_image}
                         alt=""
                       />
-                      <div className="horizotal-home-news-title">
+                      <div className={text.p1}>
                         {item.news_title}
                       </div>
-                      <div className="horizontal-home-news-date">
+                      <div className={text.p3}>
                         {parseDate(item.date_updated)}
                       </div>
                     </div>
@@ -234,8 +235,8 @@ class Home extends Component {
             {/* Humaniora */}
             <div>
               <div className="home-news-header">
-                <div className="news-category-name">Humaniora</div>
-                <div className="lihat-lainnya">Lihat Lainnya</div>
+                <div className={text.h1}>Humaniora</div>
+                <div className={text.p1}>Lihat Lainnya</div>
               </div>
               <div className="home-news-wrapper">{newsList}</div>
             </div>
@@ -243,8 +244,8 @@ class Home extends Component {
             {/* Ragam */}
             <div>
               <div className="home-news-header">
-                <div className="news-category-name">Ragam</div>
-                <div className="lihat-lainnya">Lihat Lainnya</div>
+                <div className={text.h1}>Ragam</div>
+                <div className={text.p1}>Lihat Lainnya</div>
               </div>
               <div className="home-news-wrapper">{newsList}</div>
             </div>
@@ -255,8 +256,8 @@ class Home extends Component {
             {/* Techno */}
             <div>
               <div className="home-news-header">
-                <div className="news-category-name">Techno</div>
-                <div className="lihat-lainnya">Lihat Lainnya</div>
+                <div className={text.h1}>Techno</div>
+                <div className={text.p1}>Lihat Lainnya</div>
               </div>
               <div className="side-news">{sideNewsList}</div>
             </div>

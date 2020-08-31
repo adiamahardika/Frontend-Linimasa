@@ -56,22 +56,65 @@
   display: flex;
   align-self: flex-start;
 }
-.horizontal-home-news-date{
+.horizontal-home-news-date {
   font-size: 12px;
   font-weight: 400;
   display: flex;
   align-self: flex-start;
 }
-.footer-bold{
+.footer-bold {
   font-weight: 600;
   font-size: 16px;
 }
-.footer-items{
+.footer-items {
   font-weight: 400;
   font-size: 14px;
 }
-.lihat-lainnya{
+.lihat-lainnya {
   text-decoration: underline;
   font-weight: 400;
   font-size: 16px;
+}
+
+.header-1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #004de8;
+  border-bottom: 4px solid #e80000;
+  width: min-content;
+}
+
+.header-2 {
+  grid-area: home-news-title;
+  display: flex;
+  align-self: flex-end;
+  font-size: 24px;
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.paragraph-1 {
+  font-size: 16px;
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.paragraph-2 {
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.paragraph-3 {
+  font-size: 12px;
+  font-weight: 400;
+  display: flex;
+  align-self: flex-start;
 }
