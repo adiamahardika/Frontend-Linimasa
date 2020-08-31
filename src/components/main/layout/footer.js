@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
-import { text } from "../../helpers/class_name.json"
+import { text } from "../../helpers/class_name.json";
 import lensajabar from "../../../assets/image/logo/lensajabar.png";
 import youtube from "../../../assets/image/logo/youtube.jpg";
 import instagram from "../../../assets/image/logo/instagram.jpg";
@@ -22,7 +22,9 @@ class Footer extends Component {
             <img className="socmed-logo" alt="" src={twitter} />
             <img className="socmed-logo" alt="" src={facebook} />
           </div>
-          <div className={text.p1}>Copyright 2014 lensajabar.com | By Lensa Digital</div>
+          <div className={text.p1}>
+            Copyright 2014 lensajabar.com | By Lensa Digital
+          </div>
           <div className={text.p1}>All right reserved </div>
         </div>
         <div className="footer-column middle">
@@ -38,9 +40,7 @@ class Footer extends Component {
               <div className={text.p3}>Disclaimer</div>
               <div className={text.p3}>Contact Us</div>
               <div className={text.p3}>Karir</div>
-              <div className={text.p3}>
-                Term Service Privacy Policy
-              </div>
+              <div className={text.p3}>Term Service Privacy Policy</div>
             </div>
           </div>
         </div>

@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { readNews } from "../redux/action/news";
 import { readNewsCategory } from "../redux/action/news_category";
 import { parseDate } from "../helpers/index";
+import { text } from "../helpers/class_name.json"
 import Layout from "./layout/layout";
 class NewsCategory extends Component {
   state = {
@@ -47,8 +48,8 @@ class NewsCategory extends Component {
           newsData = item;
           return (
             <div className="home-news-list" key={newsData.id}>
-              <div className="home-news-title">{newsData.news_title}</div>
-              <div className="home-news-date">
+              <div className={text.h2}>{newsData.news_title}</div>
+              <div className={text.p3}>
                 {parseDate(newsData.date_updated)}
               </div>
               <img
@@ -62,8 +63,8 @@ class NewsCategory extends Component {
           newsData = item;
           return (
             <div className="home-news-list" key={newsData.id}>
-              <div className="home-news-title">{newsData.news_title}</div>
-              <div className="home-news-date">
+              <div className={text.h2}>{newsData.news_title}</div>
+              <div className={text.p3}>
                 {parseDate(newsData.date_updated)}
               </div>
               <img
