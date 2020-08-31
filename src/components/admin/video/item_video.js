@@ -19,7 +19,7 @@ const ItemVideo = ({ item, index, selectDeleteVideo }) => {
           data-target="#deleteModalVideo"
           onClick={onClickDelete}
         >
-          <div className={text.p3}>Delete</div>
+          <div className={text.p3}>Hapus</div>
         </button>
         <button type="button" className={button.primary}>
           <div className={text.p3}>
@@ -43,7 +43,6 @@ const ItemVideo = ({ item, index, selectDeleteVideo }) => {
           <source src={item.video} type="video/mp4" />
         </video>
       </div>
-      <div className={text.p2}>{item.video_description}</div>
       <div className={text.p2}>{item.user_name}</div>
       <div className={text.p2}>{item.video_category_name}</div>
       <div className={text.p2}>{parseDate(item.date_created)}</div>

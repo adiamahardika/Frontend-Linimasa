@@ -1,8 +1,8 @@
 /* Video Table */
 .admin-table.video {
   grid-template-columns:
-    repeat(2, minmax(min-content, max-content)) minmax(150px, 400px) 2fr minmax(
-      200px,
+    repeat(2, minmax(min-content, max-content)) minmax(150px, 400px) minmax(
+      250px,
       500px
     )
     repeat(2, max-content)

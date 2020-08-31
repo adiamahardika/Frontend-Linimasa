@@ -5,7 +5,7 @@ import { readVideo, readAllVideo } from "../../redux/action/video";
 import { routes_admin } from "../../helpers/routes.json";
 import { readAllVideoCategory } from "../../redux/action/video_category";
 import { Link } from "react-router-dom";
-import { button, text } from "../../helpers/class_name.json"
+import { button, text } from "../../helpers/class_name.json";
 import ItemVideo from "./item_video";
 import DeleteVideo from "./delete_video";
 import AdminLayout from "../layout/admin_layout";
@@ -89,15 +89,15 @@ class AdminVideo extends Component {
         <div className="form admin">
           <button type="button" className={button.primary}>
             <div className={text.p3}>
-            <Link
-              to={
-                routes_admin.admin +
-                routes_admin.video +
-                routes_admin.insert_video
-              }
-            >
-              Tulis Video
-            </Link>
+              <Link
+                to={
+                  routes_admin.admin +
+                  routes_admin.video +
+                  routes_admin.insert_video
+                }
+              >
+                Tulis Video
+              </Link>
             </div>
           </button>
           <div className="admin-icon dropdown">
@@ -135,13 +135,12 @@ class AdminVideo extends Component {
         <div className="admin-table video">
           <div className="number-column paragraph-1">No</div>
           <div className={text.p1}>Manage</div>
-          <div className={text.p1}>Video Title</div>
+          <div className={text.p1}>Judul Video</div>
           <div className={text.p1}>Video</div>
-          <div className={text.p1}>Video Description</div>
-          <div className={text.p1}>Video Author</div>
-          <div className={text.p1}>Video Category</div>
-          <div className={text.p1}>Date Created</div>
-          <div className={text.p1}>Date Updated</div>
+          <div className={text.p1}>Penulis Video</div>
+          <div className={text.p1}>Kategori Video</div>
+          <div className={text.p1}>Tanggal Dibuat</div>
+          <div className={text.p1}>Tanggal Diedit</div>
           {listVideo}
         </div>
         <div className="total_data">Total Data = {total_data}</div>
