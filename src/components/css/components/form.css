@@ -12,19 +12,13 @@
   display: grid;
   grid-area: form;
   justify-content: end;
-  grid-template-columns: max-content max-content max-content;
+  grid-auto-flow: column;
   column-gap: 8px;
 }
 
 /* Search */
-.form-control.admin-search {
+.form-control.search {
   max-height: 32px;
-  font-size: 12px;
-  font-weight: 200;
-  border: none;
-  grid-column-start: 3;
-}
-.form-control.search{
   max-width: 400px;
   border-radius: 50px;
 }

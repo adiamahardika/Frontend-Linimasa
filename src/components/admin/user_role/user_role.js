@@ -76,7 +76,7 @@ class AdminUserRole extends Component {
             Tulis User Role
           </button>
           <input
-            className="form-control admin-search"
+            className="form-control search paragraph-3"
             type="search"
             placeholder="Search User Role"
             onChange={this.onSearchUserRole}

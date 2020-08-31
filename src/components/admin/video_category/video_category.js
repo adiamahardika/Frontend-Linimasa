@@ -79,7 +79,7 @@ class AdminVideoCategory extends Component {
             Tulis Kategori Video
           </button>
           <input
-            className="form-control admin-search"
+            className="form-control search paragraph-3"
             type="search"
             placeholder="Search Video Category"
             onChange={this.onSearchVideoCategory}

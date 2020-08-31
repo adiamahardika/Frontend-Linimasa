@@ -35,7 +35,7 @@ class Top extends Component {
         <div className="top-nav">
           <div className="top">
             <input
-              className="form-control search"
+              className="form-control search paragraph-3"
               type="search"
               placeholder="Search News"
             />
