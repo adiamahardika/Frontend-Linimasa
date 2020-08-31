@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { deleteUserRole } from "../../redux/action/user_role";
 import { routes_admin } from "../../helpers/routes.json";
 import { withRouter } from "react-router";
-import { button } from "../../helpers/class_name.json"
+import { button, text } from "../../helpers/class_name.json";
 class DeleteUserRole extends Component {
   deleteUserRole = async (event) => {
     event.preventDefault();
@@ -22,7 +22,7 @@ class DeleteUserRole extends Component {
           <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title">Delete User Role</h5>
+                <div className={text.h2}>Hapus User Role</div>
                 <button
                   type="button"
                   className="close"
@@ -33,7 +33,9 @@ class DeleteUserRole extends Component {
                 </button>
               </div>
               <div className="modal-body">
-                <p>Are you sure want to delete this user role?</p>
+                <div className={text.p2}>
+                  Anda yakin akan menghapus user role ini?
+                </div>
               </div>
               <div className="modal-footer">
                 <button

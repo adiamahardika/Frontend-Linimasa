@@ -1,6 +1,6 @@
 import React from "react";
 import { parseDate } from "../../helpers/index";
-import { button } from "../../helpers/class_name.json";
+import { button, text } from "../../helpers/class_name.json";
 const ItemUserRole = ({
   item,
   index,
@@ -38,9 +38,9 @@ const ItemUserRole = ({
           Edit
         </button>
       </div>
-      <div className="sentences-column">{item.user_role_name}</div>
-      <div>{parseDate(item.date_created)}</div>
-      <div>{parseDate(item.date_updated)}</div>
+      <div className={text.p2}>{item.user_role_name}</div>
+      <div className={text.p2}>{parseDate(item.date_created)}</div>
+      <div className={text.p2}>{parseDate(item.date_updated)}</div>
     </>
   );
 };

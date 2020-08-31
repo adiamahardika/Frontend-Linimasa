@@ -3,7 +3,7 @@ import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { readUserRole, readAllUserRole } from "../../redux/action/user_role";
 import { routes_admin } from "../../helpers/routes.json";
-import { button } from "../../helpers/class_name.json"
+import { button, text } from "../../helpers/class_name.json"
 import ItemUserRole from "./item_user_role";
 import InsertUserRole from "./insert_user_role";
 import EditUserRole from "./edit_user_role";
@@ -63,7 +63,7 @@ class AdminUserRole extends Component {
     return (
       <AdminLayout>
         <FullPageLoader loading={loading} />
-        <div className="admin-title">User Role</div>
+        <div className={text.h1}>User Role</div>
         <div className="form admin">
           <button
             type="button"
@@ -71,7 +71,7 @@ class AdminUserRole extends Component {
             data-toggle="modal"
             data-target="#modalInsertUserRole"
           >
-            Insert
+            Tulis User Role
           </button>
           <input
             className="form-control admin-search"
@@ -81,11 +81,11 @@ class AdminUserRole extends Component {
           />
         </div>
         <div className="admin-table user-role">
-          <div className="header-admin-table number-column">No</div>
-          <div className="header-admin-table">Manage</div>
-          <div className="header-admin-table">Name</div>
-          <div className="header-admin-table">Date Created</div>
-          <div className="header-admin-table">Date Updated</div>
+          <div className="paragraph-1 number-column">No</div>
+          <div className={text.p1}>Manage</div>
+          <div className={text.p1}>Name</div>
+          <div className={text.p1}>Date Created</div>
+          <div className={text.p1}>Date Updated</div>
           {listUserRole}
         </div>
         <InsertUserRole />

@@ -22,7 +22,7 @@ class DeleteUser extends Component {
           <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                <div className={text.h2}>Delete User</div>
+                <div className={text.h2}>Hapus User</div>
                 <button
                   type="button"
                   className="close"

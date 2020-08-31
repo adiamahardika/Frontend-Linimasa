@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { insertUserRole } from "../../redux/action/user_role";
 import { withRouter } from "react-router-dom";
 import { routes_admin } from "../../helpers/routes.json";
-import { button } from "../../helpers/class_name.json";
+import { button, text } from "../../helpers/class_name.json";
 class InsertUserRole extends Component {
   state = {
     user_role_name: "",
@@ -50,9 +50,7 @@ class InsertUserRole extends Component {
           <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="modalInsertUserRoleTitle">
-                  Insert New User Role
-                </h5>
+                <h5 className={text.h2}>Tulis User Role</h5>
                 <button
                   type="button"
                   className="close"
@@ -66,17 +64,11 @@ class InsertUserRole extends Component {
                 <form className="needs-validation" noValidate>
                   <div className="form-group">
                     <div>
-                      <label
-                        htmlFor="validationCustom01"
-                        className="col-form-label"
-                      >
-                        User Role:{" "}
-                      </label>
+                      <label className={text.p1}>User Role:</label>
                       <input
                         name="user_role_name"
                         type="text"
-                        className="form-control"
-                        id="validationCustom01"
+                        className="form-control paragraph-2"
                         onChange={this.onInsertUserRole}
                         required
                       />
