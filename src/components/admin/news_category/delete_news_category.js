@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { deleteNewsCategory } from "../../redux/action/news_category";
 import { routes_admin } from "../../helpers/routes.json";
 import { withRouter } from "react-router";
-import { button } from "../../helpers/class_name.json";
+import { button, text } from "../../helpers/class_name.json";
 class DeleteNewsCategory extends Component {
   deleteNewsCategory = async (event) => {
     event.preventDefault();
@@ -22,7 +22,7 @@ class DeleteNewsCategory extends Component {
           <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title">Delete News Category</h5>
+                <h5 className={text.h2}>Hapus Kategori Berita</h5>
                 <button
                   type="button"
                   className="close"
@@ -33,7 +33,9 @@ class DeleteNewsCategory extends Component {
                 </button>
               </div>
               <div className="modal-body">
-                <p>Are you sure want to delete this news category?</p>
+                <div className={text.p2}>
+                  Anda yakin akan menghapus Kategori Berita ini?
+                </div>
               </div>
               <div className="modal-footer">
                 <button

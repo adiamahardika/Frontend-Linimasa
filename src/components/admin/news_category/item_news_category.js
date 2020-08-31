@@ -1,6 +1,6 @@
 import React from "react";
 import { parseDate } from "../../helpers/index";
-import { button } from "../../helpers/class_name.json"
+import { button, text } from "../../helpers/class_name.json"
 const ItemNewsCategory = ({ item, index, onSelectEditNewsCategory, onSelectDeleteNewsCategory }) => {
   const onClickEdit = (event) => {
     event.preventDefault()
@@ -34,9 +34,9 @@ const ItemNewsCategory = ({ item, index, onSelectEditNewsCategory, onSelectDelet
           Edit
         </button>
       </div>
-      <div className="sentences-column">{item.news_category_name}</div>
-      <div>{parseDate(item.date_created)}</div>
-      <div>{parseDate(item.date_updated)}</div>
+      <div className={text.p2}>{item.news_category_name}</div>
+      <div className={text.p2}>{parseDate(item.date_created)}</div>
+      <div className={text.p2}>{parseDate(item.date_updated)}</div>
     </>
   );
 };

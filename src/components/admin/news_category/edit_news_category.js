@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { editNewsCategory } from "../../redux/action/news_category";
 import { withRouter } from "react-router-dom";
 import { routes_admin } from "../../helpers/routes.json";
-import { button } from "../../helpers/class_name.json";
+import { button, text } from "../../helpers/class_name.json";
 class EditNewsCategory extends Component {
   state = {
     news_category_name: "",
@@ -57,9 +57,9 @@ class EditNewsCategory extends Component {
           <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="modalEditNewsCategoryTitle">
-                  Edit News Category
-                </h5>
+                <div className={text.h2} id="modalEditNewsCategoryTitle">
+                  Edit Kategori Berita
+                </div>
                 <button
                   type="button"
                   className="close"
@@ -73,17 +73,11 @@ class EditNewsCategory extends Component {
                 <form className="needs-validation" noValidate>
                   <div className="form-group">
                     <div>
-                      <label
-                        htmlFor="validationCustom01"
-                        className="col-form-label"
-                      >
-                        News Category Name:{" "}
-                      </label>
+                      <label className={text.p1}>News Category Name:</label>
                       <input
                         name="news_category_name"
                         type="text"
-                        className="form-control"
-                        id="validationCustom01"
+                        className="form-control paragraph-2"
                         onChange={this.onEditNewsCategory}
                         value={this.state.news_category_name}
                         required

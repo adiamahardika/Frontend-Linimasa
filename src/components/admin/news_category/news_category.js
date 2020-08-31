@@ -5,7 +5,7 @@ import {
   readNewsCategory,
   readAllNewsCategory,
 } from "../../redux/action/news_category";
-import { button } from "../../helpers/class_name.json"
+import { button, text } from "../../helpers/class_name.json";
 import { routes_admin } from "../../helpers/routes.json";
 import ItemNewsCategory from "./item_news_category";
 import InsertNewsCategory from "./insert_news_category";
@@ -68,7 +68,7 @@ class AdminNewsCategory extends Component {
     return (
       <AdminLayout>
         <FullPageLoader loading={loading} />
-        <div className="admin-title">News Category</div>
+        <div className={text.h1}>News Category</div>
         <div className="form admin">
           <button
             type="button"
@@ -86,11 +86,11 @@ class AdminNewsCategory extends Component {
           />
         </div>
         <div className="admin-table news-category">
-          <div className="header-admin-table number-column">No</div>
-          <div className="header-admin-table">Manage</div>
-          <div className="header-admin-table">Name</div>
-          <div className="header-admin-table">Date Created</div>
-          <div className="header-admin-table">Date Updated</div>
+          <div className="paragraph-1 number-column">No</div>
+          <div className={text.p1}>Manage</div>
+          <div className={text.p1}>Name</div>
+          <div className={text.p1}>Date Created</div>
+          <div className={text.p1}>Date Updated</div>
           {listNewsCategory}
         </div>
         <InsertNewsCategory />
