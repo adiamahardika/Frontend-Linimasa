@@ -117,7 +117,7 @@ class EditNews extends Component {
     return (
       <AdminLayout>
         <FullPageLoader loading={loading} />
-        <div className={text.h1}> Edit Berita</div>
+        <div className={text.h1}>Edit Berita</div>
         <div className="form admin">
           <SubmitButton />
         </div>
@@ -175,7 +175,7 @@ class EditNews extends Component {
           <div className="form-group">
             <textarea
               type="text"
-              className="input-image-description paragraph-1"
+              className="input-image-description paragraph-3"
               placeholder="Tulis Deskripsi Gambar..."
               onChange={this.onEditNews}
               name="news_image_description"

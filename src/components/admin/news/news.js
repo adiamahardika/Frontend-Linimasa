@@ -5,7 +5,7 @@ import { readNews, readAllNews } from "../../redux/action/news";
 import { routes_admin } from "../../helpers/routes.json";
 import { readAllNewsCategory } from "../../redux/action/news_category";
 import { Link } from "react-router-dom";
-import { button } from "../../helpers/class_name.json"
+import { button, text } from "../../helpers/class_name.json"
 import DeleteNews from "./delete_news";
 import AdminLayout from "../layout/admin_layout";
 import FullPageLoader from "../../helpers/loading";
@@ -87,9 +87,10 @@ class AdminNews extends Component {
       <>
         <FullPageLoader loading={loading} />
         <AdminLayout>
-          <div className="admin-title">News</div>
+          <div className={text.h1}>News</div>
           <div className="form admin">
             <button type="button" className={button.primary}>
+              <div className={text.p3}>
               <Link
                 to={
                   routes_admin.admin +
@@ -97,8 +98,9 @@ class AdminNews extends Component {
                   routes_admin.insert_news
                 }
               >
-                Insert
+                Tulis Berita
               </Link>
+              </div>
             </button>
             <div className="admin-icon dropdown">
               <ion-icon
@@ -133,15 +135,15 @@ class AdminNews extends Component {
             />
           </div>
           <div className="admin-table news">
-            <div className="header-admin-table number-column">No</div>
-            <div className="header-admin-table">Manage</div>
-            <div className="header-admin-table">News Title</div>
-            <div className="header-admin-table">Image</div>
-            <div className="header-admin-table">Image Description</div>
-            <div className="header-admin-table">News Category</div>
-            <div className="header-admin-table">News Author</div>
-            <div className="header-admin-table">Date Created</div>
-            <div className="header-admin-table">Date Updated</div>
+            <div className="paragraph-1 number-column">No</div>
+            <div className={text.p1}>Manage</div>
+            <div className={text.p1}>News Title</div>
+            <div className={text.p1}>Image</div>
+            <div className={text.p1}>Image Description</div>
+            <div className={text.p1}>News Category</div>
+            <div className={text.p1}>News Author</div>
+            <div className={text.p1}>Date Created</div>
+            <div className={text.p1}>Date Updated</div>
             {listNews}
           </div>
         </AdminLayout>

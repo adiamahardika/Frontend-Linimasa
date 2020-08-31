@@ -5,7 +5,7 @@ import { withRouter } from "react-router-dom";
 import { imageFilter } from "../../helpers/index";
 import { routes_admin } from "../../helpers/routes.json";
 import { readAllNewsCategory } from "../../redux/action/news_category";
-import { button } from "../../helpers/class_name.json"
+import { button, text } from "../../helpers/class_name.json"
 import AdminLayout from "../layout/admin_layout";
 import FullPageLoader from "../../helpers/loading";
 import TextEditor from "../../helpers/text_editor";
@@ -93,7 +93,7 @@ class InsertNews extends Component {
     return (
       <AdminLayout>
       <FullPageLoader loading={loading} />
-        <div className="admin-title">Insert News</div>
+        <div className={text.h1}>Tulis Berita</div>
         <div className="form admin">
           <SubmitButton />
         </div>
@@ -101,7 +101,7 @@ class InsertNews extends Component {
           <div className="form-group">
             <textarea
               type="text"
-              className="input-title"
+              className="input-title header-2"
               placeholder="Tulis Judul..."
               onChange={this.onInsertNews}
               name="news_title"
@@ -110,30 +110,30 @@ class InsertNews extends Component {
           </div>
           <div className="form-group">
             <select
-              className="custom-select input-category"
+              className="custom-select input-category paragraph-1"
               onChange={this.onInsertNews}
               name="news_category"
               defaultValue={"DEFAULT"}
             >
-              <option disabled value="DEFAULT">
+              <option className={text.p1} disabled value="DEFAULT">
                 Pilih Kategori Berita...
               </option>
               {news_category.map((news_category, index) => (
-                <option key={index} value={news_category.id}>
+                <option className={text.p1} key={index} value={news_category.id}>
                   {news_category.news_category_name}
                 </option>
               ))}
             </select>
           </div>
           <div className="form-group">
-            <label className="label-input">Image</label>
+            <label className={text.p1}>Image</label>
             <div className="media-wrapper">
               <div className="image-uploaded">
                 <img src={this.state.image_preview} alt="" />
               </div>
               <div className="upload">
                 <ion-icon size="large" name="cloud-upload"></ion-icon>
-                <div className="text">No file chosen, yet!</div>
+                <div className={text.p2}>Belum ada gambar yang dipilih!</div>
                 <input
                   type="file"
                   className="form-control-file"
@@ -150,7 +150,7 @@ class InsertNews extends Component {
           <div className="form-group">
             <textarea
               type="text"
-              className="input-image-description"
+              className="input-image-description paragraph-3"
               placeholder="Tulis Deskripsi Gambar..."
               onChange={this.onInsertNews}
               name="news_image_description"
@@ -158,7 +158,7 @@ class InsertNews extends Component {
             />
           </div>
           <div className="form-group">
-            <label className="label-input">Artikel</label>
+            <label className={text.p1}>Artikel</label>
             <TextEditor insertArticle={this.onInsertArticle} />
           </div>
         </div>

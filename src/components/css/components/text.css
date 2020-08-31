@@ -106,6 +106,14 @@
   -webkit-box-orient: vertical;
 }
 
+.paragraph-3 a {
+  color: white;
+}
+
+.paragraph-3 a:hover {
+  text-decoration: none;
+}
+
 .paragraph-2 {
   font-weight: 300;
   font-size: 16px;
