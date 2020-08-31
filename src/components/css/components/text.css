@@ -89,7 +89,7 @@
   display: flex;
   align-self: flex-end;
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 500;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -99,7 +99,7 @@
 
 .paragraph-1 {
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -108,12 +108,12 @@
 }
 
 .paragraph-2 {
-  font-weight: 400;
+  font-weight: 500;
   font-size: 14px;
 }
 
 .paragraph-3 {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   display: flex;
   align-self: flex-start;
