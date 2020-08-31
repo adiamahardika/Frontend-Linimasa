@@ -24,14 +24,14 @@ class Sidebar extends Component {
               <Link to={routes_admin.admin + routes_admin.ads}>Ads</Link>
             </li>
             <li type="button" className="management-list">
-              <Link to={routes_admin.admin + routes_admin.commentar}>Commentar</Link>
+              <Link to={routes_admin.admin + routes_admin.commentar}>Kommentar</Link>
             </li>
             <li type="button" className="management-list">
-              <Link to={routes_admin.admin + routes_admin.news}>News</Link>
+              <Link to={routes_admin.admin + routes_admin.news}>Berita</Link>
             </li>
             <li type="button" className="management-list">
               <Link to={routes_admin.admin + routes_admin.news_category}>
-                News Category
+                Kategori Berita
               </Link>
             </li>
             <li type="button" className="management-list">
@@ -45,7 +45,7 @@ class Sidebar extends Component {
             </li>
             <li type="button" className="management-list">
               <Link to={routes_admin.admin + routes_admin.video_category}>
-                Video Category
+                Kategori Video
               </Link>
             </li>
           </ul>
