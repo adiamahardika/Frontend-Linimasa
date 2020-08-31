@@ -66,7 +66,7 @@ class InsertNewsCategory extends Component {
                 <form className="needs-validation" noValidate>
                   <div className="form-group">
                     <div>
-                      <label className={text.p1}>News Category:</label>
+                      <label className={text.p1}>Nama:</label>
                       <input
                         name="news_category_name"
                         type="text"

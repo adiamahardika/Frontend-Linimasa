@@ -68,7 +68,7 @@ class AdminNewsCategory extends Component {
     return (
       <AdminLayout>
         <FullPageLoader loading={loading} />
-        <div className={text.h1}>News Category</div>
+        <div className={text.h1}>Kategori Berita</div>
         <div className="form admin">
           <button
             type="button"
@@ -76,7 +76,7 @@ class AdminNewsCategory extends Component {
             data-toggle="modal"
             data-target="#modalInsertNewsCategory"
           >
-            Insert
+            Tulis Kategori Berita
           </button>
           <input
             className="form-control search paragraph-3"
@@ -88,9 +88,9 @@ class AdminNewsCategory extends Component {
         <div className="admin-table news-category">
           <div className="paragraph-1 number-column">No</div>
           <div className={text.p1}>Manage</div>
-          <div className={text.p1}>Name</div>
-          <div className={text.p1}>Date Created</div>
-          <div className={text.p1}>Date Updated</div>
+          <div className={text.p1}>Nama</div>
+          <div className={text.p1}>Tanggal Dibuat</div>
+          <div className={text.p1}>Tanggal Diedit</div>
           {listNewsCategory}
         </div>
         <InsertNewsCategory />
