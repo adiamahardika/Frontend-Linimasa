@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { readAds } from "../../redux/action/ads";
-import { button } from "../../helpers/class_name.json"
+import { button } from "../../helpers/class_name.json";
+import { text } from "../../helpers/class_name.json";
 import lensajabar from "../../../assets/image/logo/lensajabar.png";
 import youtube from "../../../assets/image/logo/youtube.jpg";
 import instagram from "../../../assets/image/logo/instagram.jpg";
@@ -38,7 +39,7 @@ class Top extends Component {
               type="search"
               placeholder="Search News"
             />
-            Connect with us
+            <div className={text.p1}>Connect with us</div>
             <img className="socmed-logo" alt="" src={youtube} />
             <img className="socmed-logo" alt="" src={instagram} />
             <img className="socmed-logo" alt="" src={twitter} />
