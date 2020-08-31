@@ -1,19 +1,19 @@
 import React from "react";
 import { parseDate } from "../../helpers/index";
-import { button } from "../../helpers/class_name.json";
-const ItemVideoCategory = ({
+import { button, text } from "../../helpers/class_name.json";
+const UserRoleList = ({
   item,
   index,
-  selectEditVideoCategory,
-  selectDeleteVideoCategory,
+  onSelectEditUserRole,
+  onSelectDeleteUserRole,
 }) => {
-  const onClickEdit = (event) => {
+  const onclickEdit = (event) => {
     event.preventDefault();
-    selectEditVideoCategory(item);
+    onSelectEditUserRole(item);
   };
   const onClickDelete = (event) => {
     event.preventDefault();
-    selectDeleteVideoCategory(item);
+    onSelectDeleteUserRole(item);
   };
   return (
     <>
@@ -23,7 +23,7 @@ const ItemVideoCategory = ({
           type="button"
           className={button.danger}
           data-toggle="modal"
-          data-target="#deleteModalVideoCategory"
+          data-target="#deleteModalUserRole"
           onClick={onClickDelete}
         >
           Delete
@@ -32,16 +32,16 @@ const ItemVideoCategory = ({
           type="button"
           className={button.primary}
           data-toggle="modal"
-          data-target="#modalEditVideoCategory"
-          onClick={onClickEdit}
+          data-target="#modalEditUserRole"
+          onClick={onclickEdit}
         >
           Edit
         </button>
       </div>
-      <div className="sentences-column">{item.video_category_name}</div>
-      <div>{parseDate(item.date_created)}</div>
-      <div>{parseDate(item.date_updated)}</div>
+      <div className={text.p2}>{item.user_role_name}</div>
+      <div className={text.p2}>{parseDate(item.date_created)}</div>
+      <div className={text.p2}>{parseDate(item.date_updated)}</div>
     </>
   );
 };
-export default ItemVideoCategory;
+export default UserRoleList;

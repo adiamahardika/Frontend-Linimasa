@@ -1,7 +1,7 @@
 import React from "react";
 import { parseDate } from "../../helpers/index";
 import { button, text } from "../../helpers/class_name.json"
-const ItemNewsCategory = ({ item, index, onSelectEditNewsCategory, onSelectDeleteNewsCategory }) => {
+const NewsCategoryList = ({ item, index, onSelectEditNewsCategory, onSelectDeleteNewsCategory }) => {
   const onClickEdit = (event) => {
     event.preventDefault()
     onSelectEditNewsCategory(item)
@@ -40,4 +40,4 @@ const ItemNewsCategory = ({ item, index, onSelectEditNewsCategory, onSelectDelet
     </>
   );
 };
-export default ItemNewsCategory;
+export default NewsCategoryList;

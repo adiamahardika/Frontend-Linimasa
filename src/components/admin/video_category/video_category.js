@@ -6,8 +6,8 @@ import {
   readAllVideoCategory,
 } from "../../redux/action/video_category";
 import { routes_admin } from "../../helpers/routes.json";
-import { button } from "../../helpers/class_name.json"
-import ItemVideoCategory from "./item_video_category";
+import { button, text } from "../../helpers/class_name.json";
+import VideoCategoryList from "./video_category_list";
 import InsertVideoCategory from "./insert_video_category";
 import EditVideoCategory from "./edit_video_category";
 import DeleteVideoCategory from "./delete_video_category";
@@ -56,7 +56,7 @@ class AdminVideoCategory extends Component {
       video_category &&
       video_category.map((item, index) => {
         return (
-          <ItemVideoCategory
+          <VideoCategoryList
             key={item.id}
             item={item}
             index={index}
@@ -68,7 +68,7 @@ class AdminVideoCategory extends Component {
     return (
       <AdminLayout>
         <FullPageLoader loading={loading} />
-        <div className="admin-title">Video Category</div>
+        <div className={text.h1}>Kategori Video</div>
         <div className="form admin">
           <button
             type="button"
@@ -76,7 +76,7 @@ class AdminVideoCategory extends Component {
             data-toggle="modal"
             data-target="#modalInsertVideoCategory"
           >
-            Insert
+            Tulis Kategori Video
           </button>
           <input
             className="form-control admin-search"
@@ -86,11 +86,11 @@ class AdminVideoCategory extends Component {
           />
         </div>
         <div className="admin-table video-category">
-          <div className="header-admin-table number-column">No</div>
-          <div className="header-admin-table">Manage</div>
-          <div className="header-admin-table">Name</div>
-          <div className="header-admin-table">Date Created</div>
-          <div className="header-admin-table">Date Updated</div>
+          <div className="paragraph-1 number-column">No</div>
+          <div className={text.p1}>Manage</div>
+          <div className={text.p1}>Name</div>
+          <div className={text.p1}>Date Created</div>
+          <div className={text.p1}>Date Updated</div>
           {listVideoCategory}
         </div>
         <InsertVideoCategory />

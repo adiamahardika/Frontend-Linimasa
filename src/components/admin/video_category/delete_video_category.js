@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { deleteVideoCategory } from "../../redux/action/video_category";
 import { routes_admin } from "../../helpers/routes.json";
 import { withRouter } from "react-router";
-import { button } from "../../helpers/class_name.json"
+import { button, text } from "../../helpers/class_name.json";
 class DeleteVideoCategory extends Component {
   deleteVideoCategory = async (event) => {
     event.preventDefault();
@@ -24,7 +24,7 @@ class DeleteVideoCategory extends Component {
           <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title">Delete News Category</h5>
+                <div className={text.h2}>Hapus Kategori Video</div>
                 <button
                   type="button"
                   className="close"
@@ -35,7 +35,9 @@ class DeleteVideoCategory extends Component {
                 </button>
               </div>
               <div className="modal-body">
-                <p>Are you sure want to delete this video category?</p>
+                <div className={text.p2}>
+                  Anda yakin akan menghapus kategori video ini?
+                </div>
               </div>
               <div className="modal-footer">
                 <button

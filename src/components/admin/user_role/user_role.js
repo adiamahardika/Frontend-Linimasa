@@ -3,8 +3,8 @@ import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { readUserRole, readAllUserRole } from "../../redux/action/user_role";
 import { routes_admin } from "../../helpers/routes.json";
-import { button, text } from "../../helpers/class_name.json"
-import ItemUserRole from "./item_user_role";
+import { button, text } from "../../helpers/class_name.json";
+import UserRoleList from "./user_role_list";
 import InsertUserRole from "./insert_user_role";
 import EditUserRole from "./edit_user_role";
 import DeleteUserRole from "./delete_user_role";
@@ -38,7 +38,9 @@ class AdminUserRole extends Component {
     const user_role_name = event.target.value;
     if (user_role_name !== "") {
       this.props.history.push(
-        `${routes_admin.admin + routes_admin.user_role}/?user_role_name=${user_role_name}`
+        `${
+          routes_admin.admin + routes_admin.user_role
+        }/?user_role_name=${user_role_name}`
       );
     } else {
       this.props.history.push(routes_admin.admin + routes_admin.user_role);
@@ -51,7 +53,7 @@ class AdminUserRole extends Component {
       user_role &&
       user_role.map((item, index) => {
         return (
-          <ItemUserRole
+          <UserRoleList
             key={item.id}
             item={item}
             index={index}

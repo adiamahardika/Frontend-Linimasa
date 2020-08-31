@@ -7,7 +7,7 @@ import {
 } from "../../redux/action/news_category";
 import { button, text } from "../../helpers/class_name.json";
 import { routes_admin } from "../../helpers/routes.json";
-import ItemNewsCategory from "./item_news_category";
+import NewsCategoryList from "./news_category_list";
 import InsertNewsCategory from "./insert_news_category";
 import EditNewsCategory from "./edit_news_category";
 import DeleteNewsCategory from "./delete_news_category";
@@ -56,7 +56,7 @@ class AdminNewsCategory extends Component {
       news_category &&
       news_category.map((item, index) => {
         return (
-          <ItemNewsCategory
+          <NewsCategoryList
             key={item.id}
             item={item}
             index={index}
