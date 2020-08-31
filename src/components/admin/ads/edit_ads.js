@@ -4,7 +4,7 @@ import { editAds } from "../../redux/action/ads";
 import { withRouter } from "react-router-dom";
 import { imageFilter } from "../../helpers";
 import { routes_admin } from "../../helpers/routes.json";
-import { button } from "../../helpers/class_name.json"
+import { button, text } from "../../helpers/class_name.json"
 class EditAds extends Component {
   state = {
     id: "",
@@ -75,9 +75,9 @@ class EditAds extends Component {
           <div className="modal-dialog modal-dialog-centered" role="document">
             <div className="modal-content">
               <div className="modal-header">
-                <h5 className="modal-title" id="modalEditAdsTitle">
+                <div className={text.h2}>
                   Edit Ads
-                </h5>
+                </div>
                 <button
                   type="button"
                   className="close"
@@ -92,24 +92,20 @@ class EditAds extends Component {
                   <div className="form-group">
                     <div>
                       <label
-                        htmlFor="validationCustom01"
-                        className="col-form-label"
+                        className={text.p1}
                       >
-                        Ads Name:{" "}
+                        Ads Name:
                       </label>
                       <input
                         name="ads_name"
                         type="text"
-                        className="form-control"
-                        id="validationCustom01"
+                        className="form-control paragraph-2"
                         onChange={this.onEditAds}
                         value={this.state.ads_name}
-                        required
                       />
-                      <div className="valid-feedback">Looks good!</div>
                     </div>
                     <div>
-                      <label className="col-form-label"> Image: </label>
+                      <label className={text.p1}> Image: </label>
                       <input
                         type="file"
                         name="ads_image"

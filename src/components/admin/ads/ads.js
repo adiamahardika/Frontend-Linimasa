@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { readAds } from "../../redux/action/ads";
-import { button } from "../../helpers/class_name.json"
+import { button, text } from "../../helpers/class_name.json"
 import AdsList from "./ads_list";
 import InsertAds from "./insert_ads";
 import EditAds from "./edit_ads";
@@ -51,7 +51,7 @@ class AdminAds extends Component {
     return (
       <AdminLayout>
         <FullPageLoader loading={loading} />
-        <div className="admin-title">Ads</div>
+        <div className={text.h1}>Ads</div>
         <div className="form admin">
           <button
             type="button"
@@ -68,12 +68,12 @@ class AdminAds extends Component {
           />
         </div>
         <div className="admin-table ads">
-          <div className="header-admin-table number-column">No</div>
-          <div className="header-admin-table">Manage</div>
-          <div className="header-admin-table">Name</div>
-          <div className="header-admin-table">Image</div>
-          <div className="header-admin-table">Date Created</div>
-          <div className="header-admin-table">Date Updated</div>
+          <div className="paragraph-1 number-column">No</div>
+          <div className={text.p1}>Manage</div>
+          <div className={text.p1}>Name</div>
+          <div className={text.p1}>Image</div>
+          <div className={text.p1}>Date Created</div>
+          <div className={text.p1}>Date Updated</div>
           {listAds}
         </div>
         <InsertAds />
