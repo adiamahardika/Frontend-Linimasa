@@ -21,6 +21,8 @@
   max-height: 32px;
   max-width: 400px;
   border-radius: 50px;
+  display: flex;
+  align-self: center;
 }
 .form-input {
   padding: 16px;
@@ -47,13 +49,11 @@
 .input-title:focus{
   border: none;
 }
-
 .input-category {
   border: none;
   border-bottom: 1.5px solid #DEDEDE;
   border-radius: 0%;
 }
-
 .input-image-description {
   border: none;
 }

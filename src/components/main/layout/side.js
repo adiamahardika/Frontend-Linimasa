@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
-import { readAds } from "../../redux/action/ads";
 import { readAllNews } from "../../redux/action/news";
 import { text } from "../../helpers/class_name.json"
 import berita_terbaru from "../../../assets/image/logo/berita_terbaru.png";
@@ -9,7 +8,6 @@ import berita_terpopuler from "../../../assets/image/logo/berita_terpopuler.png"
 import "../../css/main/layout/side.css";
 class Side extends Component {
   componentDidMount() {
-    this.props.dispatch(readAds());
     this.props.dispatch(readAllNews());
   }
   render() {
@@ -42,8 +40,8 @@ class Side extends Component {
       });
     return (
       <div className="side">
-        {imageAds(3)}
-        {imageAds(4)}
+        {imageAds(0)}
+        {imageAds(1)}
         <div>
           <div className="image-wrapper">
             <img className="image-side" src={berita_terbaru} alt="" />

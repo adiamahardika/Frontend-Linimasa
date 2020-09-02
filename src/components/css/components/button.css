@@ -3,11 +3,11 @@
   max-width: 150px;
   max-height: 50px;
   padding: 8px;
-  color: #004de8;
+  color: #0f4c75;
   border-radius: 10px;
   background-color: #fff;
   display: flex;
-  border: 1px solid #004de8;
+  border: 1px solid #0f4c75;
   justify-content: center;
   align-items: center;
   cursor: pointer;
@@ -15,21 +15,21 @@
   font-size: 16px;
 }
 .upload-file:hover {
-  background-color: #004de8;
+  background-color: #0f4c75;
   color: #fff;
 }
 
 .button-outline-primary {
   background-color: #fff;
-  border: 1px solid #004de8;
+  border: 1px solid #0f4c75;
   border-radius: 16px;
-  color: #004de8;
+  color: #0f4c75;
   height: 32px;
   font-size: 14px;
   font-weight: 500;
 }
 .button-primary {
-  background-color: #004de8 !important;
+  background-color: #0f4c75 !important;
   border: none;
   border-radius: 16px;
   color: white;
@@ -38,7 +38,7 @@
   font-weight: 500;
 }
 .button-danger {
-  background-color: #e80000 !important;
+  background-color: #bbe1fa !important;
   border: none;
   border-radius: 16px;
   color: white;
