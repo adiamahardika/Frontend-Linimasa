@@ -2,10 +2,11 @@ import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { readAllNews } from "../../redux/action/news";
-import { text } from "../../helpers/class_name.json"
+import { text } from "../../helpers/class_name.json";
 import berita_terbaru from "../../../assets/image/logo/berita_terbaru.png";
 import berita_terpopuler from "../../../assets/image/logo/berita_terpopuler.png";
 import "../../css/main/layout/side.css";
+import { Link } from "react-router-dom";
 class Side extends Component {
   componentDidMount() {
     this.props.dispatch(readAllNews());
@@ -19,7 +20,7 @@ class Side extends Component {
         ads.map((item, index) => {
           if (index === indexOrder) {
             url = item.ads_image;
-            return <img src={url} alt="" key={item.id}/>;
+            return <img src={url} alt="" key={item.id} />;
           }
           return null;
         })
@@ -30,10 +31,18 @@ class Side extends Component {
       news.map((item, index) => {
         if (index <= 3) {
           return (
-            <div className="side-news-wrapper" key={index}>
-              <div className={text.p1}>{item.news_title}</div>
-              <img className="side-news-image" src={item.news_image} alt="" />
-            </div>
+            <Link
+              to={{
+                pathname:
+                  "/" + item.news_category_name.toLowerCase() + "/" + item.id,
+                data: item,
+              }}
+            >
+              <div className="side-news-wrapper" key={index}>
+                <div className={text.p1}>{item.news_title}</div>
+                <img className="side-news-image" src={item.news_image} alt="" />
+              </div>
+            </Link>
           );
         }
         return null;

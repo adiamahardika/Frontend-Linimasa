@@ -11,7 +11,6 @@ import "../css/components/wrapper.css";
 import "../css/components/form.css";
 import "../css/main/news_detail.css";
 class NewsDetail extends Component {
-  componentWillReceiveProps() {}
   componentDidMount() {
     const id = this.props.location.pathname.split("/");
     this.props.dispatch(readNewsDetail(id[2]));
@@ -20,31 +19,43 @@ class NewsDetail extends Component {
   }
   render() {
     const { news_detail, news } = this.props;
+    const data = this.props.location.data;
+    const newsData = () => {
+      let news_data = {}
+      if (!data || data === undefined) {
+        news_data = news_detail
+      } else {
+        news_data = data
+      }
+      return (
+        <div className="news-wrapper">
+          <div className="news-header">
+            <div className={text.p3}>{news_data.news_category_name}</div>
+            <div className={text.p3}>
+              {parseDate(news_data.date_updated)}
+            </div>
+          </div>
+          <div className={text.h2}>{news_data.news_title}</div>
+          <div className="news-image">
+            <img src={news_data.news_image} alt="" />
+            <div className={text.p3}>
+              {news_data.news_image_description}
+            </div>
+          </div>
+          <div
+            className={text.p2}
+            dangerouslySetInnerHTML={{ __html: news_data.news_content }}
+            />
+          <div className={text.p3}>{news_data.user_name}</div>
+        </div>
+      );
+    };
     return (
       <Layout>
         <div className="news_detail">
-          <div className="news-wrapper">
-            <div className="news-header">
-              <div className={text.p3}>{news_detail.news_category_name}</div>
-              <div className={text.p3}>
-                {parseDate(news_detail.date_updated)}
-              </div>
-            </div>
-            <div className={text.h2}>{news_detail.news_title}</div>
-            <div className="news-image">
-              <img src={news_detail.news_image} alt="" />
-              <div className={text.p3}>
-                {news_detail.news_image_description}
-              </div>
-            </div>
-            <div
-              className={text.p2}
-              dangerouslySetInnerHTML={{ __html: news_detail.news_content }}
-            />
-            <div className={text.p3}>{news_detail.user_name}</div>
-          </div>
+          {newsData()}
           <div>
-              <div className={text.h1}>Baca Lainnya</div>
+            <div className={text.h1}>Baca Lainnya</div>
             <div className="news-wrapper home">
               {news &&
                 news.map((item, index) => {
@@ -79,16 +90,18 @@ class NewsDetail extends Component {
             </div>
           </div>
           <div className="commentar">
-              <div className={text.h1}>Komentar</div>
+            <div className={text.h1}>Komentar</div>
             <div className="news-wrapper commentar">
-            <textarea
-              type="text"
-              className="input-commentar paragraph-2"
-              placeholder="Tulis Komentar..."
-              name="commentar"
-              rows="5"
-            />
-            <button className={`${button.primary} submit-commentar`}>Submit</button>
+              <textarea
+                type="text"
+                className="input-commentar paragraph-2"
+                placeholder="Tulis Komentar..."
+                name="commentar"
+                rows="5"
+              />
+              <button className={`${button.primary} submit-commentar`}>
+                Submit
+              </button>
             </div>
           </div>
         </div>

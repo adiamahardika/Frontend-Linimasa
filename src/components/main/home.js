@@ -48,11 +48,23 @@ class Home extends Component {
           ) {
             newsData[item.id] = item;
             return (
-              <div className="home-news-list">
-                <div className={text.h2}>{item.news_title}</div>
-                <div className={text.p3}>{parseDate(item.date_updated)}</div>
-                <img className="home-news-image" src={item.news_image} alt="" />
-              </div>
+              <Link
+                to={{
+                  pathname:
+                    "/" + item.news_category_name.toLowerCase() + "/" + item.id,
+                  data: item,
+                }}
+              >
+                <div className="home-news-list">
+                  <div className={text.h2}>{item.news_title}</div>
+                  <div className={text.p3}>{parseDate(item.date_updated)}</div>
+                  <img
+                    className="home-news-image"
+                    src={item.news_image}
+                    alt=""
+                  />
+                </div>
+              </Link>
             );
           }
           return null;
@@ -86,10 +98,18 @@ class Home extends Component {
       news.map((item, index) => {
         if (index <= 3) {
           return (
-            <div className="side-news-wrapper" key={index}>
-              <div className={text.p1}>{item.news_title}</div>
-              <img className="side-news-image" src={item.news_image} alt="" />
-            </div>
+            <Link
+              to={{
+                pathname:
+                  "/" + item.news_category_name.toLowerCase() + "/" + item.id,
+                data: item,
+              }}
+            >
+              <div className="side-news-wrapper" key={index}>
+                <div className={text.p1}>{item.news_title}</div>
+                <img className="side-news-image" src={item.news_image} alt="" />
+              </div>
+            </Link>
           );
         }
         return null;
@@ -144,13 +164,26 @@ class Home extends Component {
             </div>
             <div className="horizontal-home-news">
               {video.map((item, index) => (
-                <div className="horizontal-home-news-list" key={index}>
-                  <video className="horizontal-home-news-media">
-                    <source src={item.video} type="video/mp4" />
-                  </video>
-                  <div className={text.p1}>{item.video_title}</div>
-                  <div className={text.p3}>{parseDate(item.date_updated)}</div>
-                </div>
+                <Link
+                  to={{
+                    pathname:
+                      "/" +
+                      item.video_category_name.toLowerCase() +
+                      "/" +
+                      item.id,
+                    data: item,
+                  }}
+                >
+                  <div className="horizontal-home-news-list" key={index}>
+                    <video className="horizontal-home-news-media">
+                      <source src={item.video} type="video/mp4" />
+                    </video>
+                    <div className={text.p1}>{item.video_title}</div>
+                    <div className={text.p3}>
+                      {parseDate(item.date_updated)}
+                    </div>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -212,17 +245,28 @@ class Home extends Component {
               {news.map((item, index) => {
                 if (index <= 3) {
                   return (
-                    <div className="horizontal-home-news-list" key={index}>
-                      <img
-                        className="horizontal-home-news-media"
-                        src={item.news_image}
-                        alt=""
-                      />
-                      <div className={text.p1}>{item.news_title}</div>
-                      <div className={text.p3}>
-                        {parseDate(item.date_updated)}
+                    <Link
+                      to={{
+                        pathname:
+                          "/" +
+                          item.news_category_name.toLowerCase() +
+                          "/" +
+                          item.id,
+                        data: item,
+                      }}
+                    >
+                      <div className="horizontal-home-news-list" key={index}>
+                        <img
+                          className="horizontal-home-news-media"
+                          src={item.news_image}
+                          alt=""
+                        />
+                        <div className={text.p1}>{item.news_title}</div>
+                        <div className={text.p3}>
+                          {parseDate(item.date_updated)}
+                        </div>
                       </div>
-                    </div>
+                    </Link>
                   );
                 }
                 return null;
