@@ -1,33 +1,10 @@
-.media-wrapper {
-  position: relative;
-  height: 300px;
-  width: 100%;
-  border-radius: 10px;
-  background-color: #fff;
-  border: 2px dashed #c2cdda;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.media-wrapper.active {
-  border: none;
-}
-/* Video */
-.wrapper video {
-  height: 100%;
-  width: 100%;
+.news-wrapper.home{
+  margin-top: 8px;
 }
 /* Image */
 .admin-image {
   max-width: 400px;
   max-height: 150px;
-}
-
-.wrapper img {
-  height: 100%;
-  width: 100%;
 }
 
 .lensajabar-logo{

@@ -13,10 +13,10 @@ export const insertNews = (data) => {
 };
 
 export const readNews = (data) => {
-  const news_title = data.news_title || ""
-  const news_category = data.news_category || ""
-  const page = data.page || 1
-  const limit = data.limit || 10
+  const news_title = data.news_title || "";
+  const news_category = data.news_category || "";
+  const page = data.page || 1;
+  const limit = data.limit || 10;
   return {
     type: "GET_NEWS",
     payload: axios({
@@ -32,6 +32,16 @@ export const readAllNews = () => {
     payload: axios({
       method: "GET",
       url: `${process.env.REACT_APP_API}/news`,
+    }),
+  };
+};
+
+export const readNewsDetail = (id) => {
+  return {
+    type: "GET_NEWS_DETAIL",
+    payload: axios({
+      method: "GET",
+      url: `${process.env.REACT_APP_API}/news/${id}`,
     }),
   };
 };

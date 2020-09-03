@@ -6,6 +6,7 @@ import { readNewsCategory } from "../redux/action/news_category";
 import { parseDate } from "../helpers/index";
 import { text } from "../helpers/class_name.json"
 import Layout from "./layout/layout";
+import "../css/components/wrapper.css";
 class NewsCategory extends Component {
   state = {
     selectedNewsCategory: "",
@@ -79,7 +80,7 @@ class NewsCategory extends Component {
       });
     return (
       <Layout>
-        <div className="home-news-wrapper">{newsList}</div>
+        <div className="news-wrapper">{newsList}</div>
       </Layout>
     );
   }

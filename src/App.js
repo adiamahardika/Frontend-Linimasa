@@ -18,6 +18,7 @@ import edit_video from "./components/admin/video/edit_video"
 import video_category from "./components/admin/video_category/video_category";
 import home from "./components/main/home";
 import news_category from "./components/main/news_category";
+import news_detail from "./components/main/news_detail"
 export default function App() {
   return (
     <Provider store={store}>
@@ -83,19 +84,8 @@ export default function App() {
             component={video_category}
           />
           <Route exact path={routes.home} component={home} />
-          <Route path={routes.news} component={news_category} />
-          <Route path={routes.hype} component={news_category}/>
-          <Route path={routes.peristiwa} component={news_category}/>
-          <Route path={routes.business} component={news_category}/>
-          <Route path={routes.economy} component={news_category}/>
-          <Route path={routes.entertainment} component={news_category}/>
-          <Route path={routes.food} component={news_category}/>
-          <Route path={routes.health} component={news_category}/>
-          <Route path={routes.humaniora} component={news_category}/>
-          <Route path={routes.outgoing} component={news_category}/>
-          <Route path={routes.ragam} component={news_category}/>
-          <Route path={routes.sport} component={news_category}/>
-          <Route path={routes.techno} component={news_category}/>
+          <Route path='/:news_category/:id' component={news_detail} />
+          <Route path='/:news_category' component={news_category}/>
         </Switch>
       </Router>
     </Provider>

@@ -4,19 +4,11 @@
   grid-auto-flow: row;
   row-gap: 16px;
 }
-.image-wrapper {
-  border-bottom: 4px solid #0f4c75;
-}
+
 .side-news {
   display: grid;
   row-gap: 8px;
   background-color: #ffffff;
   padding: 8px;
   margin-top: 8px;
-}
-.news-wrapper {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  column-gap: 8px;
-  align-items: center;
 }

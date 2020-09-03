@@ -17,7 +17,7 @@ import "../../css/components/icon.css";
 class InsertNews extends Component {
   state = {
     news_title: "",
-    news_content: "Ini isinya",
+    news_content: "",
     news_image: "",
     news_image_description: "",
     news_category: "",

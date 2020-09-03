@@ -6,7 +6,8 @@ import { readAllNews } from "../redux/action/news";
 import { parseDate } from "../helpers/index";
 import { readVideo } from "../redux/action/video";
 import { readAllNewsCategory } from "../redux/action/news_category";
-import { text } from "../helpers/class_name.json"
+import { text } from "../helpers/class_name.json";
+import { Link } from "react-router-dom";
 import Top from "./layout/top";
 import Navbar from "./layout/navbar";
 import Side from "./layout/side";
@@ -14,6 +15,7 @@ import Footer from "./layout/footer";
 import "../css/main/home.css";
 import "../css/main/layout/layout.css";
 import "../css/components/media.css";
+import "../css/components/wrapper.css";
 class Home extends Component {
   data = {
     page: 1,
@@ -48,9 +50,7 @@ class Home extends Component {
             return (
               <div className="home-news-list">
                 <div className={text.h2}>{item.news_title}</div>
-                <div className={text.p3}>
-                  {parseDate(item.date_updated)}
-                </div>
+                <div className={text.p3}>{parseDate(item.date_updated)}</div>
                 <img className="home-news-image" src={item.news_image} alt="" />
               </div>
             );
@@ -64,13 +64,19 @@ class Home extends Component {
       news.map((item, index) => {
         if (index <= 3) {
           return (
-            <div className="home-news-list">
-              <div className={text.h2}>{item.news_title}</div>
-              <div className={text.p3}>
-                {parseDate(item.date_updated)}
+            <Link
+              to={{
+                pathname:
+                  "/" + item.news_category_name.toLowerCase() + "/" + item.id,
+                data: item,
+              }}
+            >
+              <div className="home-news-list">
+                <div className={text.h2}>{item.news_title}</div>
+                <div className={text.p3}>{parseDate(item.date_updated)}</div>
+                <img className="home-news-image" src={item.news_image} alt="" />
               </div>
-              <img className="home-news-image" src={item.news_image} alt="" />
-            </div>
+            </Link>
           );
         }
         return null;
@@ -80,7 +86,7 @@ class Home extends Component {
       news.map((item, index) => {
         if (index <= 3) {
           return (
-            <div className="news-wrapper" key={index}>
+            <div className="side-news-wrapper" key={index}>
               <div className={text.p1}>{item.news_title}</div>
               <img className="side-news-image" src={item.news_image} alt="" />
             </div>
@@ -114,7 +120,7 @@ class Home extends Component {
                 <div className={text.h1}>News</div>
                 <div className={text.p1}>Lihat Lainnya</div>
               </div>
-              <div className="home-news-wrapper">{newsList}</div>
+              <div className="news-wrapper home">{newsList}</div>
             </div>
 
             {/* Hype */}
@@ -123,7 +129,7 @@ class Home extends Component {
                 <div className={text.h1}>Hype</div>
                 <div className={text.p1}>Lihat Lainnya</div>
               </div>
-              <div className="home-news-wrapper">
+              <div className="news-wrapper home">
                 {newsListByCategory(this.data.news_category_id.Hype, 4)}
               </div>
             </div>
@@ -142,12 +148,8 @@ class Home extends Component {
                   <video className="horizontal-home-news-media">
                     <source src={item.video} type="video/mp4" />
                   </video>
-                  <div className={text.p1}>
-                    {item.video_title}
-                  </div>
-                  <div className={text.p3}>
-                    {parseDate(item.date_updated)}
-                  </div>
+                  <div className={text.p1}>{item.video_title}</div>
+                  <div className={text.p3}>{parseDate(item.date_updated)}</div>
                 </div>
               ))}
             </div>
@@ -161,7 +163,7 @@ class Home extends Component {
                 <div className={text.h1}>Peristiwa</div>
                 <div className={text.p1}>Lihat Lainnya</div>
               </div>
-              <div className="home-news-wrapper">
+              <div className="news-wrapper home">
                 {newsListByCategory(this.data.news_category_id.Peristiwa, 4)}
               </div>
             </div>
@@ -172,7 +174,7 @@ class Home extends Component {
                 <div className={text.h1}>Finance</div>
                 <div className={text.p1}>Lihat Lainnya</div>
               </div>
-              <div className="home-news-wrapper">
+              <div className="news-wrapper home">
                 {newsListByCategory(this.data.news_category_id.Business, 2)}
                 {newsListByCategory(this.data.news_category_id.Economy, 2)}
               </div>
@@ -216,9 +218,7 @@ class Home extends Component {
                         src={item.news_image}
                         alt=""
                       />
-                      <div className={text.p1}>
-                        {item.news_title}
-                      </div>
+                      <div className={text.p1}>{item.news_title}</div>
                       <div className={text.p3}>
                         {parseDate(item.date_updated)}
                       </div>
@@ -238,7 +238,7 @@ class Home extends Component {
                 <div className={text.h1}>Humaniora</div>
                 <div className={text.p1}>Lihat Lainnya</div>
               </div>
-              <div className="home-news-wrapper">{newsList}</div>
+              <div className="news-wrapper home">{newsList}</div>
             </div>
 
             {/* Ragam */}
@@ -247,7 +247,7 @@ class Home extends Component {
                 <div className={text.h1}>Ragam</div>
                 <div className={text.p1}>Lihat Lainnya</div>
               </div>
-              <div className="home-news-wrapper">{newsList}</div>
+              <div className="news-wrapper home">{newsList}</div>
             </div>
           </div>
 

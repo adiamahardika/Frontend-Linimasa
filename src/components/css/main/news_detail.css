@@ -1,0 +1,13 @@
+.news_detail {
+  display: grid;
+  row-gap: 32px;
+}
+.news-header {
+  display: grid;
+  column-gap: 8px;
+  grid-template-columns: max-content 1fr;
+}
+.news-image {
+  display: grid;
+  justify-content: center;
+}

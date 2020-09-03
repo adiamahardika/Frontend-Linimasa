@@ -60,6 +60,12 @@
 .input-image-description:focus{
   border: none;
 }
+.news-wrapper .input-commentar{
+  border: 2px solid #DEDEDE;
+  border-radius: 8px;
+  padding: 4px;
+  grid-area: commentar;
+}
 textarea{
   resize: none;
   display: flex;

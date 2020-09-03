@@ -16,6 +16,7 @@ import "../../css/components/text.css";
 import "../../css/components/form.css";
 import "../../css/components/table.css";
 import "../../css/components/media.css";
+import "../../css/components/wrapper.css";
 import "../../css/components/icon.css";
 class AdminNews extends Component {
   state = {

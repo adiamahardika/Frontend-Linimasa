@@ -19,7 +19,7 @@ class Side extends Component {
         ads.map((item, index) => {
           if (index === indexOrder) {
             url = item.ads_image;
-            return <img src={url} alt="" />;
+            return <img src={url} alt="" key={item.id}/>;
           }
           return null;
         })
@@ -30,7 +30,7 @@ class Side extends Component {
       news.map((item, index) => {
         if (index <= 3) {
           return (
-            <div className="news-wrapper" key={index}>
+            <div className="side-news-wrapper" key={index}>
               <div className={text.p1}>{item.news_title}</div>
               <img className="side-news-image" src={item.news_image} alt="" />
             </div>

@@ -40,24 +40,6 @@
   row-gap: 32px;
 }
 
-/* Wrapper */
-.home-news-wrapper {
-  display: grid;
-  row-gap: 8px;
-  background-color: #ffffff;
-  padding: 8px;
-  margin-top: 8px;
-}
-.horizontal-home-news {
-  display: grid;
-  margin-top: 8px;
-  background-color: #ffffff;
-  padding: 8px;
-  grid-auto-flow: column;
-  column-gap: 8px;
-  grid-template-columns: repeat(4, 1fr);
-}
-
 /* News List */
 .home-news-list {
   display: grid;
