@@ -12,7 +12,7 @@ class Side extends Component {
     this.props.dispatch(readAllNews());
   }
   render() {
-    const { news, ads } = this.props;
+    const { all_news, ads } = this.props;
     const imageAds = (indexOrder) => {
       let url = "";
       return (
@@ -27,8 +27,8 @@ class Side extends Component {
       );
     };
     const newsList =
-      news &&
-      news.map((item, index) => {
+      all_news &&
+      all_news.map((item, index) => {
         if (index <= 3) {
           return (
             <Link
@@ -70,7 +70,7 @@ class Side extends Component {
 const mapStateToProps = (state) => {
   return {
     ads: state.ads.ads,
-    news: state.news.news,
+    all_news: state.news.all_news,
   };
 };
 export default withRouter(connect(mapStateToProps)(Side));

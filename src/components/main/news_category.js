@@ -4,9 +4,10 @@ import { connect } from "react-redux";
 import { readNews } from "../redux/action/news";
 import { readNewsCategory } from "../redux/action/news_category";
 import { parseDate } from "../helpers/index";
-import { text } from "../helpers/class_name.json"
+import { text } from "../helpers/class_name.json";
 import Layout from "./layout/layout";
 import "../css/components/wrapper.css";
+import { Link } from "react-router-dom";
 class NewsCategory extends Component {
   state = {
     selectedNewsCategory: "",
@@ -27,6 +28,7 @@ class NewsCategory extends Component {
     } else {
       this.props.dispatch(readNewsCategory(pathname));
     }
+    this.data.news_category = ""
     this.props.dispatch(readNews(this.data));
   }
   render() {
@@ -48,32 +50,48 @@ class NewsCategory extends Component {
         ) {
           newsData = item;
           return (
-            <div className="home-news-list" key={newsData.id}>
-              <div className={text.h2}>{newsData.news_title}</div>
-              <div className={text.p3}>
-                {parseDate(newsData.date_updated)}
+            <Link
+              to={{
+                pathname:
+                  "/" + item.news_category_name.toLowerCase() + "/" + item.id,
+                data: item,
+              }}
+            >
+              <div className="home-news-list" key={newsData.id}>
+                <div className={text.h2}>{newsData.news_title}</div>
+                <div className={text.p3}>
+                  {parseDate(newsData.date_updated)}
+                </div>
+                <img
+                  className="home-news-image"
+                  src={newsData.news_image}
+                  alt=""
+                />
               </div>
-              <img
-                className="home-news-image"
-                src={newsData.news_image}
-                alt=""
-              />
-            </div>
+            </Link>
           );
         } else if (this.data.news_category === "") {
           newsData = item;
           return (
-            <div className="home-news-list" key={newsData.id}>
-              <div className={text.h2}>{newsData.news_title}</div>
-              <div className={text.p3}>
-                {parseDate(newsData.date_updated)}
+            <Link
+              to={{
+                pathname:
+                  "/" + item.news_category_name.toLowerCase() + "/" + item.id,
+                data: item,
+              }}
+            >
+              <div className="home-news-list" key={newsData.id}>
+                <div className={text.h2}>{newsData.news_title}</div>
+                <div className={text.p3}>
+                  {parseDate(newsData.date_updated)}
+                </div>
+                <img
+                  className="home-news-image"
+                  src={newsData.news_image}
+                  alt=""
+                />
               </div>
-              <img
-                className="home-news-image"
-                src={newsData.news_image}
-                alt=""
-              />
-            </div>
+            </Link>
           );
         }
         return null;

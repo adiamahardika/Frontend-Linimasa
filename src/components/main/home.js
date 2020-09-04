@@ -29,7 +29,7 @@ class Home extends Component {
     this.props.dispatch(readAllNewsCategory());
   }
   render() {
-    const { ads, news, video, news_category } = this.props;
+    const { ads, all_news, video, news_category } = this.props;
     if (news_category.length > 1) {
       news_category &&
         news_category.map((item) => {
@@ -40,8 +40,8 @@ class Home extends Component {
     const newsListByCategory = (category, limit) => {
       let newsData = {};
       return (
-        news &&
-        news.map((item) => {
+        all_news &&
+        all_news.map((item) => {
           if (
             category === item.news_category &&
             limit > Object.keys(newsData).length
@@ -72,8 +72,8 @@ class Home extends Component {
       );
     };
     const newsList =
-      news &&
-      news.map((item, index) => {
+      all_news &&
+      all_news.map((item, index) => {
         if (index <= 3) {
           return (
             <Link
@@ -94,8 +94,8 @@ class Home extends Component {
         return null;
       });
     const sideNewsList =
-      news &&
-      news.map((item, index) => {
+      all_news &&
+      all_news.map((item, index) => {
         if (index <= 3) {
           return (
             <Link
@@ -118,7 +118,7 @@ class Home extends Component {
       <div className="layout">
         <Top />
         <Navbar />
-        <div className="container layout">
+        <div className="container home-layout">
           <Side />
           <div className="home">
             {ads.map((item, index) => {
@@ -242,7 +242,7 @@ class Home extends Component {
               <div className={text.p1}>Lihat Lainnya</div>
             </div>
             <div className="horizontal-home-news">
-              {news.map((item, index) => {
+              {all_news.map((item, index) => {
                 if (index <= 3) {
                   return (
                     <Link
@@ -315,7 +315,7 @@ class Home extends Component {
 const mapStateToProps = (state) => {
   return {
     ads: state.ads.ads,
-    news: state.news.news,
+    all_news: state.news.all_news,
     video: state.video.video,
     news_category: state.news_category.news_category,
   };

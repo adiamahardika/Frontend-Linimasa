@@ -28,7 +28,7 @@ export const readNews = (data) => {
 
 export const readAllNews = () => {
   return {
-    type: "GET_NEWS",
+    type: "GET_ALL_NEWS",
     payload: axios({
       method: "GET",
       url: `${process.env.REACT_APP_API}/news`,

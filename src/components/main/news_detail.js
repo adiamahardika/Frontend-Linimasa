@@ -18,7 +18,7 @@ class NewsDetail extends Component {
     this.props.dispatch(readAds());
   }
   render() {
-    const { news_detail, news } = this.props;
+    const { news_detail, all_news } = this.props;
     const data = this.props.location.data;
     const newsData = () => {
       let news_data = {}
@@ -57,8 +57,8 @@ class NewsDetail extends Component {
           <div>
             <div className={text.h1}>Baca Lainnya</div>
             <div className="news-wrapper home">
-              {news &&
-                news.map((item, index) => {
+              {all_news &&
+                all_news.map((item, index) => {
                   if (index <= 3) {
                     return (
                       <Link
@@ -112,7 +112,7 @@ class NewsDetail extends Component {
 const mapStateToProps = (state) => {
   return {
     news_detail: state.news.news_detail,
-    news: state.news.news,
+    all_news: state.news.all_news,
     ads: state.ads.ads,
   };
 };

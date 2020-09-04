@@ -71,10 +71,10 @@ class AdminNews extends Component {
     this.props.dispatch(readNews(data));
   };
   render() {
-    const { news, loading, news_category } = this.props;
+    const { all_news, loading, news_category } = this.props;
     const listNews =
-      news &&
-      news.map((item, index) => {
+      all_news &&
+      all_news.map((item, index) => {
         return (
           <NewsList
             key={item.id}
@@ -155,7 +155,7 @@ class AdminNews extends Component {
 }
 const mapStateToProps = (state) => {
   return {
-    news: state.news.news,
+    all_news: state.news.all_news,
     loading: state.news.loading,
     news_category: state.news_category.news_category,
   };

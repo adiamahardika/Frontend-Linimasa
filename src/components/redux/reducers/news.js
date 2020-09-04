@@ -1,5 +1,6 @@
 const initialState = {
   news: [],
+  all_news: [],
   news_detail: "",
   loading: false,
 };
@@ -38,6 +39,22 @@ const news = (state = initialState, action) => {
         news: action.payload.data.result,
         loading: false,
       };
+      case "GET_ALL_NEWS_PENDING":
+        return {
+          ...state,
+          loading: true,
+        };
+      case "GET_ALL_NEWS_REJECTED":
+        return {
+          ...state,
+          loading: true,
+        };
+      case "GET_ALL_NEWS_FULFILLED":
+        return {
+          ...state,
+          all_news: action.payload.data.result,
+          loading: false,
+        };
     case "GET_NEWS_DETAIL_PENDING":
       return {
         ...state,

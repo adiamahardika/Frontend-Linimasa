@@ -10,7 +10,7 @@
 .container{
   max-width: 95%;
 }
-.container.layout {
+.container.home-layout {
   grid-area: container;
   display: grid;
   grid-template-areas: "content side"
@@ -18,6 +18,14 @@
   "content-middle side-middle"
   "horizontal-bottom horizontal-bottom"
   "content-bottom side-bottom";
+  grid-template-columns: 3fr 1fr;
+  row-gap: 32px;
+  column-gap: 16px;
+}
+.container.layout {
+  grid-area: container;
+  display: grid;
+  grid-template-areas: "content side";
   grid-template-columns: 3fr 1fr;
   row-gap: 32px;
   column-gap: 16px;

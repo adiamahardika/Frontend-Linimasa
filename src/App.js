@@ -84,8 +84,8 @@ export default function App() {
             component={video_category}
           />
           <Route exact path={routes.home} component={home} />
-          <Route path='/:news_category/:id' component={news_detail} />
-          <Route path='/:news_category' component={news_category}/>
+          <Route exact path='/:news_category/:id' component={news_detail} />
+          <Route exact path='/:news_category' component={news_category}/>
         </Switch>
       </Router>
     </Provider>
