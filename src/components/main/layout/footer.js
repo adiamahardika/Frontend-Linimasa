@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { text } from "../../helpers/class_name.json";
-import lensajabar from "../../../assets/image/logo/lensajabar.png";
+import linimasa from "../../../assets/image/logo/linimasa.png";
 import youtube from "../../../assets/image/logo/youtube.jpg";
 import instagram from "../../../assets/image/logo/instagram.jpg";
 import twitter from "../../../assets/image/logo/twitter.png";
@@ -14,7 +14,7 @@ class Footer extends Component {
     return (
       <div className="footer">
         <div className="footer-column left">
-          <img className="lensajabar-logo" src={lensajabar} alt="" />
+          <img className="linimasa-logo" src={linimasa} alt="" />
           <div className={text.p1}>Connect with us</div>
           <div className="socmed-wrapper">
             <img className="socmed-logo" alt="" src={youtube} />
@@ -22,10 +22,7 @@ class Footer extends Component {
             <img className="socmed-logo" alt="" src={twitter} />
             <img className="socmed-logo" alt="" src={facebook} />
           </div>
-          <div className={text.p1}>
-            Copyright 2014 lensajabar.com | By Lensa Digital
-          </div>
-          <div className={text.p1}>All right reserved </div>
+          <div className={text.p1}>Built by Adia Mahardika using React JS</div>
         </div>
         <div className="footer-column middle">
           <div className={text.p1}>Informasi</div>
@@ -47,10 +44,9 @@ class Footer extends Component {
         <div className="footer-column right">
           <div className={text.p1}>Jaringan Media</div>
           <div>
-            <div className={text.p3}>Lensa Jakarta</div>
-            <div className={text.p3}>Lensa Sriwijaya</div>
-            <div className={text.p3}>Lensa Jateng News</div>
-            <div className={text.p3}>Jaknews Online</div>
+            <div className={text.p3}>liniMasa Jabar</div>
+            <div className={text.p3}>liniMasa Jateng</div>
+            <div className={text.p3}>liniMasa Bali</div>
           </div>
         </div>
       </div>

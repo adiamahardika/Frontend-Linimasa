@@ -7,7 +7,7 @@ import { parseDate } from "../helpers/index";
 import { text } from "../helpers/class_name.json";
 import Layout from "./layout/layout";
 import { Link } from "react-router-dom";
-import "../css/main/news_category.css"
+import "../css/main/news_category.css";
 import "../css/components/wrapper.css";
 import "../css/components/carousel.css";
 class NewsCategory extends Component {
@@ -85,6 +85,7 @@ class NewsCategory extends Component {
               <div className="home-news-list" key={newsData.id}>
                 <div className={text.h2}>{newsData.news_title}</div>
                 <div className={text.p3}>
+                  {newsData.news_category_name} |{" "}
                   {parseDate(newsData.date_updated)}
                 </div>
                 <img
@@ -158,7 +159,6 @@ class NewsCategory extends Component {
           this.data.news_category === "" &&
           Object.keys(data).length < 4
         ) {
-          console.log(Object.keys(data).length)
           newsData = item;
           if (Object.keys(data).length === 0) {
             data[item.id] = item.news_title;
@@ -211,52 +211,52 @@ class NewsCategory extends Component {
     return (
       <Layout>
         <div className="news-category-wrapper">
-        <div
-          id="carouselIndicators"
-          className="carousel slide"
-          data-ride="carousel"
-        >
-          <ol className="carousel-indicators">
-            <li
-              data-target="#carouselIndicators"
-              data-slide-to="0"
-              className="active"
-            ></li>
-            <li data-target="#carouselIndicators" data-slide-to="1"/>
-            <li data-target="#carouselIndicators" data-slide-to="2"/>
-            <li data-target="#carouselIndicators" data-slide-to="3"/>
-          </ol>
-          <div className="carousel-inner">{carousel}</div>
-          <a
-            className="carousel-control-prev"
-            href="#carouselIndicators"
-            role="button"
-            data-slide="prev"
+          <div
+            id="carouselIndicators"
+            className="carousel slide"
+            data-ride="carousel"
           >
-            <div className="carousel-icon-wrapper">
-              <span
-                className="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span className="sr-only">Previous</span>
-            </div>
-          </a>
-          <a
-            className="carousel-control-next"
-            href="#carouselIndicators"
-            role="button"
-            data-slide="next"
-          >
-            <div className="carousel-icon-wrapper">
-              <span
-                className="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span className="sr-only">Next</span>
-            </div>
-          </a>
-        </div>
-        <div className="news-wrapper">{newsList}</div>
+            <ol className="carousel-indicators">
+              <li
+                data-target="#carouselIndicators"
+                data-slide-to="0"
+                className="active"
+              ></li>
+              <li data-target="#carouselIndicators" data-slide-to="1" />
+              <li data-target="#carouselIndicators" data-slide-to="2" />
+              <li data-target="#carouselIndicators" data-slide-to="3" />
+            </ol>
+            <div className="carousel-inner">{carousel}</div>
+            <a
+              className="carousel-control-prev"
+              href="#carouselIndicators"
+              role="button"
+              data-slide="prev"
+            >
+              <div className="carousel-icon-wrapper">
+                <span
+                  className="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span className="sr-only">Previous</span>
+              </div>
+            </a>
+            <a
+              className="carousel-control-next"
+              href="#carouselIndicators"
+              role="button"
+              data-slide="next"
+            >
+              <div className="carousel-icon-wrapper">
+                <span
+                  className="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span className="sr-only">Next</span>
+              </div>
+            </a>
+          </div>
+          <div className="news-wrapper">{newsList}</div>
         </div>
       </Layout>
     );
