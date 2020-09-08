@@ -37,10 +37,10 @@ const NewsList = ({ item, index, onSelectDeleteNews }) => {
           </div>
         </button>
       </div>
-      <div className={text.p2}>{item.news_title}</div>
       <div className="media-column">
         <img className="admin-image" src={item.news_image} alt="..." />
       </div>
+      <div className={text.p2}>{item.news_title}</div>
       <div className={text.p2}>{item.news_image_description}</div>
       <div className={text.p2}>{item.news_category_name}</div>
       <div className={text.p2}>{item.user_name}</div>

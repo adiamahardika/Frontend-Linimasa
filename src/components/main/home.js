@@ -16,6 +16,7 @@ import "../css/main/home.css";
 import "../css/main/layout/layout.css";
 import "../css/components/media.css";
 import "../css/components/wrapper.css";
+import "../css/components/carousel.css";
 class Home extends Component {
   data = {
     page: 1,
@@ -37,6 +38,27 @@ class Home extends Component {
             item.id);
         });
     }
+    const listCarousel = (indexOrder) => {
+      return all_news.map((item, index) => {
+        if (index === indexOrder) {
+          return (
+            <div key={index} className="carousel">
+              <div className="gradient-overlay">
+                <img className="image-carousel" src={item.news_image} alt="" />
+              </div>
+              <div className={`carousel-caption`}>
+                <div className={text.h2}>{item.news_title}</div>
+                <div className={`${text.p3}`}>
+                  {item.news_category_name} | {parseDate(item.date_updated)}
+                </div>
+              </div>
+            </div>
+          );
+        } else {
+          return null;
+        }
+      });
+    };
     const newsListByCategory = (category, limit) => {
       let newsData = {};
       return (
@@ -85,7 +107,7 @@ class Home extends Component {
             >
               <div className="home-news-list">
                 <div className={text.h2}>{item.news_title}</div>
-                <div className={text.p3}>{parseDate(item.date_updated)}</div>
+                <div className={text.p3}>{item.news_category_name} | {parseDate(item.date_updated)}</div>
                 <img className="home-news-image" src={item.news_image} alt="" />
               </div>
             </Link>
@@ -93,27 +115,73 @@ class Home extends Component {
         }
         return null;
       });
-    const sideNewsList =
-      all_news &&
-      all_news.map((item, index) => {
-        if (index <= 3) {
-          return (
-            <Link
-              to={{
-                pathname:
-                  "/" + item.news_category_name.toLowerCase() + "/" + item.id,
-                data: item,
-              }}
-            >
-              <div className="side-news-wrapper" key={index}>
-                <div className={text.p1}>{item.news_title}</div>
-                <img className="side-news-image" src={item.news_image} alt="" />
-              </div>
-            </Link>
-          );
-        }
-        return null;
-      });
+    const sideNewsListByCategory = (category, limit) => {
+      let newsData = {};
+      return (
+        all_news &&
+        all_news.map((item, index) => {
+          if (
+            category === item.news_category &&
+            limit > Object.keys(newsData).length
+          ) {
+            newsData[item.id] = item;
+            return (
+              <Link
+                to={{
+                  pathname:
+                    "/" + item.news_category_name.toLowerCase() + "/" + item.id,
+                  data: item,
+                }}
+              >
+                <div className="side-news-wrapper" key={index}>
+                  <div className={text.p1}>{item.news_title}</div>
+                  <img
+                    className="side-news-image"
+                    src={item.news_image}
+                    alt=""
+                  />
+                </div>
+              </Link>
+            );
+          }
+          return null;
+        })
+      );
+    };
+    const horizontalNewsListByCategory = (category, limit) => {
+      let newsData = {};
+      return (
+        all_news &&
+        all_news.map((item, index) => {
+          if (
+            category === item.news_category &&
+            limit > Object.keys(newsData).length
+          ) {
+            newsData[item.id] = item;
+            return (
+              <Link
+                to={{
+                  pathname:
+                    "/" + item.news_category_name.toLowerCase() + "/" + item.id,
+                  data: item,
+                }}
+              >
+                <div className="horizontal-home-news-list" key={index}>
+                  <img
+                    className="horizontal-home-news-media"
+                    src={item.news_image}
+                    alt=""
+                  />
+                  <div className={text.p1}>{item.news_title}</div>
+                  <div className={text.p3}>{parseDate(item.date_updated)}</div>
+                </div>
+              </Link>
+            );
+          }
+          return null;
+        })
+      );
+    };
     return (
       <div className="layout">
         <Top />
@@ -121,6 +189,56 @@ class Home extends Component {
         <div className="container home-layout">
           <Side />
           <div className="home">
+            <div
+              id="carouselIndicators"
+              className="carousel slide"
+              data-ride="carousel"
+            >
+              <ol className="carousel-indicators">
+                <li
+                  data-target="#carouselIndicators"
+                  data-slide-to="0"
+                  className="active"
+                ></li>
+                <li data-target="#carouselIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselIndicators" data-slide-to="3"></li>
+              </ol>
+              <div className="carousel-inner">
+                <div className="carousel-item active">{listCarousel(0)}</div>
+                <div className="carousel-item">{listCarousel(1)}</div>
+                <div className="carousel-item">{listCarousel(2)}</div>
+                <div className="carousel-item">{listCarousel(3)}</div>
+              </div>
+              <a
+                className="carousel-control-prev"
+                href="#carouselIndicators"
+                role="button"
+                data-slide="prev"
+              >
+                <div className="carousel-icon-wrapper">
+                  <span
+                    className="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span className="sr-only">Previous</span>
+                </div>
+              </a>
+              <a
+                className="carousel-control-next"
+                href="#carouselIndicators"
+                role="button"
+                data-slide="next"
+              >
+                <div className="carousel-icon-wrapper">
+                  <span
+                    className="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span className="sr-only">Next</span>
+                </div>
+              </a>
+            </div>
             {ads.map((item, index) => {
               if (index === 5) {
                 return (
@@ -222,7 +340,12 @@ class Home extends Component {
                 <div className={text.h1}>Entertainment</div>
                 <div className={text.p1}>Lihat Lainnya</div>
               </div>
-              <div className="side-news">{sideNewsList}</div>
+              <div className="side-news">
+                {sideNewsListByCategory(
+                  this.data.news_category_id.Entertainment,
+                  4
+                )}
+              </div>
             </div>
 
             {/* Komentar */}
@@ -242,35 +365,19 @@ class Home extends Component {
               <div className={text.p1}>Lihat Lainnya</div>
             </div>
             <div className="horizontal-home-news">
-              {all_news.map((item, index) => {
-                if (index <= 3) {
-                  return (
-                    <Link
-                      to={{
-                        pathname:
-                          "/" +
-                          item.news_category_name.toLowerCase() +
-                          "/" +
-                          item.id,
-                        data: item,
-                      }}
-                    >
-                      <div className="horizontal-home-news-list" key={index}>
-                        <img
-                          className="horizontal-home-news-media"
-                          src={item.news_image}
-                          alt=""
-                        />
-                        <div className={text.p1}>{item.news_title}</div>
-                        <div className={text.p3}>
-                          {parseDate(item.date_updated)}
-                        </div>
-                      </div>
-                    </Link>
-                  );
-                }
-                return null;
-              })}
+              {horizontalNewsListByCategory(this.data.news_category_id.Food, 1)}
+              {horizontalNewsListByCategory(
+                this.data.news_category_id.Sport,
+                1
+              )}
+              {horizontalNewsListByCategory(
+                this.data.news_category_id.Health,
+                1
+              )}
+              {horizontalNewsListByCategory(
+                this.data.news_category_id.Outgoing,
+                1
+              )}
             </div>
           </div>
 
@@ -282,7 +389,9 @@ class Home extends Component {
                 <div className={text.h1}>Humaniora</div>
                 <div className={text.p1}>Lihat Lainnya</div>
               </div>
-              <div className="news-wrapper home">{newsList}</div>
+              <div className="news-wrapper home">
+                {newsListByCategory(this.data.news_category_id.Humaniora, 4)}
+              </div>
             </div>
 
             {/* Ragam */}
@@ -291,7 +400,9 @@ class Home extends Component {
                 <div className={text.h1}>Ragam</div>
                 <div className={text.p1}>Lihat Lainnya</div>
               </div>
-              <div className="news-wrapper home">{newsList}</div>
+              <div className="news-wrapper home">
+                {newsListByCategory(this.data.news_category_id.Ragam, 4)}
+              </div>
             </div>
           </div>
 
@@ -303,7 +414,9 @@ class Home extends Component {
                 <div className={text.h1}>Techno</div>
                 <div className={text.p1}>Lihat Lainnya</div>
               </div>
-              <div className="side-news">{sideNewsList}</div>
+              <div className="side-news">
+                {sideNewsListByCategory(this.data.news_category_id.Techno, 4)}
+              </div>
             </div>
           </div>
         </div>

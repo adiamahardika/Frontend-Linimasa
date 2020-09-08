@@ -138,8 +138,8 @@ class AdminNews extends Component {
           <div className="admin-table news">
             <div className="paragraph-1 number-column">No</div>
             <div className={text.p1}>Manage</div>
-            <div className={text.p1}>Judul Berita</div>
             <div className={text.p1}>Gambar</div>
+            <div className={text.p1}>Judul Berita</div>
             <div className={text.p1}>Deskripsi Gambar</div>
             <div className={text.p1}>Kategori Berita</div>
             <div className={text.p1}>Penulis Berita</div>

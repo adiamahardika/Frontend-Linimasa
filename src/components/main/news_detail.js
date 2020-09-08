@@ -35,7 +35,7 @@ class NewsDetail extends Component {
               {parseDate(news_data.date_updated)}
             </div>
           </div>
-          <div className={text.h2}>{news_data.news_title}</div>
+          <div className={`${text.h2} news-detail-title`}>{news_data.news_title}</div>
           <div className="news-image">
             <img src={news_data.news_image} alt="" />
             <div className={text.p3}>

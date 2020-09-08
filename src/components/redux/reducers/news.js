@@ -21,6 +21,7 @@ const news = (state = initialState, action) => {
       return {
         ...state,
         news: action.payload.data.result,
+        all_news: action.payload.data.result,
         loading: false,
       };
     case "GET_NEWS_PENDING":
@@ -37,24 +38,25 @@ const news = (state = initialState, action) => {
       return {
         ...state,
         news: action.payload.data.result,
+        all_news: action.payload.data.result,
         loading: false,
       };
-      case "GET_ALL_NEWS_PENDING":
-        return {
-          ...state,
-          loading: true,
-        };
-      case "GET_ALL_NEWS_REJECTED":
-        return {
-          ...state,
-          loading: true,
-        };
-      case "GET_ALL_NEWS_FULFILLED":
-        return {
-          ...state,
-          all_news: action.payload.data.result,
-          loading: false,
-        };
+    case "GET_ALL_NEWS_PENDING":
+      return {
+        ...state,
+        loading: true,
+      };
+    case "GET_ALL_NEWS_REJECTED":
+      return {
+        ...state,
+        loading: true,
+      };
+    case "GET_ALL_NEWS_FULFILLED":
+      return {
+        ...state,
+        all_news: action.payload.data.result,
+        loading: false,
+      };
     case "GET_NEWS_DETAIL_PENDING":
       return {
         ...state,
@@ -85,6 +87,7 @@ const news = (state = initialState, action) => {
       return {
         ...state,
         news: action.payload.data.result,
+        all_news: action.payload.data.result,
         loading: false,
       };
     case "DELETE_NEWS_PENDING":
@@ -101,6 +104,7 @@ const news = (state = initialState, action) => {
       return {
         ...state,
         news: action.payload.data.result,
+        all_news: action.payload.data.result,
         loading: false,
       };
     default:

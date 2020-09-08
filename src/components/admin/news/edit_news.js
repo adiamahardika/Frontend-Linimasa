@@ -185,7 +185,7 @@ class EditNews extends Component {
           </div>
           <div className="form-group">
             <label className="label-input">Artikel</label>
-            <TextEditor insertArticle={this.onEditArticle} />
+            <TextEditor insertArticle={this.onEditArticle} value={this.state.news_content}/>
           </div>
         </div>
       </AdminLayout>
