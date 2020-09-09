@@ -5,7 +5,7 @@ import { withRouter } from "react-router-dom";
 import { imageFilter } from "../../helpers/index";
 import { routes_admin } from "../../helpers/routes.json";
 import { readAllNewsCategory } from "../../redux/action/news_category";
-import { button, text } from "../../helpers/class_name.json"
+import { button, text } from "../../helpers/class_name.json";
 import AdminLayout from "../layout/admin_layout";
 import FullPageLoader from "../../helpers/loading";
 import TextEditor from "../../helpers/text_editor";
@@ -90,9 +90,35 @@ class InsertNews extends Component {
         );
       }
     };
+    const newsImage = () => {
+      if (this.state.news_image === "") {
+        return (
+          <div className="upload">
+            <ion-icon size="large" name="cloud-upload"></ion-icon>
+            <div className={text.p2}>Belum ada gambar yang dipilih!</div>
+            <input
+              type="file"
+              className="form-control-file"
+              accept="image/*"
+              onChange={this.onInsertImage}
+              id="input-button"
+            />
+            <label className="upload-file" htmlFor="input-button">
+              Upload Gambar
+            </label>
+          </div>
+        );
+      } else {
+        return (
+          <div className="image-uploaded">
+            <img src={this.state.image_preview} alt="" />
+          </div>
+        );
+      }
+    };
     return (
       <AdminLayout>
-      <FullPageLoader loading={loading} />
+        <FullPageLoader loading={loading} />
         <div className={text.h1}>Tulis Berita</div>
         <div className="form admin">
           <SubmitButton />
@@ -119,7 +145,11 @@ class InsertNews extends Component {
                 Pilih Kategori Berita...
               </option>
               {news_category.map((news_category, index) => (
-                <option className={text.p1} key={index} value={news_category.id}>
+                <option
+                  className={text.p1}
+                  key={index}
+                  value={news_category.id}
+                >
                   {news_category.news_category_name}
                 </option>
               ))}
@@ -127,25 +157,7 @@ class InsertNews extends Component {
           </div>
           <div className="form-group">
             <label className={text.p1}>Gambar</label>
-            <div className="media-wrapper">
-              <div className="image-uploaded">
-                <img src={this.state.image_preview} alt="" />
-              </div>
-              <div className="upload">
-                <ion-icon size="large" name="cloud-upload"></ion-icon>
-                <div className={text.p2}>Belum ada gambar yang dipilih!</div>
-                <input
-                  type="file"
-                  className="form-control-file"
-                  accept="image/*"
-                  onChange={this.onInsertImage}
-                  id="input-button"
-                />
-                <label className="upload-file" htmlFor="input-button">
-                  Upload Gambar
-                </label>
-              </div>
-            </div>
+            <div className="media-wrapper">{newsImage()}</div>
           </div>
           <div className="form-group">
             <textarea

@@ -22,7 +22,6 @@ class Footer extends Component {
             <img className="socmed-logo" alt="" src={twitter} />
             <img className="socmed-logo" alt="" src={facebook} />
           </div>
-          <div className={text.p1}>Built by Adia Mahardika using React JS</div>
         </div>
         <div className="footer-column middle">
           <div className={text.p1}>Informasi</div>
