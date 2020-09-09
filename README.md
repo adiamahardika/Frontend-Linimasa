@@ -1,68 +1,66 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+<img width=500 src='https://user-images.githubusercontent.com/59129342/92572615-de896900-f2ae-11ea-927b-edfbea69a8dc.png' />
+ <h1 align="center">liniMasa news app</h1>
+</p>
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Introduction](#introduction)
+- [Screenshots](#screenshots)
+- [Built With](#built-with)
+- [Features](#features)
+- [Usage](#usage-for-development)
+- [Related Project](#related-project-backend)
+- [Visit The Web](#visit-the-web)
+- [Contributors](#contributors)
 
-### `npm start`
+## Introduction
+liniMasa adalah aplikasi platform berita berbasis web. Dikembangkan menggunkan ReactJS sebagai library dan Redux untuk mengolah statenya.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Screenshots
+<div>
+<img width=500 src='https://user-images.githubusercontent.com/59129342/92573585-32e11880-f2b0-11ea-9cb4-4c584ff4b31d.jpg' />
+<p text-align='center'><strong>Halaman Home liniMasa</strong></p>
+</div>
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+<div>
+<img width=500 src='https://user-images.githubusercontent.com/59129342/92573735-6459e400-f2b0-11ea-98cf-0dd2f4a86cf3.png' />
+<p text-align='center'><strong>Halaman Category Hype</strong></p>
+</div>
 
-### `npm test`
+<div>
+<img width=500 src='https://user-images.githubusercontent.com/59129342/92573811-805d8580-f2b0-11ea-8d51-5042da898ae2.png' />
+<p text-align='center'><strong>Halaman Detail Berita</strong></p>
+</div>
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<div>
+<img width=500 src='https://user-images.githubusercontent.com/59129342/92573868-93705580-f2b0-11ea-8690-953f6e779fa8.png' />
+<p text-align='center'><strong>Halaman Insert Berita</strong></p>
+</div>
 
-### `npm run build`
+## Built With
+* [`npm`](https://www.npmjs.com/get-npm)
+* [`react-js`](https://reactjs.org/docs/create-a-new-react-app.html)
+* [`redux`](https://redux.js.org/introduction/getting-started)
+* [`backend-linimasa`](https://github.com/adiamahardika/Backend-Linimasa)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
+* Menulis, edit, hapus berita.
+* Read all berita.
+* Filter berita by categori.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Usage For Development
+1. Open your CLI
+2. Clone this repo
+```
+git clone https://github.com/adiamahardika/Frontend-Linimasa.git
+```
+3. Open the folder and type `npm install` for install dependencies.
+4. Before run this application, you must run backend first and make sure it connected with database.
+5. Type `npm start` to run this application.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Related Project Backend
+[`Backend-Linimasa`](https://github.com/adiamahardika/Backend-Linimasa)
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Contributors
+[Adia Mahardika](https://github.com/adiamahardika/)
